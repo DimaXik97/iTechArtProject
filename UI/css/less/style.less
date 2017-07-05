@@ -2,7 +2,7 @@
 @white-color: #FFF;
 @black-color: #000;
 
-#login-form {
+#login-form, #registration-form {
 	margin: 150px auto;
 	width: 300px;
     h1 {
@@ -23,9 +23,11 @@
         padding: 20px;
         position: relative;
     }
-    input[type="email"],input[type="password"]{
+    input[type="email"],input[type="password"],input[type="text"]{
         border: 1px solid #dcdcdc;
         padding: 12px 10px;
+        font-family: 'Open Sans',sans-serif;
+        color: @red-color;
         width: 238px;
     }
     button{
@@ -38,7 +40,7 @@
         transition: all 0.4s ease;
         border: 2px solid @red-color;
         cursor: pointer;
-        width: 119px;
+        min-width: 119px;
         height: 30px;
         &:hover{
             color:@red-color;
