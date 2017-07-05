@@ -1,0 +1,48 @@
+@red-color: #eb1c23;
+@white-color: #FFF;
+@black-color: #000;
+
+#login-form {
+	margin: 150px auto;
+	width: 300px;
+    h1 {
+        background-color: @red-color;
+        border-radius: 5px 5px 0 0;
+        border: 1px solid @red-color;
+        color: @white-color;
+        font-family: 'Open Sans',sans-serif;
+        font-size: 16px;
+        padding: 20px;
+        text-align: center;
+        text-transform: uppercase;
+    };
+    fieldset {
+        background: @white-color;
+        border: 0.1px solid @red-color;
+        border-radius: 0 0 5px 5px;
+        padding: 20px;
+        position: relative;
+    }
+    input[type="email"],input[type="password"]{
+        border: 1px solid #dcdcdc;
+        padding: 12px 10px;
+        width: 238px;
+    }
+    button{
+        margin-top: 20px;
+        font-family: 'Open Sans',sans-serif;
+        font-size: 12px;
+        text-transform: uppercase;
+        color: @white-color;
+        background: @red-color;
+        transition: all 0.4s ease;
+        border: 2px solid @red-color;
+        cursor: pointer;
+        width: 119px;
+        height: 30px;
+        &:hover{
+            color:@red-color;
+            background: @white-color;
+        }
+    }
+}

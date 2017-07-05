@@ -1,0 +1,45 @@
+#login-form {
+  margin: 150px auto;
+  width: 300px;
+}
+#login-form h1 {
+  background-color: #eb1c23;
+  border-radius: 5px 5px 0 0;
+  border: 1px solid #eb1c23;
+  color: #FFF;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  padding: 20px;
+  text-align: center;
+  text-transform: uppercase;
+}
+#login-form fieldset {
+  background: #FFF;
+  border: 0.1px solid #eb1c23;
+  border-radius: 0 0 5px 5px;
+  padding: 20px;
+  position: relative;
+}
+#login-form input[type="email"],
+#login-form input[type="password"] {
+  border: 1px solid #dcdcdc;
+  padding: 12px 10px;
+  width: 238px;
+}
+#login-form button {
+  margin-top: 20px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #FFF;
+  background: #eb1c23;
+  transition: all 0.4s ease;
+  border: 2px solid #eb1c23;
+  cursor: pointer;
+  width: 119px;
+  height: 30px;
+}
+#login-form button:hover {
+  color: #eb1c23;
+  background: #FFF;
+}
