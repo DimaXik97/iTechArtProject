@@ -54,3 +54,62 @@
   color: #eb1c23;
   background: #FFF;
 }
+#page {
+  display: grid;
+  grid-template-columns: auto 1024px auto;
+}
+#page #main {
+  grid-column: 2;
+  grid-row: 1;
+  display: grid;
+  grid-template-rows: 30px auto 20px;
+}
+#page #main #about {
+  grid-column: 1;
+  grid-row: 2;
+  margin: 30px;
+}
+#page #main #about #menu {
+  border: 0.1px solid #eb1c23;
+  border-radius: 5px;
+  height: 30px;
+  display: grid;
+  grid-template-columns: auto, auto, auto;
+}
+#page #main #about #menu #news,
+#page #main #about #menu #vacancies,
+#page #main #about #menu #contacts {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  height: 100%;
+  text-align: center;
+  align-content: center;
+  text-transform: uppercase;
+  color: #FFF;
+  background: #eb1c23;
+  transition: all 0.4s ease;
+  border: 2px solid #eb1c23;
+  cursor: pointer;
+}
+#page #main #about #menu #news:hover,
+#page #main #about #menu #vacancies:hover,
+#page #main #about #menu #contacts:hover {
+  color: #eb1c23;
+  background: #FFF;
+}
+#page #main #about #menu #news {
+  grid-column: 1;
+  grid-row: 1;
+}
+#page #main #about #menu #vacancies {
+  grid-column: 2;
+  grid-row: 1;
+}
+#page #main #about #menu #contacts {
+  grid-column: 3;
+  grid-row: 1;
+}
+#page #main #about #content {
+  width: 400px;
+  min-height: 400px;
+}

@@ -48,3 +48,60 @@
         }
     }
 }
+#page
+{
+    display: grid;
+    grid-template-columns: auto 1024px auto;
+    #main
+    {
+        grid-column: 2;
+        grid-row: 1;
+        display: grid;
+        grid-template-rows: 30px auto 20px;
+        #about{
+            grid-column: 1;
+            grid-row: 2;
+            margin: 30px;
+            #menu{
+                border: 0.1px solid @red-color;
+                border-radius: 5px;
+                height: 30px;
+                display: grid;
+                grid-template-columns: auto, auto, auto;
+                #news,#vacancies,#contacts{
+                    font-family: 'Open Sans',sans-serif;
+                    font-size: 20px;
+                    height: 100%;
+                    text-align: center;
+                    align-content: center;
+                    text-transform: uppercase;
+                    color: @white-color;
+                    background: @red-color;
+                    transition: all 0.4s ease;
+                    border: 2px solid @red-color;
+                    cursor: pointer;
+                    &:hover{
+                        color:@red-color;
+                        background: @white-color;
+                    }
+                }
+                #news{
+                    grid-column: 1;
+                    grid-row: 1;
+                }
+                #vacancies{
+                    grid-column: 2;
+                    grid-row: 1;
+                }
+                #contacts{
+                    grid-column: 3;
+                    grid-row: 1;
+                }
+            }
+            #content{
+                width: 400px;
+                min-height: 400px;
+            }
+        }
+    }
+}
