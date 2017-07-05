@@ -64,10 +64,27 @@
   display: grid;
   grid-template-rows: 30px auto 20px;
 }
+#page #main header {
+  display: grid;
+  grid-template-columns: auto, auto, auto;
+  padding: 10px;
+}
+#page #main header #logo {
+  grid-column: 1;
+  grid-row: 1;
+}
+#page #main header #linkAbout {
+  grid-column: 2;
+  grid-row: 1;
+}
+#page #main header #btmControl {
+  grid-column: 3;
+  grid-row: 1;
+}
 #page #main #about {
   grid-column: 1;
   grid-row: 2;
-  margin: 30px;
+  padding-top: 50px;
 }
 #page #main #about #menu {
   border: 0.1px solid #eb1c23;
