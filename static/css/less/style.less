@@ -56,8 +56,8 @@ body{
         grid-column: 2;
         grid-row: 1;
         display: grid;
-        grid-template-columns: auto auto auto;
-        padding: 10px;
+        grid-template-columns: @body-width/3 @body-width/3 @body-width/3;
+        padding: 10px 10px;
         .logo{
             grid-column: 1;
             grid-row: 1;
@@ -72,6 +72,7 @@ body{
                 font-size: 1.08em;
                 color: @color-header-links;
                 text-transform: uppercase;
+                cursor: pointer;
                 &:hover{
                     color:@red-color;
                 }
@@ -80,6 +81,21 @@ body{
         .btmControl{
             grid-column: 3;
             grid-row: 1;
+            ul{
+                text-align: right;
+            }
+            li{
+                display: inline-block;
+                padding-left: 10px;
+                list-style-type: none;
+                font-size: 1.08em;
+                color: @color-header-links;
+                text-transform: uppercase;
+                cursor: pointer;
+                &:hover{
+                    color:@red-color;
+                }
+            }
         }
     }
     footer{
@@ -98,7 +114,7 @@ body{
             border-radius: 5px;
             height: 30px;
             display: grid;
-            grid-template-columns: @body-width/3 @body-width/3 @body-width/3;
+            grid-template-columns: @body-width/3-1 @body-width/3-1 @body-width/3-1;
             .news,.vacancies,.contacts{
                 list-style-type: none;
                 font-size: 20px;
