@@ -4,6 +4,34 @@
 body{
     font-family: @font-page;
 }
+header{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+    .logo{
+        grid-column: 1;
+        grid-row: 1;
+    }
+    .linksHeader{
+        grid-column: 2;
+        grid-row: 1;
+        li{
+            display: inline-block;
+            padding-right: 10px;
+            list-style-type: none;
+            font-size: 1.08em;
+            color: @color-header-links;
+            text-transform: uppercase;
+            &:hover{
+                color:@red-color;
+            }
+        }
+    }
+    .btmControl{
+        grid-column: 3;
+        grid-row: 1;
+    }
+}
 
 #login-form, #registration-form{
 	margin: 150px auto;
@@ -57,34 +85,6 @@ body{
         display: grid;
         grid-template-rows: 3vh 95vh 2vh;
         min-height: 100vh;
-        header{
-            display: grid;
-            grid-template-columns: auto auto auto;
-            padding: 10px;
-            #logo{
-                grid-column: 1;
-                grid-row: 1;
-            }
-            #linksHeader{
-                grid-column: 2;
-                grid-row: 1;
-                li{
-                    display: inline-block;
-                    padding-right: 10px;
-                    list-style-type: none;
-                    font-size: 1.08em;
-                    color: @color-header-links;
-                    text-transform: uppercase;
-                    &:hover{
-                        color:@red-color;
-                    }
-                }
-            }
-            #btmControl{
-                grid-column: 3;
-                grid-row: 1;
-            }
-        }
         footer{
             text-align: center;
             background: @footer-bg;

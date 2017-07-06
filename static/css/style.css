@@ -114,6 +114,34 @@ a img {
 body {
   font-family: 'Open Sans', sans-serif;
 }
+header {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+}
+header .logo {
+  grid-column: 1;
+  grid-row: 1;
+}
+header .linksHeader {
+  grid-column: 2;
+  grid-row: 1;
+}
+header .linksHeader li {
+  display: inline-block;
+  padding-right: 10px;
+  list-style-type: none;
+  font-size: 1.08em;
+  color: #414141;
+  text-transform: uppercase;
+}
+header .linksHeader li:hover {
+  color: #eb1c23;
+}
+header .btmControl {
+  grid-column: 3;
+  grid-row: 1;
+}
 #login-form,
 #registration-form {
   margin: 150px auto;
@@ -181,34 +209,6 @@ body {
   display: grid;
   grid-template-rows: 3vh 95vh 2vh;
   min-height: 100vh;
-}
-#page #main header {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  padding: 10px;
-}
-#page #main header #logo {
-  grid-column: 1;
-  grid-row: 1;
-}
-#page #main header #linksHeader {
-  grid-column: 2;
-  grid-row: 1;
-}
-#page #main header #linksHeader li {
-  display: inline-block;
-  padding-right: 10px;
-  list-style-type: none;
-  font-size: 1.08em;
-  color: #414141;
-  text-transform: uppercase;
-}
-#page #main header #linksHeader li:hover {
-  color: #eb1c23;
-}
-#page #main header #btmControl {
-  grid-column: 3;
-  grid-row: 1;
 }
 #page #main footer {
   text-align: center;
