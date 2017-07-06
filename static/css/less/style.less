@@ -2,7 +2,7 @@
 @import "variables.less";
 
 body{
-    font-family: @fontPage;
+    font-family: @font-page;
 }
 
 #login-form, #registration-form{
@@ -65,19 +65,19 @@ body{
                 grid-column: 1;
                 grid-row: 1;
             }
-            #linkAbout{
+            #linksHeader{
                 grid-column: 2;
                 grid-row: 1;
-                font-size: 20px;
-                height: 100%;
-                text-align: center;
-                align-content: center;
-                color: @red-color;
-                transition: all 0.4s ease;
-                cursor: pointer;
-                &:hover{
-                    color:@white-color;
-                    background: @red-color;
+                li{
+                    display: inline-block;
+                    padding-right: 10px;
+                    list-style-type: none;
+                    font-size: 1.08em;
+                    color: @color-header-links;
+                    text-transform: uppercase;
+                    &:hover{
+                        color:@red-color;
+                    }
                 }
             }
             #btmControl{

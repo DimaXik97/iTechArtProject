@@ -191,20 +191,20 @@ body {
   grid-column: 1;
   grid-row: 1;
 }
-#page #main header #linkAbout {
+#page #main header #linksHeader {
   grid-column: 2;
   grid-row: 1;
-  font-size: 20px;
-  height: 100%;
-  text-align: center;
-  align-content: center;
-  color: #eb1c23;
-  transition: all 0.4s ease;
-  cursor: pointer;
 }
-#page #main header #linkAbout:hover {
-  color: #FFF;
-  background: #eb1c23;
+#page #main header #linksHeader li {
+  display: inline-block;
+  padding-right: 10px;
+  list-style-type: none;
+  font-size: 1.08em;
+  color: #414141;
+  text-transform: uppercase;
+}
+#page #main header #linksHeader li:hover {
+  color: #eb1c23;
 }
 #page #main header #btmControl {
   grid-column: 3;
