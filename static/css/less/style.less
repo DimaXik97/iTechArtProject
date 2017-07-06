@@ -1,22 +1,24 @@
-@red-color: #eb1c23;
-@white-color: #FFF;
-@black-color: #000;
+@import "reset.less";
+@import "variables.less";
 
-#login-form, #registration-form {
+body{
+    font-family: @fontPage;
+}
+
+#login-form, #registration-form{
 	margin: 150px auto;
 	width: 300px;
-    h1 {
+    h1{
         background-color: @red-color;
         border-radius: 5px 5px 0 0;
         border: 1px solid @red-color;
         color: @white-color;
-        font-family: 'Open Sans',sans-serif;
         font-size: 16px;
         padding: 20px;
         text-align: center;
         text-transform: uppercase;
     };
-    fieldset {
+    fieldset{
         background: @white-color;
         border: 0.1px solid @red-color;
         border-radius: 0 0 5px 5px;
@@ -26,13 +28,11 @@
     input[type="email"],input[type="password"],input[type="text"]{
         border: 1px solid #dcdcdc;
         padding: 12px 10px;
-        font-family: 'Open Sans',sans-serif;
         color: @red-color;
         width: 238px;
     }
-    button{
+    button,input[type="submit"]{
         margin-top: 20px;
-        font-family: 'Open Sans',sans-serif;
         font-size: 12px;
         text-transform: uppercase;
         color: @white-color;
@@ -48,19 +48,18 @@
         }
     }
 }
-#page
-{
+#page{
     display: grid;
-    grid-template-columns: auto 1024px auto;
-    #main
-    {
+    grid-template-columns: auto 1026px auto;
+    #main{
         grid-column: 2;
         grid-row: 1;
         display: grid;
-        grid-template-rows: 30px auto 20px;
+        grid-template-rows: 3vh 95vh 2vh;
+        min-height: 100vh;
         header{
             display: grid;
-            grid-template-columns: auto, auto, auto;
+            grid-template-columns: auto auto auto;
             padding: 10px;
             #logo{
                 grid-column: 1;
@@ -69,11 +68,27 @@
             #linkAbout{
                 grid-column: 2;
                 grid-row: 1;
+                font-size: 20px;
+                height: 100%;
+                text-align: center;
+                align-content: center;
+                color: @red-color;
+                transition: all 0.4s ease;
+                cursor: pointer;
+                &:hover{
+                    color:@white-color;
+                    background: @red-color;
+                }
             }
             #btmControl{
                 grid-column: 3;
                 grid-row: 1;
             }
+        }
+        footer{
+            text-align: center;
+            background: @footer-bg;
+            color: @footer-color;
         }
         #about{
             grid-column: 1;
@@ -86,7 +101,6 @@
                 display: grid;
                 grid-template-columns: auto, auto, auto;
                 #news,#vacancies,#contacts{
-                    font-family: 'Open Sans',sans-serif;
                     font-size: 20px;
                     height: 100%;
                     text-align: center;
@@ -116,6 +130,7 @@
                 }
             }
             #content{
+                margin-top: 20px; 
                 width: 400px;
                 min-height: 400px;
             }

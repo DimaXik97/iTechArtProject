@@ -1,3 +1,119 @@
+html,
+body {
+  border: 0;
+  font-family: "Helvetica-Neue", "Helvetica", Arial, sans-serif;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+div,
+span,
+object,
+iframe,
+img,
+table,
+caption,
+thead,
+tbody,
+tfoot,
+tr,
+tr,
+td,
+article,
+aside,
+canvas,
+details,
+figure,
+hgroup,
+menu,
+nav,
+footer,
+header,
+section,
+summary,
+mark,
+audio,
+video {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+address,
+cit,
+code,
+del,
+dfn,
+em,
+ins,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+b,
+i,
+hr,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+legend,
+label {
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+}
+article,
+aside,
+canvas,
+figure,
+figure img,
+figcaption,
+hgroup,
+footer,
+header,
+nav,
+section,
+audio,
+video {
+  display: block;
+}
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+table caption,
+table th,
+table td {
+  text-align: left;
+  vertical-align: middle;
+}
+a img {
+  border: 0;
+}
+:focus {
+  outline: 0;
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+}
 #login-form,
 #registration-form {
   margin: 150px auto;
@@ -9,7 +125,6 @@
   border-radius: 5px 5px 0 0;
   border: 1px solid #eb1c23;
   color: #FFF;
-  font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   padding: 20px;
   text-align: center;
@@ -31,14 +146,14 @@
 #registration-form input[type="text"] {
   border: 1px solid #dcdcdc;
   padding: 12px 10px;
-  font-family: 'Open Sans', sans-serif;
   color: #eb1c23;
   width: 238px;
 }
 #login-form button,
-#registration-form button {
+#registration-form button,
+#login-form input[type="submit"],
+#registration-form input[type="submit"] {
   margin-top: 20px;
-  font-family: 'Open Sans', sans-serif;
   font-size: 12px;
   text-transform: uppercase;
   color: #FFF;
@@ -50,23 +165,26 @@
   height: 30px;
 }
 #login-form button:hover,
-#registration-form button:hover {
+#registration-form button:hover,
+#login-form input[type="submit"]:hover,
+#registration-form input[type="submit"]:hover {
   color: #eb1c23;
   background: #FFF;
 }
 #page {
   display: grid;
-  grid-template-columns: auto 1024px auto;
+  grid-template-columns: auto 1026px auto;
 }
 #page #main {
   grid-column: 2;
   grid-row: 1;
   display: grid;
-  grid-template-rows: 30px auto 20px;
+  grid-template-rows: 3vh 95vh 2vh;
+  min-height: 100vh;
 }
 #page #main header {
   display: grid;
-  grid-template-columns: auto, auto, auto;
+  grid-template-columns: auto auto auto;
   padding: 10px;
 }
 #page #main header #logo {
@@ -76,10 +194,26 @@
 #page #main header #linkAbout {
   grid-column: 2;
   grid-row: 1;
+  font-size: 20px;
+  height: 100%;
+  text-align: center;
+  align-content: center;
+  color: #eb1c23;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+#page #main header #linkAbout:hover {
+  color: #FFF;
+  background: #eb1c23;
 }
 #page #main header #btmControl {
   grid-column: 3;
   grid-row: 1;
+}
+#page #main footer {
+  text-align: center;
+  background: #333;
+  color: #737373;
 }
 #page #main #about {
   grid-column: 1;
@@ -96,7 +230,6 @@
 #page #main #about #menu #news,
 #page #main #about #menu #vacancies,
 #page #main #about #menu #contacts {
-  font-family: 'Open Sans', sans-serif;
   font-size: 20px;
   height: 100%;
   text-align: center;
@@ -127,6 +260,7 @@
   grid-row: 1;
 }
 #page #main #about #content {
+  margin-top: 20px;
   width: 400px;
   min-height: 400px;
 }
