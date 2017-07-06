@@ -114,13 +114,13 @@ a img {
 body {
   font-family: 'Open Sans', sans-serif;
 }
-#login-form,
-#registration-form {
+.login-form,
+.registration-form {
   margin: 150px auto;
   width: 300px;
 }
-#login-form h1,
-#registration-form h1 {
+.login-form h1,
+.registration-form h1 {
   background-color: #eb1c23;
   border-radius: 5px 5px 0 0;
   border: 1px solid #eb1c23;
@@ -130,29 +130,29 @@ body {
   text-align: center;
   text-transform: uppercase;
 }
-#login-form fieldset,
-#registration-form fieldset {
+.login-form fieldset,
+.registration-form fieldset {
   background: #FFF;
   border: 0.1px solid #eb1c23;
   border-radius: 0 0 5px 5px;
   padding: 20px;
   position: relative;
 }
-#login-form input[type="email"],
-#registration-form input[type="email"],
-#login-form input[type="password"],
-#registration-form input[type="password"],
-#login-form input[type="text"],
-#registration-form input[type="text"] {
+.login-form input[type="email"],
+.registration-form input[type="email"],
+.login-form input[type="password"],
+.registration-form input[type="password"],
+.login-form input[type="text"],
+.registration-form input[type="text"] {
   border: 1px solid #dcdcdc;
   padding: 12px 10px;
   color: #eb1c23;
   width: 238px;
 }
-#login-form button,
-#registration-form button,
-#login-form input[type="submit"],
-#registration-form input[type="submit"] {
+.login-form button,
+.registration-form button,
+.login-form input[type="submit"],
+.registration-form input[type="submit"] {
   margin-top: 20px;
   font-size: 12px;
   text-transform: uppercase;
@@ -164,10 +164,10 @@ body {
   min-width: 119px;
   height: 30px;
 }
-#login-form button:hover,
-#registration-form button:hover,
-#login-form input[type="submit"]:hover,
-#registration-form input[type="submit"]:hover {
+.login-form button:hover,
+.registration-form button:hover,
+.login-form input[type="submit"]:hover,
+.registration-form input[type="submit"]:hover {
   color: #eb1c23;
   background: #FFF;
 }
