@@ -114,34 +114,6 @@ a img {
 body {
   font-family: 'Open Sans', sans-serif;
 }
-header {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  padding: 10px;
-}
-header .logo {
-  grid-column: 1;
-  grid-row: 1;
-}
-header .linksHeader {
-  grid-column: 2;
-  grid-row: 1;
-}
-header .linksHeader li {
-  display: inline-block;
-  padding-right: 10px;
-  list-style-type: none;
-  font-size: 1.08em;
-  color: #414141;
-  text-transform: uppercase;
-}
-header .linksHeader li:hover {
-  color: #eb1c23;
-}
-header .btmControl {
-  grid-column: 3;
-  grid-row: 1;
-}
 #login-form,
 #registration-form {
   margin: 150px auto;
@@ -199,37 +171,63 @@ header .btmControl {
   color: #eb1c23;
   background: #FFF;
 }
-#page {
+.page {
   display: grid;
   grid-template-columns: auto 1026px auto;
+  grid-template-rows: 3vh 95vh 2vh;
 }
-#page #main {
+.page header {
   grid-column: 2;
   grid-row: 1;
   display: grid;
-  grid-template-rows: 3vh 95vh 2vh;
-  min-height: 100vh;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
 }
-#page #main footer {
+.page header .logo {
+  grid-column: 1;
+  grid-row: 1;
+}
+.page header .linksHeader {
+  grid-column: 2;
+  grid-row: 1;
+}
+.page header .linksHeader li {
+  display: inline-block;
+  padding-right: 10px;
+  list-style-type: none;
+  font-size: 1.08em;
+  color: #414141;
+  text-transform: uppercase;
+}
+.page header .linksHeader li:hover {
+  color: #eb1c23;
+}
+.page header .btmControl {
+  grid-column: 3;
+  grid-row: 1;
+}
+.page footer {
+  grid-column: 2;
+  grid-row: 3;
   text-align: center;
   background: #333;
   color: #737373;
 }
-#page #main #about {
-  grid-column: 1;
+.page .about {
+  grid-column: 2;
   grid-row: 2;
   padding-top: 50px;
 }
-#page #main #about #menu {
+.page .about .menu {
   border: 0.1px solid #eb1c23;
   border-radius: 5px;
   height: 30px;
   display: grid;
   grid-template-columns: auto, auto, auto;
 }
-#page #main #about #menu #news,
-#page #main #about #menu #vacancies,
-#page #main #about #menu #contacts {
+.page .about .menu .news,
+.page .about .menu .vacancies,
+.page .about .menu .contacts {
   font-size: 20px;
   height: 100%;
   text-align: center;
@@ -241,25 +239,25 @@ header .btmControl {
   border: 2px solid #eb1c23;
   cursor: pointer;
 }
-#page #main #about #menu #news:hover,
-#page #main #about #menu #vacancies:hover,
-#page #main #about #menu #contacts:hover {
+.page .about .menu .news:hover,
+.page .about .menu .vacancies:hover,
+.page .about .menu .contacts:hover {
   color: #eb1c23;
   background: #FFF;
 }
-#page #main #about #menu #news {
+.page .about .menu .news {
   grid-column: 1;
   grid-row: 1;
 }
-#page #main #about #menu #vacancies {
+.page .about .menu .vacancies {
   grid-column: 2;
   grid-row: 1;
 }
-#page #main #about #menu #contacts {
+.page .about .menu .contacts {
   grid-column: 3;
   grid-row: 1;
 }
-#page #main #about #content {
+.page .about .content {
   margin-top: 20px;
   width: 400px;
   min-height: 400px;

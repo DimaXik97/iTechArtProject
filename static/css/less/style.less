@@ -4,34 +4,6 @@
 body{
     font-family: @font-page;
 }
-header{
-    display: grid;
-    grid-template-columns: auto auto auto;
-    padding: 10px;
-    .logo{
-        grid-column: 1;
-        grid-row: 1;
-    }
-    .linksHeader{
-        grid-column: 2;
-        grid-row: 1;
-        li{
-            display: inline-block;
-            padding-right: 10px;
-            list-style-type: none;
-            font-size: 1.08em;
-            color: @color-header-links;
-            text-transform: uppercase;
-            &:hover{
-                color:@red-color;
-            }
-        }
-    }
-    .btmControl{
-        grid-column: 3;
-        grid-row: 1;
-    }
-}
 
 #login-form, #registration-form{
 	margin: 150px auto;
@@ -76,64 +48,90 @@ header{
         }
     }
 }
-#page{
+.page{
     display: grid;
     grid-template-columns: auto 1026px auto;
-    #main{
+    grid-template-rows: 3vh 95vh 2vh;
+    header{
         grid-column: 2;
         grid-row: 1;
         display: grid;
-        grid-template-rows: 3vh 95vh 2vh;
-        min-height: 100vh;
-        footer{
-            text-align: center;
-            background: @footer-bg;
-            color: @footer-color;
-        }
-        #about{
+        grid-template-columns: auto auto auto;
+        padding: 10px;
+        .logo{
             grid-column: 1;
-            grid-row: 2;
-            padding-top: 50px;
-            #menu{
-                border: 0.1px solid @red-color;
-                border-radius: 5px;
-                height: 30px;
-                display: grid;
-                grid-template-columns: auto, auto, auto;
-                #news,#vacancies,#contacts{
-                    font-size: 20px;
-                    height: 100%;
-                    text-align: center;
-                    align-content: center;
-                    text-transform: uppercase;
-                    color: @white-color;
-                    background: @red-color;
-                    transition: all 0.4s ease;
-                    border: 2px solid @red-color;
-                    cursor: pointer;
-                    &:hover{
-                        color:@red-color;
-                        background: @white-color;
-                    }
-                }
-                #news{
-                    grid-column: 1;
-                    grid-row: 1;
-                }
-                #vacancies{
-                    grid-column: 2;
-                    grid-row: 1;
-                }
-                #contacts{
-                    grid-column: 3;
-                    grid-row: 1;
+            grid-row: 1;
+        }
+        .linksHeader{
+            grid-column: 2;
+            grid-row: 1;
+            li{
+                display: inline-block;
+                padding-right: 10px;
+                list-style-type: none;
+                font-size: 1.08em;
+                color: @color-header-links;
+                text-transform: uppercase;
+                &:hover{
+                    color:@red-color;
                 }
             }
-            #content{
-                margin-top: 20px; 
-                width: 400px;
-                min-height: 400px;
+        }
+        .btmControl{
+            grid-column: 3;
+            grid-row: 1;
+        }
+    }
+    footer{
+        grid-column: 2;
+        grid-row: 3;
+        text-align: center;
+        background: @footer-bg;
+        color: @footer-color;
+    }
+    .about{
+        grid-column: 2;
+        grid-row: 2;
+        padding-top: 50px;
+        .menu{
+            border: 0.1px solid @red-color;
+            border-radius: 5px;
+            height: 30px;
+            display: grid;
+            grid-template-columns: auto, auto, auto;
+            .news,.vacancies,.contacts{
+                font-size: 20px;
+                height: 100%;
+                text-align: center;
+                align-content: center;
+                text-transform: uppercase;
+                color: @white-color;
+                background: @red-color;
+                transition: all 0.4s ease;
+                border: 2px solid @red-color;
+                cursor: pointer;
+                &:hover{
+                    color:@red-color;
+                    background: @white-color;
+                }
             }
+            .news{
+                grid-column: 1;
+                grid-row: 1;
+            }
+            .vacancies{
+                grid-column: 2;
+                grid-row: 1;
+            }
+            .contacts{
+                grid-column: 3;
+                grid-row: 1;
+            }
+        }
+        .content{
+            margin-top: 20px; 
+            width: 400px;
+            min-height: 400px;
         }
     }
 }
