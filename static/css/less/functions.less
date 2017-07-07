@@ -1,7 +1,7 @@
 .generate-row(@count,@i: 1){
 	.newRow-@{count}{
 		display: grid;
-		grid-template-columns: @body-width/@count @body-width/@count @body-width/@count @body-width/@count;
+		grid-template-columns: repeat(@count, @body-width/@count);
 		.generate-column(@i: 1) when (@i =< @count) {
 			.col-@{i} {
 				position: relative;
@@ -15,5 +15,8 @@
 		.generate-column();
 	}
 }
-.generate-row(3);
-.generate-row(4);
+.-(@i: length(@couny-column)) when (@i > 0) {
+	.generate-row(extract(@couny-column, @i));
+	.-((@i - 1));
+}
+.-();

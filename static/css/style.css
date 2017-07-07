@@ -111,34 +111,55 @@ a img {
 :focus {
   outline: 0;
 }
-.newRow-3 {
+.newRow-6 {
   display: grid;
-  grid-template-columns: 342px 342px 342px 342px;
+  grid-template-columns: repeat(6, 171px);
 }
-.newRow-3 .col-1 {
+.newRow-6 .col-1 {
   position: relative;
   grid-column: 1;
   grid-row: 1;
-  width: 342px;
-  height: 342px;
+  width: 171px;
+  height: 171px;
 }
-.newRow-3 .col-2 {
+.newRow-6 .col-2 {
   position: relative;
   grid-column: 2;
   grid-row: 1;
-  width: 342px;
-  height: 342px;
+  width: 171px;
+  height: 171px;
 }
-.newRow-3 .col-3 {
+.newRow-6 .col-3 {
   position: relative;
   grid-column: 3;
   grid-row: 1;
-  width: 342px;
-  height: 342px;
+  width: 171px;
+  height: 171px;
+}
+.newRow-6 .col-4 {
+  position: relative;
+  grid-column: 4;
+  grid-row: 1;
+  width: 171px;
+  height: 171px;
+}
+.newRow-6 .col-5 {
+  position: relative;
+  grid-column: 5;
+  grid-row: 1;
+  width: 171px;
+  height: 171px;
+}
+.newRow-6 .col-6 {
+  position: relative;
+  grid-column: 6;
+  grid-row: 1;
+  width: 171px;
+  height: 171px;
 }
 .newRow-4 {
   display: grid;
-  grid-template-columns: 256.5px 256.5px 256.5px 256.5px;
+  grid-template-columns: repeat(4, 256.5px);
 }
 .newRow-4 .col-1 {
   position: relative;
@@ -167,6 +188,31 @@ a img {
   grid-row: 1;
   width: 256.5px;
   height: 256.5px;
+}
+.newRow-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 342px);
+}
+.newRow-3 .col-1 {
+  position: relative;
+  grid-column: 1;
+  grid-row: 1;
+  width: 342px;
+  height: 342px;
+}
+.newRow-3 .col-2 {
+  position: relative;
+  grid-column: 2;
+  grid-row: 1;
+  width: 342px;
+  height: 342px;
+}
+.newRow-3 .col-3 {
+  position: relative;
+  grid-column: 3;
+  grid-row: 1;
+  width: 342px;
+  height: 342px;
 }
 body {
   font-family: 'Open Sans', sans-serif;
