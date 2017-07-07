@@ -1,0 +1,19 @@
+.generate-row(@count,@i: 1){
+	.newRow-@{count}{
+		display: grid;
+		grid-template-columns: @body-width/@count @body-width/@count @body-width/@count @body-width/@count;
+		.generate-column(@i: 1) when (@i =< @count) {
+			.col-@{i} {
+				position: relative;
+				grid-column: @i;
+				grid-row: 1;
+				width: @body-width/@count;
+            	height: @body-width/@count;
+			}
+			.generate-column(@i + 1);
+		}
+		.generate-column();
+	}
+}
+.generate-row(3);
+.generate-row(4);

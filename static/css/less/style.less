@@ -1,57 +1,12 @@
 @import "reset.less";
 @import "variables.less";
+@import "functions.less";
 
 body{
     font-family: @font-page;
-}
-
-.login-form, .registration-form{
-	margin: 150px auto;
-	width: 300px;
-    h1{
-        background-color: @red-color;
-        border-radius: 5px 5px 0 0;
-        border: 1px solid @red-color;
-        color: @white-color;
-        font-size: 16px;
-        padding: 20px;
-        text-align: center;
-        text-transform: uppercase;
-    };
-    fieldset{
-        background: @white-color;
-        border: 0.1px solid @red-color;
-        border-radius: 0 0 5px 5px;
-        padding: 20px;
-        position: relative;
-    }
-    input[type="email"],input[type="password"],input[type="text"]{
-        border: 1px solid #dcdcdc;
-        padding: 12px 10px;
-        color: @red-color;
-        width: 238px;
-    }
-    button,input[type="submit"]{
-        margin-top: 20px;
-        font-size: 12px;
-        text-transform: uppercase;
-        color: @white-color;
-        background: @red-color;
-        transition: all 0.4s ease;
-        border: 2px solid @red-color;
-        cursor: pointer;
-        min-width: 119px;
-        height: 30px;
-        &:hover{
-            color:@red-color;
-            background: @white-color;
-        }
-    }
-}
-.page{
     display: grid;
     grid-template-columns: auto @body-width auto;
-    grid-template-rows: 3vh 95vh 2vh;
+    grid-template-rows: 50px auto 20px;
     header{
         grid-column: 2;
         grid-row: 1;
@@ -114,7 +69,7 @@ body{
     .about{
         grid-column: 2;
         grid-row: 2;
-        padding-top: 50px;
+        padding-top: 15px;
         .menu{
             border: 2px solid @red-color;
             border-radius: 5px;
@@ -130,7 +85,7 @@ body{
                 text-transform: uppercase;
                 color: @white-color;
                 background: @red-color;
-                transition: all 0.4s ease;
+                transition: @transition;
                 border: 2px solid @red-color;
                 cursor: pointer;
                 &:hover{
@@ -160,39 +115,120 @@ body{
     .mainPage{
         grid-column: 2;
         grid-row: 2;
-        padding-top: 50px;
+        padding-top: 15px;
         h1{
             background-color: @red-color;
-            border-radius: 5px 5px 0 0;
+            border-radius: 15px 15px 0 0;
             border: 1px solid @red-color;
             color: @white-color;
             font-size: 16px;
             padding: 20px;
             text-align: center;
         };
-        .newRow{
-            display: grid;
-            grid-template-columns: @body-width/@column-count @body-width/@column-count @body-width/@column-count @body-width/@column-count;
-            .generate-column(@i: 1) when (@i =< @column-count) {
-                .@{column-name}-@{i} {
-                    position: relative;
-                    grid-column: @i;
-                    grid-row: 1;
-                    width: 100%;
-                    height: @body-width/@column-count;
-                    transition: all 0.4s ease;
-                    color: @red-color;
-                    font-size: 25px;
-                    text-align: center;
-                    &:hover{
-                        color:@white-color;
-                        background: @red-color;
-                    }
-                }
-                .generate-column(@i + 1);
+        .element{
+            color: @red-color;
+            font-size: 25px;
+            text-align: center;
+            transition: @transition;
+            &:hover{
+                color:@white-color;
+                background: @red-color;
             }
-
-        .generate-column();
         } 
+    }
+    .questionsPage{
+        grid-column: 2;
+        grid-row: 2;
+        padding-top: 15px;
+        .question{
+            h1{
+                background-color: @red-color;
+                border-radius: 5px 5px 0 0;
+                border: 1px solid @red-color;
+                color: @white-color;
+                font-size: 16px;
+                padding: 10px;
+                text-align: left;
+            };
+            input[type="radio"],input[type="checkbox"]{
+                cursor: pointer;
+            }
+            p{
+                color: @color-header-links;
+                &:hover{
+                    color:@red-color;
+                }
+            }
+            textarea{
+                border: 1px solid #dcdcdc;
+                padding: 12px 10px;
+            }
+            fieldset{
+                background: @white-color;
+                border: 0.1px solid @red-color;
+                border-radius: 0 0 5px 5px;
+                padding: 20px;
+                position: relative;
+            }
+        }
+        input[type="submit"]{
+            font-size: 12px;
+            text-transform: uppercase;
+            color: @white-color;
+            background: @red-color;
+            transition: @transition;
+            border: 2px solid @red-color;
+            cursor: pointer;
+            min-width: 119px;
+            height: 30px;
+            &:hover{
+                color:@red-color;
+                background: @white-color;
+            }
+        }
+    }
+}
+
+.login-form, .registration-form{
+	margin: 150px auto;
+	width: 300px;
+    h1{
+        background-color: @red-color;
+        border-radius: 5px 5px 0 0;
+        border: 1px solid @red-color;
+        color: @white-color;
+        font-size: 16px;
+        padding: 20px;
+        text-align: center;
+        text-transform: uppercase;
+    };
+    fieldset{
+        background: @white-color;
+        border: 0.1px solid @red-color;
+        border-radius: 0 0 5px 5px;
+        padding: 20px;
+        position: relative;
+    }
+    input[type="email"],input[type="password"],input[type="text"]{
+        border: 1px solid #dcdcdc;
+        padding: 12px 10px;
+        color: @red-color;
+        width: 238px;
+    }
+    button,input[type="submit"]{
+        margin-top: 20px;
+        font-size: 12px;
+        text-transform: uppercase;
+        color: @white-color;
+        background: @red-color;
+        transition: @transition;
+        border: 2px solid @red-color;
+        cursor: pointer;
+        min-width: 119px;
+        height: 30px;
+        &:hover{
+            color:@red-color;
+            background: @white-color;
+        }
     }
 }
