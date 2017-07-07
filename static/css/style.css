@@ -214,11 +214,30 @@ a img {
   width: 342px;
   height: 342px;
 }
+.newRow-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 513px);
+}
+.newRow-2 .col-1 {
+  position: relative;
+  grid-column: 1;
+  grid-row: 1;
+  width: 513px;
+  height: 513px;
+}
+.newRow-2 .col-2 {
+  position: relative;
+  grid-column: 2;
+  grid-row: 1;
+  width: 513px;
+  height: 513px;
+}
 body {
   font-family: 'Open Sans', sans-serif;
   display: grid;
   grid-template-columns: auto 1026px auto;
   grid-template-rows: 50px auto 20px;
+  background: #f4f4f4;
 }
 body header {
   grid-column: 2;
@@ -277,6 +296,46 @@ body footer {
   text-align: center;
   background: #333;
   color: #737373;
+}
+body .userInfo {
+  grid-column: 2;
+  grid-row: 2;
+  background: #FFF;
+}
+body .userInfo .userName {
+  font-size: 50px;
+  color: #414141;
+  height: 200px;
+}
+body .userInfo .userControl {
+  text-align: right;
+}
+body .userInfo .userControl .banUser {
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #FFF;
+  background: #eb1c23;
+  transition: all 0.4s ease;
+  border: 2px solid #eb1c23;
+  cursor: pointer;
+  min-width: 119px;
+  height: 30px;
+}
+body .userInfo .userControl .banUser:hover {
+  color: #eb1c23;
+  background: #FFF;
+}
+body .userInfo .userQuestion {
+  text-align: center;
+}
+body .userInfo .userQuestion .item {
+  color: #414141;
+  height: 100px;
+}
+body .userInfo .userQuestion .value {
+  color: #eb1c23;
+  font-size: 50px;
+  transition: all 0.6s ease-out;
 }
 body .about {
   grid-column: 2;
