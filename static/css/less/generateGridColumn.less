@@ -15,8 +15,8 @@
 		.generate-column();
 	}
 }
-.-(@i: length(@couny-column)) when (@i > 0) {
+.loop(@i: length(@couny-column)) when (@i > 0) {
 	.generate-row(extract(@couny-column, @i));
-	.-((@i - 1));
+	.loop((@i - 1));
 }
-.-();
+.loop();
