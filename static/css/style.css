@@ -111,6 +111,9 @@ a img {
 :focus {
   outline: 0;
 }
+a {
+  color: inherit;
+}
 .newRow-6 {
   display: grid;
   grid-template-columns: repeat(6, 171px);
