@@ -414,22 +414,25 @@ body .mainPage h1 {
 body .mainPage .element {
   color: #eb1c23;
   font-size: 25px;
-  text-align: center;
   transition: all 0.4s ease;
   list-style-type: none;
   text-overflow: clip;
   display: table;
   cursor: pointer;
 }
-body .mainPage .element li {
+body .mainPage .element:hover {
+  color: #FFF;
+  background: #eb1c23;
+}
+body .mainPage .element a {
+  width: 100%;
+  height: 100%;
+}
+body .mainPage .content-center {
   display: table-cell;
   vertical-align: middle;
   text-align: center;
   overflow: hidden;
-}
-body .mainPage .element:hover {
-  color: #FFF;
-  background: #eb1c23;
 }
 body .questionsPage {
   grid-column: 2;

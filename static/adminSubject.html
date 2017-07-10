@@ -3,6 +3,12 @@
 <head>
     <title>Главная</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script>
+        function raz(e) {
+            e.preventDefault();
+            e.target.parentNode.parentNode.innerHTML="<form class='content-center'><input type='text'><br/><input type='submit' value='OK'><button>Отмена</button></form>";
+        };
+    </script>
 </head>
 <body>
     <header>
@@ -33,44 +39,52 @@
         <ul class="newRow-4">
             <li class="element col-1">
                 <a class="content-center" href="questions.html">
-                   Типы данных, переменные, операторы, циклы, массивы
+                   Типы данных, переменные, операторы, циклы, массивы<br/>
+                   <span onclick="raz(event)"> &#9998;</span> <span>&#10006;</span>
                 </a>
             </li>
             <li class="element col-2">
                 <a class="content-center" href="questions.html">
-                   ООП
+                   ООП<br/>
+                   <span onclick="raz(event)"> &#9998;</span> <span>&#10006;</span>
                 </a>
             </li>
             <li class="element col-3">
                 <a class="content-center" href="questions.html">
-                   Исключения
+                   Исключения<br/>
+                   <span onclick="raz(event)"> &#9998;</span> <span>&#10006;</span>
                 </a>
             </li>
             <li class="element col-4">
                 <a class="content-center" href="questions.html">
-                   Коллекции
+                   Коллекции<br/>
+                   <span onclick="raz(event)"> &#9998;</span> <span>&#10006;</span>
                 </a>
             </li>
         </ul>
         <ul class="newRow-4">
             <li class="element col-1">
                 <a class="content-center" href="questions.html">
-                   Строки
+                   Строки<br/>
+                   <span onclick="raz(event)"> &#9998;</span> <span>&#10006;</span>
                 </a>
             </li>
             <li class="element col-2">
                 <a class="content-center" href="questions.html">
-                   Потоки ввода/вывода
+                   Потоки ввода/вывода<br/>
+                   <span onclick="raz(event)"> &#9998;</span> <span>&#10006;</span>
                 </a>
             </li>
             <li class="element col-3">
                 <a class="content-center" href="questions.html">
-                    Потоки выполнения
+                    Потоки выполнения<br/>
+                    <span onclick="raz(event)"> &#9998;</span> <span>&#10006;</span>
                 </a>
             </li>
             <li class="element col-4">
                 <a class="content-center" href="questions.html">
-                   SQL, JDBC 
+                   SQL, JDBC<br/>
+                   <span onclick="raz(event)"> &#9998;</span> <span>&#10006;</span>
                 </a>
             </li>
         </ul>
@@ -78,17 +92,20 @@
             <ul class="newRow-4">
             <li class="element col-1">
                 <a class="content-center" href="questions.html">
-                   JSP
+                   JSP<br/>
+                   <span onclick="raz(event)"> &#9998;</span> <span>&#10006;</span>
                 </a>
             </li>
             <li class="element col-2">
                 <a class="content-center" href="questions.html">
-                   Servlet
+                   Servlet<br/>
+                   <span onclick="raz(event)"> &#9998;</span> <span>&#10006;</span>
                 </a>
             </li>
             <li class="element col-3">
                 <a class="content-center" href="questions.html">
-                    Web
+                    Web<br/>
+                    <span onclick="raz(event)"> &#9998;</span> <span>&#10006;</span>
                 </a>
             </li>
         </ul>

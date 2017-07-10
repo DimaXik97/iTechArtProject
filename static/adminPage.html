@@ -3,6 +3,12 @@
 <head>
     <title>Главная</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script>
+        function raz(e) {
+            e.preventDefault();
+            e.target.parentNode.parentNode.innerHTML="<form class='content-center'><input type='text'><br/><input type='submit' value='OK'><button>Отмена</button></form>";
+        };
+    </script>
 </head>
 <body>
     <header>
@@ -30,11 +36,92 @@
     </header>
     <div class="mainPage">
         <h1>Выберете категорию:</h1>
-        <div class="newRow-3">
-            <div class="element col-1">Управление вопросами</div>
-            <div class="element col-2">Пользователи</div>
-            <div class="element col-3">Java</div>
-        </div>
+        <ul class="newRow-4">
+            <li class="element col-1">
+                <a class="content-center" href="adminSubject.html">
+                    C#<br/><span onclick="raz(event)"> &#9998;</span> <span>&#10006;</span>
+                </a>
+            </li>
+            <li class="element col-2">
+                <a class="content-center" href="adminSubject.html">
+                    C++<br/><span onclick="raz(event)"> &#9998;</span> <span>&#10006;</span>
+                </a>
+            </li>
+            <li class="element col-3">
+                <a class="content-center" href="adminSubject.html">
+                    Ruby<br/><span onclick="raz(event)"> &#9998;</span> <span>&#10006;</span>
+                </a>
+            </li>
+            <li class="element col-4">
+                <a class="content-center" href="adminSubject.html">
+                    Java<br/><span onclick="raz(event)"> &#9998;</span> <span>&#10006;</span>
+                </a>
+            </li>
+        </ul>
+        <ul class="newRow-4">
+            <li class="element col-1">
+                <a class="content-center" href="adminSubject.html">
+                    JS<br/><span onclick="raz(event)"> &#9998;</span> <span>&#10006;</span>
+                </a>
+            </li>
+            <li class="element col-2">
+                <a class="content-center" href="adminSubject.html">
+                    HTML<br/><span onclick="raz(event)"> &#9998;</span> <span>&#10006;</span>
+                </a>
+            </li>
+            <li class="element col-3">
+                <a class="content-center" href="adminSubject.html">
+                    CSS<br/><span onclick="raz(event)"> &#9998;</span> <span>&#10006;</span>
+                </a>
+            </li>
+            <li class="element col-4">
+                <a class="content-center" href="adminSubject.html">
+                    XML<br/><span onclick="raz(event)"> &#9998;</span> <span>&#10006;</span>
+                </a>
+            </li>
+        </ul>
+        <ul class="newRow-4">
+            <li class="element col-1">
+                <a class="content-center" href="adminSubject.html">
+                    C#<br/><span onclick="raz(event)"> &#9998;</span> <span>&#10006;</span>
+                </a>
+            </li>
+            <li class="element col-2">
+                <a class="content-center" href="adminSubject.html">
+                    C++<br/><span onclick="raz(event)"> &#9998;</span> <span>&#10006;</span>
+                </a>
+            </li>
+            <li class="element col-3">
+                <a class="content-center" href="adminSubject.html">
+                    Ruby<br/><span onclick="raz(event)"> &#9998;</span> <span>&#10006;</span>
+                </a>
+            </li>
+            <li class="element col-4">
+                <a class="content-center" href="adminSubject.html">
+                    Java<br/><span onclick="raz(event)"> &#9998;</span> <span>&#10006;</span>
+                </a>
+            </li>
+        </ul>
+        <ul class="newRow-4">
+            <li class="element col-1">
+                <a class="content-center" href="adminSubject.html">
+                    JS<br/><span onclick="raz(event)"> &#9998;</span> <span>&#10006;</span>
+                </a>
+            </li>
+            <li class="element col-2">
+                <a class="content-center" href="adminSubject.html">
+                    HTML<br/><span onclick="raz(event)"> &#9998;</span> <span>&#10006;</span>
+                </a>
+            </li>
+            <li class="element col-3">
+                <a class="content-center" href="adminSubject.html">
+                    CSS<br/><span onclick="raz(event)"> &#9998;</span> <span>&#10006;</span>
+                </a>
+            </li>
+            <li class="element col-4">
+                <span class="content-center">&#10010;</span>
+            </li>
+        </ul>
     </div>
     <footer>
         © 2002 - 2017. :iTechArt All Rights Reserved.
