@@ -13,7 +13,7 @@ body{
         grid-row: 1;
         display: grid;
         grid-template-columns: @body-width/3 @body-width/3 @body-width/3;
-        padding: 10px 10px;
+        padding-top: 10px;
         .logo{
             grid-column: 1;
             grid-row: 1;
@@ -37,6 +37,7 @@ body{
         .btmControl{
             grid-column: 3;
             grid-row: 1;
+            text-align: right;
             ul{
                 display: inline;
                 text-align: right;
@@ -172,6 +173,7 @@ body{
             text-align: center;
             transition: @transition;
             word-wrap: break-word;
+            list-style-type: none;
             &:hover{
                 color:@white-color;
                 background: @red-color;
@@ -210,6 +212,7 @@ body{
             textarea{
                 border: 1px solid #dcdcdc;
                 padding: 12px 10px;
+                resize: vertical;
             }
             fieldset{
                 background: @white-color;
@@ -238,6 +241,8 @@ body{
 }
 
 .login-form, .registration-form{
+    grid-column: 2;
+    grid-row: 2;
 	margin: 150px auto;
 	width: 300px;
     h1{
