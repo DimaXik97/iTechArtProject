@@ -108,6 +108,30 @@ body{
                 transition: all 0.6s ease-out;
             }
         }
+        .element{
+            color: @red-color;
+            font-size: 25px;
+            transition: @transition;
+            list-style-type: none;
+            text-overflow: clip;
+            display: table;
+            cursor: pointer;
+            &:hover{
+                color:@white-color;
+                background: @red-color;
+            }
+            a{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .content-center{
+            display: table-cell; 
+            vertical-align: middle; 
+            text-align: center;
+            overflow: hidden;
+        }
+        
     }
     .about{
         grid-column: 2;
@@ -216,9 +240,19 @@ body{
             }
             p{
                 color: @color-header-links;
-                &:hover{
-                    color:@red-color;
-                }
+            }
+            li{
+                color: @color-header-links;
+                list-style-type: none;
+            }
+            .inCorrectRes{
+                color: @red-color;
+            }
+            .correctRes{
+                color: green;
+            }
+            .userRes{
+                text-decoration: underline;
             }
             textarea{
                 border: 1px solid #dcdcdc;
@@ -247,6 +281,29 @@ body{
                 color:@red-color;
                 background: @white-color;
             }
+        }
+        .element{
+            color: @red-color;
+            font-size: 25px;
+            transition: @transition;
+            list-style-type: none;
+            text-overflow: clip;
+            display: table;
+            cursor: pointer;
+            &:hover{
+                color:@white-color;
+                background: @red-color;
+            }
+            a{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .content-center{
+            display: table-cell; 
+            vertical-align: middle; 
+            text-align: center;
+            overflow: hidden;
         }
     }
 }
