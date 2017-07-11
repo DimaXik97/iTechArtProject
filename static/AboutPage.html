@@ -4,8 +4,7 @@
     <title>О компании</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="js/googleMap.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOw3RjQA8M72BmduwNrLCvS3krvGddZco&callback=initMap">
-    </script>
+    <script src="js/menu.js"></script>
 </head>
 <body>
     <header>
@@ -35,17 +34,25 @@
     </header>
     <div class="about">
         <ul class="menu">
-            <li class="news">
+            <li class="news" onclick="openlink(this)">
                 Новости
             </li>
-            <li class="vacancies">
+            <li class="vacancies" onclick="openlink(this)">
                 Вакансии
             </li>
-            <li class="contacts">
+            <li class="contacts" onclick="openlink(this)">
                 Контакты
             </li>
-        <ul>
-        <div class="content" id="map">
+        </ul>
+        <div class="content" id="news">
+            1
+        </div>
+        <div class="content" id="vacancies">
+            2
+        </div>
+        <div class="content active" id="contacts">
+            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOw3RjQA8M72BmduwNrLCvS3krvGddZco&callback=initMap">
+            </script>
         </div>
     </div>
     <footer>

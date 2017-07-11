@@ -1,6 +1,6 @@
 function initMap() {
     var coordinates = {lat: 53.88841, lng: 27.544509};
-    var map = new google.maps.Map(document.getElementById('map'), {
+    var map = new google.maps.Map(document.getElementById('contacts'), {
         zoom: 17,
         center: coordinates
     });
