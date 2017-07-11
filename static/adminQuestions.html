@@ -4,18 +4,58 @@
     <title>Главная</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script>
-        function addQuestions(){
+        function addQuestions(e){
+            e.preventDefault();
             console.log("OK");
-            mainDiv=document.getElementsByClassName("questionsPage");
+            var questions=document.getElementsByClassName("question");
+            console.log(questions[questions.length-1]);
+            mainDiv=document.getElementById("questionForm");
             newQuestions=document.createElement('div');
             newQuestions.setAttribute('class', "question");
             headQuestions=document.createElement('h2');
-            headQuestions.innerHTML='Новый вопрос<span onclick="raz(event)"> &#9998;</span> <span>&#10006;</span>'
+            headQuestions.innerHTML='Новый вопрос<span onclick="change(event)"> &#9998;</span> <span onclick="remove(event)">&#10006;</span>'
             fieldset=document.createElement("fieldset");
             textarea=document.createElement("textarea");
             fieldset.appendChild(textarea);
-            last.appendChild(headQuestions);
-            last.appendChild(fieldset);
+            newQuestions.appendChild(headQuestions);
+            newQuestions.appendChild(fieldset);
+            mainDiv.insertBefore(newQuestions,questions[questions.length-1].nextSibling);
+        }
+        function remove(e){
+            console.log("remove");
+            result = confirm("Вы уверены?");
+            if(result)
+                e.target.parentNode.parentNode.remove();
+        }
+        function change(e){
+            e.target.parentNode.innerHTML="<form><input type='text'><input type='submit' value='OK'><button>Отмена</button></form>";
+        }
+        function changeType(element){
+            elementClass=element.parentNode.getAttribute("class");
+            elementsP=element.parentNode.getElementsByTagName('p');
+            console.log(element)
+            switch(element.value){
+                case "1":{
+                    element.parentNode.innerHTML="OK1";
+                    break;
+                }
+                case "2":{
+                    element.parentNode.innerHTML="OK2";
+                    break;
+                }
+                case "3":{
+                    while(elementsP.length){
+                        elementsP[0].remove();
+                    }
+                    newTagP=document.createElement('p');
+                    newTagTA=document.createElement('textarea');
+                    newTagTA.setAttribute("cols","40")
+                    newTagTA.setAttribute("rows","3")
+                    newTagTA.setAttribute("resize","vertical")
+                    newTagP.appendChild(newTagTA);
+                    element.parentNode.appendChild(newTagP);
+                }
+            }
         }
     </script>
 </head>
@@ -44,39 +84,57 @@
         </div>
     </header>
     <div class="questionsPage">
-        <form>
+        <form id="questionForm">
             <div class="question">
-            <h2>
-                Выберете один правильный ответ<span onclick="raz(event)"> &#9998;</span> <span>&#10006;</span>
-            </h2>
-            <fieldset>
-                <p><input name="radio-question" type="radio" value="first"> Первый ответ</p>
-                <p><input name="radio-question" type="radio" value="second"> Второй ответ</p>
-                <p><input name="radio-question" type="radio" value="third"> Третий ответ</p>
-            </fieldset>
-        </div>
-        <div class="question">
-            <h2>
-                Выберете несколько правильных ответов<span onclick="raz(event)"> &#9998;</span> <span>&#10006;</span>
-            </h2>
-            <fieldset>
-                <p><input type="checkbox" name="checkbox-question" value="first"> Первый ответ</p>
-                <p><input type="checkbox" name="checkbox-question" value="second"> Второй ответ</p>
-                <p><input type="checkbox" name="checkbox-question" value="third"> Третий ответ</p>
-                <p><input type="checkbox" name="checkbox-question" value="fourth"> Четвертый ответ</p>
-            </fieldset>
-        </div>
-        <div class="question" id="last">
-            <h2>
-                Обоснуйте Ваш ответ<span onclick="raz(event)"> &#9998;</span> <span>&#10006;</span>
-            </h2>
-            <fieldset>
-                <textarea name="text-question" cols="40" rows="3" resize="vertical"></textarea></p>
-            </fieldset>
-        </div>
-        <input type="submit" value="Отправить ответы">
+                <h2>
+                    Выберете один правильный ответ<span onclick="change(event)"> &#9998;</span> <span onclick="remove(event)">&#10006;</span>
+                </h2>
+                <fieldset class="radio">
+                    <select size="1" name="type" onchange="changeType(this)">
+                        <option selected value="1">Тип 1</option>
+                        <option value="2">Тип 2</option>
+                        <option value="3">Тип 3</option>
+                    </select>
+                    <p><input name="radio-question" type="radio" value="first"> Первый ответ<span onclick="change(event)"> &#9998;</span> <span onclick="remove(event)">&#10006;</span></p>
+                    <p><input name="radio-question" type="radio" value="second"> Второй ответ<span onclick="change(event)"> &#9998;</span> <span onclick="remove(event)">&#10006;</span></p>
+                    <p><input name="radio-question" type="radio" value="third"> Третий ответ<span onclick="change(event)"> &#9998;</span> <span onclick="remove(event)">&#10006;</span></p>
+                    <p><span>&#10010;</span></p>
+                </fieldset>
+            </div>
+            <div class="question">
+                <h2>
+                    Выберете несколько правильных ответов<span onclick="change(event)"> &#9998;</span> <span onclick="remove(event)">&#10006;</span>
+                </h2>
+                <fieldset class="checkbox">
+                    <select size="1" name="type" onchange="changeType(this)">
+                        <option value="1">Тип 1</option>
+                        <option selected value="2">Тип 2</option>
+                        <option value="3">Тип 3</option>
+                    </select>
+                    <p><input type="checkbox" name="checkbox-question" value="first"> Первый ответ</p>
+                    <p><input type="checkbox" name="checkbox-question" value="second"> Второй ответ</p>
+                    <p><input type="checkbox" name="checkbox-question" value="third"> Третий ответ</p>
+                    <p><input type="checkbox" name="checkbox-question" value="fourth"> Четвертый ответ</p>
+                </fieldset>
+            </div>
+            <div class="question">
+                <h2>
+                    Обоснуйте Ваш ответ<span onclick="change(event)"> &#9998;</span> <span onclick="remove(event)">&#10006;</span>
+                </h2>
+                <fieldset class="text">
+                    <select size="1" name="type" onchange="changeType(this)">
+                        <option value="1">Тип 1</option>
+                        <option value="2">Тип 2</option>
+                        <option selected value="3">Тип 3</option>
+                    </select>
+                    <p>
+                        <textarea name="text-question" cols="40" rows="3" resize="vertical"></textarea></p>
+                    </p>
+                </fieldset>
+            </div>
+            <input type="submit" class="controlBtm" value="Сохранить">
+            <button class="controlBtm" onclick="addQuestions(event)">Добавить вопрос</button>
         </form>
-        <button onclick="addQuestions()">Добавить вопрос</button>
     </div>
     <footer>
         © 2002 - 2017. :iTechArt All Rights Reserved.

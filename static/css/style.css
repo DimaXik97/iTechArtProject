@@ -470,7 +470,7 @@ body .questionsPage .question fieldset {
   padding: 20px;
   position: relative;
 }
-body .questionsPage input[type="submit"] {
+body .questionsPage .controlBtm {
   font-size: 12px;
   text-transform: uppercase;
   color: #FFF;
@@ -481,7 +481,7 @@ body .questionsPage input[type="submit"] {
   min-width: 119px;
   height: 30px;
 }
-body .questionsPage input[type="submit"]:hover {
+body .questionsPage .controlBtm:hover {
   color: #eb1c23;
   background: #FFF;
 }
