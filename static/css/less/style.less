@@ -1,6 +1,12 @@
 @import "reset.less";
 @import "variables.less";
 @import "generateGridColumn.less";
+.contentPage(){
+    grid-column: 2;
+    grid-row: 2;
+    margin-top: 15px;
+    background: @white-color;
+}
 
 body{
     font-family: @font-page;
@@ -10,18 +16,13 @@ body{
     background: @backgroun-color;
     font-size:16px; 
 }
-.about{/*????????*/
-    grid-column: 2;
-    grid-row: 2;
-    margin-top: 15px;
-    background: @white-color;
+.about{
+    .contentPage();
     .menu{
-        border: @border;
-        border-radius: @border-radius-top;
         height: @menu-height;
         display: grid;
-        grid-template-columns: @body-width/3-1 @body-width/3-1 @body-width/3-1;
-        .news,.vacancies,.contacts{
+        grid-template-columns: @body-width/3 @body-width/3 @body-width/3;
+        .element-menu{
             list-style-type: none;
             font-size: 20px;
             height: 26px;
@@ -38,34 +39,55 @@ body{
                 background: @white-color;
             }
         }
-        .news{
+        .col-1{
             grid-column: 1;
             grid-row: 1;
         }
-        .vacancies{
+        .col-2{
             grid-column: 2;
             grid-row: 1;
         }
-        .contacts{
+        .col-3{
             grid-column: 3;
             grid-row: 1;
         }
     }
     .content{
-        margin-top: 20px; 
-        width: 400px;
-        min-height: 400px;
         display:  none;
     }
     .active{
         display: block;
     }
+    h2{
+        background-color: @red-color;
+        border-radius: @border-radius-top;
+        border: @border;
+        color: @white-color;
+        text-align: left;
+    };
+    a{
+        color: @red-color;
+    }
+    img{
+        float: left;
+        width: 250px;
+        height: 200px;
+    }
+    .contacts{
+        h2{
+            margin:10px;
+        };
+        li{
+            padding-left: 10px;
+            list-style: square inside;
+        }
+        span{
+            padding-left: 10px;
+        }
+    }
 }
 .mainPage{
-    grid-column: 2;
-    grid-row: 2;
-    margin-top: 15px;
-    background: @white-color;
+    .contentPage();
     h1{
         background-color: @red-color;
         border-radius: @border-radius-top;
@@ -75,10 +97,7 @@ body{
     };
 }
 .questionsPage{
-    grid-column: 2;
-    grid-row: 2;
-    margin-top: 15px;
-    background: @white-color;
+    .contentPage();
     .question{
         h2{
             background-color: @red-color;
@@ -115,9 +134,7 @@ body{
     }
 }
 .userInfo{
-    grid-column: 2;
-    grid-row: 2;
-    background: @white-color;
+    .contentPage();
     .userName{
         font-size: @user-info-font-size;
         color: @color-header-links;
@@ -166,6 +183,9 @@ body{
         padding: 12px 10px;
         color: @red-color;
         width: @authentication-width-input;
+    }
+    .default-btm{
+        margin-top: 10px; 
     }
 }
 fieldset{
@@ -244,10 +264,27 @@ header{
         }
     }
 }
+.newRow-2{
+    display: grid;
+    grid-template-columns: 400px auto;
+    .col-1{
+        grid-row: 1;
+        grid-column:1;
+    }
+    .col-2{
+        grid-row: 1;
+        grid-column:2;
+        width: 100%;
+    }
+}
 footer{
     grid-column: 2;
     grid-row: 3;
     text-align: center;
     background: @footer-bg;
     color: @footer-color;
+}
+#map{
+    height:400px;
+    width: 400px;
 }
