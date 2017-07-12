@@ -242,148 +242,25 @@ body {
   grid-template-columns: auto 1026px auto;
   grid-template-rows: 50px auto 20px;
   background: #f4f4f4;
-}
-body header {
-  grid-column: 2;
-  grid-row: 1;
-  display: grid;
-  grid-template-columns: 342px 342px 342px;
-  padding-top: 10px;
-}
-body header .logo {
-  grid-column: 1;
-  grid-row: 1;
-}
-body header .linksHeader {
-  grid-column: 2;
-  grid-row: 1;
-}
-body header .linksHeader li {
-  display: inline-block;
-  padding-right: 10px;
-  list-style-type: none;
-  font-size: 1.08em;
-  color: #414141;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-body header .linksHeader li:hover {
-  color: #eb1c23;
-}
-body header .btmControl {
-  grid-column: 3;
-  grid-row: 1;
-  text-align: right;
-}
-body header .btmControl ul {
-  display: inline;
-  text-align: right;
-}
-body header .btmControl ul li {
-  display: inline-block;
-  padding-left: 10px;
-  list-style-type: none;
-  font-size: 1.08em;
-  color: #414141;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-body header .btmControl ul li:hover {
-  color: #eb1c23;
-}
-body header .btmControl .userName {
-  font-size: 1.08em;
-  text-transform: uppercase;
-}
-body footer {
-  grid-column: 2;
-  grid-row: 3;
-  text-align: center;
-  background: #333;
-  color: #737373;
-}
-body .userInfo {
-  grid-column: 2;
-  grid-row: 2;
-  background: #FFF;
-}
-body .userInfo .userName {
-  font-size: 50px;
-  color: #414141;
-  height: 200px;
-}
-body .userInfo .userControl {
-  text-align: right;
-}
-body .userInfo .userControl .banUser {
   font-size: 16px;
-  text-transform: uppercase;
-  color: #FFF;
-  background: #eb1c23;
-  transition: all 0.4s ease;
-  border: 2px solid #eb1c23;
-  cursor: pointer;
-  min-width: 119px;
-  height: 30px;
 }
-body .userInfo .userControl .banUser:hover {
-  color: #eb1c23;
-  background: #FFF;
-}
-body .userInfo .userQuestion {
-  text-align: center;
-}
-body .userInfo .userQuestion .item {
-  color: #414141;
-  height: 100px;
-}
-body .userInfo .userQuestion .value {
-  color: #eb1c23;
-  font-size: 50px;
-  transition: all 0.6s ease-out;
-}
-body .userInfo .element {
-  color: #eb1c23;
-  font-size: 25px;
-  transition: all 0.4s ease;
-  list-style-type: none;
-  text-overflow: clip;
-  display: table;
-  cursor: pointer;
-}
-body .userInfo .element:hover {
-  color: #FFF;
-  background: #eb1c23;
-}
-body .userInfo .element a {
-  width: 100%;
-  height: 100%;
-}
-body .userInfo .content-center {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-  overflow: hidden;
-}
-body .userInfo img {
-  width: 300px;
-  height: 300px;
-}
-body .about {
+.about {
+  /*????????*/
   grid-column: 2;
   grid-row: 2;
-  padding-top: 15px;
+  margin-top: 15px;
+  background: #FFF;
 }
-body .about .menu {
-  border: 2px solid #eb1c23;
-  border-radius: 5px;
+.about .menu {
+  border: 1px solid #eb1c23;
+  border-radius: 5px 5px 0 0;
   height: 30px;
   display: grid;
   grid-template-columns: 341px 341px 341px;
 }
-body .about .menu .news,
-body .about .menu .vacancies,
-body .about .menu .contacts {
+.about .menu .news,
+.about .menu .vacancies,
+.about .menu .contacts {
   list-style-type: none;
   font-size: 20px;
   height: 26px;
@@ -396,216 +273,218 @@ body .about .menu .contacts {
   border: 2px solid #eb1c23;
   cursor: pointer;
 }
-body .about .menu .news:hover,
-body .about .menu .vacancies:hover,
-body .about .menu .contacts:hover {
+.about .menu .news:hover,
+.about .menu .vacancies:hover,
+.about .menu .contacts:hover {
   color: #eb1c23;
   background: #FFF;
 }
-body .about .menu .news {
+.about .menu .news {
   grid-column: 1;
   grid-row: 1;
 }
-body .about .menu .vacancies {
+.about .menu .vacancies {
   grid-column: 2;
   grid-row: 1;
 }
-body .about .menu .contacts {
+.about .menu .contacts {
   grid-column: 3;
   grid-row: 1;
 }
-body .about .content {
+.about .content {
   margin-top: 20px;
   width: 400px;
   min-height: 400px;
   display: none;
 }
-body .about .active {
+.about .active {
   display: block;
 }
-body .mainPage {
+.mainPage {
   grid-column: 2;
   grid-row: 2;
   margin-top: 15px;
   background: #FFF;
-  /*.description{
-            padding: 10px;
-            color: @color-header-links;
-            font-size: 16px;
-            text-align: justify;
-        }*/
 }
-body .mainPage h1 {
+.mainPage h1 {
   background-color: #eb1c23;
   border-radius: 5px 5px 0 0;
   border: 1px solid #eb1c23;
   color: #FFF;
-  font-size: 16px;
   text-align: center;
 }
-body .mainPage .element {
-  color: #eb1c23;
-  font-size: 25px;
-  transition: all 0.4s ease;
-  list-style-type: none;
-  text-overflow: clip;
-  display: table;
-  cursor: pointer;
-}
-body .mainPage .element:hover {
-  color: #FFF;
-  background: #eb1c23;
-}
-body .mainPage .element a {
-  width: 100%;
-  height: 100%;
-}
-body .mainPage .content-center {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-  overflow: hidden;
-}
-body .questionsPage {
+.questionsPage {
   grid-column: 2;
   grid-row: 2;
-  padding-top: 15px;
+  margin-top: 15px;
+  background: #FFF;
 }
-body .questionsPage .question h2 {
+.questionsPage .question h2 {
   background-color: #eb1c23;
   border-radius: 5px 5px 0 0;
   border: 1px solid #eb1c23;
   color: #FFF;
-  font-size: 16px;
   padding: 10px;
   text-align: left;
 }
-body .questionsPage .question input[type="radio"],
-body .questionsPage .question input[type="checkbox"] {
+.questionsPage .question input[type="radio"],
+.questionsPage .question input[type="checkbox"] {
   cursor: pointer;
 }
-body .questionsPage .question p {
+.questionsPage .question p {
   color: #414141;
 }
-body .questionsPage .question li {
+.questionsPage .question li {
   color: #414141;
   list-style-type: none;
 }
-body .questionsPage .question .inCorrectRes {
-  color: #eb1c23;
+.questionsPage .question .inCorrectRes {
+  color: red;
 }
-body .questionsPage .question .correctRes {
+.questionsPage .question .correctRes {
   color: green;
 }
-body .questionsPage .question .userRes {
+.questionsPage .question .userRes {
   text-decoration: underline;
 }
-body .questionsPage .question textarea {
+.questionsPage .question textarea {
   border: 1px solid #dcdcdc;
   padding: 12px 10px;
   resize: vertical;
 }
-body .questionsPage .question fieldset {
-  background: #FFF;
-  border: 0.1px solid #eb1c23;
-  border-radius: 0 0 5px 5px;
-  padding: 20px;
-  position: relative;
-}
-body .questionsPage .controlBtm {
-  font-size: 12px;
-  text-transform: uppercase;
-  color: #FFF;
-  background: #eb1c23;
-  transition: all 0.4s ease;
-  border: 2px solid #eb1c23;
-  cursor: pointer;
-  min-width: 119px;
-  height: 30px;
-}
-body .questionsPage .controlBtm:hover {
-  color: #eb1c23;
+.userInfo {
+  grid-column: 2;
+  grid-row: 2;
   background: #FFF;
 }
-body .questionsPage .element {
-  color: #eb1c23;
-  font-size: 25px;
-  transition: all 0.4s ease;
-  list-style-type: none;
-  text-overflow: clip;
-  display: table;
-  cursor: pointer;
+.userInfo .userName {
+  font-size: 50px;
+  color: #414141;
+  height: 300px;
 }
-body .questionsPage .element:hover {
-  color: #FFF;
-  background: #eb1c23;
+.userInfo .userControl {
+  text-align: right;
 }
-body .questionsPage .element a {
-  width: 100%;
-  height: 100%;
-}
-body .questionsPage .content-center {
-  display: table-cell;
-  vertical-align: middle;
+.userInfo .userQuestion {
   text-align: center;
-  overflow: hidden;
 }
-.login-form,
-.registration-form {
+.userInfo .userQuestion .item {
+  color: #414141;
+  height: 100px;
+}
+.userInfo .userQuestion .value {
+  color: #eb1c23;
+  font-size: 50px;
+}
+.userInfo img {
+  width: 300px;
+  height: 300px;
+}
+.authentication {
   grid-column: 2;
   grid-row: 2;
   margin: 150px auto;
   width: 300px;
 }
-.login-form h1,
-.registration-form h1 {
+.authentication h1 {
   background-color: #eb1c23;
   border-radius: 5px 5px 0 0;
   border: 1px solid #eb1c23;
+  width: 260px;
   color: #FFF;
   font-size: 16px;
   padding: 20px;
   text-align: center;
   text-transform: uppercase;
 }
-.login-form fieldset,
-.registration-form fieldset {
-  background: #FFF;
-  border: 0.1px solid #eb1c23;
-  border-radius: 0 0 5px 5px;
-  padding: 20px;
-  position: relative;
-}
-.login-form input[type="email"],
-.registration-form input[type="email"],
-.login-form input[type="password"],
-.registration-form input[type="password"],
-.login-form input[type="text"],
-.registration-form input[type="text"] {
+.authentication input[type="email"],
+.authentication input[type="password"],
+.authentication input[type="text"] {
   border: 1px solid #dcdcdc;
   padding: 12px 10px;
   color: #eb1c23;
   width: 238px;
 }
-.login-form button,
-.registration-form button,
-.login-form input[type="submit"],
-.registration-form input[type="submit"] {
-  margin-top: 20px;
-  font-size: 12px;
+fieldset {
+  background: #FFF;
+  border: 1px solid #eb1c23;
+  border-radius: 0 0 5px 5px;
+  padding: 20px;
+  position: relative;
+}
+.element {
+  color: #eb1c23;
+  font-size: 25px;
+  transition: all 0.4s ease;
+  list-style-type: none;
+  text-overflow: clip;
+  display: table;
+  cursor: pointer;
+}
+.element:hover {
+  color: #FFF;
+  background: #eb1c23;
+}
+.element a {
+  width: 100%;
+  height: 100%;
+}
+.default-btm {
+  font-size: 16px;
   text-transform: uppercase;
   color: #FFF;
   background: #eb1c23;
   transition: all 0.4s ease;
-  border: 2px solid #eb1c23;
-  cursor: pointer;
-  min-width: 119px;
+  border: 1px solid #eb1c23;
+  min-width: 120px;
   height: 30px;
+  cursor: pointer;
 }
-.login-form button:hover,
-.registration-form button:hover,
-.login-form input[type="submit"]:hover,
-.registration-form input[type="submit"]:hover {
+.default-btm:hover {
   color: #eb1c23;
   background: #FFF;
+}
+.content-center {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  overflow: hidden;
+}
+header {
+  grid-column: 2;
+  grid-row: 1;
+  display: grid;
+  grid-template-columns: 342px 342px 342px;
+  padding-top: 10px;
+}
+header .logo {
+  grid-column: 1;
+  grid-row: 1;
+}
+header .linksHeader {
+  grid-column: 2;
+  grid-row: 1;
+}
+header .btmControl {
+  grid-column: 3;
+  grid-row: 1;
+  text-align: right;
+}
+header li {
+  display: inline-block;
+  padding-left: 10px;
+  list-style-type: none;
+  color: #414141;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+header li:hover {
+  color: #eb1c23;
+}
+footer {
+  grid-column: 2;
+  grid-row: 3;
+  text-align: center;
+  background: #333;
+  color: #737373;
 }

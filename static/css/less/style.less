@@ -8,357 +8,246 @@ body{
     grid-template-columns: auto @body-width auto;
     grid-template-rows: 50px auto 20px;
     background: @backgroun-color;
-    header{
-        grid-column: 2;
-        grid-row: 1;
+    font-size:16px; 
+}
+.about{/*????????*/
+    grid-column: 2;
+    grid-row: 2;
+    margin-top: 15px;
+    background: @white-color;
+    .menu{
+        border: @border;
+        border-radius: @border-radius-top;
+        height: @menu-height;
         display: grid;
-        grid-template-columns: @body-width/3 @body-width/3 @body-width/3;
-        padding-top: 10px;
-        .logo{
-            grid-column: 1;
-            grid-row: 1;
-        }
-        .linksHeader{
-            grid-column: 2;
-            grid-row: 1;
-            li{
-                display: inline-block;
-                padding-right: 10px;
-                list-style-type: none;
-                font-size: 1.08em;
-                color: @color-header-links;
-                text-transform: uppercase;
-                cursor: pointer;
-                &:hover{
-                    color:@red-color;
-                }
-            }
-        }
-        .btmControl{
-            grid-column: 3;
-            grid-row: 1;
-            text-align: right;
-            ul{
-                display: inline;
-                text-align: right;
-                li{
-                    display: inline-block;
-                    padding-left: 10px;
-                    list-style-type: none;
-                    font-size: 1.08em;
-                    color: @color-header-links;
-                    text-transform: uppercase;
-                    cursor: pointer;
-                    &:hover{
-                        color:@red-color;
-                    }
-                }
-            }
-            .userName{
-                font-size: 1.08em;
-                text-transform: uppercase;
-            }
-            
-        }
-    }
-    footer{
-        grid-column: 2;
-        grid-row: 3;
-        text-align: center;
-        background: @footer-bg;
-        color: @footer-color;
-    }
-    .userInfo{
-        grid-column: 2;
-        grid-row: 2;
-        background: @white-color;
-        .userName{
-            font-size: 50px;
-            color: @color-header-links;
-            height: 200px;
-        }
-        .userControl{
-            text-align: right;
-            .banUser{
-                font-size: 16px;
-                text-transform: uppercase;
-                color: @white-color;
-                background: @red-color;
-                transition: @transition;
-                border: 2px solid @red-color;
-                cursor: pointer;
-                min-width: 119px;
-                height: 30px;
-                &:hover{
-                    color:@red-color;
-                    background: @white-color;
-                }
-            }
-        }
-        .userQuestion{
-            text-align: center;
-            .item{
-                color:  @color-header-links;
-                height: 100px;
-            }
-            .value
-            {
-                color: @red-color;
-                font-size: 50px;
-                transition: all 0.6s ease-out;
-            }
-        }
-        .element{
-            color: @red-color;
-            font-size: 25px;
-            transition: @transition;
+        grid-template-columns: @body-width/3-1 @body-width/3-1 @body-width/3-1;
+        .news,.vacancies,.contacts{
             list-style-type: none;
-            text-overflow: clip;
-            display: table;
-            cursor: pointer;
-            &:hover{
-                color:@white-color;
-                background: @red-color;
-            }
-            a{
-                width: 100%;
-                height: 100%;
-            }
-        }
-        .content-center{
-            display: table-cell; 
-            vertical-align: middle; 
+            font-size: 20px;
+            height: 26px;
             text-align: center;
-            overflow: hidden;
-        }
-        img{
-            width: 300px;
-            height: 300px;
-        }
-        
-    }
-    .about{
-        grid-column: 2;
-        grid-row: 2;
-        padding-top: 15px;
-        .menu{
-            border: 2px solid @red-color;
-            border-radius: 5px;
-            height: 30px;
-            display: grid;
-            grid-template-columns: @body-width/3-1 @body-width/3-1 @body-width/3-1;
-            .news,.vacancies,.contacts{
-                list-style-type: none;
-                font-size: 20px;
-                height: 26px;
-                text-align: center;
-                align-content: center;
-                text-transform: uppercase;
-                color: @white-color;
-                background: @red-color;
-                transition: @transition;
-                border: 2px solid @red-color;
-                cursor: pointer;
-                &:hover{
-                    color:@red-color;
-                    background: @white-color;
-                }
-            }
-            .news{
-                grid-column: 1;
-                grid-row: 1;
-            }
-            .vacancies{
-                grid-column: 2;
-                grid-row: 1;
-            }
-            .contacts{
-                grid-column: 3;
-                grid-row: 1;
-            }
-        }
-        .content{
-            margin-top: 20px; 
-            width: 400px;
-            min-height: 400px;
-            display:  none;
-        }
-        .active{
-            display: block;
-        }
-    }
-    .mainPage{
-        grid-column: 2;
-        grid-row: 2;
-        margin-top: 15px;
-        background: @white-color;
-        h1{
-            background-color: @red-color;
-            border-radius: 5px 5px 0 0;
-            border: 1px solid @red-color;
-            color: @white-color;
-            font-size: 16px;
-            text-align: center;
-        };
-        .element{
-            color: @red-color;
-            font-size: 25px;
-            transition: @transition;
-            list-style-type: none;
-            text-overflow: clip;
-            display: table;
-            cursor: pointer;
-            &:hover{
-                color:@white-color;
-                background: @red-color;
-            }
-            a{
-                width: 100%;
-                height: 100%;
-            }
-        }
-        .content-center{
-            display: table-cell; 
-            vertical-align: middle; 
-            text-align: center;
-            overflow: hidden;
-        }
-        /*.description{
-            padding: 10px;
-            color: @color-header-links;
-            font-size: 16px;
-            text-align: justify;
-        }*/
-    }
-    .questionsPage{
-        grid-column: 2;
-        grid-row: 2;
-        padding-top: 15px;
-        .question{
-            h2{
-                background-color: @red-color;
-                border-radius: 5px 5px 0 0;
-                border: 1px solid @red-color;
-                color: @white-color;
-                font-size: 16px;
-                padding: 10px;
-                text-align: left;
-            };
-            input[type="radio"],input[type="checkbox"]{
-                cursor: pointer;
-            }
-            p{
-                color: @color-header-links;
-            }
-            li{
-                color: @color-header-links;
-                list-style-type: none;
-            }
-            .inCorrectRes{
-                color: @red-color;
-            }
-            .correctRes{
-                color: green;
-            }
-            .userRes{
-                text-decoration: underline;
-            }
-            textarea{
-                border: 1px solid #dcdcdc;
-                padding: 12px 10px;
-                resize: vertical;
-            }
-            fieldset{
-                background: @white-color;
-                border: 0.1px solid @red-color;
-                border-radius: 0 0 5px 5px;
-                padding: 20px;
-                position: relative;
-            }
-        }
-        .controlBtm{
-            font-size: 12px;
+            align-content: center;
             text-transform: uppercase;
             color: @white-color;
             background: @red-color;
             transition: @transition;
             border: 2px solid @red-color;
             cursor: pointer;
-            min-width: 119px;
-            height: 30px;
             &:hover{
                 color:@red-color;
                 background: @white-color;
             }
         }
-        .element{
-            color: @red-color;
-            font-size: 25px;
-            transition: @transition;
-            list-style-type: none;
-            text-overflow: clip;
-            display: table;
-            cursor: pointer;
-            &:hover{
-                color:@white-color;
-                background: @red-color;
-            }
-            a{
-                width: 100%;
-                height: 100%;
-            }
+        .news{
+            grid-column: 1;
+            grid-row: 1;
         }
-        .content-center{
-            display: table-cell; 
-            vertical-align: middle; 
-            text-align: center;
-            overflow: hidden;
+        .vacancies{
+            grid-column: 2;
+            grid-row: 1;
+        }
+        .contacts{
+            grid-column: 3;
+            grid-row: 1;
+        }
+    }
+    .content{
+        margin-top: 20px; 
+        width: 400px;
+        min-height: 400px;
+        display:  none;
+    }
+    .active{
+        display: block;
+    }
+}
+.mainPage{
+    grid-column: 2;
+    grid-row: 2;
+    margin-top: 15px;
+    background: @white-color;
+    h1{
+        background-color: @red-color;
+        border-radius: @border-radius-top;
+        border: @border;
+        color: @white-color;
+        text-align: center;
+    };
+}
+.questionsPage{
+    grid-column: 2;
+    grid-row: 2;
+    margin-top: 15px;
+    background: @white-color;
+    .question{
+        h2{
+            background-color: @red-color;
+            border-radius: @border-radius-top;
+            border: @border;
+            color: @white-color;
+            padding: 10px;
+            text-align: left;
+        };
+        input[type="radio"],input[type="checkbox"]{
+            cursor: pointer;
+        }
+        p{
+            color: @color-header-links;
+        }
+        li{
+            color: @color-header-links;
+            list-style-type: none;
+        }
+        .inCorrectRes{
+            color: red;
+        }
+        .correctRes{
+            color: green;
+        }
+        .userRes{
+            text-decoration: underline;
+        }
+        textarea{
+            border: @border-input;
+            padding: 12px 10px;
+            resize: vertical;
         }
     }
 }
+.userInfo{
+    grid-column: 2;
+    grid-row: 2;
+    background: @white-color;
+    .userName{
+        font-size: @user-info-font-size;
+        color: @color-header-links;
+        height: @user-data-height;
+    }
+    .userControl{
+        text-align: right;
+    }
+    .userQuestion{
+        text-align: center;
+        .item{
+            color:  @color-header-links;
+            height: @muser-item-height;
+        }
+        .value
+        {
+            color: @red-color;
+            font-size: @user-info-font-size;
+        }
+    }
+    img{
+        width: @user-img-width;
+        height: @user-data-height;
+    }
+    
+}
 
-.login-form, .registration-form{
+.authentication{
     grid-column: 2;
     grid-row: 2;
 	margin: 150px auto;
-	width: 300px;
+	width: @authentication-width;
     h1{
         background-color: @red-color;
-        border-radius: 5px 5px 0 0;
-        border: 1px solid @red-color;
+        border-radius: @border-radius-top;
+        border: @border;
+        width: (@authentication-width)-2*@authentication-head-padding;
         color: @white-color;
-        font-size: 16px;
-        padding: 20px;
+        font-size: @head-font-size;
+        padding: @authentication-head-padding;
         text-align: center;
         text-transform: uppercase;
     };
-    fieldset{
-        background: @white-color;
-        border: 0.1px solid @red-color;
-        border-radius: 0 0 5px 5px;
-        padding: 20px;
-        position: relative;
-    }
     input[type="email"],input[type="password"],input[type="text"]{
-        border: 1px solid #dcdcdc;
+        border: @border-input;
         padding: 12px 10px;
         color: @red-color;
-        width: 238px;
+        width: @authentication-width-input;
     }
-    button,input[type="submit"]{
-        margin-top: 20px;
-        font-size: 12px;
-        text-transform: uppercase;
-        color: @white-color;
+}
+fieldset{
+    background: @white-color;
+    border: @border;
+    border-radius: @border-radius-down;
+    padding: 20px;
+    position: relative;
+}
+.element{
+    color: @red-color;
+    font-size: @element-font-size;
+    transition: @transition;
+    list-style-type: none;
+    text-overflow: clip;
+    display: table;
+    cursor: pointer;
+    &:hover{
+        color:@white-color;
         background: @red-color;
-        transition: @transition;
-        border: 2px solid @red-color;
+    }
+    a{
+        width: 100%;
+        height: 100%;
+    }
+}
+.default-btm{
+    font-size: @default-btm-font-size;
+    text-transform: uppercase;
+    color: @white-color;
+    background: @red-color;
+    transition: @transition;
+    border: @border;
+    min-width: @default-btm-min-width;
+    height: @default-btm-height;
+    cursor: pointer;
+    &:hover{
+        color:@red-color;
+        background: @white-color;
+    }
+}
+.content-center{
+    display: table-cell; 
+    vertical-align: middle; 
+    text-align: center;
+    overflow: hidden;
+}
+header{
+    grid-column: 2;
+    grid-row: 1;
+    display: grid;
+    grid-template-columns: @body-width/3 @body-width/3 @body-width/3;
+    padding-top: 10px;
+    .logo{
+        grid-column: 1;
+        grid-row: 1;
+    }
+    .linksHeader{
+        grid-column: 2;
+        grid-row: 1;
+    }
+    .btmControl{
+        grid-column: 3;
+        grid-row: 1;
+        text-align: right;
+    }
+    li{
+        display: inline-block;
+        padding-left: 10px;
+        list-style-type: none;
+        color: @color-header-links;
+        text-transform: uppercase;
         cursor: pointer;
-        min-width: 119px;
-        height: 30px;
         &:hover{
             color:@red-color;
-            background: @white-color;
         }
     }
+}
+footer{
+    grid-column: 2;
+    grid-row: 3;
+    text-align: center;
+    background: @footer-bg;
+    color: @footer-color;
 }
