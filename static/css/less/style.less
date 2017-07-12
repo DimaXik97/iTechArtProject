@@ -1,55 +1,40 @@
 @import "reset.less";
 @import "variables.less";
-@import "generateGridColumn.less";
 .contentPage(){
-    grid-column: 2;
-    grid-row: 2;
     margin-top: 15px;
     background: @white-color;
 }
 
 body{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: @body-width;
     font-family: @font-page;
-    display: grid;
-    grid-template-columns: auto @body-width auto;
-    grid-template-rows: 50px auto 20px;
-    background: @backgroun-color;
-    font-size:16px; 
+    font-size: 16px;
+    background: @backgroun-color; 
 }
 .about{
     .contentPage();
     .menu{
+        display: flex;
         height: @menu-height;
-        display: grid;
-        grid-template-columns: @body-width/3 @body-width/3 @body-width/3;
         .element-menu{
-            list-style-type: none;
+            width: @body-width/3;
+            height: @menu-height;
+            border: @border;
             font-size: 20px;
-            height: 26px;
             text-align: center;
-            align-content: center;
             text-transform: uppercase;
             color: @white-color;
             background: @red-color;
+            list-style-type: none;
             transition: @transition;
-            border: 2px solid @red-color;
             cursor: pointer;
             &:hover{
                 color:@red-color;
                 background: @white-color;
             }
-        }
-        .col-1{
-            grid-column: 1;
-            grid-row: 1;
-        }
-        .col-2{
-            grid-column: 2;
-            grid-row: 1;
-        }
-        .col-3{
-            grid-column: 3;
-            grid-row: 1;
         }
     }
     .content{
@@ -59,11 +44,11 @@ body{
         display: block;
     }
     h2{
-        background-color: @red-color;
-        border-radius: @border-radius-top;
         border: @border;
-        color: @white-color;
+        border-radius: @border-radius-top;
         text-align: left;
+        color: @white-color;
+        background-color: @red-color;
     };
     a{
         color: @red-color;
@@ -89,23 +74,23 @@ body{
 .mainPage{
     .contentPage();
     h1{
-        background-color: @red-color;
-        border-radius: @border-radius-top;
         border: @border;
-        color: @white-color;
+        border-radius: @border-radius-top;
         text-align: center;
+        color: @white-color;
+        background-color: @red-color;
     };
 }
 .questionsPage{
     .contentPage();
     .question{
         h2{
-            background-color: @red-color;
-            border-radius: @border-radius-top;
-            border: @border;
-            color: @white-color;
             padding: 10px;
+            border: @border;
+            border-radius: @border-radius-top;
             text-align: left;
+            color: @white-color;
+            background-color: @red-color;
         };
         input[type="radio"],input[type="checkbox"]{
             cursor: pointer;
@@ -127,8 +112,8 @@ body{
             text-decoration: underline;
         }
         textarea{
-            border: @border-input;
             padding: 12px 10px;
+            border: @border-input;
             resize: vertical;
         }
     }
@@ -136,9 +121,9 @@ body{
 .userInfo{
     .contentPage();
     .userName{
+        height: @user-data-height;
         font-size: @user-info-font-size;
         color: @color-header-links;
-        height: @user-data-height;
     }
     .userControl{
         text-align: right;
@@ -146,62 +131,69 @@ body{
     .userQuestion{
         text-align: center;
         .item{
+            list-style-type: none;
+            width: @body-width/3;
+            height: @user-item-height;
             color:  @color-header-links;
-            height: @muser-item-height;
         }
         .value
         {
-            color: @red-color;
             font-size: @user-info-font-size;
+            color: @red-color;
         }
     }
     img{
+        float: left;
         width: @user-img-width;
         height: @user-data-height;
+    }
+    .container{
+        justify-content: space-between;
     }
     
 }
 
 .authentication{
-    grid-column: 2;
-    grid-row: 2;
+    width: @authentication-width;
 	margin: 150px auto;
-	width: @authentication-width;
     h1{
-        background-color: @red-color;
-        border-radius: @border-radius-top;
-        border: @border;
         width: (@authentication-width)-2*@authentication-head-padding;
-        color: @white-color;
-        font-size: @head-font-size;
         padding: @authentication-head-padding;
+        border: @border;
+        border-radius: @border-radius-top;
+        font-size: @head-font-size;
         text-align: center;
         text-transform: uppercase;
+        color: @white-color;
+        background-color: @red-color;
+        
     };
     input[type="email"],input[type="password"],input[type="text"]{
-        border: @border-input;
-        padding: 12px 10px;
-        color: @red-color;
         width: @authentication-width-input;
+        padding: 12px 10px;
+        border: @border-input;
+        color: @red-color;
     }
     .default-btm{
         margin-top: 10px; 
     }
 }
 fieldset{
-    background: @white-color;
+    position: relative;
+    padding: 20px;
     border: @border;
     border-radius: @border-radius-down;
-    padding: 20px;
-    position: relative;
+    background: @white-color;
 }
 .element{
-    color: @red-color;
+    width: @body-width/4;
+    height: @body-width/4;
+    display: table;
     font-size: @element-font-size;
+    text-overflow: clip;
+    color: @red-color;
     transition: @transition;
     list-style-type: none;
-    text-overflow: clip;
-    display: table;
     cursor: pointer;
     &:hover{
         color:@white-color;
@@ -213,14 +205,14 @@ fieldset{
     }
 }
 .default-btm{
+    height: @default-btm-height;
+    min-width: @default-btm-min-width;
+    border: @border;
     font-size: @default-btm-font-size;
     text-transform: uppercase;
     color: @white-color;
     background: @red-color;
     transition: @transition;
-    border: @border;
-    min-width: @default-btm-min-width;
-    height: @default-btm-height;
     cursor: pointer;
     &:hover{
         color:@red-color;
@@ -234,38 +226,31 @@ fieldset{
     overflow: hidden;
 }
 header{
-    grid-column: 2;
-    grid-row: 1;
-    display: grid;
-    grid-template-columns: @body-width/3 @body-width/3 @body-width/3;
+    display: flex;
+    justify-content: space-between;
     padding-top: 10px;
-    .logo{
-        grid-column: 1;
-        grid-row: 1;
-    }
-    .linksHeader{
-        grid-column: 2;
-        grid-row: 1;
-    }
     .btmControl{
-        grid-column: 3;
-        grid-row: 1;
         text-align: right;
     }
     li{
         display: inline-block;
         padding-left: 10px;
-        list-style-type: none;
-        color: @color-header-links;
         text-transform: uppercase;
+        color: @color-header-links;
+        list-style-type: none;
         cursor: pointer;
         &:hover{
             color:@red-color;
         }
     }
 }
+.container{
+    display: flex;
+    flex-wrap: wrap;
+}
 .newRow-2{
     display: grid;
+    justify-content: center;
     grid-template-columns: 400px auto;
     .col-1{
         grid-row: 1;
@@ -278,13 +263,13 @@ header{
     }
 }
 footer{
-    grid-column: 2;
-    grid-row: 3;
+    width: 100%;
     text-align: center;
-    background: @footer-bg;
     color: @footer-color;
+    background: @footer-bg;
 }
 #map{
     height:400px;
     width: 400px;
+    margin-top: 2px;
 }

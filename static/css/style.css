@@ -115,174 +115,39 @@ a {
   color: inherit;
   text-decoration: none;
 }
-.newRow-6 {
-  display: grid;
-  grid-template-columns: repeat(6, 171px);
-}
-.newRow-6 .col-1 {
-  position: relative;
-  grid-column: 1;
-  grid-row: 1;
-  width: 171px;
-  height: 171px;
-}
-.newRow-6 .col-2 {
-  position: relative;
-  grid-column: 2;
-  grid-row: 1;
-  width: 171px;
-  height: 171px;
-}
-.newRow-6 .col-3 {
-  position: relative;
-  grid-column: 3;
-  grid-row: 1;
-  width: 171px;
-  height: 171px;
-}
-.newRow-6 .col-4 {
-  position: relative;
-  grid-column: 4;
-  grid-row: 1;
-  width: 171px;
-  height: 171px;
-}
-.newRow-6 .col-5 {
-  position: relative;
-  grid-column: 5;
-  grid-row: 1;
-  width: 171px;
-  height: 171px;
-}
-.newRow-6 .col-6 {
-  position: relative;
-  grid-column: 6;
-  grid-row: 1;
-  width: 171px;
-  height: 171px;
-}
-.newRow-4 {
-  display: grid;
-  grid-template-columns: repeat(4, 256.5px);
-}
-.newRow-4 .col-1 {
-  position: relative;
-  grid-column: 1;
-  grid-row: 1;
-  width: 256.5px;
-  height: 256.5px;
-}
-.newRow-4 .col-2 {
-  position: relative;
-  grid-column: 2;
-  grid-row: 1;
-  width: 256.5px;
-  height: 256.5px;
-}
-.newRow-4 .col-3 {
-  position: relative;
-  grid-column: 3;
-  grid-row: 1;
-  width: 256.5px;
-  height: 256.5px;
-}
-.newRow-4 .col-4 {
-  position: relative;
-  grid-column: 4;
-  grid-row: 1;
-  width: 256.5px;
-  height: 256.5px;
-}
-.newRow-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 342px);
-}
-.newRow-3 .col-1 {
-  position: relative;
-  grid-column: 1;
-  grid-row: 1;
-  width: 342px;
-  height: 342px;
-}
-.newRow-3 .col-2 {
-  position: relative;
-  grid-column: 2;
-  grid-row: 1;
-  width: 342px;
-  height: 342px;
-}
-.newRow-3 .col-3 {
-  position: relative;
-  grid-column: 3;
-  grid-row: 1;
-  width: 342px;
-  height: 342px;
-}
-.newRow-2 {
-  display: grid;
-  grid-template-columns: repeat(2, 513px);
-}
-.newRow-2 .col-1 {
-  position: relative;
-  grid-column: 1;
-  grid-row: 1;
-  width: 513px;
-  height: 513px;
-}
-.newRow-2 .col-2 {
-  position: relative;
-  grid-column: 2;
-  grid-row: 1;
-  width: 513px;
-  height: 513px;
-}
 body {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 1024px;
   font-family: 'Open Sans', sans-serif;
-  display: grid;
-  grid-template-columns: auto 1026px auto;
-  grid-template-rows: 50px auto 20px;
-  background: #f4f4f4;
   font-size: 16px;
+  background: #f4f4f4;
 }
 .about {
-  grid-column: 2;
-  grid-row: 2;
   margin-top: 15px;
   background: #FFF;
 }
 .about .menu {
+  display: flex;
   height: 30px;
-  display: grid;
-  grid-template-columns: 342px 342px 342px;
 }
 .about .menu .element-menu {
-  list-style-type: none;
+  width: 341.33333333px;
+  height: 30px;
+  border: 1px solid #eb1c23;
   font-size: 20px;
-  height: 26px;
   text-align: center;
-  align-content: center;
   text-transform: uppercase;
   color: #FFF;
   background: #eb1c23;
+  list-style-type: none;
   transition: all 0.4s ease;
-  border: 2px solid #eb1c23;
   cursor: pointer;
 }
 .about .menu .element-menu:hover {
   color: #eb1c23;
   background: #FFF;
-}
-.about .menu .col-1 {
-  grid-column: 1;
-  grid-row: 1;
-}
-.about .menu .col-2 {
-  grid-column: 2;
-  grid-row: 1;
-}
-.about .menu .col-3 {
-  grid-column: 3;
-  grid-row: 1;
 }
 .about .content {
   display: none;
@@ -291,11 +156,11 @@ body {
   display: block;
 }
 .about h2 {
-  background-color: #eb1c23;
-  border-radius: 5px 5px 0 0;
   border: 1px solid #eb1c23;
-  color: #FFF;
+  border-radius: 5px 5px 0 0;
   text-align: left;
+  color: #FFF;
+  background-color: #eb1c23;
 }
 .about a {
   color: #eb1c23;
@@ -316,31 +181,27 @@ body {
   padding-left: 10px;
 }
 .mainPage {
-  grid-column: 2;
-  grid-row: 2;
   margin-top: 15px;
   background: #FFF;
 }
 .mainPage h1 {
-  background-color: #eb1c23;
-  border-radius: 5px 5px 0 0;
   border: 1px solid #eb1c23;
-  color: #FFF;
+  border-radius: 5px 5px 0 0;
   text-align: center;
+  color: #FFF;
+  background-color: #eb1c23;
 }
 .questionsPage {
-  grid-column: 2;
-  grid-row: 2;
   margin-top: 15px;
   background: #FFF;
 }
 .questionsPage .question h2 {
-  background-color: #eb1c23;
-  border-radius: 5px 5px 0 0;
-  border: 1px solid #eb1c23;
-  color: #FFF;
   padding: 10px;
+  border: 1px solid #eb1c23;
+  border-radius: 5px 5px 0 0;
   text-align: left;
+  color: #FFF;
+  background-color: #eb1c23;
 }
 .questionsPage .question input[type="radio"],
 .questionsPage .question input[type="checkbox"] {
@@ -363,20 +224,18 @@ body {
   text-decoration: underline;
 }
 .questionsPage .question textarea {
-  border: 1px solid #dcdcdc;
   padding: 12px 10px;
+  border: 1px solid #dcdcdc;
   resize: vertical;
 }
 .userInfo {
-  grid-column: 2;
-  grid-row: 2;
   margin-top: 15px;
   background: #FFF;
 }
 .userInfo .userName {
+  height: 300px;
   font-size: 50px;
   color: #414141;
-  height: 300px;
 }
 .userInfo .userControl {
   text-align: right;
@@ -385,59 +244,65 @@ body {
   text-align: center;
 }
 .userInfo .userQuestion .item {
-  color: #414141;
+  list-style-type: none;
+  width: 341.33333333px;
   height: 100px;
+  color: #414141;
 }
 .userInfo .userQuestion .value {
-  color: #eb1c23;
   font-size: 50px;
+  color: #eb1c23;
 }
 .userInfo img {
+  float: left;
   width: 300px;
   height: 300px;
 }
+.userInfo .container {
+  justify-content: space-between;
+}
 .authentication {
-  grid-column: 2;
-  grid-row: 2;
-  margin: 150px auto;
   width: 300px;
+  margin: 150px auto;
 }
 .authentication h1 {
-  background-color: #eb1c23;
-  border-radius: 5px 5px 0 0;
-  border: 1px solid #eb1c23;
   width: 260px;
-  color: #FFF;
-  font-size: 16px;
   padding: 20px;
+  border: 1px solid #eb1c23;
+  border-radius: 5px 5px 0 0;
+  font-size: 16px;
   text-align: center;
   text-transform: uppercase;
+  color: #FFF;
+  background-color: #eb1c23;
 }
 .authentication input[type="email"],
 .authentication input[type="password"],
 .authentication input[type="text"] {
-  border: 1px solid #dcdcdc;
-  padding: 12px 10px;
-  color: #eb1c23;
   width: 238px;
+  padding: 12px 10px;
+  border: 1px solid #dcdcdc;
+  color: #eb1c23;
 }
 .authentication .default-btm {
   margin-top: 10px;
 }
 fieldset {
-  background: #FFF;
+  position: relative;
+  padding: 20px;
   border: 1px solid #eb1c23;
   border-radius: 0 0 5px 5px;
-  padding: 20px;
-  position: relative;
+  background: #FFF;
 }
 .element {
-  color: #eb1c23;
+  width: 256px;
+  height: 256px;
+  display: table;
   font-size: 25px;
+  text-overflow: clip;
+  color: #eb1c23;
   transition: all 0.4s ease;
   list-style-type: none;
-  text-overflow: clip;
-  display: table;
   cursor: pointer;
 }
 .element:hover {
@@ -449,14 +314,14 @@ fieldset {
   height: 100%;
 }
 .default-btm {
+  height: 30px;
+  min-width: 120px;
+  border: 1px solid #eb1c23;
   font-size: 16px;
   text-transform: uppercase;
   color: #FFF;
   background: #eb1c23;
   transition: all 0.4s ease;
-  border: 1px solid #eb1c23;
-  min-width: 120px;
-  height: 30px;
   cursor: pointer;
 }
 .default-btm:hover {
@@ -470,38 +335,31 @@ fieldset {
   overflow: hidden;
 }
 header {
-  grid-column: 2;
-  grid-row: 1;
-  display: grid;
-  grid-template-columns: 342px 342px 342px;
+  display: flex;
+  justify-content: space-between;
   padding-top: 10px;
 }
-header .logo {
-  grid-column: 1;
-  grid-row: 1;
-}
-header .linksHeader {
-  grid-column: 2;
-  grid-row: 1;
-}
 header .btmControl {
-  grid-column: 3;
-  grid-row: 1;
   text-align: right;
 }
 header li {
   display: inline-block;
   padding-left: 10px;
-  list-style-type: none;
-  color: #414141;
   text-transform: uppercase;
+  color: #414141;
+  list-style-type: none;
   cursor: pointer;
 }
 header li:hover {
   color: #eb1c23;
 }
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
 .newRow-2 {
   display: grid;
+  justify-content: center;
   grid-template-columns: 400px auto;
 }
 .newRow-2 .col-1 {
@@ -514,13 +372,13 @@ header li:hover {
   width: 100%;
 }
 footer {
-  grid-column: 2;
-  grid-row: 3;
+  width: 100%;
   text-align: center;
-  background: #333;
   color: #737373;
+  background: #333;
 }
 #map {
   height: 400px;
   width: 400px;
+  margin-top: 2px;
 }
