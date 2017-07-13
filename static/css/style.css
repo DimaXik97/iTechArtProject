@@ -125,7 +125,6 @@ body {
   background: #f4f4f4;
 }
 .about {
-  margin-top: 15px;
   background: #FFF;
 }
 .about .menu {
@@ -134,7 +133,7 @@ body {
 }
 .about .menu .element-menu {
   width: 341.33333333px;
-  height: 30px;
+  height: 28px;
   border: 1px solid #eb1c23;
   font-size: 20px;
   text-align: center;
@@ -155,13 +154,6 @@ body {
 .about .active {
   display: block;
 }
-.about h2 {
-  border: 1px solid #eb1c23;
-  border-radius: 5px 5px 0 0;
-  text-align: left;
-  color: #FFF;
-  background-color: #eb1c23;
-}
 .about a {
   color: #eb1c23;
 }
@@ -170,6 +162,9 @@ body {
   width: 250px;
   height: 200px;
 }
+.about .contacts {
+  width: 624px;
+}
 .about .contacts h2 {
   margin: 10px;
 }
@@ -177,31 +172,14 @@ body {
   padding-left: 10px;
   list-style: square inside;
 }
-.about .contacts span {
+.about .contacts p {
   padding-left: 10px;
 }
 .mainPage {
-  margin-top: 15px;
   background: #FFF;
-}
-.mainPage h1 {
-  border: 1px solid #eb1c23;
-  border-radius: 5px 5px 0 0;
-  text-align: center;
-  color: #FFF;
-  background-color: #eb1c23;
 }
 .questionsPage {
-  margin-top: 15px;
   background: #FFF;
-}
-.questionsPage .question h2 {
-  padding: 10px;
-  border: 1px solid #eb1c23;
-  border-radius: 5px 5px 0 0;
-  text-align: left;
-  color: #FFF;
-  background-color: #eb1c23;
 }
 .questionsPage .question input[type="radio"],
 .questionsPage .question input[type="checkbox"] {
@@ -229,7 +207,6 @@ body {
   resize: vertical;
 }
 .userInfo {
-  margin-top: 15px;
   background: #FFF;
 }
 .userInfo .userName {
@@ -239,6 +216,12 @@ body {
 }
 .userInfo .userControl {
   text-align: right;
+}
+.userInfo .container {
+  justify-content: space-between;
+}
+.userInfo .userInterface {
+  width: 724px;
 }
 .userInfo .userQuestion {
   text-align: center;
@@ -258,31 +241,9 @@ body {
   width: 300px;
   height: 300px;
 }
-.userInfo .container {
-  justify-content: space-between;
-}
 .authentication {
   width: 300px;
   margin: 150px auto;
-}
-.authentication h1 {
-  width: 260px;
-  padding: 20px;
-  border: 1px solid #eb1c23;
-  border-radius: 5px 5px 0 0;
-  font-size: 16px;
-  text-align: center;
-  text-transform: uppercase;
-  color: #FFF;
-  background-color: #eb1c23;
-}
-.authentication input[type="email"],
-.authentication input[type="password"],
-.authentication input[type="text"] {
-  width: 238px;
-  padding: 12px 10px;
-  border: 1px solid #dcdcdc;
-  color: #eb1c23;
 }
 .authentication .default-btm {
   margin-top: 10px;
@@ -328,6 +289,14 @@ fieldset {
   color: #eb1c23;
   background: #FFF;
 }
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  width: 238px;
+  padding: 12px 10px;
+  border: 1px solid #dcdcdc;
+  color: #eb1c23;
+}
 .content-center {
   display: table-cell;
   vertical-align: middle;
@@ -338,6 +307,7 @@ header {
   display: flex;
   justify-content: space-between;
   padding-top: 10px;
+  padding-bottom: 15px;
 }
 header .btmControl {
   text-align: right;
@@ -357,28 +327,25 @@ header li:hover {
   display: flex;
   flex-wrap: wrap;
 }
-.newRow-2 {
-  display: grid;
-  justify-content: center;
-  grid-template-columns: 400px auto;
-}
-.newRow-2 .col-1 {
-  grid-row: 1;
-  grid-column: 1;
-}
-.newRow-2 .col-2 {
-  grid-row: 1;
-  grid-column: 2;
-  width: 100%;
-}
 footer {
+  display: flex;
+  justify-content: center;
   width: 100%;
   text-align: center;
   color: #737373;
   background: #333;
 }
+.title {
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: 1px solid #eb1c23;
+  border-radius: 5px 5px 0 0;
+  text-align: left;
+  color: #FFF;
+  background-color: #eb1c23;
+}
 #map {
-  height: 400px;
   width: 400px;
-  margin-top: 2px;
+  height: 400px;
 }

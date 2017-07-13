@@ -7,6 +7,7 @@ function addQuestions(e){
     newQuestions=document.createElement('div');
     newQuestions.setAttribute('class', "question");
     headQuestions=document.createElement('h2');
+    headQuestions.setAttribute("class","title")
     headQuestions.innerHTML='Новый вопрос<span onclick="change(event)"> &#9998;</span> <span onclick="remove(event)">&#10006;</span>'
     fieldset=document.createElement("fieldset");
     textarea=document.createElement("textarea");

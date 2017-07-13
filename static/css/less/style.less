@@ -1,7 +1,6 @@
 @import "reset.less";
 @import "variables.less";
 .contentPage(){
-    margin-top: 15px;
     background: @white-color;
 }
 
@@ -21,7 +20,7 @@ body{
         height: @menu-height;
         .element-menu{
             width: @body-width/3;
-            height: @menu-height;
+            height: (@menu-height)-2px;
             border: @border;
             font-size: 20px;
             text-align: center;
@@ -43,13 +42,6 @@ body{
     .active{
         display: block;
     }
-    h2{
-        border: @border;
-        border-radius: @border-radius-top;
-        text-align: left;
-        color: @white-color;
-        background-color: @red-color;
-    };
     a{
         color: @red-color;
     }
@@ -59,6 +51,7 @@ body{
         height: 200px;
     }
     .contacts{
+        width: (@body-width)-@map-width;
         h2{
             margin:10px;
         };
@@ -66,32 +59,17 @@ body{
             padding-left: 10px;
             list-style: square inside;
         }
-        span{
+        p{
             padding-left: 10px;
         }
     }
 }
 .mainPage{
     .contentPage();
-    h1{
-        border: @border;
-        border-radius: @border-radius-top;
-        text-align: center;
-        color: @white-color;
-        background-color: @red-color;
-    };
 }
 .questionsPage{
     .contentPage();
     .question{
-        h2{
-            padding: 10px;
-            border: @border;
-            border-radius: @border-radius-top;
-            text-align: left;
-            color: @white-color;
-            background-color: @red-color;
-        };
         input[type="radio"],input[type="checkbox"]{
             cursor: pointer;
         }
@@ -128,6 +106,12 @@ body{
     .userControl{
         text-align: right;
     }
+    .container{
+        justify-content: space-between;
+    }
+    .userInterface{
+        width: (@body-width)-@user-img-width;
+    }
     .userQuestion{
         text-align: center;
         .item{
@@ -147,8 +131,8 @@ body{
         width: @user-img-width;
         height: @user-data-height;
     }
-    .container{
-        justify-content: space-between;
+    .userQuestions{
+
     }
     
 }
@@ -156,24 +140,6 @@ body{
 .authentication{
     width: @authentication-width;
 	margin: 150px auto;
-    h1{
-        width: (@authentication-width)-2*@authentication-head-padding;
-        padding: @authentication-head-padding;
-        border: @border;
-        border-radius: @border-radius-top;
-        font-size: @head-font-size;
-        text-align: center;
-        text-transform: uppercase;
-        color: @white-color;
-        background-color: @red-color;
-        
-    };
-    input[type="email"],input[type="password"],input[type="text"]{
-        width: @authentication-width-input;
-        padding: 12px 10px;
-        border: @border-input;
-        color: @red-color;
-    }
     .default-btm{
         margin-top: 10px; 
     }
@@ -219,6 +185,14 @@ fieldset{
         background: @white-color;
     }
 }
+input[type="email"],
+input[type="password"],
+input[type="text"]{
+    width: @authentication-width-input;
+    padding: 12px 10px;
+    border: @border-input;
+    color: @red-color;
+}
 .content-center{
     display: table-cell; 
     vertical-align: middle; 
@@ -229,6 +203,7 @@ header{
     display: flex;
     justify-content: space-between;
     padding-top: 10px;
+    padding-bottom: 15px;
     .btmControl{
         text-align: right;
     }
@@ -248,28 +223,25 @@ header{
     display: flex;
     flex-wrap: wrap;
 }
-.newRow-2{
-    display: grid;
-    justify-content: center;
-    grid-template-columns: 400px auto;
-    .col-1{
-        grid-row: 1;
-        grid-column:1;
-    }
-    .col-2{
-        grid-row: 1;
-        grid-column:2;
-        width: 100%;
-    }
-}
 footer{
+    display: flex;
+    justify-content: center;
     width: 100%;
     text-align: center;
     color: @footer-color;
     background: @footer-bg;
 }
+.title{
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: @border;
+    border-radius: @border-radius-top;
+    text-align: left;
+    color: @white-color;
+    background-color: @red-color;
+}
 #map{
-    height:400px;
-    width: 400px;
-    margin-top: 2px;
+    width:  @map-width;
+    height: @map-height;
 }
