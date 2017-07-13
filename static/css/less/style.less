@@ -105,6 +105,40 @@ footer{
         margin-top: 10px; 
     }
 }
+.question{
+    .incorrectAnswer{
+        color: red;
+    }
+    .correctAnswer{
+        color: green;
+    }
+    .userAnswer{
+        font-weight: 700;
+    }
+    input[type="radio"],
+    input[type="checkbox"]{
+        cursor: pointer;
+    }
+    textarea{
+        padding: 12px 10px;
+        border: @border-input;
+        resize: vertical;
+    }
+}
+.userStatistics{
+    text-align: center;
+    .item{
+        list-style-type: none;
+        width: @body-width/3;
+        height: @user-item-height;
+        padding-top:10px;
+    }
+    .value
+    {
+        font-size: @user-info-font-size;
+        color: @red-color;
+    }
+}
 fieldset{
     padding: 20px;
     border: @border;
@@ -122,7 +156,10 @@ input[type="text"]{
 li{
     list-style-type: none;
 }
-
+#map{
+    width:  @map-width;
+    height: @map-height;
+}
 
 
 
@@ -177,66 +214,24 @@ li{
         }
     }
 }
-.question{
-    input[type="radio"],input[type="checkbox"]{
-        cursor: pointer;
-    }
-    
-    .incorrectAnswer{
-        color: red;
-    }
-    .correctAnswer{
-        color: green;
-    }
-    .userAnswer{
-        font-weight: 700;
-    }
-    textarea{
-        padding: 12px 10px;
-        border: @border-input;
-        resize: vertical;
-    }
-}
 .userInfo{
+    position: relative;
     .userName{
         height: @user-data-height;
         font-size: @user-info-font-size;
-        color: @color-header-links;
     }
-    .userControl{
+    .profileMenu{
+        position: absolute;
+        right: 0;
+        top:0;
+        display: flex;
+        flex-direction: column;
         text-align: right;
-    }
-    .container{
-        justify-content: space-between;
-    }
-    .userInterface{
-        width: (@body-width)-@user-img-width;
-    }
-    .userStatistics{
-        text-align: center;
-        .item{
-            list-style-type: none;
-            width: @body-width/3;
-            height: @user-item-height;
-            color:  @color-header-links;
-        }
-        .value
-        {
-            font-size: @user-info-font-size;
-            color: @red-color;
-        }
     }
     img{
         float: left;
         width: @user-img-width;
         height: @user-data-height;
     }
-    .userQuestions{
-
-    }
     
-}
-#map{
-    width:  @map-width;
-    height: @map-height;
 }

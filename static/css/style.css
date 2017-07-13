@@ -220,6 +220,37 @@ footer {
 .authentication .default-btm {
   margin-top: 10px;
 }
+.question .incorrectAnswer {
+  color: red;
+}
+.question .correctAnswer {
+  color: green;
+}
+.question .userAnswer {
+  font-weight: 700;
+}
+.question input[type="radio"],
+.question input[type="checkbox"] {
+  cursor: pointer;
+}
+.question textarea {
+  padding: 12px 10px;
+  border: 1px solid #dcdcdc;
+  resize: vertical;
+}
+.userStatistics {
+  text-align: center;
+}
+.userStatistics .item {
+  list-style-type: none;
+  width: 341.33333333px;
+  height: 100px;
+  padding-top: 10px;
+}
+.userStatistics .value {
+  font-size: 50px;
+  color: #eb1c23;
+}
 fieldset {
   padding: 20px;
   border: 1px solid #eb1c23;
@@ -236,6 +267,10 @@ input[type="text"] {
 }
 li {
   list-style-type: none;
+}
+#map {
+  width: 400px;
+  height: 400px;
 }
 .about .menu {
   display: flex;
@@ -285,57 +320,23 @@ li {
 .about .contacts p {
   padding-left: 10px;
 }
-.question input[type="radio"],
-.question input[type="checkbox"] {
-  cursor: pointer;
-}
-.question .incorrectAnswer {
-  color: red;
-}
-.question .correctAnswer {
-  color: green;
-}
-.question .userAnswer {
-  font-weight: 700;
-}
-.question textarea {
-  padding: 12px 10px;
-  border: 1px solid #dcdcdc;
-  resize: vertical;
+.userInfo {
+  position: relative;
 }
 .userInfo .userName {
   height: 300px;
   font-size: 50px;
-  color: #414141;
 }
-.userInfo .userControl {
+.userInfo .profileMenu {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
   text-align: right;
-}
-.userInfo .container {
-  justify-content: space-between;
-}
-.userInfo .userInterface {
-  width: 724px;
-}
-.userInfo .userStatistics {
-  text-align: center;
-}
-.userInfo .userStatistics .item {
-  list-style-type: none;
-  width: 341.33333333px;
-  height: 100px;
-  color: #414141;
-}
-.userInfo .userStatistics .value {
-  font-size: 50px;
-  color: #eb1c23;
 }
 .userInfo img {
   float: left;
   width: 300px;
   height: 300px;
-}
-#map {
-  width: 400px;
-  height: 400px;
 }
