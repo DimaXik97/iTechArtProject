@@ -223,16 +223,16 @@ body {
 .userInfo .userInterface {
   width: 724px;
 }
-.userInfo .userQuestion {
+.userInfo .userStatistics {
   text-align: center;
 }
-.userInfo .userQuestion .item {
+.userInfo .userStatistics .item {
   list-style-type: none;
   width: 341.33333333px;
   height: 100px;
   color: #414141;
 }
-.userInfo .userQuestion .value {
+.userInfo .userStatistics .value {
   font-size: 50px;
   color: #eb1c23;
 }
