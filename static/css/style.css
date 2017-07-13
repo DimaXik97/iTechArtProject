@@ -120,39 +120,33 @@ body {
   flex-direction: column;
   margin: auto;
   width: 1024px;
+  min-height: 100vh;
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   color: #414141;
   background: #f4f4f4;
 }
 header {
-  display: flex;
   justify-content: space-between;
-  padding-top: 10px;
-  padding-bottom: 15px;
+  padding: 10px 0px 10px;
 }
-header .btmControl {
-  text-align: right;
-}
-header li {
-  display: inline-block;
+header .menuItem {
   padding-left: 10px;
   text-transform: uppercase;
-  color: #414141;
   list-style-type: none;
   cursor: pointer;
 }
-header li:hover {
+header .menuItem:hover {
   color: #eb1c23;
 }
 main {
+  flex: 1;
   background: #FFF;
 }
 footer {
   display: flex;
   justify-content: center;
   width: 100%;
-  text-align: center;
   color: #737373;
   background: #333;
 }
@@ -178,7 +172,6 @@ footer {
   width: 256px;
   height: 256px;
   font-size: 25px;
-  text-overflow: clip;
   color: #eb1c23;
   transition: all 0.4s ease;
   list-style-type: none;
@@ -189,12 +182,9 @@ footer {
   background: #eb1c23;
 }
 .title {
-  padding-left: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding: 5px 0px 5px 10px;
   border: 1px solid #eb1c23;
   border-radius: 5px 5px 0 0;
-  text-align: left;
   color: #FFF;
   background-color: #eb1c23;
 }
@@ -250,6 +240,25 @@ footer {
 .userStatistics .value {
   font-size: 50px;
   color: #eb1c23;
+}
+.userInfo {
+  position: relative;
+}
+.userInfo .userName {
+  height: 300px;
+  font-size: 50px;
+}
+.userInfo .profileMenu {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+.userInfo img {
+  width: 300px;
+  height: 300px;
 }
 fieldset {
   padding: 20px;
@@ -319,24 +328,4 @@ li {
 }
 .about .contacts p {
   padding-left: 10px;
-}
-.userInfo {
-  position: relative;
-}
-.userInfo .userName {
-  height: 300px;
-  font-size: 50px;
-}
-.userInfo .profileMenu {
-  position: absolute;
-  right: 0;
-  top: 0;
-  display: flex;
-  flex-direction: column;
-  text-align: right;
-}
-.userInfo img {
-  float: left;
-  width: 300px;
-  height: 300px;
 }
