@@ -64,36 +64,35 @@ body{
         }
     }
 }
-.mainPage{
+main{
     .contentPage();
 }
-.questionsPage{
-    .contentPage();
-    .question{
-        input[type="radio"],input[type="checkbox"]{
-            cursor: pointer;
-        }
-        p{
-            color: @color-header-links;
-        }
+.question{
+    color: @color-header-links;;
+    input[type="radio"],input[type="checkbox"]{
+        cursor: pointer;
+    }
+    .bodyQuestion{
+        padding: 20px;
+        border: @border;
+        border-radius: @border-radius-down;
         li{
-            color: @color-header-links;
             list-style-type: none;
         }
-        .incorrectAnswer{
-            color: red;
-        }
-        .correctAnswer{
-            color: green;
-        }
-        .userAnswer{
-            text-decoration: underline;
-        }
-        textarea{
-            padding: 12px 10px;
-            border: @border-input;
-            resize: vertical;
-        }
+    }
+    .incorrectAnswer{
+        color: red;
+    }
+    .correctAnswer{
+        color: green;
+    }
+    .userAnswer{
+        font-weight: 700;
+    }
+    textarea{
+        padding: 12px 10px;
+        border: @border-input;
+        resize: vertical;
     }
 }
 .userInfo{
