@@ -192,13 +192,13 @@ body {
   color: #414141;
   list-style-type: none;
 }
-.questionsPage .question .inCorrectRes {
+.questionsPage .question .incorrectAnswer {
   color: red;
 }
-.questionsPage .question .correctRes {
+.questionsPage .question .correctAnswer {
   color: green;
 }
-.questionsPage .question .userRes {
+.questionsPage .question .userAnswer {
   text-decoration: underline;
 }
 .questionsPage .question textarea {
