@@ -122,10 +122,120 @@ body {
   width: 1024px;
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
+  color: #414141;
   background: #f4f4f4;
 }
-.about {
+header {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+header .btmControl {
+  text-align: right;
+}
+header li {
+  display: inline-block;
+  padding-left: 10px;
+  text-transform: uppercase;
+  color: #414141;
+  list-style-type: none;
+  cursor: pointer;
+}
+header li:hover {
+  color: #eb1c23;
+}
+main {
   background: #FFF;
+}
+footer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+  color: #737373;
+  background: #333;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.content-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+.bodyContent {
+  padding: 20px;
+  border: 1px solid #eb1c23;
+  border-radius: 0 0 5px 5px;
+}
+.element {
+  width: 256px;
+  height: 256px;
+  font-size: 25px;
+  text-overflow: clip;
+  color: #eb1c23;
+  transition: all 0.4s ease;
+  list-style-type: none;
+  cursor: pointer;
+}
+.element:hover {
+  color: #FFF;
+  background: #eb1c23;
+}
+.title {
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: 1px solid #eb1c23;
+  border-radius: 5px 5px 0 0;
+  text-align: left;
+  color: #FFF;
+  background-color: #eb1c23;
+}
+.default-btm {
+  height: 30px;
+  min-width: 120px;
+  border: 1px solid #eb1c23;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #FFF;
+  background: #eb1c23;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+.default-btm:hover {
+  color: #eb1c23;
+  background: #FFF;
+}
+.authentication {
+  width: 300px;
+  margin: 150px auto;
+}
+.authentication .default-btm {
+  margin-top: 10px;
+}
+fieldset {
+  padding: 20px;
+  border: 1px solid #eb1c23;
+  border-radius: 0 0 5px 5px;
+  background: #FFF;
+}
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  width: 238px;
+  padding: 12px 10px;
+  border: 1px solid #dcdcdc;
+  color: #eb1c23;
+}
+li {
+  list-style-type: none;
 }
 .about .menu {
   display: flex;
@@ -175,23 +285,9 @@ body {
 .about .contacts p {
   padding-left: 10px;
 }
-main {
-  background: #FFF;
-}
-.question {
-  color: #414141;
-}
 .question input[type="radio"],
 .question input[type="checkbox"] {
   cursor: pointer;
-}
-.question .bodyQuestion {
-  padding: 20px;
-  border: 1px solid #eb1c23;
-  border-radius: 0 0 5px 5px;
-}
-.question .bodyQuestion li {
-  list-style-type: none;
 }
 .question .incorrectAnswer {
   color: red;
@@ -206,9 +302,6 @@ main {
   padding: 12px 10px;
   border: 1px solid #dcdcdc;
   resize: vertical;
-}
-.userInfo {
-  background: #FFF;
 }
 .userInfo .userName {
   height: 300px;
@@ -241,110 +334,6 @@ main {
   float: left;
   width: 300px;
   height: 300px;
-}
-.authentication {
-  width: 300px;
-  margin: 150px auto;
-}
-.authentication .default-btm {
-  margin-top: 10px;
-}
-fieldset {
-  position: relative;
-  padding: 20px;
-  border: 1px solid #eb1c23;
-  border-radius: 0 0 5px 5px;
-  background: #FFF;
-}
-.element {
-  width: 256px;
-  height: 256px;
-  display: table;
-  font-size: 25px;
-  text-overflow: clip;
-  color: #eb1c23;
-  transition: all 0.4s ease;
-  list-style-type: none;
-  cursor: pointer;
-}
-.element:hover {
-  color: #FFF;
-  background: #eb1c23;
-}
-.element a {
-  width: 100%;
-  height: 100%;
-}
-.default-btm {
-  height: 30px;
-  min-width: 120px;
-  border: 1px solid #eb1c23;
-  font-size: 16px;
-  text-transform: uppercase;
-  color: #FFF;
-  background: #eb1c23;
-  transition: all 0.4s ease;
-  cursor: pointer;
-}
-.default-btm:hover {
-  color: #eb1c23;
-  background: #FFF;
-}
-input[type="email"],
-input[type="password"],
-input[type="text"] {
-  width: 238px;
-  padding: 12px 10px;
-  border: 1px solid #dcdcdc;
-  color: #eb1c23;
-}
-.content-center {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-  overflow: hidden;
-}
-header {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 10px;
-  padding-bottom: 15px;
-}
-header .btmControl {
-  text-align: right;
-}
-header li {
-  display: inline-block;
-  padding-left: 10px;
-  text-transform: uppercase;
-  color: #414141;
-  list-style-type: none;
-  cursor: pointer;
-}
-header li:hover {
-  color: #eb1c23;
-}
-.container {
-  display: flex;
-  flex-wrap: wrap;
-}
-footer {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  text-align: center;
-  color: #737373;
-  background: #333;
-}
-.title {
-  padding-left: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  border: 1px solid #eb1c23;
-  border-radius: 5px 5px 0 0;
-  text-align: left;
-  color: #FFF;
-  background-color: #eb1c23;
 }
 #map {
   width: 400px;
