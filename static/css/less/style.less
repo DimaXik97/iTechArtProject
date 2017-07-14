@@ -17,7 +17,6 @@ header{
     .menuItem{
         padding-left: 10px;
         text-transform: uppercase;
-        list-style-type: none;
         cursor: pointer;
         &:hover{
             color:@red-color;
@@ -43,13 +42,13 @@ footer{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     width: 100%;
     height: 100%;
     text-align: center;
 }
 .bodyContent{
     padding: 20px;
+    overflow: hidden;
     border: @border;
     border-radius: @border-radius-down;
 }
@@ -59,9 +58,9 @@ footer{
     font-size: @element-font-size;
     color: @red-color;
     transition: @transition;
-    list-style-type: none;
     cursor: pointer;
     &:hover{
+        text-decoration: underline;
         color:@white-color;
         background: @red-color;
     }
@@ -74,6 +73,7 @@ footer{
     background-color: @red-color;
 }
 .default-btm{
+    margin-bottom: 10px;
     height: @default-btm-height;
     min-width: @default-btm-min-width;
     border: @border;
@@ -86,6 +86,20 @@ footer{
     &:hover{
         color:@red-color;
         background: @white-color;
+    }
+}
+.adminMenu{
+    &:hover{
+        text-decoration: none;
+    }
+    .edit:after{
+        content: "\270E";
+    }
+    .delete:after{
+        content: "\2716";
+    }
+    .add:after{
+        content: "\271A";
     }
 }
 .authentication{
@@ -117,8 +131,8 @@ footer{
 }
 .userStatistics{
     text-align: center;
+    margin-bottom: 10px;
     .item{
-        list-style-type: none;
         width: @body-width/3;
         height: @user-item-height;
         padding-top:10px;
@@ -141,7 +155,6 @@ footer{
         top:0;
         display: flex;
         flex-direction: column;
-        text-align: right;
     }
     img{
         width: @user-img-width;
@@ -170,24 +183,17 @@ li{
     width:  @map-width;
     height: @map-height;
 }
-
-
-
-
-.about{
+.aboutPage{
     .menu{
-        display: flex;
         height: @menu-height;
         .element-menu{
             width: @body-width/3;
-            height: (@menu-height)-2px;
-            border: @border;
+            height: (@menu-height);
             font-size: 20px;
             text-align: center;
             text-transform: uppercase;
             color: @white-color;
             background: @red-color;
-            list-style-type: none;
             transition: @transition;
             cursor: pointer;
             &:hover{
@@ -197,23 +203,16 @@ li{
         }
     }
     .content{
+        width: @body-width;
         display:  none;
     }
     .active{
         display: block;
     }
-    a{
-        color: @red-color;
-    }
-    img{
-        float: left;
-        width: 250px;
-        height: 200px;
-    }
     .contacts{
         width: (@body-width)-@map-width;
         h2{
-            margin:10px;
+            margin: 10px 0px 10px 10px;
         };
         li{
             padding-left: 10px;
@@ -223,4 +222,15 @@ li{
             padding-left: 10px;
         }
     }
+    .readMore{
+        color: @red-color;
+    }
+    img{
+        float: left;
+        margin: 0px 15px 15px 0px;
+        width: 250px;
+        height: 200px;
+    }
+
 }
+

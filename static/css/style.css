@@ -133,7 +133,6 @@ header {
 header .menuItem {
   padding-left: 10px;
   text-transform: uppercase;
-  list-style-type: none;
   cursor: pointer;
 }
 header .menuItem:hover {
@@ -158,13 +157,13 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   width: 100%;
   height: 100%;
   text-align: center;
 }
 .bodyContent {
   padding: 20px;
+  overflow: hidden;
   border: 1px solid #eb1c23;
   border-radius: 0 0 5px 5px;
 }
@@ -174,10 +173,10 @@ footer {
   font-size: 25px;
   color: #eb1c23;
   transition: all 0.4s ease;
-  list-style-type: none;
   cursor: pointer;
 }
 .element:hover {
+  text-decoration: underline;
   color: #FFF;
   background: #eb1c23;
 }
@@ -189,6 +188,7 @@ footer {
   background-color: #eb1c23;
 }
 .default-btm {
+  margin-bottom: 10px;
   height: 30px;
   min-width: 120px;
   border: 1px solid #eb1c23;
@@ -202,6 +202,18 @@ footer {
 .default-btm:hover {
   color: #eb1c23;
   background: #FFF;
+}
+.adminMenu:hover {
+  text-decoration: none;
+}
+.adminMenu .edit:after {
+  content: "\270E";
+}
+.adminMenu .delete:after {
+  content: "\2716";
+}
+.adminMenu .add:after {
+  content: "\271A";
 }
 .authentication {
   width: 300px;
@@ -230,9 +242,9 @@ footer {
 }
 .userStatistics {
   text-align: center;
+  margin-bottom: 10px;
 }
 .userStatistics .item {
-  list-style-type: none;
   width: 341.33333333px;
   height: 100px;
   padding-top: 10px;
@@ -254,7 +266,6 @@ footer {
   top: 0;
   display: flex;
   flex-direction: column;
-  text-align: right;
 }
 .userInfo img {
   width: 300px;
@@ -281,51 +292,50 @@ li {
   width: 400px;
   height: 400px;
 }
-.about .menu {
-  display: flex;
+.aboutPage .menu {
   height: 30px;
 }
-.about .menu .element-menu {
+.aboutPage .menu .element-menu {
   width: 341.33333333px;
-  height: 28px;
-  border: 1px solid #eb1c23;
+  height: 30px;
   font-size: 20px;
   text-align: center;
   text-transform: uppercase;
   color: #FFF;
   background: #eb1c23;
-  list-style-type: none;
   transition: all 0.4s ease;
   cursor: pointer;
 }
-.about .menu .element-menu:hover {
+.aboutPage .menu .element-menu:hover {
   color: #eb1c23;
   background: #FFF;
 }
-.about .content {
+.aboutPage .content {
+  width: 1024px;
   display: none;
 }
-.about .active {
+.aboutPage .active {
   display: block;
 }
-.about a {
-  color: #eb1c23;
-}
-.about img {
-  float: left;
-  width: 250px;
-  height: 200px;
-}
-.about .contacts {
+.aboutPage .contacts {
   width: 624px;
 }
-.about .contacts h2 {
-  margin: 10px;
+.aboutPage .contacts h2 {
+  margin: 10px 0px 10px 10px;
 }
-.about .contacts li {
+.aboutPage .contacts li {
   padding-left: 10px;
   list-style: square inside;
 }
-.about .contacts p {
+.aboutPage .contacts p {
   padding-left: 10px;
+}
+.aboutPage .readMore {
+  color: #eb1c23;
+}
+.aboutPage img {
+  float: left;
+  margin: 0px 15px 15px 0px;
+  width: 250px;
+  height: 200px;
 }

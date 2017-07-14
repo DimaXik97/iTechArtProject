@@ -29,53 +29,55 @@
     </header>
     <main>
         <form id="questionForm">
-            <div class="question">
-                <h2 class="title">
-                    Выберете один правильный ответ<span onclick="change(event)"> &#9998;</span> <span onclick="remove(event)">&#10006;</span>
-                </h2>
-                <fieldset class="radio">
-                    <select size="1" name="type" onchange="changeType(this)">
-                        <option selected value="1">Тип 1</option>
-                        <option value="2">Тип 2</option>
-                        <option value="3">Тип 3</option>
-                    </select>
-                    <p><input name="radio-question" type="radio" value="first"> Первый ответ<span onclick="change(event)"> &#9998;</span> <span onclick="remove(event)">&#10006;</span></p>
-                    <p><input name="radio-question" type="radio" value="second"> Второй ответ<span onclick="change(event)"> &#9998;</span> <span onclick="remove(event)">&#10006;</span></p>
-                    <p><input name="radio-question" type="radio" value="third"> Третий ответ<span onclick="change(event)"> &#9998;</span> <span onclick="remove(event)">&#10006;</span></p>
-                    <p><span>&#10010;</span></p>
-                </fieldset>
-            </div>
-            <div class="question">
-                <h2 class="title">
-                    Выберете несколько правильных ответов<span onclick="change(event)"> &#9998;</span> <span onclick="remove(event)">&#10006;</span>
-                </h2>
-                <fieldset class="checkbox">
-                    <select size="1" name="type" onchange="changeType(this)">
-                        <option value="1">Тип 1</option>
-                        <option selected value="2">Тип 2</option>
-                        <option value="3">Тип 3</option>
-                    </select>
-                    <p><input type="checkbox" name="checkbox-question" value="first"> Первый ответ</p>
-                    <p><input type="checkbox" name="checkbox-question" value="second"> Второй ответ</p>
-                    <p><input type="checkbox" name="checkbox-question" value="third"> Третий ответ</p>
-                    <p><input type="checkbox" name="checkbox-question" value="fourth"> Четвертый ответ</p>
-                </fieldset>
-            </div>
-            <div class="question">
-                <h2 class="title">
-                    Обоснуйте Ваш ответ<span onclick="change(event)"> &#9998;</span> <span onclick="remove(event)">&#10006;</span>
-                </h2>
-                <fieldset class="text">
-                    <select size="1" name="type" onchange="changeType(this)">
-                        <option value="1">Тип 1</option>
-                        <option value="2">Тип 2</option>
-                        <option selected value="3">Тип 3</option>
-                    </select>
-                    <p>
-                        <textarea name="text-question" cols="40" rows="3"></textarea></p>
-                    </p>
-                </fieldset>
-            </div>
+            <ul>
+                <li class="question">
+                    <h2 class="title">
+                        Выберете один правильный ответ<span onclick="change(event)"> &#9998;</span> <span onclick="remove(event)">&#10006;</span>
+                    </h2>
+                    <fieldset class="radio">
+                        <select size="1" name="type" onchange="changeType(this)">
+                            <option selected value="1">Тип 1</option>
+                            <option value="2">Тип 2</option>
+                            <option value="3">Тип 3</option>
+                        </select>
+                        <p><input name="radio-question" type="radio" value="first"> Первый ответ<span onclick="change(event)"> &#9998;</span> <span onclick="remove(event)">&#10006;</span></p>
+                        <p><input name="radio-question" type="radio" value="second"> Второй ответ<span onclick="change(event)"> &#9998;</span> <span onclick="remove(event)">&#10006;</span></p>
+                        <p><input name="radio-question" type="radio" value="third"> Третий ответ<span onclick="change(event)"> &#9998;</span> <span onclick="remove(event)">&#10006;</span></p>
+                        <p><span>&#10010;</span></p>
+                    </fieldset>
+                </li>
+                <li class="question">
+                    <h2 class="title">
+                        Выберете несколько правильных ответов<span onclick="change(event)"> &#9998;</span> <span onclick="remove(event)">&#10006;</span>
+                    </h2>
+                    <fieldset class="checkbox">
+                        <select size="1" name="type" onchange="changeType(this)">
+                            <option value="1">Тип 1</option>
+                            <option selected value="2">Тип 2</option>
+                            <option value="3">Тип 3</option>
+                        </select>
+                        <p><input type="checkbox" name="checkbox-question" value="first"> Первый ответ</p>
+                        <p><input type="checkbox" name="checkbox-question" value="second"> Второй ответ</p>
+                        <p><input type="checkbox" name="checkbox-question" value="third"> Третий ответ</p>
+                        <p><input type="checkbox" name="checkbox-question" value="fourth"> Четвертый ответ</p>
+                    </fieldset>
+                </li>
+                <li class="question">
+                    <h2 class="title">
+                        Обоснуйте Ваш ответ<span onclick="change(event)"> &#9998;</span> <span onclick="remove(event)">&#10006;</span>
+                    </h2>
+                    <fieldset class="text">
+                        <select size="1" name="type" onchange="changeType(this)">
+                            <option value="1">Тип 1</option>
+                            <option value="2">Тип 2</option>
+                            <option selected value="3">Тип 3</option>
+                        </select>
+                        <p>
+                            <textarea name="text-question" cols="40" rows="3"></textarea></p>
+                        </p>
+                    </fieldset>
+                </li>
+            </ul>
             <input class="default-btm" type="submit" value="Сохранить">
             <button class="default-btm" onclick="addQuestions(event)">Добавить вопрос</button>
         </form>

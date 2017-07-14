@@ -28,35 +28,37 @@
     </header>
     <main>
         <form>
-            <div class="question">
-                <h2 class="title">
-                    Выберете один правильный ответ
-                </h2>
-                <fieldset>
-                    <p><input name="radio-question" type="radio" value="first"> Первый ответ</p>
-                    <p><input name="radio-question" type="radio" value="second"> Второй ответ</p>
-                    <p><input name="radio-question" type="radio" value="third"> Третий ответ</p>
-                </fieldset>
-            </div>
-            <div class="question">
-                <h2 class="title">
-                Выберете несколько правильных ответов
-                </h2>
-                <fieldset>
-                    <p><input type="checkbox" name="checkbox-question" value="first"> Первый ответ</p>
-                    <p><input type="checkbox" name="checkbox-question" value="second"> Второй ответ</p>
-                    <p><input type="checkbox" name="checkbox-question" value="third"> Третий ответ</p>
-                    <p><input type="checkbox" name="checkbox-question" value="fourth"> Четвертый ответ</p>
-                </fieldset>
-            </div>
-            <div class="question">
-                <h2 class="title">
-                    Обоснуйте Ваш ответ
-                </h2>
-                <fieldset>
-                    <textarea name="text-question" cols="40" rows="3" resize="vertical"></textarea></p>
-                </fieldset>
-            </div>
+            <ul>
+                <li class="question">
+                    <h2 class="title">
+                        Выберете один правильный ответ
+                    </h2>
+                    <fieldset>
+                        <p><input name="radio-question" type="radio" value="first"> Первый ответ</p>
+                        <p><input name="radio-question" type="radio" value="second"> Второй ответ</p>
+                        <p><input name="radio-question" type="radio" value="third"> Третий ответ</p>
+                    </fieldset>
+                </li>
+                <li class="question">
+                    <h2 class="title">
+                    Выберете несколько правильных ответов
+                    </h2>
+                    <fieldset>
+                        <p><input type="checkbox" name="checkbox-question" value="first"> Первый ответ</p>
+                        <p><input type="checkbox" name="checkbox-question" value="second"> Второй ответ</p>
+                        <p><input type="checkbox" name="checkbox-question" value="third"> Третий ответ</p>
+                        <p><input type="checkbox" name="checkbox-question" value="fourth"> Четвертый ответ</p>
+                    </fieldset>
+                </li>
+                <li class="question">
+                    <h2 class="title">
+                        Обоснуйте Ваш ответ
+                    </h2>
+                    <fieldset>
+                        <textarea name="text-question" cols="40" rows="3"></textarea></p>
+                    </fieldset>
+                </li>
+            </ul>
             <input class="default-btm" type="submit" value="Отправить ответы">
         </form>
     </main>
