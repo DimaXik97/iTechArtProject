@@ -23,6 +23,7 @@ header{
         }
     }
 }
+
 main{
     flex: 1;
     background: @white-color;
@@ -30,6 +31,7 @@ main{
 footer{
     display: flex;
     justify-content: center;
+    text-align: center;
     width: 100%;
     color: @footer-color;
     background: @footer-bg;
@@ -108,6 +110,55 @@ footer{
     .default-btm{
         margin-top: 10px; 
     }
+    fieldset{
+        border: none;
+    }
+    
+}
+.aboutPage{
+    .menu{
+        .element-menu{
+            width: @body-width/3;
+            height: (@menu-height);
+            font-size: 20px;
+            text-align: center;
+            text-transform: uppercase;
+            color: @white-color;
+            background: @red-color;
+            transition: @transition;
+            cursor: pointer;
+            &:hover{
+                color:@red-color;
+                background: @white-color;
+            }
+        }
+    }
+    .content{
+        width: @body-width;
+        display:  none;
+    }
+    .active{
+        display: block;
+    }
+    .contacts{
+        width: (@body-width)-@map-width;
+        h2{
+            margin: 10px 0px 10px 10px;
+        };
+        li{
+            padding-left: 10px;
+            list-style: square inside;
+        }
+        p{
+            padding-left: 10px;
+        }
+    }
+    img{
+        float: left;
+        margin: 0px 15px 15px 0px;
+        width: 250px;
+        height: 200px;
+    }
 }
 .question{
     .incorrectAnswer{
@@ -146,7 +197,6 @@ footer{
 .userInfo{
     position: relative;
     .userName{
-        height: @user-data-height;
         font-size: @user-info-font-size;
     }
     .profileMenu{
@@ -183,54 +233,53 @@ li{
     width:  @map-width;
     height: @map-height;
 }
-.aboutPage{
-    .menu{
-        height: @menu-height;
-        .element-menu{
-            width: @body-width/3;
-            height: (@menu-height);
-            font-size: 20px;
-            text-align: center;
-            text-transform: uppercase;
-            color: @white-color;
-            background: @red-color;
-            transition: @transition;
-            cursor: pointer;
-            &:hover{
-                color:@red-color;
-                background: @white-color;
+@media only screen and(max-width : 320px){
+    body{
+        width: @small-mobile-body-width;
+        font-size: @small-mobile-head-font-size;
+    }
+    .element{
+        font-size: @small-mobile-element-font-size;
+        width:@small-mobile-body-width;
+        min-height: 100px;
+        height: auto;
+    }
+    .userInfo{
+        flex-direction: column;
+        .profileMenu
+        {
+            position: relative;
+        }
+    }
+    .question{
+        textarea{
+            width: 250px;
+        }
+    }
+    .authentication{
+        margin: auto;
+    }
+    .aboutPage{
+        .menu{
+            flex-direction: column;
+            .element-menu{
+                width: @small-mobile-body-width;
+                height: @menu-height;
             }
         }
-    }
-    .content{
-        width: @body-width;
-        display:  none;
-    }
-    .active{
-        display: block;
-    }
-    .contacts{
-        width: (@body-width)-@map-width;
-        h2{
-            margin: 10px 0px 10px 10px;
-        };
-        li{
-            padding-left: 10px;
-            list-style: square inside;
+        .content{
+            width: @small-mobile-body-width;
+            text-align: justify;
         }
-        p{
-            padding-left: 10px;
+        .contacts{
+            width: @small-mobile-body-width;
+        }
+        img{
+            display: none;
         }
     }
-    .readMore{
-        color: @red-color;
+    #map{
+        order:1;
     }
-    img{
-        float: left;
-        margin: 0px 15px 15px 0px;
-        width: 250px;
-        height: 200px;
-    }
-
 }
 

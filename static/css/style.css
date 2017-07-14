@@ -145,6 +145,7 @@ main {
 footer {
   display: flex;
   justify-content: center;
+  text-align: center;
   width: 100%;
   color: #737373;
   background: #333;
@@ -222,78 +223,8 @@ footer {
 .authentication .default-btm {
   margin-top: 10px;
 }
-.question .incorrectAnswer {
-  color: red;
-}
-.question .correctAnswer {
-  color: green;
-}
-.question .userAnswer {
-  font-weight: 700;
-}
-.question input[type="radio"],
-.question input[type="checkbox"] {
-  cursor: pointer;
-}
-.question textarea {
-  padding: 12px 10px;
-  border: 1px solid #dcdcdc;
-  resize: vertical;
-}
-.userStatistics {
-  text-align: center;
-  margin-bottom: 10px;
-}
-.userStatistics .item {
-  width: 341.33333333px;
-  height: 100px;
-  padding-top: 10px;
-}
-.userStatistics .value {
-  font-size: 50px;
-  color: #eb1c23;
-}
-.userInfo {
-  position: relative;
-}
-.userInfo .userName {
-  height: 300px;
-  font-size: 50px;
-}
-.userInfo .profileMenu {
-  position: absolute;
-  right: 0;
-  top: 0;
-  display: flex;
-  flex-direction: column;
-}
-.userInfo img {
-  width: 300px;
-  height: 300px;
-}
-fieldset {
-  padding: 20px;
-  border: 1px solid #eb1c23;
-  border-radius: 0 0 5px 5px;
-  background: #FFF;
-}
-input[type="email"],
-input[type="password"],
-input[type="text"] {
-  width: 238px;
-  padding: 12px 10px;
-  border: 1px solid #dcdcdc;
-  color: #eb1c23;
-}
-li {
-  list-style-type: none;
-}
-#map {
-  width: 400px;
-  height: 400px;
-}
-.aboutPage .menu {
-  height: 30px;
+.authentication fieldset {
+  border: none;
 }
 .aboutPage .menu .element-menu {
   width: 341.33333333px;
@@ -330,12 +261,122 @@ li {
 .aboutPage .contacts p {
   padding-left: 10px;
 }
-.aboutPage .readMore {
-  color: #eb1c23;
-}
 .aboutPage img {
   float: left;
   margin: 0px 15px 15px 0px;
   width: 250px;
   height: 200px;
+}
+.question .incorrectAnswer {
+  color: red;
+}
+.question .correctAnswer {
+  color: green;
+}
+.question .userAnswer {
+  font-weight: 700;
+}
+.question input[type="radio"],
+.question input[type="checkbox"] {
+  cursor: pointer;
+}
+.question textarea {
+  padding: 12px 10px;
+  border: 1px solid #dcdcdc;
+  resize: vertical;
+}
+.userStatistics {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.userStatistics .item {
+  width: 341.33333333px;
+  height: 100px;
+  padding-top: 10px;
+}
+.userStatistics .value {
+  font-size: 50px;
+  color: #eb1c23;
+}
+.userInfo {
+  position: relative;
+}
+.userInfo .userName {
+  font-size: 50px;
+}
+.userInfo .profileMenu {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+}
+.userInfo img {
+  width: 320px;
+  height: 300px;
+}
+fieldset {
+  padding: 20px;
+  border: 1px solid #eb1c23;
+  border-radius: 0 0 5px 5px;
+  background: #FFF;
+}
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  width: 238px;
+  padding: 12px 10px;
+  border: 1px solid #dcdcdc;
+  color: #eb1c23;
+}
+li {
+  list-style-type: none;
+}
+#map {
+  width: 400px;
+  height: 400px;
+}
+@media only screen and (max-width: 320px) {
+  body {
+    width: 320px;
+    font-size: 20px;
+  }
+  .element {
+    font-size: 30px;
+    width: 320px;
+    min-height: 100px;
+    height: auto;
+  }
+  .userInfo {
+    flex-direction: column;
+  }
+  .userInfo .profileMenu {
+    position: relative;
+  }
+  .question textarea {
+    width: 250px;
+  }
+  .authentication {
+    margin: auto;
+  }
+  .aboutPage .menu {
+    flex-direction: column;
+  }
+  .aboutPage .menu .element-menu {
+    width: 320px;
+    height: 30px;
+  }
+  .aboutPage .content {
+    width: 320px;
+    text-align: justify;
+  }
+  .aboutPage .contacts {
+    width: 320px;
+  }
+  .aboutPage img {
+    display: none;
+  }
+  #map {
+    order: 1;
+  }
 }
