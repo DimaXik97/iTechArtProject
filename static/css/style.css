@@ -138,6 +138,9 @@ header .menuItem {
 header .menuItem:hover {
   color: #eb1c23;
 }
+header .logo {
+  width: 150px;
+}
 main {
   flex: 1;
   background: #FFF;
@@ -169,7 +172,7 @@ footer {
   border-radius: 0 0 5px 5px;
 }
 .element {
-  width: 256px;
+  width: 25%;
   height: 256px;
   font-size: 25px;
   color: #eb1c23;
@@ -227,7 +230,7 @@ footer {
   border: none;
 }
 .aboutPage .menu .element-menu {
-  width: 341.33333333px;
+  width: 33.33333333%;
   height: 30px;
   font-size: 20px;
   text-align: center;
@@ -242,7 +245,7 @@ footer {
   background: #FFF;
 }
 .aboutPage .content {
-  width: 1024px;
+  width: 100%;
   display: none;
 }
 .aboutPage .active {
@@ -291,7 +294,8 @@ footer {
 }
 .userStatistics .item {
   width: 341.33333333px;
-  height: 100px;
+  min-height: 100px;
+  height: auto;
   padding-top: 10px;
 }
 .userStatistics .value {
@@ -336,47 +340,91 @@ li {
   width: 400px;
   height: 400px;
 }
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 1023px) {
   body {
-    width: 320px;
+    width: 768px;
     font-size: 20px;
   }
   .element {
-    font-size: 30px;
-    width: 320px;
-    min-height: 100px;
-    height: auto;
+    width: 33.33333333%;
+    height: 256px;
+  }
+  .userInfo .userName {
+    width: 448px;
+  }
+  .userInfo .profileMenu {
+    position: relative;
+    width: 100%;
+  }
+  .aboutPage .contacts {
+    width: 100%;
+  }
+  .userStatistics .item {
+    width: 50%;
+  }
+  .authentication {
+    margin: auto;
+  }
+  input[type="text"] {
+    width: 85%;
+  }
+  #map {
+    margin: auto;
+    order: 1;
+  }
+}
+@media only screen and (max-width: 767px) {
+  body {
+    width: 480px;
+  }
+  header {
+    justify-content: flex-end;
+  }
+  header .menu {
+    justify-content: flex-end;
+    width: 330px;
+  }
+  .element {
+    width: 50%;
   }
   .userInfo {
     flex-direction: column;
   }
-  .userInfo .profileMenu {
-    position: relative;
+  .userInfo .userName {
+    width: auto;
+  }
+}
+@media only screen and (max-width: 479px) {
+  body {
+    width: 320px;
+  }
+  header {
+    justify-content: flex-start;
+  }
+  header .menu {
+    width: auto;
+  }
+  .userStatistics .item {
+    width: 100%;
+  }
+  .element {
+    width: 320px;
+    min-height: 100px;
+    height: auto;
   }
   .question textarea {
     width: 250px;
-  }
-  .authentication {
-    margin: auto;
   }
   .aboutPage .menu {
     flex-direction: column;
   }
   .aboutPage .menu .element-menu {
     width: 320px;
-    height: 30px;
   }
   .aboutPage .content {
-    width: 320px;
     text-align: justify;
-  }
-  .aboutPage .contacts {
-    width: 320px;
   }
   .aboutPage img {
     display: none;
-  }
-  #map {
-    order: 1;
   }
 }

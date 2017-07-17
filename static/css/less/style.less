@@ -22,8 +22,10 @@ header{
             color:@red-color;
         }
     }
+    .logo{
+        width: @logo-width;
+    }
 }
-
 main{
     flex: 1;
     background: @white-color;
@@ -55,7 +57,7 @@ footer{
     border-radius: @border-radius-down;
 }
 .element{
-    width: @body-width/4;
+    width: 100%/4;
     height: @body-width/4;
     font-size: @element-font-size;
     color: @red-color;
@@ -118,7 +120,7 @@ footer{
 .aboutPage{
     .menu{
         .element-menu{
-            width: @body-width/3;
+            width: 100%/3;
             height: (@menu-height);
             font-size: 20px;
             text-align: center;
@@ -134,7 +136,7 @@ footer{
         }
     }
     .content{
-        width: @body-width;
+        width: 100%;
         display:  none;
     }
     .active{
@@ -185,7 +187,8 @@ footer{
     margin-bottom: 10px;
     .item{
         width: @body-width/3;
-        height: @user-item-height;
+        min-height: @user-item-height;
+        height: auto;
         padding-top:10px;
     }
     .value
@@ -233,53 +236,106 @@ li{
     width:  @map-width;
     height: @map-height;
 }
-@media only screen and(max-width : 320px){
+@media only screen and(max-width: ((@body-width)-1px)){
     body{
-        width: @small-mobile-body-width;
-        font-size: @small-mobile-head-font-size;
+        width: @tablet-body-width;
+        font-size: @mobile-head-font-size;
     }
     .element{
-        font-size: @small-mobile-element-font-size;
-        width:@small-mobile-body-width;
-        min-height: 100px;
-        height: auto;
+        width: 100%/3;
+        height: @tablet-body-width/3;
     }
     .userInfo{
-        flex-direction: column;
+        .userName{
+            width: (@tablet-body-width)-@user-img-width;
+        }
         .profileMenu
         {
             position: relative;
+            width: 100%;
         }
+    }
+    .aboutPage{
+        .contacts{
+            width: 100%;
+        }
+    }
+    .userStatistics{
+        .item{
+             width: 100%/2;
+        }
+    }
+    .authentication{
+        margin: auto;
+    }
+    input[type="text"]{
+        width: 85%;
+    }
+    #map{
+        margin: auto;
+        order:1;
+    }
+
+}
+@media only screen and(max-width: ((@tablet-body-width)-1px)){
+    body{
+        width: @mobile-body-width;
+    }
+    header{
+        justify-content: flex-end;
+        .menu{
+            justify-content: flex-end;
+            width: (@mobile-body-width)-@logo-width;
+        }
+    }
+    .element{
+        width: 100%/2;
+    }
+    .userInfo{
+        flex-direction: column;
+        .userName{
+            width: auto;
+        }
+    }
+}
+@media only screen and(max-width : ((@mobile-body-width)-1px)){
+    body{
+        width: @small-mobile-body-width;
+    }
+    header{
+        justify-content: flex-start;
+        .menu{
+            width: auto;
+        }
+    }
+    .userStatistics{
+        .item{
+             width: 100%;
+        }
+    }
+    .element{
+        width:@small-mobile-body-width;
+        min-height: 100px;
+        height: auto;
     }
     .question{
         textarea{
             width: 250px;
         }
     }
-    .authentication{
-        margin: auto;
-    }
     .aboutPage{
         .menu{
             flex-direction: column;
             .element-menu{
                 width: @small-mobile-body-width;
-                height: @menu-height;
             }
         }
         .content{
-            width: @small-mobile-body-width;
             text-align: justify;
-        }
-        .contacts{
-            width: @small-mobile-body-width;
         }
         img{
             display: none;
         }
-    }
-    #map{
-        order:1;
     }
 }
 
