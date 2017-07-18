@@ -9772,13 +9772,30 @@ var _footer2 = _interopRequireDefault(_footer);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var user = "Юрашевич Д.";
+var categories = [{
+    name: "C#"
+}, {
+    name: "C++"
+}, {
+    name: "Java"
+}, {
+    name: "Ruby"
+}, {
+    name: "JS"
+}, {
+    name: "HTML"
+}, {
+    name: "CSS"
+}, {
+    name: "XML"
+}];
 console.log(user);
 _reactDom2.default.render(_react2.default.createElement(
-        'div',
-        { className: 'body' },
-        _react2.default.createElement(_header2.default, { user: user }),
-        _react2.default.createElement(_main2.default, null),
-        _react2.default.createElement(_footer2.default, null)
+    'div',
+    { className: 'body' },
+    _react2.default.createElement(_header2.default, { user: user }),
+    _react2.default.createElement(_main2.default, { categories: categories }),
+    _react2.default.createElement(_footer2.default, null)
 ), document.getElementById('app'));
 
 /***/ }),
@@ -22621,173 +22638,25 @@ exports.default = MenuProfile;
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _react = __webpack_require__(82);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _categories = __webpack_require__(192);
+
+var _categories2 = _interopRequireDefault(_categories);
+
+var _user = __webpack_require__(194);
+
+var _user2 = _interopRequireDefault(_user);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Main = function Main() {
-    return _react2.default.createElement(
-        "main",
-        null,
-        _react2.default.createElement(
-            "h1",
-            { className: "title" },
-            "\u0412\u044B\u0431\u0435\u0440\u0435\u0442\u0435 \u043A\u0430\u0442\u0435\u0433\u043E\u0440\u0438\u044E:"
-        ),
-        _react2.default.createElement(
-            "ul",
-            { className: "container" },
-            _react2.default.createElement(
-                "li",
-                { className: "element" },
-                _react2.default.createElement(
-                    "a",
-                    { className: "content-center", href: "adminSubject.html" },
-                    "C#",
-                    _react2.default.createElement(
-                        "p",
-                        { className: "adminMenu" },
-                        _react2.default.createElement("span", { className: "edit", onclick: "raz(event)" }),
-                        " ",
-                        _react2.default.createElement("span", { className: "delete" })
-                    )
-                )
-            ),
-            _react2.default.createElement(
-                "li",
-                { className: "element" },
-                _react2.default.createElement(
-                    "a",
-                    { className: "content-center", href: "adminSubject.html" },
-                    "C++",
-                    _react2.default.createElement(
-                        "p",
-                        { className: "adminMenu" },
-                        _react2.default.createElement("span", { className: "edit", onclick: "raz(event)" }),
-                        " ",
-                        _react2.default.createElement("span", { className: "delete" })
-                    )
-                )
-            ),
-            _react2.default.createElement(
-                "li",
-                { className: "element" },
-                _react2.default.createElement(
-                    "a",
-                    { className: "content-center", href: "adminSubject.html" },
-                    "Ruby",
-                    _react2.default.createElement(
-                        "p",
-                        { className: "adminMenu" },
-                        _react2.default.createElement("span", { className: "edit", onclick: "raz(event)" }),
-                        " ",
-                        _react2.default.createElement("span", { className: "delete" })
-                    )
-                )
-            ),
-            _react2.default.createElement(
-                "li",
-                { className: "element" },
-                _react2.default.createElement(
-                    "a",
-                    { className: "content-center", href: "adminSubject.html" },
-                    "Java",
-                    _react2.default.createElement(
-                        "p",
-                        { className: "adminMenu" },
-                        _react2.default.createElement("span", { className: "edit", onclick: "raz(event)" }),
-                        " ",
-                        _react2.default.createElement("span", { className: "delete" })
-                    )
-                )
-            ),
-            _react2.default.createElement(
-                "li",
-                { className: "element" },
-                _react2.default.createElement(
-                    "a",
-                    { className: "content-center", href: "adminSubject.html" },
-                    "JS",
-                    _react2.default.createElement(
-                        "p",
-                        { className: "adminMenu" },
-                        _react2.default.createElement("span", { className: "edit", onclick: "raz(event)" }),
-                        " ",
-                        _react2.default.createElement("span", { className: "delete" })
-                    )
-                )
-            ),
-            _react2.default.createElement(
-                "li",
-                { className: "element" },
-                _react2.default.createElement(
-                    "a",
-                    { className: "content-center", href: "adminSubject.html" },
-                    "HTML",
-                    _react2.default.createElement(
-                        "p",
-                        { className: "adminMenu" },
-                        _react2.default.createElement("span", { className: "edit", onclick: "raz(event)" }),
-                        " ",
-                        _react2.default.createElement("span", { className: "delete" })
-                    )
-                )
-            ),
-            _react2.default.createElement(
-                "li",
-                { className: "element" },
-                _react2.default.createElement(
-                    "a",
-                    { className: "content-center", href: "adminSubject.html" },
-                    "CSS",
-                    _react2.default.createElement(
-                        "p",
-                        { className: "adminMenu" },
-                        _react2.default.createElement("span", { className: "edit", onclick: "raz(event)" }),
-                        " ",
-                        _react2.default.createElement("span", { className: "delete" })
-                    )
-                )
-            ),
-            _react2.default.createElement(
-                "li",
-                { className: "element" },
-                _react2.default.createElement(
-                    "a",
-                    { className: "content-center", href: "adminSubject.html" },
-                    "XML",
-                    _react2.default.createElement(
-                        "p",
-                        { className: "adminMenu" },
-                        _react2.default.createElement("span", { className: "edit", onclick: "raz(event)" }),
-                        " ",
-                        _react2.default.createElement("span", { className: "delete" })
-                    )
-                )
-            ),
-            _react2.default.createElement(
-                "li",
-                { className: "element" },
-                _react2.default.createElement(
-                    "a",
-                    { className: "content-center", href: "adminSubject.html" },
-                    "C#",
-                    _react2.default.createElement(
-                        "p",
-                        { className: "adminMenu" },
-                        _react2.default.createElement("span", { className: "edit", onclick: "raz(event)" }),
-                        " ",
-                        _react2.default.createElement("span", { className: "delete" })
-                    )
-                )
-            )
-        )
-    );
+var Main = function Main(props) {
+  return _react2.default.createElement(_user2.default, null);
 };
 
 exports.default = Main;
@@ -22822,6 +22691,342 @@ var Footer = function Footer() {
 };
 
 exports.default = Footer;
+
+/***/ }),
+/* 191 */,
+/* 192 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(82);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _element = __webpack_require__(193);
+
+var _element2 = _interopRequireDefault(_element);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Categories = function Categories(props) {
+    console.log(props.categories);
+    return _react2.default.createElement(
+        "main",
+        null,
+        _react2.default.createElement(
+            "h1",
+            { className: "title" },
+            "\u0412\u044B\u0431\u0435\u0440\u0435\u0442\u0435 \u043A\u0430\u0442\u0435\u0433\u043E\u0440\u0438\u044E:"
+        ),
+        _react2.default.createElement(_element2.default, { categories: props.categories })
+    );
+};
+exports.default = Categories;
+
+/***/ }),
+/* 193 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(82);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Element = function Element(props) {
+    console.log(props.categories);
+    return _react2.default.createElement(
+        "ul",
+        { className: "container" },
+        props.categories.map(function (element, num) {
+            return _react2.default.createElement(
+                "li",
+                { key: num, className: "element" },
+                _react2.default.createElement(
+                    "a",
+                    { className: "content-center", href: "subject.html" },
+                    element.name
+                )
+            );
+        })
+    );
+};
+exports.default = Element;
+
+/***/ }),
+/* 194 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(82);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _userInfo = __webpack_require__(195);
+
+var _userInfo2 = _interopRequireDefault(_userInfo);
+
+var _userStatistics = __webpack_require__(199);
+
+var _userStatistics2 = _interopRequireDefault(_userStatistics);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var User = function User() {
+  return _react2.default.createElement(
+    "main",
+    null,
+    _react2.default.createElement(_userInfo2.default, null),
+    _react2.default.createElement(_userStatistics2.default, null)
+  );
+};
+exports.default = User;
+
+/***/ }),
+/* 195 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(82);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _userMenu = __webpack_require__(196);
+
+var _userMenu2 = _interopRequireDefault(_userMenu);
+
+var _userName = __webpack_require__(197);
+
+var _userName2 = _interopRequireDefault(_userName);
+
+var _userPhoto = __webpack_require__(198);
+
+var _userPhoto2 = _interopRequireDefault(_userPhoto);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var UserInfo = function UserInfo() {
+  return _react2.default.createElement(
+    "div",
+    { className: "userInfo container" },
+    _react2.default.createElement(_userPhoto2.default, null),
+    _react2.default.createElement(_userName2.default, null),
+    _react2.default.createElement(_userMenu2.default, null)
+  );
+};
+exports.default = UserInfo;
+
+/***/ }),
+/* 196 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(82);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var userBtm = { admin: ["Заблокировать"],
+    user: ["Изменить фотографию", "Изменить имя", "Изменить пароль"] };
+
+function generateBtm(user) {
+    if (user == "admin") return userBtm.admin;else return userBtm.user;
+}
+var UserMenu = function UserMenu() {
+    return _react2.default.createElement(
+        "div",
+        { className: "profileMenu" },
+        generateBtm("admin").map(function (element) {
+            return _react2.default.createElement(
+                "button",
+                { className: "default-btm" },
+                element
+            );
+        })
+    );
+};
+exports.default = UserMenu;
+
+/***/ }),
+/* 197 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(82);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var user = {
+    name: "Имя",
+    surname: "Фамилия"
+};
+var UserName = function UserName() {
+    return _react2.default.createElement(
+        "div",
+        { className: "userName" },
+        _react2.default.createElement(
+            "p",
+            null,
+            user.surname
+        ),
+        _react2.default.createElement(
+            "p",
+            null,
+            user.name
+        )
+    );
+};
+exports.default = UserName;
+
+/***/ }),
+/* 198 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(82);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var UserPhoto = function UserPhoto() {
+  return _react2.default.createElement(
+    "div",
+    { className: "userPhoto" },
+    _react2.default.createElement("img", { alt: "userPhoto", src: "img/default_photo.png" })
+  );
+};
+exports.default = UserPhoto;
+
+/***/ }),
+/* 199 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(82);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _item = __webpack_require__(200);
+
+var _item2 = _interopRequireDefault(_item);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var statistics = [{
+    data: "Дата регистрации",
+    value: "12.12.2017"
+}, {
+    data: "Количество прошедших тестов",
+    value: "99"
+}, {
+    data: "Самый посещаемый раздел",
+    value: "C#"
+}, {
+    data: "Количество правельных",
+    value: "52"
+}, {
+    data: "Количество неправельных",
+    value: "47"
+}];
+
+var UserStatistics = function UserStatistics() {
+    return _react2.default.createElement(
+        'ul',
+        { className: 'userStatistics container' },
+        statistics.map(function (element, num) {
+            return _react2.default.createElement(_item2.default, { key: num, element: element });
+        })
+    );
+};
+exports.default = UserStatistics;
+
+/***/ }),
+/* 200 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(82);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Item = function Item(props) {
+  return _react2.default.createElement(
+    "li",
+    { className: "item" },
+    _react2.default.createElement(
+      "p",
+      { className: "value" },
+      props.element.value
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      props.element.data
+    )
+  );
+};
+exports.default = Item;
 
 /***/ })
 /******/ ]);

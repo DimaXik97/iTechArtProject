@@ -1,15 +1,18 @@
 @import "reset.less";
 @import "variables.less";
-.body{
-    display: flex;
-    flex-direction: column;
+body
+{
+    width: @body-width; 
     margin: auto;
-    width: @body-width;
-    min-height: 100vh;
     font-family: @font-page;
     font-size: 16px;
     color: @color-header-links;
-    background: @backgroun-color; 
+    background: @backgroun-color;
+}
+.body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
 }
 header{
     justify-content: space-between;
