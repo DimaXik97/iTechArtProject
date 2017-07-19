@@ -9779,6 +9779,14 @@ var _footer = __webpack_require__(199);
 
 var _footer2 = _interopRequireDefault(_footer);
 
+var _authentication = __webpack_require__(203);
+
+var _authentication2 = _interopRequireDefault(_authentication);
+
+var _SignIn = __webpack_require__(204);
+
+var _SignIn2 = _interopRequireDefault(_SignIn);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var user = "Юрашевич Д.";
@@ -9800,13 +9808,12 @@ var categories = [{
     name: "XML"
 }];
 console.log(user);
-_reactDom2.default.render(_react2.default.createElement(
-    'div',
-    { className: 'body' },
-    _react2.default.createElement(_header2.default, { user: user }),
-    _react2.default.createElement(_main2.default, { categories: categories }),
-    _react2.default.createElement(_footer2.default, null)
-), document.getElementById('app'));
+/*<div className='body'>
+    <Header user={user}/>
+    <Main categories={categories}/>
+    <Footer/>
+    </div>*/
+_reactDom2.default.render(_react2.default.createElement(_authentication2.default, { form: _react2.default.createElement(_SignIn2.default, null), type: "Авторизария:" }), document.getElementById('app'));
 
 /***/ }),
 /* 83 */
@@ -23200,6 +23207,76 @@ var Select = function Select(props) {
   );
 };
 exports.default = Select;
+
+/***/ }),
+/* 203 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(7);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Main = function Main(props) {
+    return _react2.default.createElement(
+        "div",
+        { className: "authentication" },
+        _react2.default.createElement(
+            "h1",
+            { className: "title" },
+            props.type
+        ),
+        _react2.default.createElement(
+            "form",
+            null,
+            props.form
+        )
+    );
+};
+
+exports.default = Main;
+
+/***/ }),
+/* 204 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+      value: true
+});
+
+var _react = __webpack_require__(7);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var SignIn = function SignIn(props) {
+      return _react2.default.createElement(
+            "fieldset",
+            null,
+            _react2.default.createElement("input", { type: "email", placeholder: "E-mail" }),
+            _react2.default.createElement("input", { type: "password", placeholder: "\u041F\u0430\u0440\u043E\u043B\u044C" }),
+            _react2.default.createElement("input", { className: "default-btm", type: "submit", value: "\u0412\u043E\u0439\u0442\u0438" }),
+            _react2.default.createElement(
+                  "button",
+                  { className: "default-btm" },
+                  "\u0420\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044F"
+            )
+      );
+};
+
+exports.default = SignIn;
 
 /***/ })
 /******/ ]);
