@@ -1,5 +1,5 @@
 import React from 'react';
-import QuestionItem from './item.jsx';
+import QuestionItem from './../components/main/question/item.jsx';
 let questions=[
     {
         id: 1,

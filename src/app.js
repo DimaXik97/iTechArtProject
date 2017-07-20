@@ -11,7 +11,7 @@ ReactDOM.render(
     <HashRouter>
         <Switch>
             <Route path="/auth" component={Authentication}/>
-            <Route exact path="/" component={Main}/>
+            <Route path="/" component={Main}/>
         </Switch>
     </HashRouter>,
     document.getElementById('app'));

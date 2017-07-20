@@ -11315,7 +11315,7 @@ _reactDom2.default.render(_react2.default.createElement(
         _reactRouterDom.Switch,
         null,
         _react2.default.createElement(_reactRouterDom.Route, { path: '/auth', component: _authentication2.default }),
-        _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _main2.default })
+        _react2.default.createElement(_reactRouterDom.Route, { path: '/', component: _main2.default })
     )
 ), document.getElementById('app'));
 
@@ -25761,6 +25761,8 @@ var _react = __webpack_require__(7);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactRouterDom = __webpack_require__(92);
+
 var _header = __webpack_require__(228);
 
 var _header2 = _interopRequireDefault(_header);
@@ -25769,14 +25771,42 @@ var _footer = __webpack_require__(232);
 
 var _footer2 = _interopRequireDefault(_footer);
 
+var _categories = __webpack_require__(234);
+
+var _categories2 = _interopRequireDefault(_categories);
+
+var _about = __webpack_require__(235);
+
+var _about2 = _interopRequireDefault(_about);
+
+var _user = __webpack_require__(236);
+
+var _user2 = _interopRequireDefault(_user);
+
+var _test = __webpack_require__(237);
+
+var _test2 = _interopRequireDefault(_test);
+
+var _question = __webpack_require__(238);
+
+var _question2 = _interopRequireDefault(_question);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Main = function Main(props) {
+var Main = function Main() {
   return _react2.default.createElement(
-    "div",
-    { className: "body" },
+    'div',
+    { className: 'body' },
     _react2.default.createElement(_header2.default, null),
-    "sdf",
+    _react2.default.createElement(
+      _reactRouterDom.Switch,
+      null,
+      _react2.default.createElement(_reactRouterDom.Route, { path: '/profile', component: _user2.default }),
+      _react2.default.createElement(_reactRouterDom.Route, { path: '/test', component: _test2.default }),
+      _react2.default.createElement(_reactRouterDom.Route, { path: '/question', component: _question2.default }),
+      _react2.default.createElement(_reactRouterDom.Route, { path: '/about', component: _about2.default }),
+      _react2.default.createElement(_reactRouterDom.Route, { path: '/', component: _categories2.default })
+    ),
     _react2.default.createElement(_footer2.default, null)
   );
 };
@@ -25939,7 +25969,7 @@ var Header = function Header() {
     _react2.default.createElement(
       "ul",
       { className: "menu container" },
-      _react2.default.createElement(_link2.default, { nameLink: "\u0424\u0430\u043C\u0438\u043B\u0438\u044F \u0418.", link: "/user" }),
+      _react2.default.createElement(_link2.default, { nameLink: "\u0424\u0430\u043C\u0438\u043B\u0438\u044F \u0418.", link: "/profile" }),
       _react2.default.createElement(_link2.default, { nameLink: "\u0412\u044B\u0439\u0442\u0438", link: "/auth" })
     )
   );
@@ -26012,6 +26042,588 @@ var defLink = function defLink(props) {
   );
 };
 exports.default = defLink;
+
+/***/ }),
+/* 234 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(7);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _element = __webpack_require__(239);
+
+var _element2 = _interopRequireDefault(_element);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var categories = [{
+    name: "C#"
+}, {
+    name: "C++"
+}, {
+    name: "Java"
+}, {
+    name: "Ruby"
+}, {
+    name: "JS"
+}, {
+    name: "HTML"
+}, {
+    name: "CSS"
+}, {
+    name: "XML"
+}];
+
+var Categories = function Categories() {
+    return _react2.default.createElement(
+        "main",
+        null,
+        _react2.default.createElement(
+            "h1",
+            { className: "title" },
+            "\u0412\u044B\u0431\u0435\u0440\u0435\u0442\u0435 \u043A\u0430\u0442\u0435\u0433\u043E\u0440\u0438\u044E:"
+        ),
+        _react2.default.createElement(_element2.default, { categories: categories })
+    );
+};
+exports.default = Categories;
+
+/***/ }),
+/* 235 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/***/ }),
+/* 236 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(7);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _userInfo = __webpack_require__(243);
+
+var _userInfo2 = _interopRequireDefault(_userInfo);
+
+var _userStatistics = __webpack_require__(247);
+
+var _userStatistics2 = _interopRequireDefault(_userStatistics);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var User = function User() {
+  return _react2.default.createElement(
+    "main",
+    null,
+    _react2.default.createElement(_userInfo2.default, null),
+    _react2.default.createElement(_userStatistics2.default, null)
+  );
+};
+exports.default = User;
+
+/***/ }),
+/* 237 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(7);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _element = __webpack_require__(239);
+
+var _element2 = _interopRequireDefault(_element);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var categories = [{
+    name: "C#"
+}, {
+    name: "C++"
+}, {
+    name: "Java"
+}, {
+    name: "Ruby"
+}, {
+    name: "JS"
+}, {
+    name: "HTML"
+}, {
+    name: "CSS"
+}, {
+    name: "XML"
+}];
+
+var Test = function Test() {
+    return _react2.default.createElement(
+        "main",
+        null,
+        _react2.default.createElement(
+            "h1",
+            { className: "title" },
+            "\u0412\u044B\u0431\u0435\u0440\u0435\u0442\u0435 \u0442\u0435\u0441\u0442:"
+        ),
+        _react2.default.createElement(_element2.default, { categories: categories })
+    );
+};
+exports.default = Test;
+
+/***/ }),
+/* 238 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(7);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _item = __webpack_require__(240);
+
+var _item2 = _interopRequireDefault(_item);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var questions = [{
+    id: 1,
+    type: 1,
+    question: "Первый вопрос?",
+    answers: [{ id: 1, text: "Первый ответ" }, { id: 2, text: "Второй ответ" }, { id: 3, text: "Третий ответ" }, { id: 4, text: "Четвертый ответ" }]
+}, {
+    id: 2,
+    type: 2,
+    question: "Второй вопрос?",
+    answers: [{ id: 1, text: "Первый ответ" }, { id: 2, text: "Второй ответ" }, { id: 3, text: "Третий ответ" }, { id: 4, text: "Четвертый ответ" }]
+}, {
+    id: 3,
+    type: 3,
+    question: "Третий вопрос?"
+}];
+
+var QuestionList = function QuestionList() {
+    return _react2.default.createElement(
+        'main',
+        null,
+        _react2.default.createElement(
+            'form',
+            null,
+            _react2.default.createElement(
+                'ul',
+                null,
+                questions.map(function (element, num) {
+                    return _react2.default.createElement(_item2.default, { key: num, item: element });
+                })
+            ),
+            _react2.default.createElement('input', { className: 'default-btm', type: 'submit', value: '\u041E\u0442\u043F\u0440\u0430\u0432\u0438\u0442\u044C \u043E\u0442\u0432\u0435\u0442\u044B' })
+        )
+    );
+};
+exports.default = QuestionList;
+
+/***/ }),
+/* 239 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(7);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Element = function Element(props) {
+    return _react2.default.createElement(
+        "ul",
+        { className: "container" },
+        props.categories.map(function (element, num) {
+            return _react2.default.createElement(
+                "li",
+                { key: num, className: "element" },
+                _react2.default.createElement(
+                    "a",
+                    { className: "content-center", href: "subject.html" },
+                    element.name
+                )
+            );
+        })
+    );
+};
+exports.default = Element;
+
+/***/ }),
+/* 240 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(7);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _text = __webpack_require__(241);
+
+var _text2 = _interopRequireDefault(_text);
+
+var _select = __webpack_require__(242);
+
+var _select2 = _interopRequireDefault(_select);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function getAnswer(item) {
+    switch (item.type) {
+        case 1:
+            {
+                return item.answers.map(function (element, num) {
+                    return _react2.default.createElement(_select2.default, { type: "radio", key: num, id: item.id, answer: element });
+                });
+            }
+        case 2:
+            {
+                return item.answers.map(function (element, num) {
+                    return _react2.default.createElement(_select2.default, { type: "checkbox", key: num, id: item.id, answer: element });
+                });
+            }
+        case 3:
+            {
+                return _react2.default.createElement(_text2.default, null);
+            }
+    }
+}
+
+var QuestionItem = function QuestionItem(props) {
+    return _react2.default.createElement(
+        'li',
+        { className: 'question' },
+        _react2.default.createElement(
+            'h2',
+            { className: 'title' },
+            props.item.question
+        ),
+        _react2.default.createElement(
+            'fieldset',
+            null,
+            getAnswer(props.item)
+        )
+    );
+};
+exports.default = QuestionItem;
+
+/***/ }),
+/* 241 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(7);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Text = function Text() {
+  return _react2.default.createElement("textarea", { name: "text-question", cols: "40", rows: "3" });
+};
+exports.default = Text;
+
+/***/ }),
+/* 242 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(7);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Select = function Select(props) {
+  return _react2.default.createElement(
+    "p",
+    null,
+    _react2.default.createElement("input", { name: props.type + "-" + props.id, type: props.type, value: props.answer.value }),
+    " ",
+    props.answer.text
+  );
+};
+exports.default = Select;
+
+/***/ }),
+/* 243 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(7);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _userMenu = __webpack_require__(244);
+
+var _userMenu2 = _interopRequireDefault(_userMenu);
+
+var _userName = __webpack_require__(245);
+
+var _userName2 = _interopRequireDefault(_userName);
+
+var _userPhoto = __webpack_require__(246);
+
+var _userPhoto2 = _interopRequireDefault(_userPhoto);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var UserInfo = function UserInfo() {
+  return _react2.default.createElement(
+    "div",
+    { className: "userInfo container" },
+    _react2.default.createElement(_userPhoto2.default, null),
+    _react2.default.createElement(_userName2.default, null),
+    _react2.default.createElement(_userMenu2.default, null)
+  );
+};
+exports.default = UserInfo;
+
+/***/ }),
+/* 244 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(7);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var userBtm = { admin: ["Заблокировать"],
+    user: ["Изменить фотографию", "Изменить имя", "Изменить пароль"] };
+
+function generateBtm(user) {
+    if (user == "admin") return userBtm.admin;else return userBtm.user;
+}
+var UserMenu = function UserMenu() {
+    return _react2.default.createElement(
+        "div",
+        { className: "profileMenu" },
+        generateBtm("admin").map(function (element) {
+            return _react2.default.createElement(
+                "button",
+                { className: "default-btm" },
+                element
+            );
+        })
+    );
+};
+exports.default = UserMenu;
+
+/***/ }),
+/* 245 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(7);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var user = {
+    name: "Имя",
+    surname: "Фамилия"
+};
+var UserName = function UserName() {
+    return _react2.default.createElement(
+        "div",
+        { className: "userName" },
+        _react2.default.createElement(
+            "p",
+            null,
+            user.surname
+        ),
+        _react2.default.createElement(
+            "p",
+            null,
+            user.name
+        )
+    );
+};
+exports.default = UserName;
+
+/***/ }),
+/* 246 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(7);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var UserPhoto = function UserPhoto() {
+  return _react2.default.createElement(
+    "div",
+    { className: "userPhoto" },
+    _react2.default.createElement("img", { alt: "userPhoto", src: "img/default_photo.png" })
+  );
+};
+exports.default = UserPhoto;
+
+/***/ }),
+/* 247 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(7);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _item = __webpack_require__(248);
+
+var _item2 = _interopRequireDefault(_item);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var statistics = [{
+    data: "Дата регистрации",
+    value: "12.12.2017"
+}, {
+    data: "Количество прошедших тестов",
+    value: "99"
+}, {
+    data: "Самый посещаемый раздел",
+    value: "C#"
+}, {
+    data: "Количество правельных",
+    value: "52"
+}, {
+    data: "Количество неправельных",
+    value: "47"
+}];
+
+var UserStatistics = function UserStatistics() {
+    return _react2.default.createElement(
+        'ul',
+        { className: 'userStatistics container' },
+        statistics.map(function (element, num) {
+            return _react2.default.createElement(_item2.default, { key: num, element: element });
+        })
+    );
+};
+exports.default = UserStatistics;
+
+/***/ }),
+/* 248 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(7);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Item = function Item(props) {
+  return _react2.default.createElement(
+    "li",
+    { className: "item" },
+    _react2.default.createElement(
+      "p",
+      { className: "value" },
+      props.element.value
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      props.element.data
+    )
+  );
+};
+exports.default = Item;
 
 /***/ })
 /******/ ]);

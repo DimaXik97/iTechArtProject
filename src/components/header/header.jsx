@@ -12,7 +12,7 @@ const Header = ()=> {
       <DefaultLink nameLink="О компании" link="/about"/>
     </ul>
     <ul className="menu container">
-      <DefaultLink nameLink="Фамилия И." link="/user"/>
+      <DefaultLink nameLink="Фамилия И." link="/profile"/>
       <DefaultLink nameLink="Выйти" link="/auth"/>
     </ul>
   </header>);
