@@ -1,10 +1,33 @@
 import React from 'react';
 
+let categories=[{
+    name: "C#"
+},{
+    name: "C++"
+},
+{
+    name: "Java"
+},
+{
+    name: "Ruby"
+},
+{
+    name: "JS"
+},
+{
+    name: "HTML"
+},
+{
+    name: "CSS"
+},
+{
+    name: "XML"
+}];
+
 const Element = (props)=> {
-    console.log(props.categories);
   return (
     <ul className="container">
-        {props.categories.map((element, num)=>{
+        {categories.map((element, num)=>{
             return (
                 <li key={num} className="element">
                     <a className="content-center" href="subject.html">

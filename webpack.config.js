@@ -9,7 +9,7 @@ module.exports={
             }
         }]
     },
-    entry: './react/index.js',
+    entry: './src/app.js',
     output: {
         path: __dirname +'/static/js',
         filename: 'bundle.js'
