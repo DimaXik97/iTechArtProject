@@ -8,12 +8,12 @@ const Header = ()=> {
       <img src="img/logo.png"/>
     </div>
     <ul className="menu container">
-      <DefaultLink nameLink="Главная" link="/"/>
-      <DefaultLink nameLink="О компании" link="/about"/>
+      <DefaultLink nameLink="Тесты" link="/test"/>
+      <DefaultLink nameLink="О компании" link="/"/>
     </ul>
     <ul className="menu container">
       <DefaultLink nameLink="Фамилия И." link="/profile"/>
-      <DefaultLink nameLink="Выйти" link="/auth"/>
+      <DefaultLink nameLink="Выйти" link="/signIn"/>
     </ul>
   </header>);
 };
