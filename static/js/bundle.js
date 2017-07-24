@@ -25951,10 +25951,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 console.log(window.location.pathname);
 var Main = function Main() {
+  var isAdmin = window.location.pathname.indexOf("/admin/") == 0;
   return _react2.default.createElement(
     'div',
     { className: 'body' },
-    _react2.default.createElement(_header2.default, null),
+    _react2.default.createElement(_header2.default, { isAdmin: isAdmin }),
     _react2.default.createElement(
       _reactRouterDom.Switch,
       null,
@@ -25996,7 +25997,7 @@ var _link2 = _interopRequireDefault(_link);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Header = function Header() {
+var Header = function Header(props) {
   return _react2.default.createElement(
     "header",
     { className: "container" },
@@ -26014,7 +26015,7 @@ var Header = function Header() {
     _react2.default.createElement(
       "ul",
       { className: "menu container" },
-      _react2.default.createElement(_link2.default, { nameLink: "\u0424\u0430\u043C\u0438\u043B\u0438\u044F \u0418.", link: "/profile" }),
+      _react2.default.createElement(_link2.default, { nameLink: props.isAdmin ? "Пользователи" : "Фамилия И.", link: props.isAdmin ? "/admin/user" : "/profile" }),
       _react2.default.createElement(_link2.default, { nameLink: "\u0412\u044B\u0439\u0442\u0438", link: "/signIn" })
     )
   );
@@ -26464,6 +26465,7 @@ var categories = [{
 }];
 
 var Test = function Test() {
+    var isAdmin = window.location.pathname.indexOf("/admin/") == 0;
     return _react2.default.createElement(
         "main",
         null,
@@ -26472,7 +26474,7 @@ var Test = function Test() {
             { className: "title" },
             "\u0412\u044B\u0431\u0435\u0440\u0435\u0442\u0435 \u0442\u0435\u0441\u0442:"
         ),
-        _react2.default.createElement(_element2.default, { url: window.location.pathname, categories: categories })
+        _react2.default.createElement(_element2.default, { url: window.location.pathname, categories: categories, isAdmin: isAdmin })
     );
 };
 exports.default = Test;

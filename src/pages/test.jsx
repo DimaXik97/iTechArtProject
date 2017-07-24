@@ -35,10 +35,11 @@ let categories=[{
 
 
 const Test = ()=> {
+    let isAdmin = window.location.pathname.indexOf("/admin/")==0;
   return (
     <main>
         <h1 className="title">Выберете тест:</h1>
-        <Element url={window.location.pathname} categories={categories}/>
+        <Element url={window.location.pathname} categories={categories} isAdmin={isAdmin}/>
     </main>
   );
 };

@@ -12,9 +12,10 @@ import Questions from "./question.jsx";
 
 console.log(window.location.pathname);
 const Main = ()=> {
+  let isAdmin = window.location.pathname.indexOf("/admin/")==0;
   return (
         <div className="body">
-          <Header/>
+          <Header isAdmin={isAdmin}/>
           <Switch>
             <Route path="/admin/test/:catigories/:test" component={Questions}/>
             <Route path="/admin/test/:catigories" component={Test}/>
