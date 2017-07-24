@@ -1,5 +1,8 @@
 import React from 'react';
+
 import QuestionItem from './../components/main/question/item.jsx';
+import Element from "./../components/main/element.jsx";
+
 let questions=[
     {
         id: 1,
@@ -25,9 +28,48 @@ let questions=[
         question: "Третий вопрос?"
     },
 
-]
+];
+let tests=[{
+  id: 1,
+  user: {
+      name: "1",
+      surName: "user"
+  },
+  date: "10.12.2017"
+},{
+  id: 2,
+  user: {
+      name: "2",
+      surName: "user"
+  },
+  date: "10.12.2017"
+},{
+  id: 3,
+  user: {
+      name: "4",
+      surName: "user"
+  },
+  date: "11.12.2017"
+},{
+  id: 4,
+  user: {
+      name: "2",
+      surName: "user"
+  },
+  date: "13.12.2017"
+}];
+function usersTests(isAdmin){
+    usersTests="";
+    if(isAdmin){
+        usersTests=(<div><h2 className="title">Ответы пользователей:</h2>
+        <Element url={"/admin/question"} data={tests.map((element)=>{return {id:element.id, text: `${element.user.surName} ${element.user.name} ${element.date}`}})}/>
+        </div>);
+    }
+    return usersTests;
+}
 
 const QuestionList = ()=> {
+    let isAdmin = window.location.pathname.indexOf("/admin/")==0;
   return (
     <main>
         <form>
@@ -38,6 +80,7 @@ const QuestionList = ()=> {
             </ul>
             <input className="default-btm" type="submit" value="Отправить ответы"/>
         </form>
+       {usersTests(isAdmin)} 
     </main>
   );
 };

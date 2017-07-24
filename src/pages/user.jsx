@@ -42,9 +42,7 @@ const User = ()=> {
     <main>
         <UserInfo/>
         <UserStatistics/>
-        {
-          userQuestions(isAdmin)
-        }
+        {userQuestions(isAdmin)}
     </main>
   );
 };

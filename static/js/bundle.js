@@ -26566,6 +26566,10 @@ var _item = __webpack_require__(242);
 
 var _item2 = _interopRequireDefault(_item);
 
+var _element = __webpack_require__(96);
+
+var _element2 = _interopRequireDefault(_element);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var questions = [{
@@ -26583,8 +26587,56 @@ var questions = [{
     type: 3,
     question: "Третий вопрос?"
 }];
+var tests = [{
+    id: 1,
+    user: {
+        name: "1",
+        surName: "user"
+    },
+    date: "10.12.2017"
+}, {
+    id: 2,
+    user: {
+        name: "2",
+        surName: "user"
+    },
+    date: "10.12.2017"
+}, {
+    id: 3,
+    user: {
+        name: "4",
+        surName: "user"
+    },
+    date: "11.12.2017"
+}, {
+    id: 4,
+    user: {
+        name: "2",
+        surName: "user"
+    },
+    date: "13.12.2017"
+}];
+function usersTests(isAdmin) {
+    usersTests = "";
+    if (isAdmin) {
+        usersTests = _react2.default.createElement(
+            'div',
+            null,
+            _react2.default.createElement(
+                'h2',
+                { className: 'title' },
+                '\u041E\u0442\u0432\u0435\u0442\u044B \u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u0435\u0439:'
+            ),
+            _react2.default.createElement(_element2.default, { url: "/admin/question", data: tests.map(function (element) {
+                    return { id: element.id, text: element.user.surName + ' ' + element.user.name + ' ' + element.date };
+                }) })
+        );
+    }
+    return usersTests;
+}
 
 var QuestionList = function QuestionList() {
+    var isAdmin = window.location.pathname.indexOf("/admin/") == 0;
     return _react2.default.createElement(
         'main',
         null,
@@ -26599,7 +26651,8 @@ var QuestionList = function QuestionList() {
                 })
             ),
             _react2.default.createElement('input', { className: 'default-btm', type: 'submit', value: '\u041E\u0442\u043F\u0440\u0430\u0432\u0438\u0442\u044C \u043E\u0442\u0432\u0435\u0442\u044B' })
-        )
+        ),
+        usersTests(isAdmin)
     );
 };
 exports.default = QuestionList;
