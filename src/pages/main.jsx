@@ -7,6 +7,7 @@ import Footer from "./../components/footer/footer.jsx";
 import Categories from "./categories.jsx";
 import About from "./about.jsx";
 import Profile from "./user.jsx";
+import Users from "./users.jsx";
 import Test from "./test.jsx";
 import Questions from "./question.jsx";
 
@@ -21,7 +22,7 @@ const Main = ()=> {
             <Route path="/admin/test/:catigories" component={Test}/>
             <Route path="/admin/test" component={Categories}/>
             <Route path="/admin/user/:id" component={Profile}/>
-            <Route path="/admin/user" component={About}/>
+            <Route path="/admin/user" component={Users}/>
             <Route path="/test/:catigories/:test" component={Questions}/>
             <Route path="/test/:catigories" component={Test}/>
             <Route path="/test" component={Categories}/>

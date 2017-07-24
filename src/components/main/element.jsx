@@ -17,10 +17,10 @@ function adminElements(isAdmin)
 const Element = (props)=> {
   return (
     <ul className="container">
-        {props.categories.map((element, num)=>{
+        {props.data.map((element, num)=>{
             return (
                 <li key={element.id} className="element">
-                    <Link to={props.url+"/"+element.id} className="content-center">{element.name}
+                    <Link to={props.url+"/"+element.id} className="content-center">{element.text}
                         {adminElements(props.isAdmin)}
                     </Link>
 

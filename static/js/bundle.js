@@ -11319,14 +11319,14 @@ var Element = function Element(props) {
     return _react2.default.createElement(
         'ul',
         { className: 'container' },
-        props.categories.map(function (element, num) {
+        props.data.map(function (element, num) {
             return _react2.default.createElement(
                 'li',
                 { key: element.id, className: 'element' },
                 _react2.default.createElement(
                     _reactRouterDom.Link,
                     { to: props.url + "/" + element.id, className: 'content-center' },
-                    element.name,
+                    element.text,
                     adminElements(props.isAdmin)
                 )
             );
@@ -25939,6 +25939,10 @@ var _user = __webpack_require__(233);
 
 var _user2 = _interopRequireDefault(_user);
 
+var _users = __webpack_require__(245);
+
+var _users2 = _interopRequireDefault(_users);
+
 var _test = __webpack_require__(240);
 
 var _test2 = _interopRequireDefault(_test);
@@ -25963,7 +25967,7 @@ var Main = function Main() {
       _react2.default.createElement(_reactRouterDom.Route, { path: '/admin/test/:catigories', component: _test2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/admin/test', component: _categories2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/admin/user/:id', component: _user2.default }),
-      _react2.default.createElement(_reactRouterDom.Route, { path: '/admin/user', component: _about2.default }),
+      _react2.default.createElement(_reactRouterDom.Route, { path: '/admin/user', component: _users2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/test/:catigories/:test', component: _question2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/test/:catigories', component: _test2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/test', component: _categories2.default }),
@@ -26143,7 +26147,9 @@ var Categories = function Categories() {
             { className: "title" },
             "\u0412\u044B\u0431\u0435\u0440\u0435\u0442\u0435 \u043A\u0430\u0442\u0435\u0433\u043E\u0440\u0438\u044E:"
         ),
-        _react2.default.createElement(_element2.default, { url: window.location.pathname, categories: categories, isAdmin: isAdmin })
+        _react2.default.createElement(_element2.default, { url: window.location.pathname, data: categories.map(function (element) {
+                return { id: element.id, text: element.name };
+            }), isAdmin: isAdmin })
     );
 };
 exports.default = Categories;
@@ -26474,7 +26480,9 @@ var Test = function Test() {
             { className: "title" },
             "\u0412\u044B\u0431\u0435\u0440\u0435\u0442\u0435 \u0442\u0435\u0441\u0442:"
         ),
-        _react2.default.createElement(_element2.default, { url: window.location.pathname, categories: categories, isAdmin: isAdmin })
+        _react2.default.createElement(_element2.default, { url: window.location.pathname, data: categories.map(function (element) {
+                return { id: element.id, text: element.name };
+            }), isAdmin: isAdmin })
     );
 };
 exports.default = Test;
@@ -26649,6 +26657,78 @@ var Select = function Select(props) {
   );
 };
 exports.default = Select;
+
+/***/ }),
+/* 245 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _element = __webpack_require__(96);
+
+var _element2 = _interopRequireDefault(_element);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var users = [{
+    id: 1,
+    name: "1",
+    surName: "User"
+}, {
+    id: 2,
+    name: "2",
+    surName: "User"
+}, {
+    id: 3,
+    name: "3",
+    surName: "User"
+}, {
+    id: 4,
+    name: "4",
+    surName: "User"
+}, {
+    id: 5,
+    name: "5",
+    surName: "User"
+}, {
+    id: 6,
+    name: "6",
+    surName: "User"
+}, {
+    id: 7,
+    name: "7",
+    surName: "User"
+}, {
+    id: 8,
+    name: "8",
+    surName: "User"
+}];
+
+var Users = function Users() {
+    var isAdmin = window.location.pathname.indexOf("/admin/") == 0;
+    return _react2.default.createElement(
+        "main",
+        null,
+        _react2.default.createElement(
+            "h1",
+            { className: "title" },
+            "\u0412\u044B\u0431\u0435\u0440\u0435\u0442\u0435 \u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044F:"
+        ),
+        _react2.default.createElement(_element2.default, { url: window.location.pathname, data: users.map(function (element) {
+                return { id: element.id, text: element.surName + " " + element.name };
+            }) })
+    );
+};
+exports.default = Users;
 
 /***/ })
 /******/ ]);

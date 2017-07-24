@@ -39,7 +39,7 @@ const Test = ()=> {
   return (
     <main>
         <h1 className="title">Выберете тест:</h1>
-        <Element url={window.location.pathname} categories={categories} isAdmin={isAdmin}/>
+        <Element url={window.location.pathname} data={categories.map((element)=>{return {id:element.id, text: element.name}})} isAdmin={isAdmin}/>
     </main>
   );
 };
