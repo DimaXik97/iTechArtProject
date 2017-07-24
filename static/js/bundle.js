@@ -26200,14 +26200,52 @@ var _userStatistics = __webpack_require__(238);
 
 var _userStatistics2 = _interopRequireDefault(_userStatistics);
 
+var _element = __webpack_require__(96);
+
+var _element2 = _interopRequireDefault(_element);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var questions = [{
+  id: 1,
+  categories: "Java",
+  test: "JSP",
+  date: "10.12.2017"
+}, {
+  id: 2,
+  categories: "Java",
+  test: "Servlet",
+  date: "10.12.2017"
+}, {
+  id: 3,
+  categories: "C#",
+  test: "ООП",
+  date: "11.12.2017"
+}, {
+  id: 4,
+  categories: "Java",
+  test: "Коллекции",
+  date: "13.12.2017"
+}];
+
+function userQuestions(isAdmin) {
+  var userQuestions = "";
+  if (isAdmin) {
+    userQuestions = _react2.default.createElement(_element2.default, { url: "/admin/question", data: questions.map(function (element) {
+        return { id: element.id, text: element.test + " (" + element.categories + ") " + element.date };
+      }) });
+  }
+  return userQuestions;
+}
+
 var User = function User() {
+  var isAdmin = window.location.pathname.indexOf("/admin/") == 0;
   return _react2.default.createElement(
     "main",
     null,
     _react2.default.createElement(_userInfo2.default, null),
-    _react2.default.createElement(_userStatistics2.default, null)
+    _react2.default.createElement(_userStatistics2.default, null),
+    userQuestions(isAdmin)
   );
 };
 exports.default = User;
