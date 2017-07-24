@@ -26177,6 +26177,100 @@ exports.default = Categories;
 "use strict";
 
 
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _menu = __webpack_require__(246);
+
+var _menu2 = _interopRequireDefault(_menu);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function content() {
+    return _react2.default.createElement(
+        'div',
+        { className: 'container' },
+        _react2.default.createElement('script', { src: '/js/googleMap.js' }),
+        _react2.default.createElement('div', { id: 'map' }),
+        _react2.default.createElement(
+            'div',
+            { className: 'contacts' },
+            _react2.default.createElement(
+                'h2',
+                { className: 'title' },
+                '\u0422\u0435\u043B\u0435\u0444\u043E\u043D\u044B:'
+            ),
+            _react2.default.createElement(
+                'ul',
+                null,
+                _react2.default.createElement(
+                    'li',
+                    null,
+                    '+375331234567'
+                ),
+                _react2.default.createElement(
+                    'li',
+                    null,
+                    '+375331234568'
+                )
+            ),
+            _react2.default.createElement(
+                'h2',
+                { className: 'title' },
+                'E-mail:'
+            ),
+            _react2.default.createElement(
+                'ul',
+                null,
+                _react2.default.createElement(
+                    'li',
+                    null,
+                    'example-1@gmail.com'
+                ),
+                _react2.default.createElement(
+                    'li',
+                    null,
+                    'example-2@gmail.com'
+                )
+            ),
+            _react2.default.createElement(
+                'h2',
+                { className: 'title' },
+                '\u0410\u0434\u0440\u0435\u0441:'
+            ),
+            _react2.default.createElement(
+                'ul',
+                null,
+                _react2.default.createElement(
+                    'li',
+                    null,
+                    '\u0433. \u041C\u0438\u043D\u0441\u043A'
+                )
+            )
+        ),
+        _react2.default.createElement('script', { async: true, defer: true, src: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDOw3RjQA8M72BmduwNrLCvS3krvGddZco&callback=initMap' })
+    );
+}
+
+var About = function About() {
+    return _react2.default.createElement(
+        'main',
+        { className: 'aboutPage' },
+        _react2.default.createElement(_menu2.default, null),
+        _react2.default.createElement(
+            'div',
+            null,
+            content()
+        )
+    );
+};
+exports.default = About;
+
 /***/ }),
 /* 233 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -26842,6 +26936,46 @@ var Users = function Users() {
     );
 };
 exports.default = Users;
+
+/***/ }),
+/* 246 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Menu = function Menu() {
+    return _react2.default.createElement(
+        "ul",
+        { className: "menu container" },
+        _react2.default.createElement(
+            "li",
+            { className: "element-menu" },
+            "\u041D\u043E\u0432\u043E\u0441\u0442\u0438"
+        ),
+        _react2.default.createElement(
+            "li",
+            { className: "element-menu" },
+            "\u0412\u0430\u043A\u0430\u043D\u0441\u0438\u0438"
+        ),
+        _react2.default.createElement(
+            "li",
+            { className: "element-menu" },
+            "\u041A\u043E\u043D\u0442\u0430\u043A\u0442\u044B"
+        )
+    );
+};
+exports.default = Menu;
 
 /***/ })
 /******/ ]);
