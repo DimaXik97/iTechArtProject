@@ -8,7 +8,7 @@ function adminElements(isAdmin)
     let admineIements="";
     if(isAdmin){
         admineIements=(<p className="adminMenu">
-                    <span className="edit" onclick="raz(event)"></span> <span className="delete"></span>
+                    <span className="edit" onClick="raz(event)"></span> <span className="delete"></span>
                 </p>)
     }
     return admineIements;

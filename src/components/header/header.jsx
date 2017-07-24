@@ -5,7 +5,7 @@ import DefaultLink from "./../link.jsx";
 const Header = ()=> {
   return (<header className="container">
     <div className="logo">
-      <img src="img/logo.png"/>
+      <img src="/img/logo.png"/>
     </div>
     <ul className="menu container">
       <DefaultLink nameLink="Тесты" link="/test"/>

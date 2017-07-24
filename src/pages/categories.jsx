@@ -33,8 +33,8 @@ let categories=[{
     name: "XML"
 }];
 
-let isAdmin = window.location.pathname.indexOf("/admin/")==0;
 const Categories = ()=> {
+    let isAdmin = window.location.pathname.indexOf("/admin/")==0;
   return (
     <main >
         <h1 className="title">Выберете категорию:</h1>

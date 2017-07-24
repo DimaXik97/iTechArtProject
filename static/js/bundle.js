@@ -11307,7 +11307,7 @@ function adminElements(isAdmin) {
         admineIements = _react2.default.createElement(
             'p',
             { className: 'adminMenu' },
-            _react2.default.createElement('span', { className: 'edit', onclick: 'raz(event)' }),
+            _react2.default.createElement('span', { className: 'edit', onClick: 'raz(event)' }),
             ' ',
             _react2.default.createElement('span', { className: 'delete' })
         );
@@ -26003,7 +26003,7 @@ var Header = function Header() {
     _react2.default.createElement(
       "div",
       { className: "logo" },
-      _react2.default.createElement("img", { src: "img/logo.png" })
+      _react2.default.createElement("img", { src: "/img/logo.png" })
     ),
     _react2.default.createElement(
       "ul",
@@ -26132,8 +26132,8 @@ var categories = [{
     name: "XML"
 }];
 
-var isAdmin = window.location.pathname.indexOf("/admin/") == 0;
 var Categories = function Categories() {
+    var isAdmin = window.location.pathname.indexOf("/admin/") == 0;
     return _react2.default.createElement(
         "main",
         null,
@@ -26327,7 +26327,7 @@ var UserPhoto = function UserPhoto() {
   return _react2.default.createElement(
     "div",
     { className: "userPhoto" },
-    _react2.default.createElement("img", { alt: "userPhoto", src: "img/default_photo.png" })
+    _react2.default.createElement("img", { alt: "userPhoto", src: "/img/default_photo.png" })
   );
 };
 exports.default = UserPhoto;
