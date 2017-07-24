@@ -3,35 +3,35 @@ import Element from "./../components/main/element.jsx"
 
 let categories=[{
     id: 1,
-    name: "C#"
+    name: "Типы данных, переменные, операторы, циклы, массивы"
 },{
     id: 2,
-    name: "C++"
-},
-{
+    name: "ООП"
+},{
     id: 3,
-    name: "Java"
-},
-{
+    name: "Исключения"
+},{
     id: 4,
-    name: "Ruby"
-},
-{
+    name: "Коллекции"
+},{
     id: 5,
-    name: "JS"
-},
-{
+    name: "Строки"
+},{
     id: 6,
-    name: "HTML"
-},
-{
+    name: "Потоки ввода/вывода"
+},{
     id: 7,
-    name: "CSS"
-},
-{
+    name: " Потоки выполнения"
+},{
     id: 8,
-    name: "XML"
-}];
+    name: "SQL, JDBC"
+},{
+    id: 9,
+    name: "JSP"
+},{
+    id: 10,
+    name: "Servlet"
+},];
 
 
 const Test = ()=> {

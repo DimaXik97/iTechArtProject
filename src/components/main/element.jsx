@@ -13,6 +13,17 @@ function adminElements(isAdmin)
     }
     return admineIements;
 }
+function addElement(isAdmin){
+    let element="";
+    if(isAdmin){
+            element=(<li className="element">
+            <div className="content-center adminMenu">
+                <span className="add"></span>
+            </div>
+        </li>)
+    }
+    return element;
+}
 
 const Element = (props)=> {
   return (
@@ -23,9 +34,9 @@ const Element = (props)=> {
                     <Link to={props.url+"/"+element.id} className="content-center">{element.text}
                         {adminElements(props.isAdmin)}
                     </Link>
-
                 </li>)
         })}
+        {addElement(props.isAdmin)}
     </ul>
   );
 };

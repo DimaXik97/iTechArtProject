@@ -11314,6 +11314,21 @@ function adminElements(isAdmin) {
     }
     return admineIements;
 }
+function addElement(isAdmin) {
+    var element = "";
+    if (isAdmin) {
+        element = _react2.default.createElement(
+            'li',
+            { className: 'element' },
+            _react2.default.createElement(
+                'div',
+                { className: 'content-center adminMenu' },
+                _react2.default.createElement('span', { className: 'add' })
+            )
+        );
+    }
+    return element;
+}
 
 var Element = function Element(props) {
     return _react2.default.createElement(
@@ -11330,7 +11345,8 @@ var Element = function Element(props) {
                     adminElements(props.isAdmin)
                 )
             );
-        })
+        }),
+        addElement(props.isAdmin)
     );
 };
 exports.default = Element;
@@ -26446,28 +26462,34 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var categories = [{
     id: 1,
-    name: "C#"
+    name: "Типы данных, переменные, операторы, циклы, массивы"
 }, {
     id: 2,
-    name: "C++"
+    name: "ООП"
 }, {
     id: 3,
-    name: "Java"
+    name: "Исключения"
 }, {
     id: 4,
-    name: "Ruby"
+    name: "Коллекции"
 }, {
     id: 5,
-    name: "JS"
+    name: "Строки"
 }, {
     id: 6,
-    name: "HTML"
+    name: "Потоки ввода/вывода"
 }, {
     id: 7,
-    name: "CSS"
+    name: " Потоки выполнения"
 }, {
     id: 8,
-    name: "XML"
+    name: "SQL, JDBC"
+}, {
+    id: 9,
+    name: "JSP"
+}, {
+    id: 10,
+    name: "Servlet"
 }];
 
 var Test = function Test() {
@@ -26705,7 +26727,7 @@ var users = [{
     surName: "User"
 }, {
     id: 7,
-    name: "7",
+    name: "726262",
     surName: "User"
 }, {
     id: 8,
