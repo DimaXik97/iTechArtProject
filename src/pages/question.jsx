@@ -58,15 +58,10 @@ let tests=[{
   },
   date: "13.12.2017"
 }];
-function usersTests(isAdmin){
-    usersTests="";
-    if(isAdmin){
-        usersTests=(<div><h2 className="title">Ответы пользователей:</h2>
+
+    let usersTests=(<div><h2 className="title">Ответы пользователей:</h2>
         <Element url={"/admin/question"} data={tests.map((element)=>{return {id:element.id, text: `${element.user.surName} ${element.user.name} ${element.date}`}})}/>
         </div>);
-    }
-    return usersTests;
-}
 
 const QuestionList = ()=> {
     let isAdmin = window.location.pathname.indexOf("/admin/")==0;
@@ -80,7 +75,7 @@ const QuestionList = ()=> {
             </ul>
             <input className="default-btm" type="submit" value="Отправить ответы"/>
         </form>
-       {usersTests(isAdmin)} 
+       {isAdmin?usersTests:undefined} 
     </main>
   );
 };

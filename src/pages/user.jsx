@@ -38,9 +38,10 @@ function userQuestions(isAdmin)
 
 const User = ()=> {
   let isAdmin = window.location.pathname.indexOf("/admin/")==0;
+  console.log("isAdmin",isAdmin);
   return (
     <main>
-        <UserInfo/>
+        <UserInfo isAdmin={isAdmin}/>
         <UserStatistics/>
         {userQuestions(isAdmin)}
     </main>

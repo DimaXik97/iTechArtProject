@@ -4,16 +4,16 @@ const userBtm=
     {admin: ["Заблокировать"],
     user: ["Изменить фотографию", "Изменить имя", "Изменить пароль"]};
 
-function generateBtm(user){
-    if(user=="admin")
+function generateBtm(isAdmin){
+    if(isAdmin)
         return userBtm.admin;
     else
         return userBtm.user;
 }
-const UserMenu = ()=> {
+const UserMenu = (props)=> {
   return (
     <div className="profileMenu">
-        {generateBtm("admin").map((element)=>{
+        {generateBtm(props.isAdmin).map((element)=>{
             return (<button className="default-btm">{element}</button>)
         })}
     </div>
