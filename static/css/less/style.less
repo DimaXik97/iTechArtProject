@@ -132,6 +132,10 @@ footer{
             background: @red-color;
             transition: @transition;
             cursor: pointer;
+            a{
+                width: 100%;
+                height: 100%;
+            }
             &:hover{
                 color:@red-color;
                 background: @white-color;
@@ -140,10 +144,6 @@ footer{
     }
     .content{
         width: 100%;
-        display:  none;
-    }
-    .active{
-        display: block;
     }
     .contacts{
         width: (@body-width)-@map-width;

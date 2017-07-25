@@ -26185,77 +26185,25 @@ var _react = __webpack_require__(3);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactRouterDom = __webpack_require__(28);
+
 var _menu = __webpack_require__(233);
 
 var _menu2 = _interopRequireDefault(_menu);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _contacts = __webpack_require__(247);
 
-function content() {
-    return _react2.default.createElement(
-        'div',
-        { className: 'container' },
-        _react2.default.createElement('script', { src: '/js/googleMap.js' }),
-        _react2.default.createElement('div', { id: 'map' }),
-        _react2.default.createElement(
-            'div',
-            { className: 'contacts' },
-            _react2.default.createElement(
-                'h2',
-                { className: 'title' },
-                '\u0422\u0435\u043B\u0435\u0444\u043E\u043D\u044B:'
-            ),
-            _react2.default.createElement(
-                'ul',
-                null,
-                _react2.default.createElement(
-                    'li',
-                    null,
-                    '+375331234567'
-                ),
-                _react2.default.createElement(
-                    'li',
-                    null,
-                    '+375331234568'
-                )
-            ),
-            _react2.default.createElement(
-                'h2',
-                { className: 'title' },
-                'E-mail:'
-            ),
-            _react2.default.createElement(
-                'ul',
-                null,
-                _react2.default.createElement(
-                    'li',
-                    null,
-                    'example-1@gmail.com'
-                ),
-                _react2.default.createElement(
-                    'li',
-                    null,
-                    'example-2@gmail.com'
-                )
-            ),
-            _react2.default.createElement(
-                'h2',
-                { className: 'title' },
-                '\u0410\u0434\u0440\u0435\u0441:'
-            ),
-            _react2.default.createElement(
-                'ul',
-                null,
-                _react2.default.createElement(
-                    'li',
-                    null,
-                    '\u0433. \u041C\u0438\u043D\u0441\u043A'
-                )
-            )
-        ),
-        _react2.default.createElement('script', { async: true, defer: true, src: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDOw3RjQA8M72BmduwNrLCvS3krvGddZco&callback=initMap' })
-    );
-}
+var _contacts2 = _interopRequireDefault(_contacts);
+
+var _vacancies = __webpack_require__(248);
+
+var _vacancies2 = _interopRequireDefault(_vacancies);
+
+var _news = __webpack_require__(249);
+
+var _news2 = _interopRequireDefault(_news);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var About = function About() {
     return _react2.default.createElement(
@@ -26263,9 +26211,14 @@ var About = function About() {
         { className: 'aboutPage' },
         _react2.default.createElement(_menu2.default, null),
         _react2.default.createElement(
-            'div',
+            _reactRouterDom.Switch,
             null,
-            content()
+            _react2.default.createElement(_reactRouterDom.Route, { path: '/about/contacts', component: _contacts2.default }),
+            _react2.default.createElement(_reactRouterDom.Route, { path: '/about/vacancies', component: _vacancies2.default }),
+            _react2.default.createElement(_reactRouterDom.Route, { path: '/about/news', component: _news2.default }),
+            _react2.default.createElement(_reactRouterDom.Route, { path: '/', render: function render() {
+                    return _react2.default.createElement(_reactRouterDom.Redirect, { to: '/about/news' });
+                } })
         )
     );
 };
@@ -26286,26 +26239,40 @@ var _react = __webpack_require__(3);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactRouterDom = __webpack_require__(28);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Menu = function Menu() {
     return _react2.default.createElement(
-        "ul",
-        { className: "menu container" },
+        'ul',
+        { className: 'menu container' },
         _react2.default.createElement(
-            "li",
-            { className: "element-menu" },
-            "\u041D\u043E\u0432\u043E\u0441\u0442\u0438"
+            'li',
+            { className: 'element-menu' },
+            _react2.default.createElement(
+                _reactRouterDom.Link,
+                { to: '/about/news' },
+                '\u041D\u043E\u0432\u043E\u0441\u0442\u0438'
+            )
         ),
         _react2.default.createElement(
-            "li",
-            { className: "element-menu" },
-            "\u0412\u0430\u043A\u0430\u043D\u0441\u0438\u0438"
+            'li',
+            { className: 'element-menu' },
+            _react2.default.createElement(
+                _reactRouterDom.Link,
+                { to: '/about/vacancies' },
+                '\u0412\u0430\u043A\u0430\u043D\u0441\u0438\u0438'
+            )
         ),
         _react2.default.createElement(
-            "li",
-            { className: "element-menu" },
-            "\u041A\u043E\u043D\u0442\u0430\u043A\u0442\u044B"
+            'li',
+            { className: 'element-menu' },
+            _react2.default.createElement(
+                _reactRouterDom.Link,
+                { to: '/about/contacts' },
+                '\u041A\u043E\u043D\u0442\u0430\u043A\u0442\u044B'
+            )
         )
     );
 };
@@ -26972,6 +26939,142 @@ var Select = function Select(props) {
   );
 };
 exports.default = Select;
+
+/***/ }),
+/* 247 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Contacts = function Contacts() {
+    return _react2.default.createElement(
+        "div",
+        { className: "content container" },
+        _react2.default.createElement("div", { id: "map" }),
+        _react2.default.createElement(
+            "div",
+            { className: "contacts" },
+            _react2.default.createElement(
+                "h2",
+                { className: "title" },
+                "\u0422\u0435\u043B\u0435\u0444\u043E\u043D\u044B:"
+            ),
+            _react2.default.createElement(
+                "ul",
+                null,
+                _react2.default.createElement(
+                    "li",
+                    null,
+                    "+375331234567"
+                ),
+                _react2.default.createElement(
+                    "li",
+                    null,
+                    "+375331234568"
+                )
+            ),
+            _react2.default.createElement(
+                "h2",
+                { className: "title" },
+                "E-mail:"
+            ),
+            _react2.default.createElement(
+                "ul",
+                null,
+                _react2.default.createElement(
+                    "li",
+                    null,
+                    "example-1@gmail.com"
+                ),
+                _react2.default.createElement(
+                    "li",
+                    null,
+                    "example-2@gmail.com"
+                )
+            ),
+            _react2.default.createElement(
+                "h2",
+                { className: "title" },
+                "\u0410\u0434\u0440\u0435\u0441:"
+            ),
+            _react2.default.createElement(
+                "ul",
+                null,
+                _react2.default.createElement(
+                    "li",
+                    null,
+                    "\u0433. \u041C\u0438\u043D\u0441\u043A"
+                )
+            )
+        ),
+        _react2.default.createElement("script", { src: "js/googleMap.js" }),
+        _react2.default.createElement("script", { async: true, defer: true, src: "https://maps.googleapis.com/maps/api/js?key=AIzaSyDOw3RjQA8M72BmduwNrLCvS3krvGddZco&callback=initMap" })
+    );
+};
+exports.default = Contacts;
+
+/***/ }),
+/* 248 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Vacancies = function Vacancies() {
+    return _react2.default.createElement(
+        'div',
+        null,
+        'Vacancies'
+    );
+};
+exports.default = Vacancies;
+
+/***/ }),
+/* 249 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var News = function News() {
+    return _react2.default.createElement(
+        'div',
+        null,
+        'News'
+    );
+};
+exports.default = News;
 
 /***/ })
 /******/ ]);
