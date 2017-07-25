@@ -3801,21 +3801,15 @@ function adminElements(isAdmin) {
     }
     return admineIements;
 }
-function addElement(isAdmin) {
-    var element = "";
-    if (isAdmin) {
-        element = _react2.default.createElement(
-            'li',
-            { className: 'element' },
-            _react2.default.createElement(
-                'div',
-                { className: 'content-center adminMenu' },
-                _react2.default.createElement('span', { className: 'add' })
-            )
-        );
-    }
-    return element;
-}
+var element = _react2.default.createElement(
+    'li',
+    { className: 'element' },
+    _react2.default.createElement(
+        'div',
+        { className: 'content-center adminMenu' },
+        _react2.default.createElement('span', { className: 'add' })
+    )
+);
 
 var Element = function Element(props) {
     return _react2.default.createElement(
@@ -3833,7 +3827,7 @@ var Element = function Element(props) {
                 )
             );
         }),
-        addElement(props.isAdmin)
+        props.isAdmin ? element : undefined
     );
 };
 exports.default = Element;
@@ -25967,6 +25961,10 @@ var _question = __webpack_require__(243);
 
 var _question2 = _interopRequireDefault(_question);
 
+var _answer = __webpack_require__(251);
+
+var _answer2 = _interopRequireDefault(_answer);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 console.log(window.location.pathname);
@@ -25984,6 +25982,10 @@ var Main = function Main() {
       _react2.default.createElement(_reactRouterDom.Route, { path: '/admin/test', component: _categories2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/admin/user/:id', component: _user2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/admin/user', component: _users2.default }),
+      _react2.default.createElement(_reactRouterDom.Route, { path: '/admin/question/:id', component: _answer2.default }),
+      _react2.default.createElement(_reactRouterDom.Route, { path: '/admin', render: function render() {
+          return _react2.default.createElement(_reactRouterDom.Redirect, { to: '/admin/test' });
+        } }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/test/:catigories/:test', component: _question2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/test/:catigories', component: _test2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/test', component: _categories2.default }),
@@ -27143,6 +27145,168 @@ var Content = function Content(props) {
     );
 };
 exports.default = Content;
+
+/***/ }),
+/* 251 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _answer = __webpack_require__(252);
+
+var _answer2 = _interopRequireDefault(_answer);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var answers = [{
+    id: 1,
+    type: 1,
+    question: "Первый вопрос?",
+    answers: [{ id: 1, text: "Первый ответ", atrr: [] }, { id: 2, text: "Второй ответ", atrr: ["user"] }, { id: 3, text: "Третий ответ", atrr: ["correct"] }, { id: 4, text: "Четвертый ответ", atrr: [] }]
+}, {
+    id: 2,
+    type: 2,
+    question: "Второй вопрос?",
+    answers: [{ id: 1, text: "Первый ответ", atrr: [] }, { id: 2, text: "Второй ответ", atrr: ["user", "correct"] }, { id: 3, text: "Третий ответ", atrr: ["user"] }, { id: 4, text: "Четвертый ответ", atrr: ["user", "correct"] }]
+}, {
+    id: 3,
+    type: 3,
+    question: "Третий вопрос?",
+    correctAnswer: { text: "2", atrr: ["correct"] },
+    userAnswer: { text: "3", atrr: ["user"] }
+}];
+var AnswerList = function AnswerList() {
+    console.log("okkkkk");
+    return _react2.default.createElement(
+        'main',
+        null,
+        _react2.default.createElement(
+            'ul',
+            null,
+            answers.map(function (element, num) {
+                return _react2.default.createElement(_answer2.default, { answer: element });
+            })
+        )
+    );
+};
+exports.default = AnswerList;
+
+/***/ }),
+/* 252 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function getAnswer(answer) {
+    switch (answer.type) {
+        case 1:
+            {
+                return _react2.default.createElement(
+                    "ul",
+                    { className: "bodyContent" },
+                    answer.answers.map(function (element) {
+                        return _react2.default.createElement(
+                            "li",
+                            { className: getClass(element.atrr) },
+                            element.text
+                        );
+                    })
+                );
+            };
+        case 2:
+            {
+                return _react2.default.createElement(
+                    "ul",
+                    { className: "bodyContent" },
+                    answer.answers.map(function (element) {
+                        return _react2.default.createElement(
+                            "li",
+                            { className: getClass(element.atrr) },
+                            element.text
+                        );
+                    })
+                );
+            }
+        case 3:
+            {
+                return _react2.default.createElement(
+                    "div",
+                    { className: "bodyContent" },
+                    _react2.default.createElement(
+                        "p",
+                        null,
+                        "\u041F\u0440\u0430\u0432\u0435\u043B\u044C\u043D\u044B\u0439 \u043E\u0442\u0432\u0435\u0442:",
+                        _react2.default.createElement(
+                            "span",
+                            { className: getClass(answer.correctAnswer.atrr) },
+                            answer.correctAnswer.text
+                        )
+                    ),
+                    _react2.default.createElement(
+                        "p",
+                        null,
+                        "\u041E\u0442\u0432\u0435\u0442:",
+                        _react2.default.createElement(
+                            "span",
+                            { className: getClass(answer.userAnswer.atrr) },
+                            answer.userAnswer.text
+                        )
+                    )
+                );
+            }
+    }
+}
+function getClass(atrr) {
+    console.log(atrr);
+    var className = "";
+    atrr.map(function (element) {
+        switch (element) {
+            case "user":
+                {
+                    return className += "userAnswer ";
+                };
+            case "correct":
+                {
+                    return className += "correctAnswer ";
+                };
+        }
+    });
+    return className;
+}
+
+var Answer = function Answer(props) {
+    return _react2.default.createElement(
+        "li",
+        { className: "question" },
+        _react2.default.createElement(
+            "h2",
+            { className: "title" },
+            props.answer.question
+        ),
+        getAnswer(props.answer)
+    );
+};
+exports.default = Answer;
 
 /***/ })
 /******/ ]);
