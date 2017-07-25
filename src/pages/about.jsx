@@ -7,8 +7,6 @@ import Vacancies from './../components/about/vacancies.jsx';
 import News from './../components/about/news.jsx';
 
 
-
-
 const About = ()=> {
   return (
     <main className="aboutPage">
