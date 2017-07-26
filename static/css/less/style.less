@@ -99,15 +99,6 @@ footer{
     &:hover{
         text-decoration: none;
     }
-    .edit:after{
-        content: "\270E";
-    }
-    .delete:after{
-        content: "\2716";
-    }
-    .add:after{
-        content: "\271A";
-    }
 }
 .authentication{
     width: @authentication-width;
@@ -234,6 +225,18 @@ input[type="text"]{
 }
 li{
     list-style-type: none;
+}
+.edit:after{
+    cursor: pointer;
+    content: "\270E";
+}
+.delete:after{
+    cursor: pointer;
+    content: "\2716";
+}
+.add:after{
+    cursor: pointer;
+    content: "\271A";
 }
 #map{
     width:  @map-width;

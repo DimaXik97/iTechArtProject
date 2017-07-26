@@ -37,7 +37,7 @@ const AnswerList = ()=> {
         <ul>
             {
                 answers.map((element, num)=>{
-                    return <Answer answer={element}/>
+                    return <Answer key={num} answer={element}/>
             })}
         </ul>
     </main>

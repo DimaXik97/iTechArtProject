@@ -26,15 +26,8 @@ let questions=[{
   date: "13.12.2017"
 }];
 
-
-function userQuestions(isAdmin)
-{
-  let userQuestions="";
-  if(isAdmin){
-    userQuestions=(<Element url={"/admin/question"} data={questions.map((element)=>{return {id:element.id, text: `${element.test} (${element.categories}) ${element.date}`}})}/>);
-  }
-  return userQuestions;
-}
+let userQuestions=(<Element url={"/admin/question"} data={questions.map((element)=>{return {id:element.id, text: `${element.test} (${element.categories}) ${element.date}`}})}/>);
+ 
 
 const User = ()=> {
   let isAdmin = window.location.pathname.indexOf("/admin/")==0;
@@ -43,7 +36,7 @@ const User = ()=> {
     <main>
         <UserInfo isAdmin={isAdmin}/>
         <UserStatistics/>
-        {userQuestions(isAdmin)}
+        {isAdmin?userQuestions:undefined}
     </main>
   );
 };

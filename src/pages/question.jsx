@@ -59,9 +59,10 @@ let tests=[{
   date: "13.12.2017"
 }];
 
-    let usersTests=(<div><h2 className="title">Ответы пользователей:</h2>
+let usersTests=(<div>
+        <h2 className="title">Ответы пользователей:</h2>
         <Element url={"/admin/question"} data={tests.map((element)=>{return {id:element.id, text: `${element.user.surName} ${element.user.name} ${element.date}`}})}/>
-        </div>);
+    </div>);
 
 const QuestionList = ()=> {
     let isAdmin = window.location.pathname.indexOf("/admin/")==0;
@@ -70,10 +71,11 @@ const QuestionList = ()=> {
         <form>
             <ul>
                 {questions.map((element, num)=>{
-                    return <QuestionItem key={num} item={element}/> 
+                    return <QuestionItem key={num} item={element} isAdmin={isAdmin}/> 
                 })}
             </ul>
-            <input className="default-btm" type="submit" value="Отправить ответы"/>
+            <input className="default-btm" type="submit" value={isAdmin?"Сохранить":"Отправить ответы"}/>
+            {isAdmin?<input className="default-btm" type="submit" value={"Добавить вопрос"}/>:undefined}
         </form>
        {isAdmin?usersTests:undefined} 
     </main>

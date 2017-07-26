@@ -2,18 +2,11 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 
-function adminElements(isAdmin)
-{
-    console.log(isAdmin);
-    let admineIements="";
-    if(isAdmin){
-        admineIements=(<p className="adminMenu">
-                    <span className="edit" onClick="raz(event)"></span> <span className="delete"></span>
-                </p>)
-    }
-    return admineIements;
-}
-let element=(<li className="element">
+let admineIements=(<p className="adminMenu">
+    <span className="edit" onClick="raz(event)"></span> <span className="delete"></span>
+</p>);
+
+let addElement=(<li className="element">
     <div className="content-center adminMenu">
         <span className="add"></span>
     </div>
@@ -26,11 +19,11 @@ const Element = (props)=> {
             return (
                 <li key={element.id} className="element">
                     <Link to={props.url+"/"+element.id} className="content-center">{element.text}
-                        {adminElements(props.isAdmin)}
+                        {props.isAdmin?admineIements:undefined}
                     </Link>
                 </li>)
         })}
-        {props.isAdmin?element:undefined}
+        {props.isAdmin?addElement:undefined}
     </ul>
   );
 };
