@@ -6,7 +6,13 @@ var file = new static.Server('static');
 const assetUrl = process.env.NODE_ENV !== 'production' ? 'http://localhost:8080/' : '/';
 
 const app = express();
+
+ 
 app.use(express.static('static'));
+
+const apiController = require('./moch/controllers/api')();
+
+app.use('/api', apiController);
 app.get('*',(req, res) => {
   return res.send(f());
 });
@@ -19,13 +25,13 @@ function f() {
         <title>React</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
-        <link rel="stylesheet" type="text/css" href="${assetUrl}css/style.css">
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
     </head>
     <body >
         <div id="app">
             
         </div>
-        <script src="${assetUrl}js/bundle.js"></script>
+        <script src="/js/bundle.js"></script>
     </body>
   `;
 }

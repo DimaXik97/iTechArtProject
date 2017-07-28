@@ -1,0 +1,56 @@
+[
+    {
+        "id":"1",
+        "email":"ddhfgj@gmail.com",
+        "password":"sdfaerfgag",
+        "name":"user1",
+        "surName":"new",
+        "photo":"/img/default_photo.png",
+        "isBan": false
+    },
+    {
+        "id":"2",
+        "email":"edcrfv@gmail.com",
+        "password":"sdfaerfgag",
+        "name":"user2",
+        "surName":"new",
+        "photo":"/img/default_photo.png",
+        "isBan": false
+    },
+    {
+        "id":"3",
+        "email":"tgbyhn@gmail.com",
+        "password":"sdfaerfgag",
+        "name":"user3",
+        "surName":"new",
+        "photo":"/img/default_photo.png",
+        "isBan": false
+    },
+    {
+        "id":"4",
+        "email":"qwedfgvb@gmail.com",
+        "password":"sdfaerfgag",
+        "name":"user4",
+        "surName":"new",
+        "photo":"/img/default_photo.png",
+        "isBan": false
+    },
+    {
+        "id":"5",
+        "email":"bghrfgd@gmail.com",
+        "password":"sdfaerfgag",
+        "name":"user5",
+        "surName":"new",
+        "photo":"/img/default_photo.png",
+        "isBan": true
+    },
+    {
+        "id":"6",
+        "email":"dfgrths@gmail.com",
+        "password":"sdfaerfgag",
+        "name":"user6",
+        "surName":"new",
+        "photo":"/img/default_photo.png",
+        "isBan": false
+    }
+]
