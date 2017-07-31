@@ -1,0 +1,130 @@
+[
+    {
+        "id":"1",
+        "idTest":"2",
+        "idUser": "3",
+        "date":"12.12.2016",
+        "attrs":[
+            {
+                "idAnswer": "1",
+                "attr":["user","correct"]
+            },
+            {
+                "idAnswer": "3",
+                "attr":["user","correct"]
+            }
+        ]
+    },
+    {
+        "id":"2",
+        "idTest":"2",
+        "idUser": "1",
+        "date":"01.01.2017",
+        "attrs":[
+            {
+                "idAnswer": "1",
+                "attr":["user","correct"]
+            },
+            {
+                "idAnswer": "3",
+                "attr":["user","correct"]
+            }
+        ]
+    },
+    {
+        "id":"3",
+        "idTest":"1",
+        "idUser": "2",
+        "date":"24.12.2016",
+        "attrs":[
+            {
+                "idAnswer": "1",
+                "attr":["user","correct"]
+            },
+            {
+                "idAnswer": "3",
+                "attr":["user","correct"]
+            }
+        ]
+    },
+    {
+        "id":"4",
+        "idTest":"5",
+        "idUser": "3",
+        "date":"21.12.2016",
+        "attrs":[
+            {
+                "idAnswer": "2",
+                "attr":["user","correct"]
+            },
+            {
+                "idAnswer": "4",
+                "attr":["user","correct"]
+            }
+        ]
+    },
+    {
+        "id":"5",
+        "idTest":"2",
+        "idUser": "3",
+        "date":"07.06.2017",
+        "attrs":[
+            {
+                "idAnswer": "1",
+                "attr":["user","correct"]
+            },
+            {
+                "idAnswer": "3",
+                "attr":["user","correct"]
+            }
+        ]
+    },
+    {
+        "id":"6",
+        "idTest":"5",
+        "idUser": "5",
+        "date":"12.12.2016",
+        "attrs":[
+            {
+                "idAnswer": "1",
+                "attr":["correct"]
+            },
+            {
+                "idAnswer": "3",
+                "attr":["user"]
+            }
+        ]
+    },
+    {
+        "id":"7",
+        "idTest":"2",
+        "idUser": "4",
+        "date":"12.12.2016",
+        "attrs":[
+            {
+                "idAnswer": "1",
+                "attr":["user","correct"]
+            },
+            {
+                "idAnswer": "2",
+                "attr":["correct"]
+            }
+        ]
+    },
+    {
+        "id":"8",
+        "idTest":"4",
+        "idUser": "1",
+        "date":"12.12.2016",
+        "attrs":[
+            {
+                "idAnswer": "2",
+                "attr":["user","correct"]
+            },
+            {
+                "idAnswer": "3",
+                "attr":["user","correct"]
+            }
+        ]
+    }
+]
