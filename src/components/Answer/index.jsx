@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Answer from './../components/answer.jsx';
+import Answer from './answer.jsx';
 
 let answers=[
     {
@@ -31,7 +31,6 @@ let answers=[
 
 ];
 const AnswerList = ()=> {
-    console.log("okkkkk");
   return (
     <main>
         <ul>

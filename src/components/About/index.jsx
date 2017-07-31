@@ -1,10 +1,10 @@
 import React from 'react';
 import {Switch, Route, Redirect} from 'react-router-dom'
 
-import Menu from './../components/about/menu.jsx';
-import Contacts from './../components/about/contacts.jsx';
-import Vacancies from './../components/about/vacancies.jsx';
-import News from './../components/about/news.jsx';
+import Menu from './menu.jsx';
+import Contacts from './contacts.jsx';
+import Vacancies from './vacancies.jsx';
+import News from './news.jsx';
 
 
 const About = ()=> {

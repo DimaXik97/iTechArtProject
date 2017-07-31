@@ -1,5 +1,5 @@
 import React from 'react';
-import Element from "./../components/main/element.jsx"
+import ContainerElements from "./../ContainerElements/index.jsx"
 
 let users=[{
     id: 1,
@@ -40,7 +40,7 @@ const Users = ()=> {
   return (
     <main >
         <h1 className="title">Выберете пользователя:</h1>
-        <Element url={window.location.pathname} data={users.map((element)=>{return {id:element.id, text: `${element.surName} ${element.name}`}})}/>
+        <ContainerElements url={window.location.pathname} data={users.map((element)=>{return {id:element.id, text: `${element.surName} ${element.name}`}})}/>
     </main>
   );
 };

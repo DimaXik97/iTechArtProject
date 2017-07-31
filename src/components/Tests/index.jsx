@@ -1,7 +1,7 @@
 import React from 'react';
-import Element from "./../components/main/element.jsx"
+import ContainerElements from "./../ContainerElements/index.jsx"
 
-let categories=[{
+let tests=[{
     id: 1,
     name: "Типы данных, переменные, операторы, циклы, массивы"
 },{
@@ -39,7 +39,7 @@ const Test = ()=> {
   return (
     <main>
         <h1 className="title">Выберете тест:</h1>
-        <Element url={window.location.pathname} data={categories.map((element)=>{return {id:element.id, text: element.name}})} isAdmin={isAdmin}/>
+        <ContainerElements url={window.location.pathname} data={tests.map((element)=>{return {id:element.id, text: element.name}})} isAdmin={isAdmin}/>
     </main>
   );
 };

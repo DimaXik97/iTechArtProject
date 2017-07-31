@@ -3,8 +3,6 @@ var static = require('node-static');
 var express = require('express');
 var file = new static.Server('static');
 
-const assetUrl = process.env.NODE_ENV !== 'production' ? 'http://localhost:8080/' : '/';
-
 const app = express();
 
  
@@ -29,10 +27,11 @@ function f() {
     </head>
     <body >
         <div id="app">
-            
+            <img src="/img/preload.gif">
         </div>
         <script src="/js/bundle.js"></script>
     </body>
+    
   `;
 }
 

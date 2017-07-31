@@ -1,16 +1,16 @@
 import React from 'react';
 import {Switch, Route,Redirect} from 'react-router-dom'
 
-import Header from "./../components/header/header.jsx";
-import Footer from "./../components/footer/footer.jsx";
+import Header from "./../Header/index.jsx";
+import Footer from "./../Footer/index.jsx";
 
-import Categories from "./categories.jsx";
-import About from "./about.jsx";
-import Profile from "./user.jsx";
-import Users from "./users.jsx";
-import Test from "./test.jsx";
-import Questions from "./question.jsx";
-import Answer from "./answer.jsx";
+import Categories from "./../Categories/index.jsx";
+import About from "./../About/index.jsx";
+import Profile from "./../Profile/index.jsx";
+import Users from "./../Users/index.jsx";
+import Test from "./../Tests/index.jsx";
+import Questions from "./../Questions/index.jsx";
+import Answer from "./../Answer/index.jsx";
 
 console.log(window.location.pathname);
 const Main = ()=> {
@@ -19,7 +19,7 @@ const Main = ()=> {
         <div className="body">
           <Header isAdmin={isAdmin}/>
           <Switch>
-            <Route path="/admin/test/:catigories/:test" component={Questions}/>
+            <Route path="/admin/test/:catigories/:test" component={Questions}/>*/
             <Route path="/admin/test/:catigories" component={Test}/>
             <Route path="/admin/test" component={Categories}/>
             <Route path="/admin/user/:id" component={Profile}/>

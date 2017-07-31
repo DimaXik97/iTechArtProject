@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
 
-import SignIn from './components/authentication/signIn.jsx';
-import SignUp from './components/authentication/signUp.jsx';
-import Main from './pages/main.jsx';
+import SignIn from './components/Authentication/signIn.jsx';
+import SignUp from './components/Authentication/signUp.jsx';
+import Main from './components/Main/index.jsx';
 
 
 ReactDOM.render(

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import DefaultLink from "./../link.jsx";
+import DefaultLink from "./../DefaultLink/index.jsx";
 
 const Header = (props)=> {
   return (<header className="container">
@@ -8,7 +8,7 @@ const Header = (props)=> {
       <img src="/img/logo.png"/>
     </div>
     <ul className="menu container">
-      <DefaultLink nameLink="Тесты" link="/test"/>
+      <DefaultLink nameLink="Тесты" link={props.isAdmin?"/admin/test":"/test"}/>
       <DefaultLink nameLink="О компании" link="/"/>
     </ul>
     <ul className="menu container">

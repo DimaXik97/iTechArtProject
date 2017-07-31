@@ -3,21 +3,21 @@ import React from 'react';
 function getAnswer(answer){
     switch(answer.type){
         case 1:{
-            return (<ul className="bodyContent">
+            return (<ul className="contentBody">
                 {answer.answers.map((element)=>{
                     return <li className={getClass(element.atrr)}>{element.text}</li>
                 })}
             </ul>)
         };
         case 2:{
-            return (<ul className="bodyContent">
+            return (<ul className="contentBody">
                 {answer.answers.map((element)=>{
                     return <li className={getClass(element.atrr)}>{element.text}</li>
                 })}
             </ul>)
         }
         case 3:{
-            return (<div className="bodyContent">
+            return (<div className="contentBody">
                 <p>Правельный ответ:<span className={getClass(answer.correctAnswer.atrr)}>{answer.correctAnswer.text}</span></p>
                 <p>Ответ:<span className={getClass(answer.userAnswer.atrr)}>{answer.userAnswer.text}</span></p>
             </div>)

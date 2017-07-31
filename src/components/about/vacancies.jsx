@@ -1,6 +1,6 @@
 import React from 'react';
 
-import BodyContent from './bodyContent.jsx';
+import Item from './itemContent.jsx';
 let vacancies=[{title:" Новая вакансия №1",
     text:"jdfsgkjdfjgn"
 },{title:"Новая вакансия №2",
@@ -11,6 +11,14 @@ let vacancies=[{title:" Новая вакансия №1",
 }];
 
 const Vacancies = ()=> {
-    return (<BodyContent content={vacancies}/>);
+    return (
+    <div className="content">
+        {
+            vacancies.map((element,num)=>{
+                 return <Item key={num} title={element.title} text={element.text}/>
+            })
+        }
+    </div>
+    );
 };
 export default Vacancies;

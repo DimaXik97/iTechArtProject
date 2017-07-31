@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Text from './typeQuestion/text.jsx';
-import Select from './typeQuestion/select.jsx';
+import Text from './text.jsx';
+import Select from './select.jsx';
 
 let isAdmin;
 

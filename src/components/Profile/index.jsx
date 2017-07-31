@@ -1,8 +1,8 @@
 import React from 'react';
 
-import UserInfo from "./../components/main/user/userInfo/userInfo.jsx";
-import UserStatistics from "./../components/main/user/userStatistics/userStatistics.jsx"
-import Element from "./../components/main/element.jsx"
+import UserInfo from "./../UserInfo/index.jsx"
+import UserStatistics from "./../UserStatistics/index.jsx"
+import ContainerElements from "./../ContainerElements/index.jsx"
 
 let questions=[{
   id: 1,
@@ -26,12 +26,11 @@ let questions=[{
   date: "13.12.2017"
 }];
 
-let userQuestions=(<Element url={"/admin/question"} data={questions.map((element)=>{return {id:element.id, text: `${element.test} (${element.categories}) ${element.date}`}})}/>);
- 
+ let userQuestions=(<ContainerElements url={"/admin/question"} data={questions.map((element)=>{return {id:element.id, text: `${element.test} (${element.categories}) ${element.date}`}})}/>);
 
 const User = ()=> {
   let isAdmin = window.location.pathname.indexOf("/admin/")==0;
-  console.log("isAdmin",isAdmin);
+
   return (
     <main>
         <UserInfo isAdmin={isAdmin}/>

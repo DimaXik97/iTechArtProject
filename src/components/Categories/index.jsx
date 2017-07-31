@@ -1,5 +1,5 @@
 import React from 'react';
-import Element from "./../components/main/element.jsx"
+import ContainerElements from "./../ContainerElements/index.jsx"
 
 let categories=[{
     id: 1,
@@ -38,8 +38,8 @@ const Categories = ()=> {
   return (
     <main >
         <h1 className="title">Выберете категорию:</h1>
-        <Element url={window.location.pathname} data={categories.map((element)=>{return {id:element.id, text: element.name}})} isAdmin={isAdmin}/>
+        <ContainerElements url={window.location.pathname} data={categories.map((element)=>{return {id:element.id, text: element.name}})} isAdmin={isAdmin}/>
     </main>
   );
 };
-export default Categories ;
+export default Categories;

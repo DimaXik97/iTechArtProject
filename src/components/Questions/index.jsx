@@ -1,7 +1,7 @@
 import React from 'react';
 
-import QuestionItem from './../components/main/question/item.jsx';
-import Element from "./../components/main/element.jsx";
+import QuestionItem from './item.jsx';
+import ContainerElements from "./../ContainerElements/index.jsx";
 
 let questions=[
     {
@@ -61,7 +61,7 @@ let tests=[{
 
 let usersTests=(<div>
         <h2 className="title">Ответы пользователей:</h2>
-        <Element url={"/admin/question"} data={tests.map((element)=>{return {id:element.id, text: `${element.user.surName} ${element.user.name} ${element.date}`}})}/>
+        <ContainerElements url={"/admin/question"} data={tests.map((element)=>{return {id:element.id, text: `${element.user.surName} ${element.user.name} ${element.date}`}})}/>
     </div>);
 
 const QuestionList = ()=> {

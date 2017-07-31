@@ -1,6 +1,6 @@
 import React from 'react';
 
-import BodyContent from './bodyContent.jsx';
+import Item from './itemContent.jsx';
 
 let news=[{
     title:"Новость №1",
@@ -32,6 +32,14 @@ let news=[{
 }]
 
 const News = ()=> {
-    return (<BodyContent content={news}/>);
+    return (
+    <div className="content">
+        {
+            news.map((element, num)=>{
+                 return <Item key={num} title={element.title} photo={element.photo} text={element.text}/>
+            })
+        }
+    </div>
+    );
 };
 export default News;
