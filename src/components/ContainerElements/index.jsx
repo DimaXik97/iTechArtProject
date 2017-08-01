@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 
 let admineIements=(<p className="adminMenu">
     <span className="edit" onClick="raz(event)"></span> <span className="delete"></span>
+    <input type="checkbox" className="isReady"/>
 </p>);
 
 let addElement=(<li className="element">

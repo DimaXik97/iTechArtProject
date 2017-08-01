@@ -60,6 +60,7 @@ footer{
     border-radius: @border-radius-down;
 }
 .element{
+    position: relative;
     width: 100%/4;
     height: @body-width/4;
     font-size: @element-font-size;
@@ -70,6 +71,13 @@ footer{
         text-decoration: underline;
         color:@white-color;
         background: @red-color;
+    }
+    .isReady{
+        position: absolute;
+        right: 10px;
+        top: 5px;
+        height: 20px;
+        width: 20px;
     }
 }
 .title{

@@ -22,7 +22,7 @@ function getAnswer(item){
         }
     }
 }
-let adminBtm=<span><span className="edit"> </span><span className="delete"> </span></span>;
+let adminBtm=<span><span className="edit"> </span><span className="delete"> </span><input type="checkbox" className="isReady"/></span>;
 
 const QuestionItem = (props)=> {
     isAdmin=props.isAdmin;
