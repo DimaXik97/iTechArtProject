@@ -3,15 +3,15 @@ import {Link} from 'react-router-dom';
 
 
 let admineIements=(<p className="adminMenu">
-    <span className="edit" onClick="raz(event)"></span> <span className="delete"></span>
+    <span className="edit"></span> <span className="delete"></span>
     <input type="checkbox" className="isReady"/>
 </p>);
 
-let addElement=(<li className="element">
-    <div className="content-center adminMenu">
+let addElement=(addElement)=>{return(<li className="element">
+    <div className="content-center adminMenu" onClick={addElement}>
         <span className="add"></span>
     </div>
-</li>)
+</li>)}
 
 const Element = (props)=> {
   return (
@@ -24,7 +24,7 @@ const Element = (props)=> {
                     </Link>
                 </li>)
         })}
-        {props.isAdmin?addElement:undefined}
+        {props.isAdmin?addElement(props.addElement):undefined}
     </ul>
   );
 };

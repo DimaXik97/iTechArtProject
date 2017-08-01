@@ -4,7 +4,7 @@ import {Switch, Route,Redirect} from 'react-router-dom'
 import Header from "./../Header/index.jsx";
 import Footer from "./../Footer/index.jsx";
 
-import Categories from "./../Categories/index.jsx";
+import Categories from "./../../containers/Categories.js";
 import About from "./../About/index.jsx";
 import Profile from "./../Profile/index.jsx";
 import Users from "./../Users/index.jsx";
@@ -19,7 +19,7 @@ const Main = ()=> {
         <div className="body">
           <Header isAdmin={isAdmin}/>
           <Switch>
-            <Route path="/admin/test/:catigories/:test" component={Questions}/>*/
+            <Route path="/admin/test/:catigories/:test" component={Questions}/>
             <Route path="/admin/test/:catigories" component={Test}/>
             <Route path="/admin/test" component={Categories}/>
             <Route path="/admin/user/:id" component={Profile}/>

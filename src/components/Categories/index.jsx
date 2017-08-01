@@ -1,44 +1,13 @@
 import React from 'react';
 import ContainerElements from "./../ContainerElements/index.jsx"
 
-let categories=[{
-    id: 1,
-    name: "C#"
-},{
-    id: 2,
-    name: "C++"
-},
-{
-    id: 3,
-    name: "Java"
-},
-{
-    id: 4,
-    name: "Ruby"
-},
-{
-    id: 5,
-    name: "JS"
-},
-{
-    id: 6,
-    name: "HTML"
-},
-{
-    id: 7,
-    name: "CSS"
-},
-{
-    id: 8,
-    name: "XML"
-}];
-
-const Categories = ()=> {
+const Categories = ({categories, addCategory})=> {
     let isAdmin = window.location.pathname.indexOf("/admin/")==0;
+    console.log(categories);
   return (
     <main >
         <h1 className="title">Выберете категорию:</h1>
-        <ContainerElements url={window.location.pathname} data={categories.map((element)=>{return {id:element.id, text: element.name}})} isAdmin={isAdmin}/>
+        <ContainerElements url={window.location.pathname} data={categories.map((element)=>{return {id:element.id, text: element.name}})} isAdmin={isAdmin} addElement={addCategory}/>
     </main>
   );
 };
