@@ -1,13 +1,12 @@
 import React from 'react';
 import ContainerElements from "./../ContainerElements/index.jsx"
 
-const Categories = ({categories, addCategory})=> {
+const Categories = ({categories, addСategory,deleteCategory, changeCategory})=> {
     let isAdmin = window.location.pathname.indexOf("/admin/")==0;
-    console.log(categories);
   return (
     <main >
         <h1 className="title">Выберете категорию:</h1>
-        <ContainerElements url={window.location.pathname} data={categories.map((element)=>{return {id:element.id, text: element.name}})} isAdmin={isAdmin} addElement={addCategory}/>
+        <ContainerElements url={window.location.pathname} data={categories.map((element)=>{return {id:element.id, text: element.name, isReady: element.isReady}})} isAdmin={isAdmin} addElement={addСategory} deleteElement={deleteCategory} changeCheckBox={changeCategory}/>
     </main>
   );
 };

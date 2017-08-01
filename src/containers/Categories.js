@@ -1,13 +1,21 @@
 import { connect } from 'react-redux'
 
 import Categories from '../components/Categories/index.jsx';
-console.log("OK");
 const mapStateToProps = state => ({
-    categories: state
+    categories: state.categories
 })
 const mapDispatchToProps = dispatch => ({
-  addCategory: ()=>{
-      dispatch({type: 'ADD_CATEGORIES'})
+  addСategory: ()=>{
+      dispatch({type: 'ADD_CATEGORY'})
+  },
+  deleteCategory: (id)=>{
+    dispatch({type: 'DELETE_CATEGORY',
+      data: id})
+  },
+  changeCategory:(id)=>
+  {
+    dispatch({type: 'CHANGE_CATEGORY',
+      data: id})
   }
 })
 

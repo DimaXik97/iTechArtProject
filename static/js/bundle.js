@@ -3787,14 +3787,17 @@ var _reactRouterDom = __webpack_require__(19);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var admineIements = _react2.default.createElement(
-    'p',
-    { className: 'adminMenu' },
-    _react2.default.createElement('span', { className: 'edit' }),
-    ' ',
-    _react2.default.createElement('span', { className: 'delete' }),
-    _react2.default.createElement('input', { type: 'checkbox', className: 'isReady' })
-);
+var admineIements = function admineIements(deleteElement, id) {
+    return _react2.default.createElement(
+        'p',
+        { className: 'adminMenu' },
+        _react2.default.createElement('span', { className: 'edit' }),
+        ' ',
+        _react2.default.createElement('span', { className: 'delete', onClick: function onClick(e) {
+                e.preventDefault();deleteElement(id);
+            } })
+    );
+};
 
 var addElement = function addElement(_addElement) {
     return _react2.default.createElement(
@@ -3820,8 +3823,11 @@ var Element = function Element(props) {
                     _reactRouterDom.Link,
                     { to: props.url + "/" + element.id, className: 'content-center' },
                     element.text,
-                    props.isAdmin ? admineIements : undefined
-                )
+                    props.isAdmin ? admineIements(props.deleteElement, element.id) : undefined
+                ),
+                props.isAdmin ? _react2.default.createElement('input', { type: 'checkbox', className: 'isReady', checked: element.isReady, onChange: function onChange(e) {
+                        props.changeCheckBox(element.id);
+                    } }) : null
             );
         }),
         props.isAdmin ? addElement(props.addElement) : undefined
@@ -11415,46 +11421,79 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
-var initialState = [{
-    id: 1,
-    name: "C#"
-}, {
-    id: 2,
-    name: "C++"
-}, {
-    id: 3,
-    name: "Java"
-}, {
-    id: 4,
-    name: "Ruby"
-}, {
-    id: 5,
-    name: "JS"
-}, {
-    id: 6,
-    name: "HTML"
-}, {
-    id: 7,
-    name: "CSS"
-}, {
-    id: 8,
-    name: "XML"
-}];
+var initialState = {
+    categories: [{
+        id: 1,
+        name: "C#",
+        isReady: true
+    }, {
+        id: 2,
+        name: "C++",
+        isReady: true
+    }, {
+        id: 3,
+        name: "Java",
+        isReady: true
+    }, {
+        id: 4,
+        name: "Ruby",
+        isReady: true
+    }, {
+        id: 5,
+        name: "JS",
+        isReady: true
+    }, {
+        id: 6,
+        name: "HTML",
+        isReady: true
+    }, {
+        id: 7,
+        name: "CSS",
+        isReady: true
+    }, {
+        id: 8,
+        name: "XML",
+        isReady: true
+    }],
+    tests: []
+};
 var id = 8;
 function rootReducer() {
     var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
     var action = arguments[1];
 
-    if (action.type === 'ADD_CATEGORIES') {
-        return [].concat(_toConsumableArray(state), [{
-            id: id++,
-            name: "New Category!"
-        }]);
+    switch (action.type) {
+        case 'ADD_CATEGORY':
+            {
+                return Object.assign({}, state, {
+                    categories: [].concat(_toConsumableArray(state.categories), [{
+                        id: ++id,
+                        name: "New Category!",
+                        isReady: false
+                    }]) });
+            }
+        case 'DELETE_CATEGORY':
+            {
+                return Object.assign({}, state, {
+                    categories: state.categories.filter(function (element) {
+                        return element.id !== action.data;
+                    }) });
+            }
+        case 'CHANGE_CATEGORY':
+            {
+                return Object.assign({}, state, {
+                    categories: state.categories.map(function (element) {
+                        if (element.id == action.data) {
+                            element.isReady = !element.isReady;
+                        };return element;
+                    })
+                });
+            }
     }
     return state;
 }
 
-var store = (0, _redux.createStore)(rootReducer);
+var store = (0, _redux.createStore)(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 _reactDom2.default.render(_react2.default.createElement(
     _reactRedux.Provider,
@@ -26215,10 +26254,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var Categories = function Categories(_ref) {
     var categories = _ref.categories,
-        addCategory = _ref.addCategory;
+        addСategory = _ref.addСategory,
+        deleteCategory = _ref.deleteCategory,
+        changeCategory = _ref.changeCategory;
 
     var isAdmin = window.location.pathname.indexOf("/admin/") == 0;
-    console.log(categories);
     return _react2.default.createElement(
         "main",
         null,
@@ -26228,8 +26268,8 @@ var Categories = function Categories(_ref) {
             "\u0412\u044B\u0431\u0435\u0440\u0435\u0442\u0435 \u043A\u0430\u0442\u0435\u0433\u043E\u0440\u0438\u044E:"
         ),
         _react2.default.createElement(_index2.default, { url: window.location.pathname, data: categories.map(function (element) {
-                return { id: element.id, text: element.name };
-            }), isAdmin: isAdmin, addElement: addCategory })
+                return { id: element.id, text: element.name, isReady: element.isReady };
+            }), isAdmin: isAdmin, addElement: addСategory, deleteElement: deleteCategory, changeCheckBox: changeCategory })
     );
 };
 exports.default = Categories;
@@ -29468,16 +29508,23 @@ var _index2 = _interopRequireDefault(_index);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-console.log("OK");
 var mapStateToProps = function mapStateToProps(state) {
   return {
-    categories: state
+    categories: state.categories
   };
 };
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
-    addCategory: function addCategory() {
-      dispatch({ type: 'ADD_CATEGORIES' });
+    addСategory: function addAtegory() {
+      dispatch({ type: 'ADD_CATEGORY' });
+    },
+    deleteCategory: function deleteCategory(id) {
+      dispatch({ type: 'DELETE_CATEGORY',
+        data: id });
+    },
+    changeCategory: function changeCategory(id) {
+      dispatch({ type: 'CHANGE_CATEGORY',
+        data: id });
     }
   };
 };
