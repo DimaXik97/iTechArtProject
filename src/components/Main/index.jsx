@@ -7,7 +7,7 @@ import Footer from "./../Footer/index.jsx";
 import Categories from "./../../containers/Categories.js";
 import About from "./../About/index.jsx";
 import Profile from "./../Profile/index.jsx";
-import Users from "./../Users/index.jsx";
+import Users from "./../../containers/Users.js";
 import Test from "./../../containers/Tests.js";
 import Questions from "./../Questions/index.jsx";
 import Answer from "./../Answer/index.jsx";
