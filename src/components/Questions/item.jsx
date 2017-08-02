@@ -3,9 +3,8 @@ import React from 'react';
 import Text from './text.jsx';
 import Select from './select.jsx';
 
-let isAdmin;
 
-function getAnswer(item){
+function getAnswer(item, isAdmin){
     switch(item.type){
         case 1:{
             return item.answers.map((element, num)=>{
@@ -22,17 +21,16 @@ function getAnswer(item){
         }
     }
 }
-let adminBtm=<span><span className="edit"> </span><span className="delete"> </span><input type="checkbox" className="isReady"/></span>;
 
-const QuestionItem = (props)=> {
-    isAdmin=props.isAdmin;
+const QuestionItem = ({item, isAdmin,deleteQuestion,changeQuestion})=> {
+    let adminBtm=<span><span className="edit"> </span><span className="delete" onClick={()=>{deleteQuestion(item.id)}}> </span><input type="checkbox" checked={item.isReady} onChange={()=>{changeQuestion(item.id)}} className="isReady"/></span>;
     return (
         <li className="question">
             <h2 className="title">
-                {props.item.question}{isAdmin?adminBtm:undefined}
+                {item.question}{isAdmin?adminBtm:undefined}
             </h2>
             <fieldset>
-                {getAnswer(props.item)}
+                {getAnswer(item, isAdmin)}
             </fieldset>
         </li>
   );

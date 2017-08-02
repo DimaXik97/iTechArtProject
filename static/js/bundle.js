@@ -12592,10 +12592,37 @@ var initialState = {
         title: "Новость №6",
         img: "/img/default_img.png",
         text: "Утром во вторник на шоссе столкнулись четыре машины. Одна из них – Mercedes — впоследствии загорелась, пострадали четыре человека. По предварительным данным, аварию спровоцировал водитель Mercedes, устроив \"шашки\" на дороге; после ДТП он убежал. При этом в СМИ сообщалось, что речь идет о сыне бывшего гендиректора МГТС Михаила Смирнова."
-    }]
+    }],
+    questions: [{
+        id: 1,
+        type: 1,
+        isReady: true,
+        question: "C# Переменные 1 Вопрос?",
+        answers: ["Первый ответ", "Второй ответ", "Третий ответ", "Четвертый ответ"]
+    }, {
+        id: 2,
+        type: 2,
+        isReady: true,
+        question: "C# Переменные 2 Вопрос?",
+        answers: ["Первый ответ", "Второй ответ", "Третий ответ", "Четвертый ответ"]
+    }, {
+        id: 3,
+        type: 1,
+        isReady: true,
+        question: "C# Переменные 3 Вопрос?",
+        answers: ["Первый ответ", "Второй ответ", "Третий ответ", "Четвертый ответ"]
+    }, {
+        id: 4,
+        type: 3,
+        isReady: true,
+        question: "C# Переменные 4 Вопрос?",
+        answers: null
+    }],
+    answers: []
 };
 var id = 8;
 var idTest = 10;
+var idQuestion = 4;
 function rootReducer() {
     var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
     var action = arguments[1];
@@ -12647,6 +12674,34 @@ function rootReducer() {
             {
                 return Object.assign({}, state, {
                     tests: state.tests.map(function (element) {
+                        if (element.id == action.data) {
+                            element.isReady = !element.isReady;
+                        };return element;
+                    })
+                });
+            }
+        case 'ADD_QUESTION':
+            {
+                return Object.assign({}, state, {
+                    questions: [].concat(_toConsumableArray(state.questions), [{
+                        id: ++idQuestion,
+                        type: action.data,
+                        isReady: false,
+                        question: '\u041D\u043E\u0432\u044B\u0439 \u0432\u043E\u043F\u0440\u043E\u0441 ' + idQuestion + ' \u0412\u043E\u043F\u0440\u043E\u0441?',
+                        answers: ["Первый ответ", "Второй ответ", "Третий ответ", "Четвертый ответ"]
+                    }]) });
+            }
+        case "DELETE_QUESTION":
+            {
+                return Object.assign({}, state, {
+                    questions: state.questions.filter(function (element) {
+                        return element.id !== action.data;
+                    }) });
+            }
+        case "CHANGE_QUESTION":
+            {
+                return Object.assign({}, state, {
+                    questions: state.questions.map(function (element) {
                         if (element.id == action.data) {
                             element.isReady = !element.isReady;
                         };return element;
@@ -28344,13 +28399,13 @@ var _Tests = __webpack_require__(284);
 
 var _Tests2 = _interopRequireDefault(_Tests);
 
-var _index5 = __webpack_require__(286);
+var _Questions = __webpack_require__(295);
+
+var _Questions2 = _interopRequireDefault(_Questions);
+
+var _index5 = __webpack_require__(290);
 
 var _index6 = _interopRequireDefault(_index5);
-
-var _index7 = __webpack_require__(290);
-
-var _index8 = _interopRequireDefault(_index7);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -28363,16 +28418,16 @@ var Main = function Main() {
     _react2.default.createElement(
       _reactRouterDom.Switch,
       null,
-      _react2.default.createElement(_reactRouterDom.Route, { path: '/admin/test/:catigories/:test', component: _index6.default }),
+      _react2.default.createElement(_reactRouterDom.Route, { path: '/admin/test/:catigories/:test', component: _Questions2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/admin/test/:catigories', component: _Tests2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/admin/test', component: _Categories2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/admin/user/:id', component: _User2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/admin/user', component: _Users2.default }),
-      _react2.default.createElement(_reactRouterDom.Route, { path: '/admin/question/:id', component: _index8.default }),
+      _react2.default.createElement(_reactRouterDom.Route, { path: '/admin/question/:id', component: _index6.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/admin', render: function render() {
           return _react2.default.createElement(_reactRouterDom.Redirect, { to: '/admin/test' });
         } }),
-      _react2.default.createElement(_reactRouterDom.Route, { path: '/test/:catigories/:test', component: _index6.default }),
+      _react2.default.createElement(_reactRouterDom.Route, { path: '/test/:catigories/:test', component: _Questions2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/test/:catigories', component: _Tests2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/test', component: _Categories2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/profile', component: _User2.default }),
@@ -29256,21 +29311,6 @@ var _index2 = _interopRequireDefault(_index);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var questions = [{
-    id: 1,
-    type: 1,
-    question: "Первый вопрос?",
-    answers: [{ id: 1, text: "Первый ответ" }, { id: 2, text: "Второй ответ" }, { id: 3, text: "Третий ответ" }, { id: 4, text: "Четвертый ответ" }]
-}, {
-    id: 2,
-    type: 2,
-    question: "Второй вопрос?",
-    answers: [{ id: 1, text: "Первый ответ" }, { id: 2, text: "Второй ответ" }, { id: 3, text: "Третий ответ" }, { id: 4, text: "Четвертый ответ" }]
-}, {
-    id: 3,
-    type: 3,
-    question: "Третий вопрос?"
-}];
 var tests = [{
     id: 1,
     user: {
@@ -29314,7 +29354,12 @@ var usersTests = _react2.default.createElement(
         }) })
 );
 
-var QuestionList = function QuestionList() {
+var QuestionList = function QuestionList(_ref) {
+    var questions = _ref.questions,
+        addQuestion = _ref.addQuestion,
+        deleteQuestion = _ref.deleteQuestion,
+        changeQuestion = _ref.changeQuestion;
+
     var isAdmin = window.location.pathname.indexOf("/admin/") == 0;
     return _react2.default.createElement(
         'main',
@@ -29326,11 +29371,13 @@ var QuestionList = function QuestionList() {
                 'ul',
                 null,
                 questions.map(function (element, num) {
-                    return _react2.default.createElement(_item2.default, { key: num, item: element, isAdmin: isAdmin });
+                    return _react2.default.createElement(_item2.default, { key: num, item: element, deleteQuestion: deleteQuestion, changeQuestion: changeQuestion, isAdmin: isAdmin });
                 })
             ),
             _react2.default.createElement('input', { className: 'default-btm', type: 'submit', value: isAdmin ? "Сохранить" : "Отправить ответы" }),
-            isAdmin ? _react2.default.createElement('input', { className: 'default-btm', type: 'submit', value: "Добавить вопрос" }) : undefined
+            isAdmin ? _react2.default.createElement('input', { className: 'default-btm', type: 'submit', value: "Добавить вопрос", onClick: function onClick(e) {
+                    e.preventDefault();addQuestion();
+                } }) : undefined
         ),
         isAdmin ? usersTests : undefined
     );
@@ -29362,9 +29409,7 @@ var _select2 = _interopRequireDefault(_select);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var isAdmin = void 0;
-
-function getAnswer(item) {
+function getAnswer(item, isAdmin) {
     switch (item.type) {
         case 1:
             {
@@ -29384,37 +29429,45 @@ function getAnswer(item) {
             }
     }
 }
-var adminBtm = _react2.default.createElement(
-    'span',
-    null,
-    _react2.default.createElement(
-        'span',
-        { className: 'edit' },
-        ' '
-    ),
-    _react2.default.createElement(
-        'span',
-        { className: 'delete' },
-        ' '
-    ),
-    _react2.default.createElement('input', { type: 'checkbox', className: 'isReady' })
-);
 
-var QuestionItem = function QuestionItem(props) {
-    isAdmin = props.isAdmin;
+var QuestionItem = function QuestionItem(_ref) {
+    var item = _ref.item,
+        isAdmin = _ref.isAdmin,
+        deleteQuestion = _ref.deleteQuestion,
+        changeQuestion = _ref.changeQuestion;
+
+    var adminBtm = _react2.default.createElement(
+        'span',
+        null,
+        _react2.default.createElement(
+            'span',
+            { className: 'edit' },
+            ' '
+        ),
+        _react2.default.createElement(
+            'span',
+            { className: 'delete', onClick: function onClick() {
+                    deleteQuestion(item.id);
+                } },
+            ' '
+        ),
+        _react2.default.createElement('input', { type: 'checkbox', checked: item.isReady, onChange: function onChange() {
+                changeQuestion(item.id);
+            }, className: 'isReady' })
+    );
     return _react2.default.createElement(
         'li',
         { className: 'question' },
         _react2.default.createElement(
             'h2',
             { className: 'title' },
-            props.item.question,
+            item.question,
             isAdmin ? adminBtm : undefined
         ),
         _react2.default.createElement(
             'fieldset',
             null,
-            getAnswer(props.item)
+            getAnswer(item, isAdmin)
         )
     );
 };
@@ -29473,9 +29526,9 @@ var Select = function Select(props) {
   return _react2.default.createElement(
     "p",
     null,
-    _react2.default.createElement("input", { name: props.type + "-" + props.id, type: props.type, value: props.answer.value }),
+    _react2.default.createElement("input", { name: props.type + "-" + props.id, type: props.type }),
     " ",
-    props.answer.text,
+    props.answer,
     " ",
     props.isAdmin ? adminBtm : undefined
   );
@@ -29724,6 +29777,49 @@ var mapStateToProps = function mapStateToProps(state) {
 };
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(_index2.default);
+
+/***/ }),
+/* 295 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _reactRedux = __webpack_require__(62);
+
+var _index = __webpack_require__(286);
+
+var _index2 = _interopRequireDefault(_index);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapStateToProps = function mapStateToProps(state) {
+    return {
+        questions: state.questions
+    };
+};
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+    return {
+        addQuestion: function addQuestion() {
+            dispatch({ type: 'ADD_QUESTION',
+                data: 1 });
+        },
+        changeQuestion: function changeQuestion(id) {
+            dispatch({ type: 'CHANGE_QUESTION',
+                data: id });
+        },
+        deleteQuestion: function deleteQuestion(id) {
+            dispatch({ type: 'DELETE_QUESTION',
+                data: id });
+        }
+    };
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_index2.default);
 
 /***/ })
 /******/ ]);

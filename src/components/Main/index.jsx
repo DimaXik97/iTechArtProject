@@ -9,7 +9,7 @@ import About from "./../../containers/About.js";
 import Profile from "./../../containers/User.js";
 import Users from "./../../containers/Users.js";
 import Test from "./../../containers/Tests.js";
-import Questions from "./../Questions/index.jsx";
+import Questions from "./../../containers/Questions.js";
 import Answer from "./../Answer/index.jsx";
 
 const Main = ()=> {

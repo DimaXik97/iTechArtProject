@@ -237,9 +237,42 @@ const initialState = {
             text: "Утром во вторник на шоссе столкнулись четыре машины. Одна из них – Mercedes — впоследствии загорелась, пострадали четыре человека. По предварительным данным, аварию спровоцировал водитель Mercedes, устроив \"шашки\" на дороге; после ДТП он убежал. При этом в СМИ сообщалось, что речь идет о сыне бывшего гендиректора МГТС Михаила Смирнова."
         }
     ],
+    questions:[
+        {
+            id:1,
+            type:1,
+            isReady: true,
+            question:"C# Переменные 1 Вопрос?",
+            answers:[ "Первый ответ", "Второй ответ", "Третий ответ","Четвертый ответ"]
+        },
+        {
+            id:2,
+            type:2,
+            isReady: true,
+            question:"C# Переменные 2 Вопрос?",
+            answers:[ "Первый ответ", "Второй ответ", "Третий ответ","Четвертый ответ"]
+        },
+        {
+            id:3,
+            type:1,
+            isReady: true,
+            question:"C# Переменные 3 Вопрос?",
+            answers:[ "Первый ответ", "Второй ответ", "Третий ответ","Четвертый ответ"]
+        },
+        {
+            id: 4,
+            type: 3,
+            isReady: true,
+            question: "C# Переменные 4 Вопрос?",
+            answers: null
+        }
+    ],
+    answers:[
+    ]
 };
 let id=8;
 let idTest=10;
+let idQuestion= 4;
 function rootReducer(state = initialState, action) {
     switch(action.type)
     {
@@ -281,6 +314,28 @@ function rootReducer(state = initialState, action) {
         case 'CHANGE_TEST':{
             return Object.assign({}, state, {
                 tests: state.tests.map(element => {if(element.id==action.data) {element.isReady=(!element.isReady)}; return element})
+            })
+        }
+        case 'ADD_QUESTION':{
+            return Object.assign({}, state, {
+                questions: [
+                ...state.questions,
+                {
+                    id: ++idQuestion,
+                    type: action.data,
+                    isReady: false,
+                    question:`Новый вопрос ${idQuestion} Вопрос?`,
+                    answers:[ "Первый ответ", "Второй ответ", "Третий ответ","Четвертый ответ"]
+                }
+            ]});
+        }
+        case "DELETE_QUESTION":{
+            return Object.assign({}, state, {
+                questions: state.questions.filter(element => element.id !== action.data)});
+        }
+        case "CHANGE_QUESTION":{
+            return Object.assign({}, state, {
+                questions: state.questions.map(element => {if(element.id==action.data) {element.isReady=(!element.isReady)}; return element})
             })
         }
     }

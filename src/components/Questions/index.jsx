@@ -3,32 +3,6 @@ import React from 'react';
 import QuestionItem from './item.jsx';
 import ContainerElements from "./../ContainerElements/index.jsx";
 
-let questions=[
-    {
-        id: 1,
-        type: 1,
-        question: "Первый вопрос?",
-        answers: [{id:1, text: "Первый ответ"},
-         {id:2, text: "Второй ответ"},
-         {id: 3, text: "Третий ответ"},
-         {id: 4, text: "Четвертый ответ"}]
-    },
-    {
-        id: 2,
-        type: 2,
-        question: "Второй вопрос?",
-        answers: [{id:1, text: "Первый ответ" },
-         {id:2, text: "Второй ответ"},
-         {id: 3, text: "Третий ответ"},
-         {id: 4, text: "Четвертый ответ"}]
-    },
-    {
-        id: 3,
-        type: 3,
-        question: "Третий вопрос?"
-    },
-
-];
 let tests=[{
   id: 1,
   user: {
@@ -64,18 +38,18 @@ let usersTests=(<div>
         <ContainerElements url={"/admin/question"} data={tests.map((element)=>{return {id:element.id, text: `${element.user.surName} ${element.user.name} ${element.date}`}})}/>
     </div>);
 
-const QuestionList = ()=> {
+const QuestionList = ({questions,addQuestion,deleteQuestion,changeQuestion})=> {
     let isAdmin = window.location.pathname.indexOf("/admin/")==0;
   return (
     <main>
         <form>
             <ul>
                 {questions.map((element, num)=>{
-                    return <QuestionItem key={num} item={element} isAdmin={isAdmin}/> 
+                    return <QuestionItem key={num} item={element} deleteQuestion={deleteQuestion} changeQuestion={changeQuestion} isAdmin={isAdmin}/> 
                 })}
             </ul>
             <input className="default-btm" type="submit" value={isAdmin?"Сохранить":"Отправить ответы"}/>
-            {isAdmin?<input className="default-btm" type="submit" value={"Добавить вопрос"}/>:undefined}
+            {isAdmin?<input className="default-btm" type="submit" value={"Добавить вопрос"} onClick={(e)=>{e.preventDefault(); addQuestion()}}/>:undefined}
         </form>
        {isAdmin?usersTests:undefined} 
     </main>
