@@ -2,7 +2,8 @@ import { connect } from 'react-redux'
 
 import Questions from '../components/Questions/index.jsx';
 const mapStateToProps = state => ({
-    questions: state.questions
+    questions: state.questions,
+    usersAnswers: state.answers
 })
 const mapDispatchToProps = dispatch => ({
     addQuestion: ()=>{

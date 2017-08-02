@@ -163,32 +163,6 @@ const initialState = {
                 data: "Количество неправельных",
                 value: "47"
             }
-        ],
-        questions:[
-            {
-                id: 1,
-                categories: "Java",
-                test: "JSP",
-                date: "10.12.2017"
-                },
-            {
-                id: 2,
-                categories: "Java",
-                test: "Servlet",
-                date: "10.12.2017"
-            },
-            {
-                id: 3,
-                categories: "C#",
-                test: "ООП",
-                date: "11.12.2017"
-            },
-            {
-                id: 4,
-                categories: "Java",
-                test: "Коллекции",
-                date: "13.12.2017"
-            }
         ]
     },
     vacancies:[
@@ -268,6 +242,34 @@ const initialState = {
         }
     ],
     answers:[
+        {
+            id: "1",
+            test: "JSP",
+            categories: "Java",
+            user: "User 1",
+            date: "10.12.2016"
+        },
+        {
+            id: "2",
+            test: "Servlet",
+            categories: "Java",
+            user: "User 1",
+            date: "11.12.2016"
+        },
+        {
+            id: "3",
+            test: "Циклы",
+            categories: "C#",
+            user: "User 1",
+            date: "12.12.2016"
+        },
+        {
+            id: "4",
+            test: "Асинхронность",
+            categories: "JS",
+            user: "User 1",
+            date: "13.12.2016"
+        }
     ]
 };
 let id=8;

@@ -33,13 +33,12 @@ let tests=[{
   date: "13.12.2017"
 }];
 
-let usersTests=(<div>
-        <h2 className="title">Ответы пользователей:</h2>
-        <ContainerElements url={"/admin/question"} data={tests.map((element)=>{return {id:element.id, text: `${element.user.surName} ${element.user.name} ${element.date}`}})}/>
-    </div>);
-
-const QuestionList = ({questions,addQuestion,deleteQuestion,changeQuestion})=> {
+const QuestionList = ({questions,addQuestion,deleteQuestion,changeQuestion, usersAnswers})=> {
     let isAdmin = window.location.pathname.indexOf("/admin/")==0;
+    let usersTests=(<div>
+        <h2 className="title">Ответы пользователей:</h2>
+        <ContainerElements url={"/admin/question"} data={usersAnswers.map((element)=>{return {id:element.id, text: `${element.user} ${element.date}`}})}/>
+    </div>);
   return (
     <main>
         <form>

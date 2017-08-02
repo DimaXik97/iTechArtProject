@@ -4,9 +4,9 @@ import UserInfo from "./../UserInfo/index.jsx"
 import UserStatistics from "./../UserStatistics/index.jsx"
 import ContainerElements from "./../ContainerElements/index.jsx"
 
-const User = ({user})=> {
+const User = ({user,questions})=> {
   let isAdmin = window.location.pathname.indexOf("/admin/")==0;
-  let userQuestions=(<ContainerElements url={"/admin/question"} data={user.questions.map((element)=>{return {id:element.id, text: `${element.test} (${element.categories}) ${element.date}`}})}/>);
+  let userQuestions=(<ContainerElements url={"/admin/question"} data={questions.map((element)=>{return {id:element.id, text: `${element.test} (${element.categories}) ${element.date}`}})}/>);
   return (
     <main>
         <UserInfo user={{name:user.name, surname: user.surname}} photo={user.photo} isAdmin={isAdmin}/>

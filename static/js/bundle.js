@@ -12535,27 +12535,6 @@ var initialState = {
         }, {
             data: "Количество неправельных",
             value: "47"
-        }],
-        questions: [{
-            id: 1,
-            categories: "Java",
-            test: "JSP",
-            date: "10.12.2017"
-        }, {
-            id: 2,
-            categories: "Java",
-            test: "Servlet",
-            date: "10.12.2017"
-        }, {
-            id: 3,
-            categories: "C#",
-            test: "ООП",
-            date: "11.12.2017"
-        }, {
-            id: 4,
-            categories: "Java",
-            test: "Коллекции",
-            date: "13.12.2017"
         }]
     },
     vacancies: [{
@@ -12618,7 +12597,31 @@ var initialState = {
         question: "C# Переменные 4 Вопрос?",
         answers: null
     }],
-    answers: []
+    answers: [{
+        id: "1",
+        test: "JSP",
+        categories: "Java",
+        user: "User 1",
+        date: "10.12.2016"
+    }, {
+        id: "2",
+        test: "Servlet",
+        categories: "Java",
+        user: "User 1",
+        date: "11.12.2016"
+    }, {
+        id: "3",
+        test: "Циклы",
+        categories: "C#",
+        user: "User 1",
+        date: "12.12.2016"
+    }, {
+        id: "4",
+        test: "Асинхронность",
+        categories: "JS",
+        user: "User 1",
+        date: "13.12.2016"
+    }]
 };
 var id = 8;
 var idTest = 10;
@@ -28931,10 +28934,11 @@ var _index6 = _interopRequireDefault(_index5);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var User = function User(_ref) {
-  var user = _ref.user;
+  var user = _ref.user,
+      questions = _ref.questions;
 
   var isAdmin = window.location.pathname.indexOf("/admin/") == 0;
-  var userQuestions = _react2.default.createElement(_index6.default, { url: "/admin/question", data: user.questions.map(function (element) {
+  var userQuestions = _react2.default.createElement(_index6.default, { url: "/admin/question", data: questions.map(function (element) {
       return { id: element.id, text: element.test + " (" + element.categories + ") " + element.date };
     }) });
   return _react2.default.createElement(
@@ -29341,26 +29345,26 @@ var tests = [{
     date: "13.12.2017"
 }];
 
-var usersTests = _react2.default.createElement(
-    'div',
-    null,
-    _react2.default.createElement(
-        'h2',
-        { className: 'title' },
-        '\u041E\u0442\u0432\u0435\u0442\u044B \u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u0435\u0439:'
-    ),
-    _react2.default.createElement(_index2.default, { url: "/admin/question", data: tests.map(function (element) {
-            return { id: element.id, text: element.user.surName + ' ' + element.user.name + ' ' + element.date };
-        }) })
-);
-
 var QuestionList = function QuestionList(_ref) {
     var questions = _ref.questions,
         addQuestion = _ref.addQuestion,
         deleteQuestion = _ref.deleteQuestion,
-        changeQuestion = _ref.changeQuestion;
+        changeQuestion = _ref.changeQuestion,
+        usersAnswers = _ref.usersAnswers;
 
     var isAdmin = window.location.pathname.indexOf("/admin/") == 0;
+    var usersTests = _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+            'h2',
+            { className: 'title' },
+            '\u041E\u0442\u0432\u0435\u0442\u044B \u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u0435\u0439:'
+        ),
+        _react2.default.createElement(_index2.default, { url: "/admin/question", data: usersAnswers.map(function (element) {
+                return { id: element.id, text: element.user + ' ' + element.date };
+            }) })
+    );
     return _react2.default.createElement(
         'main',
         null,
@@ -29731,7 +29735,7 @@ exports.default = (0, _reactRedux.connect)(mapStateToProps)(_index2.default);
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 
 var _reactRedux = __webpack_require__(62);
@@ -29743,9 +29747,10 @@ var _index2 = _interopRequireDefault(_index);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var mapStateToProps = function mapStateToProps(state) {
-  return {
-    user: state.user
-  };
+    return {
+        user: state.user,
+        questions: state.answers
+    };
 };
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(_index2.default);
@@ -29799,7 +29804,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var mapStateToProps = function mapStateToProps(state) {
     return {
-        questions: state.questions
+        questions: state.questions,
+        usersAnswers: state.answers
     };
 };
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
