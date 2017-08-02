@@ -1,16 +1,8 @@
 import React from 'react';
 
 import Item from './itemContent.jsx';
-let vacancies=[{title:" Новая вакансия №1",
-    text:"jdfsgkjdfjgn"
-},{title:"Новая вакансия №2",
-    text:"jdfsgkjdfjgn"
-},
-{title:"Новая вакансия №3",
-    text:"jdfsgkjdfjgn"
-}];
 
-const Vacancies = ()=> {
+const Vacancies = ({vacancies})=> {
     return (
     <div className="content">
         {

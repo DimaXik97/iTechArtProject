@@ -5,7 +5,7 @@ import Header from "./../Header/index.jsx";
 import Footer from "./../Footer/index.jsx";
 
 import Categories from "./../../containers/Categories.js";
-import About from "./../About/index.jsx";
+import About from "./../../containers/About.js";
 import Profile from "./../../containers/User.js";
 import Users from "./../../containers/Users.js";
 import Test from "./../../containers/Tests.js";

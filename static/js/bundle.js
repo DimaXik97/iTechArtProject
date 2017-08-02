@@ -12517,7 +12517,7 @@ var initialState = {
         surName: "User"
     }],
     user: {
-        name: "Имя",
+        name: "Имя123",
         surname: "Фамилия",
         photo: "/img/default_photo.png",
         statistics: [{
@@ -12557,7 +12557,42 @@ var initialState = {
             test: "Коллекции",
             date: "13.12.2017"
         }]
-    }
+    },
+    vacancies: [{
+        title: "Вакансия №1",
+        text: "Требуется специалист в отдел N"
+    }, {
+        title: "Вакансия №2",
+        text: "Требуется специалист в отдел N"
+    }, {
+        title: "Вакансия №3",
+        text: "Требуется специалист в отдел N"
+    }],
+    news: [{
+        title: "Новость №1",
+        img: "/img/default_img.png",
+        text: "Lorem Ipsum - это текст-\"рыба\", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной \"рыбой\" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации \"Здесь ваш текст.. Здесь ваш текст.. Здесь ваш текст..\" Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым словам \"lorem ipsum\" сразу показывает, как много веб-страниц всё ещё дожидаются своего настоящего рождения. За прошедшие годы текст Lorem Ipsum получил много версий. Некоторые версии появились по ошибке, некоторые - намеренно (например, юмористические варианты)."
+    }, {
+        title: "Новость №2",
+        img: "/img/default_img.png",
+        text: "Активные увольнения, средняя зарплата, далекая от идеала, затянувшаяся уборочная и посылки белорусов из-за рубежа — все это стало самыми главными новостями за среду, 26 июля. Теперь их можно не только смотреть в социальных сетях в рамках проекта «Короткая лента», но и слушать в аудиоверсии на удобных мобильных платформах."
+    }, {
+        title: "Новость №3",
+        img: null,
+        text: "Инцидент произошел в пятницу утром на железнодорожной станции Французский Вокзал. Пригородный поезд, вышедший со станции Сант-Винсенс-де Кальдерс (провинция Таррагона) врезался носом в оградительную платформу. По предварительной версии, машинист не успел затормозить. В железнодорожной компании Renfe пока не комментируют причины происшествия."
+    }, {
+        title: "Новость №4",
+        img: "/img/default_img.png",
+        text: "Сотрудники ФСБ задержали семерых подозреваемых в подготовке терактов в Санкт-Петербурге, сообщает спецслужба. Ространснадзор планирует усилить меры безопасности в метро Операция по задержанию прошла в пятницу. Все семеро подозреваемых — выходцы из Центральной Азии. По данным ФСБ, они планировали атаки на железнодорожном транспорте и в местах массового скопления людей."
+    }, {
+        title: "Новость №5",
+        img: null,
+        text: "Вашингтону предписали оставить в России 455 сотрудников посольства и консульств — столько же российских дипломатов находятся в США. \"В случае новых односторонних действий американских властей по сокращению численности наших дипломатов в США за этим последует зеркальный ответ\", — подчеркнули в ведомстве."
+    }, {
+        title: "Новость №6",
+        img: "/img/default_img.png",
+        text: "Утром во вторник на шоссе столкнулись четыре машины. Одна из них – Mercedes — впоследствии загорелась, пострадали четыре человека. По предварительным данным, аварию спровоцировал водитель Mercedes, устроив \"шашки\" на дороге; после ДТП он убежал. При этом в СМИ сообщалось, что речь идет о сыне бывшего гендиректора МГТС Михаила Смирнова."
+    }]
 };
 var id = 8;
 var idTest = 10;
@@ -28293,9 +28328,9 @@ var _Categories = __webpack_require__(269);
 
 var _Categories2 = _interopRequireDefault(_Categories);
 
-var _index5 = __webpack_require__(271);
+var _About = __webpack_require__(294);
 
-var _index6 = _interopRequireDefault(_index5);
+var _About2 = _interopRequireDefault(_About);
 
 var _User = __webpack_require__(293);
 
@@ -28309,13 +28344,13 @@ var _Tests = __webpack_require__(284);
 
 var _Tests2 = _interopRequireDefault(_Tests);
 
-var _index7 = __webpack_require__(286);
+var _index5 = __webpack_require__(286);
+
+var _index6 = _interopRequireDefault(_index5);
+
+var _index7 = __webpack_require__(290);
 
 var _index8 = _interopRequireDefault(_index7);
-
-var _index9 = __webpack_require__(290);
-
-var _index10 = _interopRequireDefault(_index9);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -28328,20 +28363,20 @@ var Main = function Main() {
     _react2.default.createElement(
       _reactRouterDom.Switch,
       null,
-      _react2.default.createElement(_reactRouterDom.Route, { path: '/admin/test/:catigories/:test', component: _index8.default }),
+      _react2.default.createElement(_reactRouterDom.Route, { path: '/admin/test/:catigories/:test', component: _index6.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/admin/test/:catigories', component: _Tests2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/admin/test', component: _Categories2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/admin/user/:id', component: _User2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/admin/user', component: _Users2.default }),
-      _react2.default.createElement(_reactRouterDom.Route, { path: '/admin/question/:id', component: _index10.default }),
+      _react2.default.createElement(_reactRouterDom.Route, { path: '/admin/question/:id', component: _index8.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/admin', render: function render() {
           return _react2.default.createElement(_reactRouterDom.Redirect, { to: '/admin/test' });
         } }),
-      _react2.default.createElement(_reactRouterDom.Route, { path: '/test/:catigories/:test', component: _index8.default }),
+      _react2.default.createElement(_reactRouterDom.Route, { path: '/test/:catigories/:test', component: _index6.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/test/:catigories', component: _Tests2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/test', component: _Categories2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/profile', component: _User2.default }),
-      _react2.default.createElement(_reactRouterDom.Route, { path: '/', component: _index6.default })
+      _react2.default.createElement(_reactRouterDom.Route, { path: '/', component: _About2.default })
     ),
     _react2.default.createElement(_index4.default, null)
   );
@@ -28579,7 +28614,10 @@ var _news2 = _interopRequireDefault(_news);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var About = function About() {
+var About = function About(_ref) {
+    var news = _ref.news,
+        vacancies = _ref.vacancies;
+
     return _react2.default.createElement(
         'main',
         { className: 'aboutPage' },
@@ -28588,8 +28626,12 @@ var About = function About() {
             _reactRouterDom.Switch,
             null,
             _react2.default.createElement(_reactRouterDom.Route, { path: '/about/contacts', component: _contacts2.default }),
-            _react2.default.createElement(_reactRouterDom.Route, { path: '/about/vacancies', component: _vacancies2.default }),
-            _react2.default.createElement(_reactRouterDom.Route, { path: '/about/news', component: _news2.default }),
+            _react2.default.createElement(_reactRouterDom.Route, { path: '/about/vacancies', render: function render() {
+                    return _react2.default.createElement(_vacancies2.default, { vacancies: vacancies });
+                } }),
+            _react2.default.createElement(_reactRouterDom.Route, { path: '/about/news', render: function render() {
+                    return _react2.default.createElement(_news2.default, { news: news });
+                } }),
             _react2.default.createElement(_reactRouterDom.Route, { path: '/', render: function render() {
                     return _react2.default.createElement(_reactRouterDom.Redirect, { to: '/about/news' });
                 } })
@@ -28757,15 +28799,9 @@ var _itemContent2 = _interopRequireDefault(_itemContent);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var vacancies = [{ title: " Новая вакансия №1",
-    text: "jdfsgkjdfjgn"
-}, { title: "Новая вакансия №2",
-    text: "jdfsgkjdfjgn"
-}, { title: "Новая вакансия №3",
-    text: "jdfsgkjdfjgn"
-}];
+var Vacancies = function Vacancies(_ref) {
+    var vacancies = _ref.vacancies;
 
-var Vacancies = function Vacancies() {
     return _react2.default.createElement(
         'div',
         { className: 'content' },
@@ -28797,30 +28833,14 @@ var _itemContent2 = _interopRequireDefault(_itemContent);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var news = [{
-    title: "Новость №1",
-    photo: "/img/default_img.png",
-    text: 'Lorem Ipsum - \u044D\u0442\u043E \u0442\u0435\u043A\u0441\u0442-"\u0440\u044B\u0431\u0430", \u0447\u0430\u0441\u0442\u043E \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0435\u043C\u044B\u0439 \u0432 \u043F\u0435\u0447\u0430\u0442\u0438 \u0438 \u0432\u044D\u0431-\u0434\u0438\u0437\u0430\u0439\u043D\u0435. Lorem Ipsum \u044F\u0432\u043B\u044F\u0435\u0442\u0441\u044F \u0441\u0442\u0430\u043D\u0434\u0430\u0440\u0442\u043D\u043E\u0439 "\u0440\u044B\u0431\u043E\u0439"\n                    \u0434\u043B\u044F \u0442\u0435\u043A\u0441\u0442\u043E\u0432 \u043D\u0430 \u043B\u0430\u0442\u0438\u043D\u0438\u0446\u0435 \u0441 \u043D\u0430\u0447\u0430\u043B\u0430 XVI \u0432\u0435\u043A\u0430. \u0412 \u0442\u043E \u0432\u0440\u0435\u043C\u044F \u043D\u0435\u043A\u0438\u0439 \u0431\u0435\u0437\u044B\u043C\u044F\u043D\u043D\u044B\u0439 \u043F\u0435\u0447\u0430\u0442\u043D\u0438\u043A \u0441\u043E\u0437\u0434\u0430\u043B \u0431\u043E\u043B\u044C\u0448\u0443\u044E \u043A\u043E\u043B\u043B\u0435\u043A\u0446\u0438\u044E \u0440\u0430\u0437\u043C\u0435\u0440\u043E\u0432 \u0438 \u0444\u043E\u0440\u043C \u0448\u0440\u0438\u0444\u0442\u043E\u0432,\n                    \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u044F Lorem Ipsum \u0434\u043B\u044F \u0440\u0430\u0441\u043F\u0435\u0447\u0430\u0442\u043A\u0438 \u043E\u0431\u0440\u0430\u0437\u0446\u043E\u0432. Lorem Ipsum \u043D\u0435 \u0442\u043E\u043B\u044C\u043A\u043E \u0443\u0441\u043F\u0435\u0448\u043D\u043E \u043F\u0435\u0440\u0435\u0436\u0438\u043B \u0431\u0435\u0437 \u0437\u0430\u043C\u0435\u0442\u043D\u044B\u0445 \u0438\u0437\u043C\u0435\u043D\u0435\u043D\u0438\u0439 \u043F\u044F\u0442\u044C \u0432\u0435\u043A\u043E\u0432,\n                    \u043D\u043E \u0438 \u043F\u0435\u0440\u0435\u0448\u0430\u0433\u043D\u0443\u043B \u0432 \u044D\u043B\u0435\u043A\u0442\u0440\u043E\u043D\u043D\u044B\u0439 \u0434\u0438\u0437\u0430\u0439\u043D. \u0415\u0433\u043E \u043F\u043E\u043F\u0443\u043B\u044F\u0440\u0438\u0437\u0430\u0446\u0438\u0438 \u0432 \u043D\u043E\u0432\u043E\u0435 \u0432\u0440\u0435\u043C\u044F \u043F\u043E\u0441\u043B\u0443\u0436\u0438\u043B\u0438 \u043F\u0443\u0431\u043B\u0438\u043A\u0430\u0446\u0438\u044F \u043B\u0438\u0441\u0442\u043E\u0432 Letraset \u0441 \u043E\u0431\u0440\u0430\u0437\u0446\u0430\u043C\u0438\n                    Lorem Ipsum \u0432 60-\u0445 \u0433\u043E\u0434\u0430\u0445 \u0438, \u0432 \u0431\u043E\u043B\u0435\u0435 \u043D\u0435\u0434\u0430\u0432\u043D\u0435\u0435 \u0432\u0440\u0435\u043C\u044F, \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u044B \u044D\u043B\u0435\u043A\u0442\u0440\u043E\u043D\u043D\u043E\u0439 \u0432\u0451\u0440\u0441\u0442\u043A\u0438 \u0442\u0438\u043F\u0430 Aldus PageMaker,\n                    \u0432 \u0448\u0430\u0431\u043B\u043E\u043D\u0430\u0445 \u043A\u043E\u0442\u043E\u0440\u044B\u0445 \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0435\u0442\u0441\u044F Lorem Ipsum.\u0414\u0430\u0432\u043D\u043E \u0432\u044B\u044F\u0441\u043D\u0435\u043D\u043E, \u0447\u0442\u043E \u043F\u0440\u0438 \u043E\u0446\u0435\u043D\u043A\u0435 \u0434\u0438\u0437\u0430\u0439\u043D\u0430 \u0438 \u043A\u043E\u043C\u043F\u043E\u0437\u0438\u0446\u0438\u0438 \u0447\u0438\u0442\u0430\u0435\u043C\u044B\u0439 \u0442\u0435\u043A\u0441\u0442 \u043C\u0435\u0448\u0430\u0435\u0442 \u0441\u043E\u0441\u0440\u0435\u0434\u043E\u0442\u043E\u0447\u0438\u0442\u044C\u0441\u044F.\n                    Lorem Ipsum \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u044E\u0442 \u043F\u043E\u0442\u043E\u043C\u0443, \u0447\u0442\u043E \u0442\u043E\u0442 \u043E\u0431\u0435\u0441\u043F\u0435\u0447\u0438\u0432\u0430\u0435\u0442 \u0431\u043E\u043B\u0435\u0435 \u0438\u043B\u0438 \u043C\u0435\u043D\u0435\u0435 \u0441\u0442\u0430\u043D\u0434\u0430\u0440\u0442\u043D\u043E\u0435 \u0437\u0430\u043F\u043E\u043B\u043D\u0435\u043D\u0438\u0435 \u0448\u0430\u0431\u043B\u043E\u043D\u0430, \u0430 \u0442\u0430\u043A\u0436\u0435 \u0440\u0435\u0430\u043B\u044C\u043D\u043E\u0435 \u0440\u0430\u0441\u043F\u0440\u0435\u0434\u0435\u043B\u0435\u043D\u0438\u0435 \u0431\u0443\u043A\u0432\n                    \u0438 \u043F\u0440\u043E\u0431\u0435\u043B\u043E\u0432 \u0432 \u0430\u0431\u0437\u0430\u0446\u0430\u0445, \u043A\u043E\u0442\u043E\u0440\u043E\u0435 \u043D\u0435 \u043F\u043E\u043B\u0443\u0447\u0430\u0435\u0442\u0441\u044F \u043F\u0440\u0438 \u043F\u0440\u043E\u0441\u0442\u043E\u0439 \u0434\u0443\u0431\u043B\u0438\u043A\u0430\u0446\u0438\u0438 "\u0417\u0434\u0435\u0441\u044C \u0432\u0430\u0448 \u0442\u0435\u043A\u0441\u0442.. \u0417\u0434\u0435\u0441\u044C \u0432\u0430\u0448 \u0442\u0435\u043A\u0441\u0442.. \u0417\u0434\u0435\u0441\u044C \u0432\u0430\u0448 \u0442\u0435\u043A\u0441\u0442.."\n                    \u041C\u043D\u043E\u0433\u0438\u0435 \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u044B \u044D\u043B\u0435\u043A\u0442\u0440\u043E\u043D\u043D\u043E\u0439 \u0432\u0451\u0440\u0441\u0442\u043A\u0438 \u0438 \u0440\u0435\u0434\u0430\u043A\u0442\u043E\u0440\u044B HTML \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u044E\u0442 Lorem Ipsum \u0432 \u043A\u0430\u0447\u0435\u0441\u0442\u0432\u0435 \u0442\u0435\u043A\u0441\u0442\u0430 \u043F\u043E \u0443\u043C\u043E\u043B\u0447\u0430\u043D\u0438\u044E, \u0442\u0430\u043A \u0447\u0442\u043E \u043F\u043E\u0438\u0441\u043A \u043F\u043E \u043A\u043B\u044E\u0447\u0435\u0432\u044B\u043C \u0441\u043B\u043E\u0432\u0430\u043C\n                    "lorem ipsum" \u0441\u0440\u0430\u0437\u0443 \u043F\u043E\u043A\u0430\u0437\u044B\u0432\u0430\u0435\u0442, \u043A\u0430\u043A \u043C\u043D\u043E\u0433\u043E \u0432\u0435\u0431-\u0441\u0442\u0440\u0430\u043D\u0438\u0446 \u0432\u0441\u0451 \u0435\u0449\u0451 \u0434\u043E\u0436\u0438\u0434\u0430\u044E\u0442\u0441\u044F \u0441\u0432\u043E\u0435\u0433\u043E \u043D\u0430\u0441\u0442\u043E\u044F\u0449\u0435\u0433\u043E \u0440\u043E\u0436\u0434\u0435\u043D\u0438\u044F.\n                    \u0417\u0430 \u043F\u0440\u043E\u0448\u0435\u0434\u0448\u0438\u0435 \u0433\u043E\u0434\u044B \u0442\u0435\u043A\u0441\u0442 Lorem Ipsum \u043F\u043E\u043B\u0443\u0447\u0438\u043B \u043C\u043D\u043E\u0433\u043E \u0432\u0435\u0440\u0441\u0438\u0439. \u041D\u0435\u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u0432\u0435\u0440\u0441\u0438\u0438 \u043F\u043E\u044F\u0432\u0438\u043B\u0438\u0441\u044C \u043F\u043E \u043E\u0448\u0438\u0431\u043A\u0435, \u043D\u0435\u043A\u043E\u0442\u043E\u0440\u044B\u0435 - \u043D\u0430\u043C\u0435\u0440\u0435\u043D\u043D\u043E\n                    (\u043D\u0430\u043F\u0440\u0438\u043C\u0435\u0440, \u044E\u043C\u043E\u0440\u0438\u0441\u0442\u0438\u0447\u0435\u0441\u043A\u0438\u0435 \u0432\u0430\u0440\u0438\u0430\u043D\u0442\u044B).'
-}, {
-    title: "Новость №2",
-    photo: "/img/default_img.png",
-    text: '\u0422\u0435\u043A\u0441\u0442 \u0430\u0440\u0430\u043F\u043E\u0442\u043F\u0430\u043F \u0430\u043F\u043E\u0430\u043E\u043F\u0438\u0442 \u043F\u043E \u043F\u043E\u0430\u043F \u0430\u043E\u043F\u0435\u0446\u044B \u0444\u044B\u0432\u0430\u043E\u0442 \u0444\u044B\u0432\u0430'
-}, {
-    title: "Новость №3",
-    photo: "/img/default_img.png",
-    text: 'jdfsgkjdfjgn'
-}, {
-    title: "Новость №4",
-    photo: "/img/default_img.png",
-    text: '\u0430\u043F\u043E\u0430\u043E\u043F\u0438\u0442 \u043F\u043E \u043F\u043E\u0430\u043F \u0430\u043E\u043F\u0435\u0446'
-}];
+var News = function News(_ref) {
+    var news = _ref.news;
 
-var News = function News() {
     return _react2.default.createElement(
         'div',
         { className: 'content' },
         news.map(function (element, num) {
-            return _react2.default.createElement(_itemContent2.default, { key: num, title: element.title, photo: element.photo, text: element.text });
+            return _react2.default.createElement(_itemContent2.default, { key: num, title: element.title, photo: element.img, text: element.text });
         })
     );
 };
@@ -29673,6 +29693,34 @@ var mapStateToProps = function mapStateToProps(state) {
   return {
     user: state.user
   };
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps)(_index2.default);
+
+/***/ }),
+/* 294 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _reactRedux = __webpack_require__(62);
+
+var _index = __webpack_require__(271);
+
+var _index2 = _interopRequireDefault(_index);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapStateToProps = function mapStateToProps(state) {
+    return {
+        vacancies: state.vacancies,
+        news: state.news
+    };
 };
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(_index2.default);
