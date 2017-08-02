@@ -1,9 +1,5 @@
 import React from 'react';
-let user={
-    name: "Имя",
-    surname: "Фамилия"
-}
-const UserName = ()=> {
+const UserName = ({user})=> {
   return (
     <div className="userName">
         <p>{user.surname}</p>

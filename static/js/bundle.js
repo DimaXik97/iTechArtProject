@@ -12515,7 +12515,49 @@ var initialState = {
         id: 8,
         name: "8",
         surName: "User"
-    }]
+    }],
+    user: {
+        name: "Имя",
+        surname: "Фамилия",
+        photo: "/img/default_photo.png",
+        statistics: [{
+            data: "Дата регистрации",
+            value: "12.12.2017"
+        }, {
+            data: "Количество прошедших тестов",
+            value: "99"
+        }, {
+            data: "Самый посещаемый раздел",
+            value: "C#"
+        }, {
+            data: "Количество правельных",
+            value: "52"
+        }, {
+            data: "Количество неправельных",
+            value: "47"
+        }],
+        questions: [{
+            id: 1,
+            categories: "Java",
+            test: "JSP",
+            date: "10.12.2017"
+        }, {
+            id: 2,
+            categories: "Java",
+            test: "Servlet",
+            date: "10.12.2017"
+        }, {
+            id: 3,
+            categories: "C#",
+            test: "ООП",
+            date: "11.12.2017"
+        }, {
+            id: 4,
+            categories: "Java",
+            test: "Коллекции",
+            date: "13.12.2017"
+        }]
+    }
 };
 var id = 8;
 var idTest = 10;
@@ -28255,9 +28297,9 @@ var _index5 = __webpack_require__(271);
 
 var _index6 = _interopRequireDefault(_index5);
 
-var _index7 = __webpack_require__(276);
+var _User = __webpack_require__(293);
 
-var _index8 = _interopRequireDefault(_index7);
+var _User2 = _interopRequireDefault(_User);
 
 var _Users = __webpack_require__(292);
 
@@ -28267,17 +28309,16 @@ var _Tests = __webpack_require__(284);
 
 var _Tests2 = _interopRequireDefault(_Tests);
 
-var _index9 = __webpack_require__(286);
+var _index7 = __webpack_require__(286);
+
+var _index8 = _interopRequireDefault(_index7);
+
+var _index9 = __webpack_require__(290);
 
 var _index10 = _interopRequireDefault(_index9);
 
-var _index11 = __webpack_require__(290);
-
-var _index12 = _interopRequireDefault(_index11);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-console.log(window.location.pathname);
 var Main = function Main() {
   var isAdmin = window.location.pathname.indexOf("/admin/") == 0;
   return _react2.default.createElement(
@@ -28287,19 +28328,19 @@ var Main = function Main() {
     _react2.default.createElement(
       _reactRouterDom.Switch,
       null,
-      _react2.default.createElement(_reactRouterDom.Route, { path: '/admin/test/:catigories/:test', component: _index10.default }),
+      _react2.default.createElement(_reactRouterDom.Route, { path: '/admin/test/:catigories/:test', component: _index8.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/admin/test/:catigories', component: _Tests2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/admin/test', component: _Categories2.default }),
-      _react2.default.createElement(_reactRouterDom.Route, { path: '/admin/user/:id', component: _index8.default }),
+      _react2.default.createElement(_reactRouterDom.Route, { path: '/admin/user/:id', component: _User2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/admin/user', component: _Users2.default }),
-      _react2.default.createElement(_reactRouterDom.Route, { path: '/admin/question/:id', component: _index12.default }),
+      _react2.default.createElement(_reactRouterDom.Route, { path: '/admin/question/:id', component: _index10.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/admin', render: function render() {
           return _react2.default.createElement(_reactRouterDom.Redirect, { to: '/admin/test' });
         } }),
-      _react2.default.createElement(_reactRouterDom.Route, { path: '/test/:catigories/:test', component: _index10.default }),
+      _react2.default.createElement(_reactRouterDom.Route, { path: '/test/:catigories/:test', component: _index8.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/test/:catigories', component: _Tests2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/test', component: _Categories2.default }),
-      _react2.default.createElement(_reactRouterDom.Route, { path: '/profile', component: _index8.default }),
+      _react2.default.createElement(_reactRouterDom.Route, { path: '/profile', component: _User2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/', component: _index6.default })
     ),
     _react2.default.createElement(_index4.default, null)
@@ -28814,40 +28855,18 @@ var _index6 = _interopRequireDefault(_index5);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var questions = [{
-  id: 1,
-  categories: "Java",
-  test: "JSP",
-  date: "10.12.2017"
-}, {
-  id: 2,
-  categories: "Java",
-  test: "Servlet",
-  date: "10.12.2017"
-}, {
-  id: 3,
-  categories: "C#",
-  test: "ООП",
-  date: "11.12.2017"
-}, {
-  id: 4,
-  categories: "Java",
-  test: "Коллекции",
-  date: "13.12.2017"
-}];
+var User = function User(_ref) {
+  var user = _ref.user;
 
-var userQuestions = _react2.default.createElement(_index6.default, { url: "/admin/question", data: questions.map(function (element) {
-    return { id: element.id, text: element.test + " (" + element.categories + ") " + element.date };
-  }) });
-
-var User = function User() {
   var isAdmin = window.location.pathname.indexOf("/admin/") == 0;
-
+  var userQuestions = _react2.default.createElement(_index6.default, { url: "/admin/question", data: user.questions.map(function (element) {
+      return { id: element.id, text: element.test + " (" + element.categories + ") " + element.date };
+    }) });
   return _react2.default.createElement(
     "main",
     null,
-    _react2.default.createElement(_index2.default, { isAdmin: isAdmin }),
-    _react2.default.createElement(_index4.default, null),
+    _react2.default.createElement(_index2.default, { user: { name: user.name, surname: user.surname }, photo: user.photo, isAdmin: isAdmin }),
+    _react2.default.createElement(_index4.default, { statistics: user.statistics }),
     isAdmin ? userQuestions : undefined
   );
 };
@@ -28882,13 +28901,17 @@ var _userPhoto2 = _interopRequireDefault(_userPhoto);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var UserInfo = function UserInfo(props) {
+var UserInfo = function UserInfo(_ref) {
+  var isAdmin = _ref.isAdmin,
+      user = _ref.user,
+      photo = _ref.photo;
+
   return _react2.default.createElement(
     "div",
     { className: "userInfo container" },
-    _react2.default.createElement(_userPhoto2.default, null),
-    _react2.default.createElement(_userName2.default, null),
-    _react2.default.createElement(_userMenu2.default, { isAdmin: props.isAdmin })
+    _react2.default.createElement(_userPhoto2.default, { photo: photo }),
+    _react2.default.createElement(_userName2.default, { user: user }),
+    _react2.default.createElement(_userMenu2.default, { isAdmin: isAdmin })
   );
 };
 exports.default = UserInfo;
@@ -28936,7 +28959,7 @@ exports.default = UserMenu;
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _react = __webpack_require__(1);
@@ -28945,25 +28968,23 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var user = {
-    name: "Имя",
-    surname: "Фамилия"
-};
-var UserName = function UserName() {
-    return _react2.default.createElement(
-        "div",
-        { className: "userName" },
-        _react2.default.createElement(
-            "p",
-            null,
-            user.surname
-        ),
-        _react2.default.createElement(
-            "p",
-            null,
-            user.name
-        )
-    );
+var UserName = function UserName(_ref) {
+  var user = _ref.user;
+
+  return _react2.default.createElement(
+    "div",
+    { className: "userName" },
+    _react2.default.createElement(
+      "p",
+      null,
+      user.surname
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      user.name
+    )
+  );
 };
 exports.default = UserName;
 
@@ -28984,11 +29005,13 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var UserPhoto = function UserPhoto() {
+var UserPhoto = function UserPhoto(_ref) {
+  var photo = _ref.photo;
+
   return _react2.default.createElement(
     "div",
     { className: "userPhoto" },
-    _react2.default.createElement("img", { alt: "userPhoto", src: "/img/default_photo.png" })
+    _react2.default.createElement("img", { alt: "userPhoto", src: photo })
   );
 };
 exports.default = UserPhoto;
@@ -29001,7 +29024,7 @@ exports.default = UserPhoto;
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _react = __webpack_require__(1);
@@ -29014,31 +29037,16 @@ var _item2 = _interopRequireDefault(_item);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var statistics = [{
-    data: "Дата регистрации",
-    value: "12.12.2017"
-}, {
-    data: "Количество прошедших тестов",
-    value: "99"
-}, {
-    data: "Самый посещаемый раздел",
-    value: "C#"
-}, {
-    data: "Количество правельных",
-    value: "52"
-}, {
-    data: "Количество неправельных",
-    value: "47"
-}];
+var UserStatistics = function UserStatistics(_ref) {
+  var statistics = _ref.statistics;
 
-var UserStatistics = function UserStatistics() {
-    return _react2.default.createElement(
-        'ul',
-        { className: 'userStatistics container' },
-        statistics.map(function (element, num) {
-            return _react2.default.createElement(_item2.default, { key: num, element: element });
-        })
-    );
+  return _react2.default.createElement(
+    'ul',
+    { className: 'userStatistics container' },
+    statistics.map(function (element, num) {
+      return _react2.default.createElement(_item2.default, { key: num, element: element });
+    })
+  );
 };
 exports.default = UserStatistics;
 
@@ -29637,6 +29645,33 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var mapStateToProps = function mapStateToProps(state) {
   return {
     users: state.users
+  };
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps)(_index2.default);
+
+/***/ }),
+/* 293 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _reactRedux = __webpack_require__(62);
+
+var _index = __webpack_require__(276);
+
+var _index2 = _interopRequireDefault(_index);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    user: state.user
   };
 };
 

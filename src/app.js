@@ -137,7 +137,60 @@ const initialState = {
         id: 8,
         name: "8",
         surName: "User"
-    }]
+    }],
+    user:{
+        name: "Имя",
+        surname: "Фамилия",
+        photo: "/img/default_photo.png",
+        statistics:[
+            {
+                data: "Дата регистрации",
+                value: "12.12.2017"
+            },
+            {
+                data: "Количество прошедших тестов",
+                value: "99"
+            },
+            {
+                data: "Самый посещаемый раздел",
+                value: "C#"
+            },
+            {
+                data:"Количество правельных",
+                value: "52"
+            },
+            {
+                data: "Количество неправельных",
+                value: "47"
+            }
+        ],
+        questions:[
+            {
+                id: 1,
+                categories: "Java",
+                test: "JSP",
+                date: "10.12.2017"
+                },
+            {
+                id: 2,
+                categories: "Java",
+                test: "Servlet",
+                date: "10.12.2017"
+            },
+            {
+                id: 3,
+                categories: "C#",
+                test: "ООП",
+                date: "11.12.2017"
+            },
+            {
+                id: 4,
+                categories: "Java",
+                test: "Коллекции",
+                date: "13.12.2017"
+            }
+        ]
+    }
 };
 let id=8;
 let idTest=10;
