@@ -29315,36 +29315,6 @@ var _index2 = _interopRequireDefault(_index);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var tests = [{
-    id: 1,
-    user: {
-        name: "1",
-        surName: "user"
-    },
-    date: "10.12.2017"
-}, {
-    id: 2,
-    user: {
-        name: "2",
-        surName: "user"
-    },
-    date: "10.12.2017"
-}, {
-    id: 3,
-    user: {
-        name: "4",
-        surName: "user"
-    },
-    date: "11.12.2017"
-}, {
-    id: 4,
-    user: {
-        name: "2",
-        surName: "user"
-    },
-    date: "13.12.2017"
-}];
-
 var QuestionList = function QuestionList(_ref) {
     var questions = _ref.questions,
         addQuestion = _ref.addQuestion,

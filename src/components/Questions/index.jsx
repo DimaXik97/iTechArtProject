@@ -3,36 +3,6 @@ import React from 'react';
 import QuestionItem from './item.jsx';
 import ContainerElements from "./../ContainerElements/index.jsx";
 
-let tests=[{
-  id: 1,
-  user: {
-      name: "1",
-      surName: "user"
-  },
-  date: "10.12.2017"
-},{
-  id: 2,
-  user: {
-      name: "2",
-      surName: "user"
-  },
-  date: "10.12.2017"
-},{
-  id: 3,
-  user: {
-      name: "4",
-      surName: "user"
-  },
-  date: "11.12.2017"
-},{
-  id: 4,
-  user: {
-      name: "2",
-      surName: "user"
-  },
-  date: "13.12.2017"
-}];
-
 const QuestionList = ({questions,addQuestion,deleteQuestion,changeQuestion, usersAnswers})=> {
     let isAdmin = window.location.pathname.indexOf("/admin/")==0;
     let usersTests=(<div>
