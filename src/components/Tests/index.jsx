@@ -1,45 +1,12 @@
 import React from 'react';
 import ContainerElements from "./../ContainerElements/index.jsx"
 
-let tests=[{
-    id: 1,
-    name: "Типы данных, переменные, операторы, циклы, массивы"
-},{
-    id: 2,
-    name: "ООП"
-},{
-    id: 3,
-    name: "Исключения"
-},{
-    id: 4,
-    name: "Коллекции"
-},{
-    id: 5,
-    name: "Строки"
-},{
-    id: 6,
-    name: "Потоки ввода/вывода"
-},{
-    id: 7,
-    name: " Потоки выполнения"
-},{
-    id: 8,
-    name: "SQL, JDBC"
-},{
-    id: 9,
-    name: "JSP"
-},{
-    id: 10,
-    name: "Servlet"
-},];
-
-
-const Test = ()=> {
+const Test = ({tests,addTest,deleteTest, changeTest})=> {
     let isAdmin = window.location.pathname.indexOf("/admin/")==0;
   return (
     <main>
         <h1 className="title">Выберете тест:</h1>
-        <ContainerElements url={window.location.pathname} data={tests.map((element)=>{return {id:element.id, text: element.name}})} isAdmin={isAdmin}/>
+        <ContainerElements url={window.location.pathname} data={tests.map((element)=>{return {id:element.id, text: element.name, isReady: element.isReady}})} isAdmin={isAdmin} addElement={addTest} deleteElement={deleteTest} changeCheckBox={changeTest}/>
     </main>
   );
 };
