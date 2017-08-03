@@ -1,4 +1,6 @@
 import { connect } from 'react-redux'
+import {addСategory, deleteCategory, changeCategory} from '../actions';
+
 
 import Categories from '../components/Categories/index.jsx';
 const mapStateToProps = state => ({
@@ -6,17 +8,14 @@ const mapStateToProps = state => ({
 })
 const mapDispatchToProps = dispatch => ({
   addСategory: ()=>{
-      dispatch({type: 'ADD_CATEGORY'})
+    dispatch(addСategory());
   },
   deleteCategory: (id)=>{
-    dispatch({type: 'DELETE_CATEGORY',
-      data: id})
+    dispatch(deleteCategory(id));
   },
-  changeCategory:(id)=>
-  {
-    dispatch({type: 'CHANGE_CATEGORY',
-      data: id})
-  }
+  changeCategory: (id)=>{
+    dispatch(changeCategory(id));
+  },
 })
 
 export default connect(

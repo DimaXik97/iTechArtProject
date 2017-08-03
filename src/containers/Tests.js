@@ -1,21 +1,21 @@
 import { connect } from 'react-redux'
+import {addTest, deleteTest, changeTest} from '../actions';
 
 import Tests from '../components/Tests/index.jsx';
+
 const mapStateToProps = state => ({
     tests: state.tests
 })
 const mapDispatchToProps = dispatch => ({
   addTest: ()=>{
-      dispatch({type: 'ADD_TEST'})
+      dispatch(addTest())
   },
   deleteTest: (id)=>{
-    dispatch({type: 'DELETE_TEST',
-      data: id})
+    dispatch(deleteTest(id))
   },
   changeTest:(id)=>
   {
-    dispatch({type: 'CHANGE_TEST',
-      data: id})
+    dispatch(changeTest(id))
   }
 })
 

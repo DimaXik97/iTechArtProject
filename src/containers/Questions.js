@@ -1,22 +1,23 @@
 import { connect } from 'react-redux'
+import {addQuestion, deleteQuestion, changeQuestion} from '../actions';
+
+console.log(addQuestion);
 
 import Questions from '../components/Questions/index.jsx';
+
 const mapStateToProps = state => ({
     questions: state.questions,
-    usersAnswers: state.answers
+    usersAnswers: []
 })
 const mapDispatchToProps = dispatch => ({
     addQuestion: ()=>{
-        dispatch({type: 'ADD_QUESTION',
-        data:1})
+        dispatch(addQuestion())
     },
     changeQuestion: (id)=>{
-        dispatch({type: 'CHANGE_QUESTION',
-        data: id})
+        dispatch(changeQuestion(id))
     },
     deleteQuestion:(id)=>{
-        dispatch({type: 'DELETE_QUESTION',
-        data: id})
+        dispatch(deleteQuestion(id))
     }
 })
 
