@@ -53,7 +53,6 @@
 const tests = (state = [], action) => {
     switch (action.type) {
     case 'INIT_TESTS':{
-        console.log("action",action);
         return action.tests
     }
     case 'ADD_TEST':{

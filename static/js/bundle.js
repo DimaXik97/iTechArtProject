@@ -38606,7 +38606,6 @@ var tests = function tests() {
     switch (action.type) {
         case 'INIT_TESTS':
             {
-                console.log("action", action);
                 return action.tests;
             }
         case 'ADD_TEST':
@@ -38763,36 +38762,45 @@ Object.defineProperty(exports, "__esModule", {
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
-var initState = [{
-    id: 1,
-    type: 1,
-    isReady: true,
-    question: "C# Переменные 1 Вопрос?",
-    answers: ["Первый ответ", "Второй ответ", "Третий ответ", "Четвертый ответ"]
-}, {
-    id: 2,
-    type: 2,
-    isReady: true,
-    question: "C# Переменные 2 Вопрос?",
-    answers: ["Первый ответ", "Второй ответ", "Третий ответ", "Четвертый ответ"]
-}, {
-    id: 3,
-    type: 1,
-    isReady: true,
-    question: "C# Переменные 3 Вопрос?",
-    answers: ["Первый ответ", "Второй ответ", "Третий ответ", "Четвертый ответ"]
-}, {
-    id: 4,
-    type: 3,
-    isReady: true,
-    question: "C# Переменные 4 Вопрос?",
-    answers: null
-}];
+/*const initState=[
+    {
+        id:1,
+        type:1,
+        isReady: true,
+        question:"C# Переменные 1 Вопрос?",
+        answers:[ "Первый ответ", "Второй ответ", "Третий ответ","Четвертый ответ"]
+    },
+    {
+        id:2,
+        type:2,
+        isReady: true,
+        question:"C# Переменные 2 Вопрос?",
+        answers:[ "Первый ответ", "Второй ответ", "Третий ответ","Четвертый ответ"]
+    },
+    {
+        id:3,
+        type:1,
+        isReady: true,
+        question:"C# Переменные 3 Вопрос?",
+        answers:[ "Первый ответ", "Второй ответ", "Третий ответ","Четвертый ответ"]
+    },
+    {
+        id: 4,
+        type: 3,
+        isReady: true,
+        question: "C# Переменные 4 Вопрос?",
+        answers: null
+    }
+]*/
 var questions = function questions() {
-    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initState;
+    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
     var action = arguments[1];
 
     switch (action.type) {
+        case 'INIT_QUESTIONS':
+            {
+                return action.questions;
+            }
         case 'ADD_QUESTION':
             {
                 return [].concat(_toConsumableArray(state), [{
@@ -38925,13 +38933,16 @@ exports.default = users;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.initCategories = initCategories;
-exports.initTests = initTests;
+exports.categories = categories;
+exports.tests = tests;
+exports.questions = questions;
 exports.default = rootSaga;
 
 var _reduxSaga = __webpack_require__(230);
 
 var _effects = __webpack_require__(235);
+
+var _actions = __webpack_require__(157);
 
 var _axios = __webpack_require__(630);
 
@@ -38939,22 +38950,18 @@ var _axios2 = _interopRequireDefault(_axios);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var _marked = [initCategories, initTests, rootSaga].map(regeneratorRuntime.mark);
+var _marked = [categories, tests, questions, rootSaga].map(regeneratorRuntime.mark);
 
-var ff = function ff() {
-    return _axios2.default.get('/api/test').then(function (res) {
+var ff = function ff(idCategory, idTest) {
+    var url = '/api/test' + (idCategory ? '/' + idCategory : "") + (idTest ? '/' + idTest : "");
+    return _axios2.default.get(url).then(function (res) {
         return res.data;
     });
 };
-var fff = function fff(id) {
-    return _axios2.default.get('/api/test/' + id).then(function (res) {
-        console.log(res);
-        return res.data;
-    });
-};
-function initCategories() {
+
+function categories() {
     var data;
-    return regeneratorRuntime.wrap(function initCategories$(_context) {
+    return regeneratorRuntime.wrap(function categories$(_context) {
         while (1) {
             switch (_context.prev = _context.next) {
                 case 0:
@@ -38964,7 +38971,7 @@ function initCategories() {
                 case 2:
                     data = _context.sent;
                     _context.next = 5;
-                    return (0, _effects.put)({ type: 'INIT_CATEGORIES', categories: data });
+                    return (0, _effects.put)((0, _actions.initCategories)(data));
 
                 case 5:
                 case 'end':
@@ -38973,19 +38980,19 @@ function initCategories() {
         }
     }, _marked[0], this);
 }
-function initTests(action) {
+function tests(action) {
     var data;
-    return regeneratorRuntime.wrap(function initTests$(_context2) {
+    return regeneratorRuntime.wrap(function tests$(_context2) {
         while (1) {
             switch (_context2.prev = _context2.next) {
                 case 0:
                     _context2.next = 2;
-                    return (0, _effects.call)(fff, action.id);
+                    return (0, _effects.call)(ff, action.idCategory);
 
                 case 2:
                     data = _context2.sent;
                     _context2.next = 5;
-                    return (0, _effects.put)({ type: 'INIT_TESTS', tests: data });
+                    return (0, _effects.put)((0, _actions.initTest)(data));
 
                 case 5:
                 case 'end':
@@ -38994,25 +39001,50 @@ function initTests(action) {
         }
     }, _marked[1], this);
 }
-
-function rootSaga() {
-    return regeneratorRuntime.wrap(function rootSaga$(_context3) {
+function questions(action) {
+    var data;
+    return regeneratorRuntime.wrap(function questions$(_context3) {
         while (1) {
             switch (_context3.prev = _context3.next) {
                 case 0:
                     _context3.next = 2;
-                    return (0, _effects.takeEvery)('GET_CATEGORIES', initCategories);
+                    return (0, _effects.call)(ff, action.idCategory, action.idTest);
 
                 case 2:
-                    _context3.next = 4;
-                    return (0, _effects.takeEvery)('GET_TESTS', initTests);
+                    data = _context3.sent;
+                    _context3.next = 5;
+                    return (0, _effects.put)((0, _actions.initQuestions)(data));
 
-                case 4:
+                case 5:
                 case 'end':
                     return _context3.stop();
             }
         }
     }, _marked[2], this);
+}
+
+function rootSaga() {
+    return regeneratorRuntime.wrap(function rootSaga$(_context4) {
+        while (1) {
+            switch (_context4.prev = _context4.next) {
+                case 0:
+                    _context4.next = 2;
+                    return (0, _effects.takeEvery)('GET_CATEGORIES', categories);
+
+                case 2:
+                    _context4.next = 4;
+                    return (0, _effects.takeEvery)('GET_TESTS', tests);
+
+                case 4:
+                    _context4.next = 6;
+                    return (0, _effects.takeEvery)('GET_QUESTIONS', questions);
+
+                case 6:
+                case 'end':
+                    return _context4.stop();
+            }
+        }
+    }, _marked[3], this);
 }
 
 /***/ }),
@@ -39416,7 +39448,7 @@ var initTest = exports.initTest = function initTest(tests) {
 var getTests = exports.getTests = function getTests(id) {
     return {
         type: 'GET_TESTS',
-        id: id
+        idCategory: id
     };
 };
 var addTest = exports.addTest = function addTest() {
@@ -39451,13 +39483,26 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 var idNew = 4;
+var initQuestions = exports.initQuestions = function initQuestions(questions) {
+    return {
+        type: 'INIT_QUESTIONS',
+        questions: questions
+    };
+};
+var getQuestions = exports.getQuestions = function getQuestions(idCategory, idTest) {
+    return {
+        type: 'GET_QUESTIONS',
+        idCategory: idCategory,
+        idTest: idTest
+    };
+};
 var addQuestion = exports.addQuestion = function addQuestion() {
     return {
         type: 'ADD_QUESTION',
         id: ++idNew,
         isReady: false,
         typeQuestions: 2,
-        question: "New " + idNew + " Questions!",
+        question: 'New ' + idNew + ' Questions!',
         answers: ["Первый ответ", "Второй ответ", "Третий ответ", "Четвертый ответ"]
     };
 };
@@ -40339,6 +40384,9 @@ var mapStateToProps = function mapStateToProps(state) {
 };
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     return {
+        init: function init(idCategory, idTest) {
+            dispatch((0, _actions.getQuestions)(idCategory, idTest));
+        },
         addQuestion: function addQuestion() {
             dispatch((0, _actions.addQuestion)());
         },
@@ -40364,6 +40412,8 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
@@ -40378,47 +40428,73 @@ var _index2 = _interopRequireDefault(_index);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var QuestionList = function QuestionList(_ref) {
-    var questions = _ref.questions,
-        addQuestion = _ref.addQuestion,
-        deleteQuestion = _ref.deleteQuestion,
-        changeQuestion = _ref.changeQuestion,
-        usersAnswers = _ref.usersAnswers;
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-    var isAdmin = window.location.pathname.indexOf("/admin/") == 0;
-    var usersTests = _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(
-            'h2',
-            { className: 'title' },
-            '\u041E\u0442\u0432\u0435\u0442\u044B \u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u0435\u0439:'
-        ),
-        _react2.default.createElement(_index2.default, { url: "/admin/question", data: usersAnswers.map(function (element) {
-                return { id: element.id, text: element.user + ' ' + element.date };
-            }) })
-    );
-    return _react2.default.createElement(
-        'main',
-        null,
-        _react2.default.createElement(
-            'form',
-            null,
-            _react2.default.createElement(
-                'ul',
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var QuestionList = function (_React$Component) {
+    _inherits(QuestionList, _React$Component);
+
+    function QuestionList() {
+        _classCallCheck(this, QuestionList);
+
+        return _possibleConstructorReturn(this, (QuestionList.__proto__ || Object.getPrototypeOf(QuestionList)).apply(this, arguments));
+    }
+
+    _createClass(QuestionList, [{
+        key: 'componentDidMount',
+        /*({questions,addQuestion,deleteQuestion,changeQuestion, usersAnswers})=>*/
+        value: function componentDidMount() {
+            var params = this.props.match.params;
+            this.props.init(params.category, params.test);
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _this2 = this;
+
+            var isAdmin = window.location.pathname.indexOf("/admin/") == 0;
+            var usersTests = _react2.default.createElement(
+                'div',
                 null,
-                questions.map(function (element, num) {
-                    return _react2.default.createElement(_item2.default, { key: num, item: element, deleteQuestion: deleteQuestion, changeQuestion: changeQuestion, isAdmin: isAdmin });
-                })
-            ),
-            _react2.default.createElement('input', { className: 'default-btm', type: 'submit', value: isAdmin ? "Сохранить" : "Отправить ответы" }),
-            isAdmin ? _react2.default.createElement('input', { className: 'default-btm', type: 'submit', value: "Добавить вопрос", onClick: function onClick(e) {
-                    e.preventDefault();addQuestion();
-                } }) : undefined
-        ),
-        isAdmin ? usersTests : undefined
-    );
-};
+                _react2.default.createElement(
+                    'h2',
+                    { className: 'title' },
+                    '\u041E\u0442\u0432\u0435\u0442\u044B \u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u0435\u0439:'
+                ),
+                _react2.default.createElement(_index2.default, { url: "/admin/question", data: this.props.usersAnswers.map(function (element) {
+                        return { id: element.id, text: element.user + ' ' + element.date };
+                    }) })
+            );
+            return _react2.default.createElement(
+                'main',
+                null,
+                _react2.default.createElement(
+                    'form',
+                    null,
+                    _react2.default.createElement(
+                        'ul',
+                        null,
+                        this.props.questions.map(function (element, num) {
+                            return _react2.default.createElement(_item2.default, { key: num, item: element, deleteQuestion: _this2.props.deleteQuestion, changeQuestion: _this2.props.changeQuestion, isAdmin: isAdmin });
+                        })
+                    ),
+                    _react2.default.createElement('input', { className: 'default-btm', type: 'submit', value: isAdmin ? "Сохранить" : "Отправить ответы" }),
+                    isAdmin ? _react2.default.createElement('input', { className: 'default-btm', type: 'submit', value: "Добавить вопрос", onClick: function onClick(e) {
+                            e.preventDefault();_this2.props.addQuestion();
+                        } }) : undefined
+                ),
+                isAdmin ? usersTests : undefined
+            );
+        }
+    }]);
+
+    return QuestionList;
+}(_react2.default.Component);
+
+;
 exports.default = QuestionList;
 
 /***/ }),

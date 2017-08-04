@@ -1,4 +1,13 @@
 let idNew=4;
+export const initQuestions =(questions)=>({
+    type: 'INIT_QUESTIONS',
+    questions: questions
+})
+export const getQuestions =(idCategory,idTest)=>({
+    type: 'GET_QUESTIONS',
+    idCategory: idCategory,
+    idTest: idTest
+})
 export const addQuestion = ()=>({
     type: 'ADD_QUESTION',
     id: ++idNew,

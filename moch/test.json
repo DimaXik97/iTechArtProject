@@ -1,38 +1,38 @@
 [
     {
-        "id":"1",
+        "id":1,
         "name":"C#",
         "isReady": true,
         "tests": [
             {
-                "id":"1",
+                "id":1,
                 "name":"Переменные",
                 "isReady": true,
                 "questions":[
                     {
-                        "id":"1",
-                        "type":"1",
+                        "id":1,
+                        "type":1,
                         "isReady": true,
                         "question":"C# Переменные 1 Вопрос?",
                         "answers":[ "Первый ответ", "Второй ответ", "Третий ответ","Четвертый ответ"]
                     },
                     {
-                        "id":"2",
-                        "type":"2",
+                        "id":2,
+                        "type":2,
                         "isReady": true,
                         "question":"C# Переменные 2 Вопрос?",
                         "answers":[ "Первый ответ", "Второй ответ", "Третий ответ","Четвертый ответ"]
                     },
                     {
-                        "id":"3",
-                        "type":"1",
+                        "id":3,
+                        "type":1,
                         "isReady": true,
                         "question":"C# Переменные 3 Вопрос?",
                         "answers":[ "Первый ответ", "Второй ответ", "Третий ответ","Четвертый ответ"]
                     },
                     {
-                        "id": "4",
-                        "type": "3",
+                        "id": 4,
+                        "type": 3,
                         "isReady": true,
                         "question": "C# Переменные 4 Вопрос?",
                         "answers": null
@@ -40,101 +40,101 @@
                 ]
             },
             {
-                "id":"2",
+                "id":2,
                 "name":"Сборщик мусора",
                 "isReady": true,
                 "questions":[
                     {
-                        "id":"1",
-                        "type":"3",
+                        "id":1,
+                        "type":3,
                         "isReady": true,
                         "question":"C# Сборщик мусора 1 Вопрос?",
                         "answers":null
                     },
                     {
-                        "id":"2",
-                        "type":"2",
+                        "id":2,
+                        "type":2,
                         "isReady": true,
                         "question":"C# Сборщик мусора 2 Вопрос?",
                         "answers":[ "Первый ответ", "Второй ответ", "Третий ответ","Четвертый ответ"]
                     },
                     {
-                        "id":"3",
-                        "type":"2",
+                        "id":3,
+                        "type":2,
                         "isReady": true,
                         "question":"C# Сборщик мусора 3 Вопрос?",
                         "answers":[ "Первый ответ", "Второй ответ", "Третий ответ","Четвертый ответ"]
                     },
                     {
-                        "id":"4",
-                        "type":"1",
+                        "id":4,
+                        "type":1,
                         "question":"C# Сборщик мусора 4 Вопрос?",
                         "answers":[ "Первый ответ", "Второй ответ", "Третий ответ","Четвертый ответ"]
                     }
                 ]
             },{
-                "id":"3",
+                "id":3,
                 "name": "Наследование",
                 "isReady":true,
                 "questions":[
                     {
-                        "id":"1",
-                        "type":"2",
+                        "id":1,
+                        "type":2,
                         "isReady": true,
                         "question":"C# Наследование 1 Вопрос?",
                         "answers":null
                     },
                     {
-                        "id":"2",
-                        "type":"3",
+                        "id":2,
+                        "type":3,
                         "isReady": true,
                         "question":"C# Наследование 2 Вопрос?",
                         "answers":null
                     },
                     {
-                        "id":"3",
-                        "type":"3",
+                        "id":3,
+                        "type":3,
                         "isReady": true,
                         "question":"C# Наследование 3 Вопрос?",
                         "answers":null
                     },
                     {
-                        "id":"4",
-                        "type":"3",
+                        "id":4,
+                        "type":3,
                         "isReady": true,
                         "question":"C# Наследование 4 Вопрос?",
                         "answers":null
                     }
                 ]
             },{
-                "id":"4",
+                "id":4,
                 "name":"Функции",
                 "isReady":true,
                 "questions":[
                     {
-                        "id":"1",
-                        "type":"1",
+                        "id":1,
+                        "type":1,
                         "isReady": true,
                         "question":"C# Функции 1 Вопрос?",
                         "answers":[ "Первый ответ", "Второй ответ", "Третий ответ","Четвертый ответ"]
                     },
                     {
-                        "id":"2",
-                        "type":"1",
+                        "id":2,
+                        "type":1,
                         "isReady": true,
                         "question":"C# Функции 2 Вопрос?",
                         "answers":[ "Первый ответ", "Второй ответ", "Третий ответ","Четвертый ответ"]
                     },
                     {
-                        "id":"3",
-                        "type":"2",
+                        "id":3,
+                        "type":2,
                         "isReady": true,
                         "question":"C# Функции 3 Вопрос?",
                         "answers":[ "Первый ответ", "Второй ответ", "Третий ответ","Четвертый ответ"]
                     },
                     {
-                        "id":"4",
-                        "type":"1",
+                        "id":4,
+                        "type":1,
                         "isReady": true,
                         "question":"C# Функции 4 Вопрос?",
                         "answers":[ "Первый ответ", "Второй ответ", "Третий ответ","Четвертый ответ"]
@@ -144,39 +144,39 @@
         ]
     },
     {
-        "id":"2",
+        "id":2,
         "name":"Java",
         "isReady": true,
         "tests": [
             {
-                "id":"1",
+                "id":1,
                 "name":"JSP",
                 "isReady":true,
                 "questions":[
                     {
-                        "id":"1",
-                        "type":"1",
+                        "id":1,
+                        "type":1,
                         "isReady": true,
                         "question":"Java JSP 1 Вопрос?",
                         "answers":[ "Первый ответ", "Второй ответ", "Третий ответ","Четвертый ответ"]
                     },
                     {
-                        "id":"1",
-                        "type":"1",
+                        "id":1,
+                        "type":1,
                         "isReady": true,
                         "question":"Java JSP 2 Вопрос?",
                         "answers":[ "Первый ответ", "Второй ответ", "Третий ответ","Четвертый ответ"]
                     },
                     {
-                        "id":"1",
-                        "type":"2",
+                        "id":1,
+                        "type":2,
                         "isReady": true,
                         "question":"Java JSP 3 Вопрос?",
                         "answers":[ "Первый ответ", "Второй ответ", "Третий ответ","Четвертый ответ"]
                     },
                     {
-                        "id":"1",
-                        "type":"3",
+                        "id":1,
+                        "type":3,
                         "isReady": true,
                         "question":"Java JSP 4 Вопрос?",
                         "answers":null
@@ -184,102 +184,102 @@
                 ]
             },
             {
-                "id":"2",
+                "id":2,
                 "name":"JSF",
                 "isReady":true,
                 "questions":[
                     {
-                        "id":"1",
-                        "type":"1",
+                        "id":1,
+                        "type":1,
                         "isReady": true,
                         "question":"Java JSF 1 Вопрос?",
                         "answers":[ "Первый ответ", "Второй ответ", "Третий ответ","Четвертый ответ"]
                     },
                     {
-                        "id":"2",
-                        "type":"2",
+                        "id":2,
+                        "type":2,
                         "isReady": true,
                         "question":"Java JSF 2 Вопрос?",
                         "answers":[ "Первый ответ", "Второй ответ", "Третий ответ","Четвертый ответ"]
                     },
                     {
-                        "id":"3",
-                        "type":"1",
+                        "id":3,
+                        "type":1,
                         "isReady": true,
                         "question":"Java JSF 3 Вопрос?",
                         "answers":[ "Первый ответ", "Второй ответ", "Третий ответ","Четвертый ответ"]
                     },
                     {
-                        "id":"4",
-                        "type":"2",
+                        "id":4,
+                        "type":2,
                         "isReady": true,
                         "question":"Java JSF 4 Вопрос?",
                         "answers":[ "Первый ответ", "Второй ответ", "Третий ответ","Четвертый ответ"]
                     }
                 ]
             },{
-                "id":"3",
+                "id":3,
                 "name":"Servlet",
                 "isReady":true,
                 "questions":[
                     {
-                        "id":"1",
-                        "type":"2",
+                        "id":1,
+                        "type":2,
                         "isReady": true,
                         "question":"Java Servlet 1 Вопрос?",
                         "answers":[ "Первый ответ", "Второй ответ", "Третий ответ","Четвертый ответ"]
                     },
                     {
-                        "id":"2",
-                        "type":"3",
+                        "id":2,
+                        "type": 3,
                         "isReady": true,
                         "question":"Java Servlet 2 Вопрос?",
                         "answers":null
                     },
                     {
-                        "id":"3",
-                        "type":"3",
+                        "id":3,
+                        "type":3,
                         "isReady": true,
                         "question":"Java Servlet 3 Вопрос?",
                         "answers":null
                     },
                     {
-                        "id":"4",
-                        "type":"3",
+                        "id":4,
+                        "type":3,
                         "isReady": true,
                         "question":"Java Servlet 4 Вопрос?",
                         "answers":null
                     }
                 ]
             },{
-                "id":"4",
+                "id":4,
                 "name":"Циклы",
                 "isReady":true,
                 "questions":[
                     {
-                        "id":"1",
-                        "type":"1",
+                        "id":1,
+                        "type":1,
                         "isReady": true,
                         "question":"Java Циклы 1 Вопрос?",
                         "answers":[ "Первый ответ", "Второй ответ", "Третий ответ","Четвертый ответ"]
                     },
                     {
-                        "id":"2",
-                        "type":"1",
+                        "id":2,
+                        "type":1,
                         "isReady": true,
                         "question":"Java Циклы 2 Вопрос?",
                         "answers":[ "Первый ответ", "Второй ответ", "Третий ответ","Четвертый ответ"]
                     },
                     {
-                        "id":"2",
-                        "type":"2",
+                        "id":2,
+                        "type":2,
                         "isReady": true,
                         "question":"Java Циклы 3 Вопрос?",
                         "answers":[ "Первый ответ", "Второй ответ", "Третий ответ","Четвертый ответ"]
                     },
                     {
-                        "id":"2",
-                        "type":"3",
+                        "id":2,
+                        "type":3,
                         "isReady": true,
                         "question":"Java Циклы 4 Вопрос?",
                         "answers":null
@@ -289,39 +289,39 @@
         ]
     },
     {
-        "id":"3",
+        "id":3,
         "name":"JS",
         "isReady": true,
         "tests": [
             {
-                "id":"1",
+                "id":1,
                 "name":"Жизненный цикл",
                 "isReady":true,
                 "questions":[
                     {
-                        "id":"1",
-                        "type":"2",
+                        "id":1,
+                        "type":2,
                         "isReady": true,
                         "question":"JS Жизненный цикл 1 Вопрос?",
                         "answers":[ "Первый ответ", "Второй ответ", "Третий ответ","Четвертый ответ"]
                     },
                     {
-                        "id":"2",
-                        "type":"3",
+                        "id":2,
+                        "type":3,
                         "isReady": true,
                         "question":"JS Жизненный цикл 2 Вопрос?",
                         "answers":null
                     },
                     {
-                        "id":"2",
-                        "type":"1",
+                        "id":2,
+                        "type":1,
                         "isReady": true,
                         "question":"JS Жизненный цикл 3 Вопрос?",
                         "answers":[ "Первый ответ", "Второй ответ", "Третий ответ","Четвертый ответ"]
                     },
                     {
-                        "id":"2",
-                        "type":"1",
+                        "id":2,
+                        "type":1,
                         "isReady": true,
                         "question":"JS Жизненный цикл 4 Вопрос?",
                         "answers":[ "Первый ответ", "Второй ответ", "Третий ответ","Четвертый ответ"]
@@ -329,102 +329,102 @@
                 ]
             },
             {
-                "id":"2",
+                "id":2,
                 "name":"Синтаксис",
                 "isReady":true,
                 "questions":[
                     {
-                        "id":"1",
-                        "type":"1",
+                        "id":1,
+                        "type":1,
                         "isReady": true,
                         "question":"JS Синтаксис 1 Вопрос?",
                         "answers":[ "Первый ответ", "Второй ответ", "Третий ответ","Четвертый ответ"]
                     },
                     {
-                        "id":"2",
-                        "type":"1",
+                        "id":2,
+                        "type":1,
                         "isReady": true,
                         "question":"JS Синтаксис 2 Вопрос?",
                         "answers":[ "Первый ответ", "Второй ответ", "Третий ответ","Четвертый ответ"]
                     },
                     {
-                        "id":"3",
-                        "type":"2",
+                        "id":3,
+                        "type":2,
                         "isReady": true,
                         "question":"JS Синтаксис 3 Вопрос?",
                         "answers":[ "Первый ответ", "Второй ответ", "Третий ответ","Четвертый ответ"]
                     },
                     {
-                        "id":"4",
-                        "type":"2",
+                        "id":4,
+                        "type":2,
                         "isReady": true,
                         "question":"JS Синтаксис 4 Вопрос?",
                         "answers":[ "Первый ответ", "Второй ответ", "Третий ответ","Четвертый ответ"]
                     }
                 ]
             },{
-                "id":"3",
+                "id":3,
                 "name":"События",
                 "isReady":true,
                 "questions":[
                     {
-                        "id":"1",
-                        "type":"3",
+                        "id":1,
+                        "type":3,
                         "isReady": true,
                         "question":"JS События 1 Вопрос?",
                         "answers":null
                     },
                     {
-                        "id":"2",
-                        "type":"3",
+                        "id":2,
+                        "type":3,
                         "isReady": true,
                         "question":"JS События 2 Вопрос?",
                         "answers":null
                     },
                     {
-                        "id":"3",
-                        "type":"1",
+                        "id":3,
+                        "type":1,
                         "isReady": true,
                         "question":"JS События 3 Вопрос?",
                         "answers":[ "Первый ответ", "Второй ответ", "Третий ответ","Четвертый ответ"]
                     },
                     {
-                        "id":"3",
-                        "type":"1",
+                        "id":3,
+                        "type":1,
                         "isReady": true,
                         "question":"JS События 4 Вопрос?",
                         "answers":[ "Первый ответ", "Второй ответ", "Третий ответ","Четвертый ответ"]
                     }
                 ]
             },{
-                "id":"4",
+                "id":4,
                 "name":"Асинхронность",
                 "isReady":true,
                 "questions":[
                     {
-                        "id":"1",
-                        "type":"1",
+                        "id":1,
+                        "type":1,
                         "isReady": true,
                         "question":"JS Асинхронность 1 Вопрос?",
                         "answers":[ "Первый ответ", "Второй ответ", "Третий ответ","Четвертый ответ"]
                     },
                     {
-                        "id":"1",
-                        "type":"1",
+                        "id":1,
+                        "type":1,
                         "isReady": true,
                         "question":"JS Асинхронность 2 Вопрос?",
                         "answers":[ "Первый ответ", "Второй ответ", "Третий ответ","Четвертый ответ"]
                     },
                     {
-                        "id":"1",
-                        "type":"1",
+                        "id":1,
+                        "type":1,
                         "isReady": true,
                         "question":"JS Асинхронность 3 Вопрос?",
                         "answers":[ "Первый ответ", "Второй ответ", "Третий ответ","Четвертый ответ"]
                     },
                     {
-                        "id":"1",
-                        "type":"3",
+                        "id":1,
+                        "type":3,
                         "isReady": true,
                         "question":"JS Асинхронность 4 Вопрос?",
                         "answers":null

@@ -6,7 +6,7 @@ export const initTest =(tests)=>({
 })
 export const getTests =(id)=>({
     type: 'GET_TESTS',
-    id:id
+    idCategory: id
 })
 export const addTest = ()=>({
     type: 'ADD_TEST',

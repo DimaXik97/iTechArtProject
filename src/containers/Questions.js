@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import {addQuestion, deleteQuestion, changeQuestion} from '../actions';
+import {addQuestion, deleteQuestion, changeQuestion, getQuestions} from '../actions';
 
 import Questions from '../components/Questions/index.jsx';
 
@@ -8,6 +8,9 @@ const mapStateToProps = state => ({
     usersAnswers: state.answers
 })
 const mapDispatchToProps = dispatch => ({
+    init:(idCategory, idTest)=>{
+        dispatch(getQuestions(idCategory,idTest))
+    },
     addQuestion: ()=>{
         dispatch(addQuestion())
     },

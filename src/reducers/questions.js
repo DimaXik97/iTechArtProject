@@ -1,4 +1,4 @@
-const initState=[
+/*const initState=[
     {
         id:1,
         type:1,
@@ -27,9 +27,12 @@ const initState=[
         question: "C# Переменные 4 Вопрос?",
         answers: null
     }
-]
-const questions = (state = initState, action) => {
+]*/
+const questions = (state = [], action) => {
     switch (action.type) {
+    case 'INIT_QUESTIONS':{
+        return action.questions
+    }
     case 'ADD_QUESTION':{
         return [
             ...state,
