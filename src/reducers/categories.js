@@ -1,4 +1,4 @@
-const initState=[
+/*const initState=[
     {
         id: 1,
         name: "C#",
@@ -39,9 +39,12 @@ const initState=[
         name: "XML",
         isReady: true
     }
-]
-const categories = (state = initState, action) => {
+]*/
+const categories = (state = [], action) => {
     switch (action.type) {
+    case 'INIT_CATEGORIES':{
+        return action.categories
+    }
     case 'ADD_CATEGORY':{
         return [
             ...state,

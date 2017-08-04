@@ -9,7 +9,9 @@ module.exports={
             }
         }]
     },
-    entry: './src/app.js',
+    entry: {
+        js: ['babel-polyfill', './src/app.js']
+    },
     output: {
         path: __dirname +'/static/js',
         filename: 'bundle.js'
