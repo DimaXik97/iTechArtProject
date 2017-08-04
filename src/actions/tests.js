@@ -1,4 +1,13 @@
 let idNew=10;
+
+export const initTest =(tests)=>({
+    type: 'INIT_TESTS',
+    tests: tests
+})
+export const getTests =(id)=>({
+    type: 'GET_TESTS',
+    id:id
+})
 export const addTest = ()=>({
     type: 'ADD_TEST',
     id: ++idNew,

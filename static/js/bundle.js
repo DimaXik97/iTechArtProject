@@ -38547,52 +38547,68 @@ Object.defineProperty(exports, "__esModule", {
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
-var initState = [{
-    id: 1,
-    name: "Типы данных, переменные, операторы, циклы, массивы",
-    isReady: true
-}, {
-    id: 2,
-    name: "ООП",
-    isReady: true
-}, {
-    id: 3,
-    name: "Исключения",
-    isReady: true
-}, {
-    id: 4,
-    name: "Коллекции",
-    isReady: true
-}, {
-    id: 5,
-    name: "Строки",
-    isReady: true
-}, {
-    id: 6,
-    name: "Потоки ввода/вывода",
-    isReady: true
-}, {
-    id: 7,
-    name: " Потоки выполнения",
-    isReady: true
-}, {
-    id: 8,
-    name: "SQL, JDBC",
-    isReady: true
-}, {
-    id: 9,
-    name: "JSP",
-    isReady: true
-}, {
-    id: 10,
-    name: "Servlet",
-    isReady: true
-}];
+/*const initState=[
+    {
+        id: 1,
+        name: "Типы данных, переменные, операторы, циклы, массивы",
+        isReady: true
+    },
+    {
+        id: 2,
+        name: "ООП",
+        isReady: true
+    },
+    {
+        id: 3,
+        name: "Исключения",
+        isReady: true
+    },
+    {
+        id: 4,
+        name: "Коллекции",
+        isReady: true
+    },
+    {
+        id: 5,
+        name: "Строки",
+        isReady: true
+    },
+    {
+        id: 6,
+        name: "Потоки ввода/вывода",
+        isReady: true
+    },
+    {
+        id: 7,
+        name: " Потоки выполнения",
+        isReady: true
+    },
+    {
+        id: 8,
+        name: "SQL, JDBC",
+        isReady: true
+    },
+    {
+        id: 9,
+        name: "JSP",
+        isReady: true
+    },
+    {
+        id: 10,
+        name: "Servlet",
+        isReady: true
+    }
+]*/
 var tests = function tests() {
-    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initState;
+    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
     var action = arguments[1];
 
     switch (action.type) {
+        case 'INIT_TESTS':
+            {
+                console.log("action", action);
+                return action.tests;
+            }
         case 'ADD_TEST':
             {
                 return [].concat(_toConsumableArray(state), [{
@@ -38909,7 +38925,8 @@ exports.default = users;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.incrementAsync = incrementAsync;
+exports.initCategories = initCategories;
+exports.initTests = initTests;
 exports.default = rootSaga;
 
 var _reduxSaga = __webpack_require__(230);
@@ -38922,16 +38939,22 @@ var _axios2 = _interopRequireDefault(_axios);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var _marked = [incrementAsync, rootSaga].map(regeneratorRuntime.mark);
+var _marked = [initCategories, initTests, rootSaga].map(regeneratorRuntime.mark);
 
 var ff = function ff() {
     return _axios2.default.get('/api/test').then(function (res) {
         return res.data;
     });
 };
-function incrementAsync() {
+var fff = function fff(id) {
+    return _axios2.default.get('/api/test/' + id).then(function (res) {
+        console.log(res);
+        return res.data;
+    });
+};
+function initCategories() {
     var data;
-    return regeneratorRuntime.wrap(function incrementAsync$(_context) {
+    return regeneratorRuntime.wrap(function initCategories$(_context) {
         while (1) {
             switch (_context.prev = _context.next) {
                 case 0:
@@ -38950,21 +38973,46 @@ function incrementAsync() {
         }
     }, _marked[0], this);
 }
-
-function rootSaga() {
-    return regeneratorRuntime.wrap(function rootSaga$(_context2) {
+function initTests(action) {
+    var data;
+    return regeneratorRuntime.wrap(function initTests$(_context2) {
         while (1) {
             switch (_context2.prev = _context2.next) {
                 case 0:
                     _context2.next = 2;
-                    return (0, _effects.takeEvery)('GET_CATEGORIES', incrementAsync);
+                    return (0, _effects.call)(fff, action.id);
 
                 case 2:
+                    data = _context2.sent;
+                    _context2.next = 5;
+                    return (0, _effects.put)({ type: 'INIT_TESTS', tests: data });
+
+                case 5:
                 case 'end':
                     return _context2.stop();
             }
         }
     }, _marked[1], this);
+}
+
+function rootSaga() {
+    return regeneratorRuntime.wrap(function rootSaga$(_context3) {
+        while (1) {
+            switch (_context3.prev = _context3.next) {
+                case 0:
+                    _context3.next = 2;
+                    return (0, _effects.takeEvery)('GET_CATEGORIES', initCategories);
+
+                case 2:
+                    _context3.next = 4;
+                    return (0, _effects.takeEvery)('GET_TESTS', initTests);
+
+                case 4:
+                case 'end':
+                    return _context3.stop();
+            }
+        }
+    }, _marked[2], this);
 }
 
 /***/ }),
@@ -39128,8 +39176,8 @@ var Main = function Main() {
     _react2.default.createElement(
       _reactRouterDom.Switch,
       null,
-      _react2.default.createElement(_reactRouterDom.Route, { path: '/admin/test/:catigories/:test', component: _Questions2.default }),
-      _react2.default.createElement(_reactRouterDom.Route, { path: '/admin/test/:catigories', component: _Tests2.default }),
+      _react2.default.createElement(_reactRouterDom.Route, { path: '/admin/test/:category/:test', component: _Questions2.default }),
+      _react2.default.createElement(_reactRouterDom.Route, { path: '/admin/test/:category', component: _Tests2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/admin/test', component: _Categories2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/admin/user/:id', component: _User2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/admin/user', component: _Users2.default }),
@@ -39137,8 +39185,8 @@ var Main = function Main() {
       _react2.default.createElement(_reactRouterDom.Route, { path: '/admin', render: function render() {
           return _react2.default.createElement(_reactRouterDom.Redirect, { to: '/admin/test' });
         } }),
-      _react2.default.createElement(_reactRouterDom.Route, { path: '/test/:catigories/:test', component: _Questions2.default }),
-      _react2.default.createElement(_reactRouterDom.Route, { path: '/test/:catigories', component: _Tests2.default }),
+      _react2.default.createElement(_reactRouterDom.Route, { path: '/test/:category/:test', component: _Questions2.default }),
+      _react2.default.createElement(_reactRouterDom.Route, { path: '/test/:category', component: _Tests2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/test', component: _Categories2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/profile', component: _User2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/', component: _About2.default })
@@ -39358,6 +39406,19 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 var idNew = 10;
+
+var initTest = exports.initTest = function initTest(tests) {
+    return {
+        type: 'INIT_TESTS',
+        tests: tests
+    };
+};
+var getTests = exports.getTests = function getTests(id) {
+    return {
+        type: 'GET_TESTS',
+        id: id
+    };
+};
 var addTest = exports.addTest = function addTest() {
     return {
         type: 'ADD_TEST',
@@ -40162,6 +40223,9 @@ var mapStateToProps = function mapStateToProps(state) {
 };
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
+    init: function init(id) {
+      dispatch((0, _actions.getTests)(id));
+    },
     addTest: function addTest() {
       dispatch((0, _actions.addTest)());
     },
@@ -40184,8 +40248,10 @@ exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(2);
 
@@ -40197,26 +40263,51 @@ var _index2 = _interopRequireDefault(_index);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Test = function Test(_ref) {
-    var tests = _ref.tests,
-        addTest = _ref.addTest,
-        deleteTest = _ref.deleteTest,
-        changeTest = _ref.changeTest;
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-    var isAdmin = window.location.pathname.indexOf("/admin/") == 0;
-    return _react2.default.createElement(
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Test = function (_React$Component) {
+  _inherits(Test, _React$Component);
+
+  function Test() {
+    _classCallCheck(this, Test);
+
+    return _possibleConstructorReturn(this, (Test.__proto__ || Object.getPrototypeOf(Test)).apply(this, arguments));
+  }
+
+  _createClass(Test, [{
+    key: "componentDidMount",
+    /*({tests,addTest,deleteTest, changeTest})=> */
+    value: function componentDidMount() {
+      this.props.init(this.props.match.params.category);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var isAdmin = window.location.pathname.indexOf("/admin/") == 0;
+      return _react2.default.createElement(
         "main",
         null,
         _react2.default.createElement(
-            "h1",
-            { className: "title" },
-            "\u0412\u044B\u0431\u0435\u0440\u0435\u0442\u0435 \u0442\u0435\u0441\u0442:"
+          "h1",
+          { className: "title" },
+          "\u0412\u044B\u0431\u0435\u0440\u0435\u0442\u0435 \u0442\u0435\u0441\u0442:"
         ),
-        _react2.default.createElement(_index2.default, { url: window.location.pathname, data: tests.map(function (element) {
-                return { id: element.id, text: element.name, isReady: element.isReady };
-            }), isAdmin: isAdmin, addElement: addTest, deleteElement: deleteTest, changeCheckBox: changeTest })
-    );
-};
+        _react2.default.createElement(_index2.default, { url: window.location.pathname, data: this.props.tests.map(function (element) {
+            return { id: element.id, text: element.name, isReady: element.isReady };
+          }),
+          isAdmin: isAdmin, addElement: this.props.addTest, deleteElement: this.props.deleteTest, changeCheckBox: this.props.changeTest })
+      );
+    }
+  }]);
+
+  return Test;
+}(_react2.default.Component);
+
+;
 exports.default = Test;
 
 /***/ }),

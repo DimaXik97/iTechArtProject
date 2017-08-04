@@ -1,4 +1,4 @@
-const initState=[
+/*const initState=[
     {
         id: 1,
         name: "Типы данных, переменные, операторы, циклы, массивы",
@@ -49,9 +49,13 @@ const initState=[
         name: "Servlet",
         isReady: true
     }
-]
-const tests = (state = initState, action) => {
+]*/
+const tests = (state = [], action) => {
     switch (action.type) {
+    case 'INIT_TESTS':{
+        console.log("action",action);
+        return action.tests
+    }
     case 'ADD_TEST':{
         return [
                 ...state,

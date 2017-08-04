@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import {addTest, deleteTest, changeTest} from '../actions';
+import {addTest, deleteTest, changeTest,getTests} from '../actions';
 
 import Tests from '../components/Tests/index.jsx';
 
@@ -7,8 +7,11 @@ const mapStateToProps = state => ({
     tests: state.tests
 })
 const mapDispatchToProps = dispatch => ({
+  init:(id)=>{
+    dispatch(getTests(id))
+  },
   addTest: ()=>{
-      dispatch(addTest())
+    dispatch(addTest())
   },
   deleteTest: (id)=>{
     dispatch(deleteTest(id))

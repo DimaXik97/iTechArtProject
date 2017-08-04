@@ -18,15 +18,15 @@ const Main = ()=> {
         <div className="body">
           <Header isAdmin={isAdmin}/>
           <Switch>
-            <Route path="/admin/test/:catigories/:test" component={Questions}/>
-            <Route path="/admin/test/:catigories" component={Test}/>
+            <Route path="/admin/test/:category/:test" component={Questions}/>
+            <Route path="/admin/test/:category" component={Test}/>
             <Route path="/admin/test" component={Categories}/>
             <Route path="/admin/user/:id" component={Profile}/>
             <Route path="/admin/user" component={Users}/>
             <Route path="/admin/question/:id" component={Answer}/>
             <Route path="/admin" render={() => <Redirect to="/admin/test"/>}/>
-            <Route path="/test/:catigories/:test" component={Questions}/>
-            <Route path="/test/:catigories" component={Test}/>
+            <Route path="/test/:category/:test" component={Questions}/>
+            <Route path="/test/:category" component={Test}/>
             <Route path="/test" component={Categories}/>
             <Route path="/profile" component={Profile}/>
             <Route path="/" component={About}/>
