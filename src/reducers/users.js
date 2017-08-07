@@ -1,4 +1,4 @@
-const initState=[
+/*const initState=[
     {
         id: 1,
         name: "1",
@@ -39,8 +39,13 @@ const initState=[
         name: "8",
         surName: "User"
     }
-];
-const users = (state = initState) => {
+];*/
+const users = (state = [],action) => {
+    switch(action.type){
+        case 'INIT_USERS':{
+            return action.users
+        }
+    }
     return state;
 }
 

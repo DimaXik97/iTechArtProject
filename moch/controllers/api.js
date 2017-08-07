@@ -7,8 +7,10 @@ module.exports = () => {
     const newsController= require('./news')();
     const resultController = require('./result')();
     const vacanciesController= require('./vacancies')();
+    const statisticsController= require('./statistics')();
    
 
+    router.use('/statistics', statisticsController);
     router.use('/user', userController);
     router.use('/test', testController);
     router.use("/news", newsController);

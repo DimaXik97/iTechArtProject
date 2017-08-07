@@ -1,14 +1,17 @@
 import React from 'react';
 import ContainerElements from "./../ContainerElements/index.jsx"
 
-const Users = ({users})=> {
-    console.log(users);
+class Users extends React.Component{
+  componentDidMount(){
+    this.props.init();
+  }
+  render(){
     let isAdmin = window.location.pathname.indexOf("/admin/")==0;
-  return (
-    <main >
+    return (
+      <main >
         <h1 className="title">Выберете пользователя:</h1>
-        <ContainerElements url={window.location.pathname} data={users.map((element)=>{return {id:element.id, text: `${element.surName} ${element.name}`}})}/>
-    </main>
-  );
+        <ContainerElements url={window.location.pathname} data={this.props.users.map((element)=>{return {id:element.id, text: element.name}})}/>
+      </main>);
+  }
 };
 export default Users;

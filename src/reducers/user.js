@@ -1,4 +1,4 @@
-const initState={
+/*const initState={
     name: "Имя123",
     surname: "Фамилия",
     photo: "/img/default_photo.png",
@@ -24,8 +24,22 @@ const initState={
             value: "47"
         }
     ]
-};
+};*/
+const initState={
+    user:{},
+    statistics:[]
+}
 const user = (state = initState, action) => {
+    switch(action.type){
+    case 'INIT_USER':{
+        return Object.assign({}, state, {
+            user: action.user});
+    }
+    case 'INIT_STATISTICS':{
+        return Object.assign({}, state, {
+            statistics: action.statistics});
+    }
+    }
     return state;
 }
 
