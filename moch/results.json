@@ -1,8 +1,16 @@
 [
     {
-        "id":"1",
-        "idTest":"2",
-        "idUser": "3",
+        "id":1,
+        "test":{
+            "id": 1,
+            "name":"Переменные",
+            "category":"C#"
+        },
+        "user": {
+            "id":"1",
+            "name":"user1",
+            "surName":"new"
+        },
         "date":"12.12.2016",
         "attrs":[
             {
@@ -16,9 +24,17 @@
         ]
     },
     {
-        "id":"2",
-        "idTest":"2",
-        "idUser": "1",
+        "id":2,
+        "test":{
+            "id": 1,
+            "name":"Переменные",
+            "category":"C#"
+        },
+        "user": {
+            "id":"1",
+            "name":"user1",
+            "surName":"new"
+        },
         "date":"01.01.2017",
         "attrs":[
             {
@@ -32,9 +48,17 @@
         ]
     },
     {
-        "id":"3",
-        "idTest":"1",
-        "idUser": "2",
+        "id":3,
+        "test":{
+            "id": 2,
+            "name":"Сборщик мусора",
+            "category":"C#"
+        },
+        "user": {
+            "id":"2",
+            "name":"user2",
+            "surName":"new"
+        },
         "date":"24.12.2016",
         "attrs":[
             {
@@ -48,9 +72,17 @@
         ]
     },
     {
-        "id":"4",
-        "idTest":"5",
-        "idUser": "3",
+        "id":4,
+        "test":{
+            "id": 5,
+            "name":"JSP",
+            "category":"Java"
+        },
+        "user": {
+            "id":"3",
+            "name":"user3",
+            "surName":"new"
+        },
         "date":"21.12.2016",
         "attrs":[
             {
@@ -64,9 +96,17 @@
         ]
     },
     {
-        "id":"5",
-        "idTest":"2",
-        "idUser": "3",
+        "id":5,
+        "test":{
+            "id": 2,
+            "name":"Сборщик мусора",
+            "category":"C#"
+        },
+        "user": {
+            "id":"3",
+            "name":"user3",
+            "surName":"new"
+        },
         "date":"07.06.2017",
         "attrs":[
             {
@@ -80,9 +120,17 @@
         ]
     },
     {
-        "id":"6",
-        "idTest":"5",
-        "idUser": "5",
+        "id":6,
+        "test":{
+            "id": 5,
+            "name":"JSP",
+            "category":"Java"
+        },
+        "user": {
+            "id":"5",
+            "name":"user5",
+            "surName":"new"
+        },
         "date":"12.12.2016",
         "attrs":[
             {
@@ -96,9 +144,17 @@
         ]
     },
     {
-        "id":"7",
-        "idTest":"2",
-        "idUser": "4",
+        "id":7,
+        "test":{
+            "id": 2,
+            "name":"Сборщик мусора",
+            "category":"C#"
+        },
+        "user": {
+            "id":"3", 
+            "name":"user3",
+            "surName":"new"
+        },
         "date":"12.12.2016",
         "attrs":[
             {
@@ -112,9 +168,17 @@
         ]
     },
     {
-        "id":"8",
-        "idTest":"4",
-        "idUser": "1",
+        "id":8,
+        "test":{
+            "id": 5,
+            "name":"Функции",
+            "category":"Java"
+        },
+        "user": {
+            "id":"1",
+            "name":"user1",
+            "surName":"new"
+        },
         "date":"12.12.2016",
         "attrs":[
             {

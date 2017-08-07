@@ -149,7 +149,7 @@
         "isReady": true,
         "tests": [
             {
-                "id":1,
+                "id":5,
                 "name":"JSP",
                 "isReady":true,
                 "questions":[
@@ -184,7 +184,7 @@
                 ]
             },
             {
-                "id":2,
+                "id":6,
                 "name":"JSF",
                 "isReady":true,
                 "questions":[
@@ -218,7 +218,7 @@
                     }
                 ]
             },{
-                "id":3,
+                "id":7,
                 "name":"Servlet",
                 "isReady":true,
                 "questions":[
@@ -252,7 +252,7 @@
                     }
                 ]
             },{
-                "id":4,
+                "id":8,
                 "name":"Циклы",
                 "isReady":true,
                 "questions":[
@@ -294,7 +294,7 @@
         "isReady": true,
         "tests": [
             {
-                "id":1,
+                "id":9,
                 "name":"Жизненный цикл",
                 "isReady":true,
                 "questions":[
@@ -329,7 +329,7 @@
                 ]
             },
             {
-                "id":2,
+                "id":10,
                 "name":"Синтаксис",
                 "isReady":true,
                 "questions":[
@@ -363,7 +363,7 @@
                     }
                 ]
             },{
-                "id":3,
+                "id":11,
                 "name":"События",
                 "isReady":true,
                 "questions":[
@@ -397,7 +397,7 @@
                     }
                 ]
             },{
-                "id":4,
+                "id":12,
                 "name":"Асинхронность",
                 "isReady":true,
                 "questions":[

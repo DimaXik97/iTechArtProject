@@ -8074,6 +8074,18 @@ Object.keys(_user).forEach(function (key) {
   });
 });
 
+var _answers = __webpack_require__(650);
+
+Object.keys(_answers).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _answers[key];
+    }
+  });
+});
+
 /***/ }),
 /* 107 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -39407,34 +39419,46 @@ exports.default = news;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-var initState = [{
-    id: "1",
-    test: "JSP",
-    categories: "Java",
-    user: "User 1",
-    date: "10.12.2016"
-}, {
-    id: "2",
-    test: "Servlet",
-    categories: "Java",
-    user: "User 1",
-    date: "11.12.2016"
-}, {
-    id: "3",
-    test: "Циклы",
-    categories: "C#",
-    user: "User 1",
-    date: "12.12.2016"
-}, {
-    id: "4",
-    test: "Асинхронность",
-    categories: "JS",
-    user: "User 1",
-    date: "13.12.2016"
-}];
+/*const initState=[
+    {
+        id: "1",
+        test: "JSP",
+        categories: "Java",
+        user: "User 1",
+        date: "10.12.2016"
+    },
+    {
+        id: "2",
+        test: "Servlet",
+        categories: "Java",
+        user: "User 1",
+        date: "11.12.2016"
+    },
+    {
+        id: "3",
+        test: "Циклы",
+        categories: "C#",
+        user: "User 1",
+        date: "12.12.2016"
+    },
+    {
+        id: "4",
+        test: "Асинхронность",
+        categories: "JS",
+        user: "User 1",
+        date: "13.12.2016"
+    }
+]*/
 var answer = function answer() {
-    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initState;
+    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+    var action = arguments[1];
 
+    switch (action.type) {
+        case "INIT_ANSWERS":
+            {
+                return action.answers;
+            }
+    }
     return state;
 };
 
@@ -39668,6 +39692,7 @@ exports.questions = questions;
 exports.users = users;
 exports.user = user;
 exports.userStatistics = userStatistics;
+exports.answers = answers;
 exports.default = rootSaga;
 
 var _reduxSaga = __webpack_require__(232);
@@ -39682,7 +39707,7 @@ var _axios2 = _interopRequireDefault(_axios);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var _marked = [categories, tests, questions, users, user, userStatistics, rootSaga].map(regeneratorRuntime.mark);
+var _marked = [categories, tests, questions, users, user, userStatistics, answers, rootSaga].map(regeneratorRuntime.mark);
 
 var ff = function ff(idCategory, idTest) {
     var url = '/api/test' + (idCategory ? '/' + idCategory : "") + (idTest ? '/' + idTest : "");
@@ -39699,6 +39724,13 @@ var apiUsers = function apiUsers(idUser) {
 var apiStatistics = function apiStatistics(idUser) {
     var url = '/api/statistics/' + idUser;
     return _axios2.default.get(url).then(function (res) {
+        return res.data;
+    });
+};
+var apiAnswers = function apiAnswers(params, id) {
+    var url = '/api/result?' + (params + '=' + id);
+    return _axios2.default.get(url).then(function (res) {
+        console.log(res.data);
         return res.data;
     });
 };
@@ -39829,41 +39861,65 @@ function userStatistics(action) {
         }
     }, _marked[5], this);
 }
-
-function rootSaga() {
-    return regeneratorRuntime.wrap(function rootSaga$(_context7) {
+function answers(action) {
+    var data;
+    return regeneratorRuntime.wrap(function answers$(_context7) {
         while (1) {
             switch (_context7.prev = _context7.next) {
                 case 0:
                     _context7.next = 2;
-                    return (0, _effects.takeEvery)('GET_CATEGORIES', categories);
+                    return (0, _effects.call)(apiAnswers, action.param, action.id);
 
                 case 2:
-                    _context7.next = 4;
-                    return (0, _effects.takeEvery)('GET_TESTS', tests);
+                    data = _context7.sent;
+                    _context7.next = 5;
+                    return (0, _effects.put)((0, _actions.initAnswers)(data));
 
-                case 4:
-                    _context7.next = 6;
-                    return (0, _effects.takeEvery)('GET_QUESTIONS', questions);
-
-                case 6:
-                    _context7.next = 8;
-                    return (0, _effects.takeEvery)('GET_USERS', users);
-
-                case 8:
-                    _context7.next = 10;
-                    return (0, _effects.takeEvery)('GET_USER', user);
-
-                case 10:
-                    _context7.next = 12;
-                    return (0, _effects.takeEvery)('GET_STATISTICS', userStatistics);
-
-                case 12:
+                case 5:
                 case 'end':
                     return _context7.stop();
             }
         }
     }, _marked[6], this);
+}
+function rootSaga() {
+    return regeneratorRuntime.wrap(function rootSaga$(_context8) {
+        while (1) {
+            switch (_context8.prev = _context8.next) {
+                case 0:
+                    _context8.next = 2;
+                    return (0, _effects.takeEvery)('GET_CATEGORIES', categories);
+
+                case 2:
+                    _context8.next = 4;
+                    return (0, _effects.takeEvery)('GET_TESTS', tests);
+
+                case 4:
+                    _context8.next = 6;
+                    return (0, _effects.takeEvery)('GET_QUESTIONS', questions);
+
+                case 6:
+                    _context8.next = 8;
+                    return (0, _effects.takeEvery)('GET_USERS', users);
+
+                case 8:
+                    _context8.next = 10;
+                    return (0, _effects.takeEvery)('GET_USER', user);
+
+                case 10:
+                    _context8.next = 12;
+                    return (0, _effects.takeEvery)('GET_STATISTICS', userStatistics);
+
+                case 12:
+                    _context8.next = 14;
+                    return (0, _effects.takeEvery)('GET_ANSWERS', answers);
+
+                case 14:
+                case 'end':
+                    return _context8.stop();
+            }
+        }
+    }, _marked[7], this);
 }
 
 /***/ }),
@@ -41600,9 +41656,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     return {
-        init: function init(id) {
+        init: function init(id, param) {
             dispatch((0, _actions.getUser)(id));
             dispatch((0, _actions.getStatistics)(id));
+            dispatch((0, _actions.getAnswers)(param, id));
         }
     };
 };
@@ -41666,7 +41723,7 @@ var User = function (_React$Component) {
   _createClass(User, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.props.init(this.props.match.params.id ? this.props.match.params.id : 1);
+      this.props.init(this.props.match.params.id ? this.props.match.params.id : 1, "user");
     }
   }, {
     key: "render",
@@ -41674,7 +41731,7 @@ var User = function (_React$Component) {
       var isAdmin = window.location.pathname.indexOf("/admin/") == 0;
       var userQuestions = _react2.default.createElement(_index6.default, { url: "/admin/question",
         data: this.props.questions.map(function (element) {
-          return { id: element.id, text: element.test + " (" + element.categories + ") " + element.date };
+          return { id: element.id, text: element.test.name + " (" + element.test.category + ") " + element.date };
         }) });
       return _react2.default.createElement(
         "main",
@@ -41831,7 +41888,7 @@ var UserPhoto = function UserPhoto(_ref) {
   return _react2.default.createElement(
     "div",
     { className: "userPhoto" },
-    _react2.default.createElement("img", { alt: "userPhoto", src: photo })
+    _react2.default.createElement("img", { alt: "userPhoto", src: photo ? photo : "/img/default_photo.png" })
   );
 };
 exports.default = UserPhoto;
@@ -42154,8 +42211,9 @@ var mapStateToProps = function mapStateToProps(state) {
 };
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     return {
-        init: function init(idCategory, idTest) {
+        init: function init(idCategory, idTest, param) {
             dispatch((0, _actions.getQuestions)(idCategory, idTest));
+            dispatch((0, _actions.getAnswers)(param, idTest));
         },
         addQuestion: function addQuestion() {
             dispatch((0, _actions.addQuestion)());
@@ -42218,7 +42276,7 @@ var QuestionList = function (_React$Component) {
         /*({questions,addQuestion,deleteQuestion,changeQuestion, usersAnswers})=>*/
         value: function componentDidMount() {
             var params = this.props.match.params;
-            this.props.init(params.category, params.test);
+            this.props.init(params.category, params.test, "test");
         }
     }, {
         key: 'render',
@@ -42235,7 +42293,7 @@ var QuestionList = function (_React$Component) {
                     '\u041E\u0442\u0432\u0435\u0442\u044B \u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u0435\u0439:'
                 ),
                 _react2.default.createElement(_index2.default, { url: "/admin/question", data: this.props.usersAnswers.map(function (element) {
-                        return { id: element.id, text: element.user + ' ' + element.date };
+                        return { id: element.id, text: element.user.name + ' ' + element.user.surName + ' ' + element.date };
                     }) })
             );
             return _react2.default.createElement(
@@ -42622,6 +42680,30 @@ var initStatistics = exports.initStatistics = function initStatistics(statistics
     return {
         type: 'INIT_STATISTICS',
         statistics: statistics
+    };
+};
+
+/***/ }),
+/* 650 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var getAnswers = exports.getAnswers = function getAnswers(param, id) {
+    return {
+        type: 'GET_ANSWERS',
+        param: param,
+        id: id
+    };
+};
+var initAnswers = exports.initAnswers = function initAnswers(answers) {
+    return {
+        type: 'INIT_ANSWERS',
+        answers: answers
     };
 };
 

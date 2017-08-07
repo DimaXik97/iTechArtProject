@@ -6,13 +6,13 @@ import ContainerElements from "./../ContainerElements/index.jsx";
 class QuestionList extends React.Component{/*({questions,addQuestion,deleteQuestion,changeQuestion, usersAnswers})=>*/
     componentDidMount(){
         let params=this.props.match.params;
-        this.props.init(params.category,params.test);
+        this.props.init(params.category,params.test,"test");
     }
     render(){
         let isAdmin = window.location.pathname.indexOf("/admin/")==0;
         let usersTests=(<div>
             <h2 className="title">Ответы пользователей:</h2>
-            <ContainerElements url={"/admin/question"} data={this.props.usersAnswers.map((element)=>{return {id:element.id, text: `${element.user} ${element.date}`}})}/>
+            <ContainerElements url={"/admin/question"} data={this.props.usersAnswers.map((element)=>{return {id:element.id, text: `${element.user.name} ${element.user.surName} ${element.date}`}})}/>
         </div>);
         return (
             <main>

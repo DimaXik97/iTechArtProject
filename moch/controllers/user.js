@@ -15,7 +15,7 @@ module.exports = () => {
         thisUser={};
         user.forEach(function(element) {
             if(element.id==req.params.id)
-                thisUser={name:element.name+" "+element.surName, photo: element.photo, isBan: element.isBan}
+                thisUser={name:element.name, surname: element.surName, photo: element.photo, isBan: element.isBan}
         });
         res.send(thisUser);
     });

@@ -1,11 +1,12 @@
 import { connect } from 'react-redux'
-import {getUser, getStatistics} from '../actions';
+import {getUser, getStatistics,getAnswers} from '../actions';
 
 import User from '../components/Profile/index.jsx';
 const mapDispatchToProps = dispatch => ({
-    init:(id)=>{
+    init:(id, param)=>{
         dispatch(getUser(id));
-        dispatch(getStatistics(id))
+        dispatch(getStatistics(id));
+        dispatch(getAnswers(param, id))
     }
 })
 

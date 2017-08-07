@@ -9,13 +9,13 @@ module.exports = () => {
         results.forEach(function(element) {
             if(req.query.user)
             {
-                if(req.query.user!=element.idUser) return;
+                if(req.query.user!=element.user.id) return;
             }
             if(req.query.test)
             {
-                if(req.query.test!=element.idTest) return;
+                if(req.query.test!=element.test.id) return;
             }
-            tests.push({id:element.id, user:element.idUser, test: element.idTest, date: element.date});
+            tests.push({id:element.id, user: element.user, test: element.test, date: element.date});
         });
         res.send(tests);
     });

@@ -1,4 +1,4 @@
-const initState=[
+/*const initState=[
     {
         id: "1",
         test: "JSP",
@@ -27,8 +27,13 @@ const initState=[
         user: "User 1",
         date: "13.12.2016"
     }
-]
-const answer = (state = initState) => {
+]*/
+const answer = (state = [], action) => {
+    switch(action.type){
+        case "INIT_ANSWERS":{
+            return action.answers
+        }
+    }
     return state;
 }
 
