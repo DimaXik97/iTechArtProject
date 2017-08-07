@@ -1,5 +1,7 @@
 const express = require('express');
 const results = require('./../results');
+const result = require('./../result');
+
 
 module.exports = () => {
     const router = express.Router();
@@ -21,9 +23,7 @@ module.exports = () => {
     });
     router.get('/:id',(req, res) =>
     {
-        results.forEach(function(element) {
-            res.send(element);
-        });
+        res.send(result);
     });
 
     return router;

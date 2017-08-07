@@ -8,6 +8,7 @@ import answers from './answers'
 import questions from './questions'
 import user from './user'
 import users from './users'
+import result from './result'
 
 const rootReducer = combineReducers({
     categories,
@@ -17,7 +18,8 @@ const rootReducer = combineReducers({
     answers,
     questions,
     user,
-    users
+    users,
+    result
 })
 
 export default rootReducer

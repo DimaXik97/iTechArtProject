@@ -10,7 +10,7 @@ import Profile from "./../../containers/User.js";
 import Users from "./../../containers/Users.js";
 import Test from "./../../containers/Tests.js";
 import Questions from "./../../containers/Questions.js";
-import Answer from "./../Answer/index.jsx";
+import Result from "./../../containers/Result.js";
 
 const Main = ()=> {
   let isAdmin = window.location.pathname.indexOf("/admin/")==0;
@@ -23,7 +23,7 @@ const Main = ()=> {
             <Route path="/admin/test" component={Categories}/>
             <Route path="/admin/user/:id" component={Profile}/>
             <Route path="/admin/user" component={Users}/>
-            <Route path="/admin/question/:id" component={Answer}/>
+            <Route path="/admin/question/:id" component={Result}/>
             <Route path="/admin" render={() => <Redirect to="/admin/test"/>}/>
             <Route path="/test/:category/:test" component={Questions}/>
             <Route path="/test/:category" component={Test}/>

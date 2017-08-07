@@ -4,4 +4,5 @@ export * from './questions';
 export * from './user';
 export * from './answers';
 export * from './news';
-export * from './vacancies'
+export * from './vacancies';
+export * from './result';

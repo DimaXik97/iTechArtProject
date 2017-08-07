@@ -8110,6 +8110,18 @@ Object.keys(_vacancies).forEach(function (key) {
   });
 });
 
+var _result = __webpack_require__(654);
+
+Object.keys(_result).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _result[key];
+    }
+  });
+});
+
 /***/ }),
 /* 107 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -39154,6 +39166,10 @@ var _users = __webpack_require__(592);
 
 var _users2 = _interopRequireDefault(_users);
 
+var _result = __webpack_require__(653);
+
+var _result2 = _interopRequireDefault(_result);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var rootReducer = (0, _redux.combineReducers)({
@@ -39164,7 +39180,8 @@ var rootReducer = (0, _redux.combineReducers)({
     answers: _answers2.default,
     questions: _questions2.default,
     user: _user2.default,
-    users: _users2.default
+    users: _users2.default,
+    result: _result2.default
 });
 
 exports.default = rootReducer;
@@ -39744,6 +39761,7 @@ exports.userStatistics = userStatistics;
 exports.answers = answers;
 exports.news = news;
 exports.vacancies = vacancies;
+exports.result = result;
 exports.default = rootSaga;
 
 var _reduxSaga = __webpack_require__(232);
@@ -39758,61 +39776,30 @@ var _axios2 = _interopRequireDefault(_axios);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var _marked = [categories, tests, questions, users, user, userStatistics, answers, news, vacancies, rootSaga].map(regeneratorRuntime.mark);
+var _marked = [categories, tests, questions, users, user, userStatistics, answers, news, vacancies, result, rootSaga].map(regeneratorRuntime.mark);
 
-var ff = function ff(idCategory, idTest) {
-    var url = '/api/test' + (idCategory ? '/' + idCategory : "") + (idTest ? '/' + idTest : "");
-    return _axios2.default.get(url).then(function (res) {
-        return res.data;
-    });
-};
-var apiUsers = function apiUsers(idUser) {
-    var url = '/api/user' + (idUser ? '/' + idUser : "");
-    return _axios2.default.get(url).then(function (res) {
-        return res.data;
-    });
-};
-var apiStatistics = function apiStatistics(idUser) {
-    var url = '/api/statistics/' + idUser;
-    return _axios2.default.get(url).then(function (res) {
-        return res.data;
-    });
-};
-var apiAnswers = function apiAnswers(params, id) {
-    var url = '/api/result?' + (params + '=' + id);
-    return _axios2.default.get(url).then(function (res) {
-        console.log(res.data);
-        return res.data;
-    });
-};
-var apiNews = function apiNews() {
-    var url = '/api/news';
-    return _axios2.default.get(url).then(function (res) {
-        return res.data;
-    });
-};
-var apiVacancies = function apiVacancies() {
-    var url = '/api/vacancies';
+var getData = function getData(url) {
     return _axios2.default.get(url).then(function (res) {
         return res.data;
     });
 };
 
 function categories() {
-    var data;
+    var url, data;
     return regeneratorRuntime.wrap(function categories$(_context) {
         while (1) {
             switch (_context.prev = _context.next) {
                 case 0:
-                    _context.next = 2;
-                    return (0, _effects.call)(ff);
+                    url = '/api/test';
+                    _context.next = 3;
+                    return (0, _effects.call)(getData, url);
 
-                case 2:
+                case 3:
                     data = _context.sent;
-                    _context.next = 5;
+                    _context.next = 6;
                     return (0, _effects.put)((0, _actions.initCategories)(data));
 
-                case 5:
+                case 6:
                 case 'end':
                     return _context.stop();
             }
@@ -39820,20 +39807,21 @@ function categories() {
     }, _marked[0], this);
 }
 function tests(action) {
-    var data;
+    var url, data;
     return regeneratorRuntime.wrap(function tests$(_context2) {
         while (1) {
             switch (_context2.prev = _context2.next) {
                 case 0:
-                    _context2.next = 2;
-                    return (0, _effects.call)(ff, action.idCategory);
+                    url = '/api/test/' + action.idCategory;
+                    _context2.next = 3;
+                    return (0, _effects.call)(getData, url);
 
-                case 2:
+                case 3:
                     data = _context2.sent;
-                    _context2.next = 5;
+                    _context2.next = 6;
                     return (0, _effects.put)((0, _actions.initTest)(data));
 
-                case 5:
+                case 6:
                 case 'end':
                     return _context2.stop();
             }
@@ -39841,20 +39829,21 @@ function tests(action) {
     }, _marked[1], this);
 }
 function questions(action) {
-    var data;
+    var url, data;
     return regeneratorRuntime.wrap(function questions$(_context3) {
         while (1) {
             switch (_context3.prev = _context3.next) {
                 case 0:
-                    _context3.next = 2;
-                    return (0, _effects.call)(ff, action.idCategory, action.idTest);
+                    url = '/api/test/' + action.idCategory + '/' + action.idTest;
+                    _context3.next = 3;
+                    return (0, _effects.call)(getData, url);
 
-                case 2:
+                case 3:
                     data = _context3.sent;
-                    _context3.next = 5;
+                    _context3.next = 6;
                     return (0, _effects.put)((0, _actions.initQuestions)(data));
 
-                case 5:
+                case 6:
                 case 'end':
                     return _context3.stop();
             }
@@ -39862,20 +39851,21 @@ function questions(action) {
     }, _marked[2], this);
 }
 function users() {
-    var data;
+    var url, data;
     return regeneratorRuntime.wrap(function users$(_context4) {
         while (1) {
             switch (_context4.prev = _context4.next) {
                 case 0:
-                    _context4.next = 2;
-                    return (0, _effects.call)(apiUsers);
+                    url = '/api/user';
+                    _context4.next = 3;
+                    return (0, _effects.call)(getData, url);
 
-                case 2:
+                case 3:
                     data = _context4.sent;
-                    _context4.next = 5;
+                    _context4.next = 6;
                     return (0, _effects.put)((0, _actions.initUsers)(data));
 
-                case 5:
+                case 6:
                 case 'end':
                     return _context4.stop();
             }
@@ -39883,20 +39873,21 @@ function users() {
     }, _marked[3], this);
 }
 function user(action) {
-    var data;
+    var url, data;
     return regeneratorRuntime.wrap(function user$(_context5) {
         while (1) {
             switch (_context5.prev = _context5.next) {
                 case 0:
-                    _context5.next = 2;
-                    return (0, _effects.call)(apiUsers, action.idUser);
+                    url = '/api/user' + action.idUser;
+                    _context5.next = 3;
+                    return (0, _effects.call)(getData, url);
 
-                case 2:
+                case 3:
                     data = _context5.sent;
-                    _context5.next = 5;
+                    _context5.next = 6;
                     return (0, _effects.put)((0, _actions.initUser)(data));
 
-                case 5:
+                case 6:
                 case 'end':
                     return _context5.stop();
             }
@@ -39904,20 +39895,21 @@ function user(action) {
     }, _marked[4], this);
 }
 function userStatistics(action) {
-    var data;
+    var url, data;
     return regeneratorRuntime.wrap(function userStatistics$(_context6) {
         while (1) {
             switch (_context6.prev = _context6.next) {
                 case 0:
-                    _context6.next = 2;
-                    return (0, _effects.call)(apiStatistics, action.idUser);
+                    url = '/api/statistics/' + action.idUser;
+                    _context6.next = 3;
+                    return (0, _effects.call)(getData, url);
 
-                case 2:
+                case 3:
                     data = _context6.sent;
-                    _context6.next = 5;
+                    _context6.next = 6;
                     return (0, _effects.put)((0, _actions.initStatistics)(data));
 
-                case 5:
+                case 6:
                 case 'end':
                     return _context6.stop();
             }
@@ -39925,20 +39917,21 @@ function userStatistics(action) {
     }, _marked[5], this);
 }
 function answers(action) {
-    var data;
+    var url, data;
     return regeneratorRuntime.wrap(function answers$(_context7) {
         while (1) {
             switch (_context7.prev = _context7.next) {
                 case 0:
-                    _context7.next = 2;
-                    return (0, _effects.call)(apiAnswers, action.param, action.id);
+                    url = '/api/result?' + (action.param + '=' + action.id);
+                    _context7.next = 3;
+                    return (0, _effects.call)(getData, url);
 
-                case 2:
+                case 3:
                     data = _context7.sent;
-                    _context7.next = 5;
+                    _context7.next = 6;
                     return (0, _effects.put)((0, _actions.initAnswers)(data));
 
-                case 5:
+                case 6:
                 case 'end':
                     return _context7.stop();
             }
@@ -39946,20 +39939,21 @@ function answers(action) {
     }, _marked[6], this);
 }
 function news(action) {
-    var data;
+    var url, data;
     return regeneratorRuntime.wrap(function news$(_context8) {
         while (1) {
             switch (_context8.prev = _context8.next) {
                 case 0:
-                    _context8.next = 2;
-                    return (0, _effects.call)(apiNews);
+                    url = '/api/news';
+                    _context8.next = 3;
+                    return (0, _effects.call)(getData, url);
 
-                case 2:
+                case 3:
                     data = _context8.sent;
-                    _context8.next = 5;
+                    _context8.next = 6;
                     return (0, _effects.put)((0, _actions.initNews)(data));
 
-                case 5:
+                case 6:
                 case 'end':
                     return _context8.stop();
             }
@@ -39967,20 +39961,21 @@ function news(action) {
     }, _marked[7], this);
 }
 function vacancies(action) {
-    var data;
+    var url, data;
     return regeneratorRuntime.wrap(function vacancies$(_context9) {
         while (1) {
             switch (_context9.prev = _context9.next) {
                 case 0:
-                    _context9.next = 2;
-                    return (0, _effects.call)(apiVacancies);
+                    url = '/api/vacancies';
+                    _context9.next = 3;
+                    return (0, _effects.call)(getData, url);
 
-                case 2:
+                case 3:
                     data = _context9.sent;
-                    _context9.next = 5;
+                    _context9.next = 6;
                     return (0, _effects.put)((0, _actions.initVacancies)(data));
 
-                case 5:
+                case 6:
                 case 'end':
                     return _context9.stop();
             }
@@ -39988,52 +39983,79 @@ function vacancies(action) {
     }, _marked[8], this);
 }
 
-function rootSaga() {
-    return regeneratorRuntime.wrap(function rootSaga$(_context10) {
+function result(action) {
+    var url, data;
+    return regeneratorRuntime.wrap(function result$(_context10) {
         while (1) {
             switch (_context10.prev = _context10.next) {
                 case 0:
-                    _context10.next = 2;
-                    return (0, _effects.takeEvery)('GET_CATEGORIES', categories);
+                    url = '/api/result/' + action.id;
+                    _context10.next = 3;
+                    return (0, _effects.call)(getData, url);
 
-                case 2:
-                    _context10.next = 4;
-                    return (0, _effects.takeEvery)('GET_TESTS', tests);
-
-                case 4:
+                case 3:
+                    data = _context10.sent;
                     _context10.next = 6;
-                    return (0, _effects.takeEvery)('GET_QUESTIONS', questions);
+                    return (0, _effects.put)((0, _actions.initResult)(data));
 
                 case 6:
-                    _context10.next = 8;
-                    return (0, _effects.takeEvery)('GET_USERS', users);
-
-                case 8:
-                    _context10.next = 10;
-                    return (0, _effects.takeEvery)('GET_USER', user);
-
-                case 10:
-                    _context10.next = 12;
-                    return (0, _effects.takeEvery)('GET_STATISTICS', userStatistics);
-
-                case 12:
-                    _context10.next = 14;
-                    return (0, _effects.takeEvery)('GET_ANSWERS', answers);
-
-                case 14:
-                    _context10.next = 16;
-                    return (0, _effects.takeEvery)('GET_NEWS', news);
-
-                case 16:
-                    _context10.next = 18;
-                    return (0, _effects.takeEvery)('GET_VACANCIES', vacancies);
-
-                case 18:
                 case 'end':
                     return _context10.stop();
             }
         }
     }, _marked[9], this);
+}
+
+function rootSaga() {
+    return regeneratorRuntime.wrap(function rootSaga$(_context11) {
+        while (1) {
+            switch (_context11.prev = _context11.next) {
+                case 0:
+                    _context11.next = 2;
+                    return (0, _effects.takeEvery)('GET_CATEGORIES', categories);
+
+                case 2:
+                    _context11.next = 4;
+                    return (0, _effects.takeEvery)('GET_TESTS', tests);
+
+                case 4:
+                    _context11.next = 6;
+                    return (0, _effects.takeEvery)('GET_QUESTIONS', questions);
+
+                case 6:
+                    _context11.next = 8;
+                    return (0, _effects.takeEvery)('GET_USERS', users);
+
+                case 8:
+                    _context11.next = 10;
+                    return (0, _effects.takeEvery)('GET_USER', user);
+
+                case 10:
+                    _context11.next = 12;
+                    return (0, _effects.takeEvery)('GET_STATISTICS', userStatistics);
+
+                case 12:
+                    _context11.next = 14;
+                    return (0, _effects.takeEvery)('GET_ANSWERS', answers);
+
+                case 14:
+                    _context11.next = 16;
+                    return (0, _effects.takeEvery)('GET_NEWS', news);
+
+                case 16:
+                    _context11.next = 18;
+                    return (0, _effects.takeEvery)('GET_VACANCIES', vacancies);
+
+                case 18:
+                    _context11.next = 20;
+                    return (0, _effects.takeEvery)('GET_RESULT', result);
+
+                case 20:
+                case 'end':
+                    return _context11.stop();
+            }
+        }
+    }, _marked[10], this);
 }
 
 /***/ }),
@@ -41191,9 +41213,9 @@ var _Questions = __webpack_require__(642);
 
 var _Questions2 = _interopRequireDefault(_Questions);
 
-var _index5 = __webpack_require__(647);
+var _Result = __webpack_require__(657);
 
-var _index6 = _interopRequireDefault(_index5);
+var _Result2 = _interopRequireDefault(_Result);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -41211,7 +41233,7 @@ var Main = function Main() {
       _react2.default.createElement(_reactRouterDom.Route, { path: '/admin/test', component: _Categories2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/admin/user/:id', component: _User2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/admin/user', component: _Users2.default }),
-      _react2.default.createElement(_reactRouterDom.Route, { path: '/admin/question/:id', component: _index6.default }),
+      _react2.default.createElement(_reactRouterDom.Route, { path: '/admin/question/:id', component: _Result2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { path: '/admin', render: function render() {
           return _react2.default.createElement(_reactRouterDom.Redirect, { to: '/admin/test' });
         } }),
@@ -42630,167 +42652,8 @@ var Select = function Select(props) {
 exports.default = Select;
 
 /***/ }),
-/* 647 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _react = __webpack_require__(2);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _answer = __webpack_require__(648);
-
-var _answer2 = _interopRequireDefault(_answer);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var answers = [{
-    id: 1,
-    type: 1,
-    question: "Первый вопрос?",
-    answers: [{ id: 1, text: "Первый ответ", atrr: [] }, { id: 2, text: "Второй ответ", atrr: ["user"] }, { id: 3, text: "Третий ответ", atrr: ["correct"] }, { id: 4, text: "Четвертый ответ", atrr: [] }]
-}, {
-    id: 2,
-    type: 2,
-    question: "Второй вопрос?",
-    answers: [{ id: 1, text: "Первый ответ", atrr: [] }, { id: 2, text: "Второй ответ", atrr: ["user", "correct"] }, { id: 3, text: "Третий ответ", atrr: ["user"] }, { id: 4, text: "Четвертый ответ", atrr: ["user", "correct"] }]
-}, {
-    id: 3,
-    type: 3,
-    question: "Третий вопрос?",
-    correctAnswer: { text: "2", atrr: ["correct"] },
-    userAnswer: { text: "3", atrr: ["user"] }
-}];
-var AnswerList = function AnswerList() {
-    return _react2.default.createElement(
-        'main',
-        null,
-        _react2.default.createElement(
-            'ul',
-            null,
-            answers.map(function (element, num) {
-                return _react2.default.createElement(_answer2.default, { key: num, answer: element });
-            })
-        )
-    );
-};
-exports.default = AnswerList;
-
-/***/ }),
-/* 648 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _react = __webpack_require__(2);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function getAnswer(answer) {
-    switch (answer.type) {
-        case 1:
-            {
-                return _react2.default.createElement(
-                    "ul",
-                    { className: "contentBody" },
-                    answer.answers.map(function (element) {
-                        return _react2.default.createElement(
-                            "li",
-                            { className: getClass(element.atrr) },
-                            element.text
-                        );
-                    })
-                );
-            };
-        case 2:
-            {
-                return _react2.default.createElement(
-                    "ul",
-                    { className: "contentBody" },
-                    answer.answers.map(function (element) {
-                        return _react2.default.createElement(
-                            "li",
-                            { className: getClass(element.atrr) },
-                            element.text
-                        );
-                    })
-                );
-            }
-        case 3:
-            {
-                return _react2.default.createElement(
-                    "div",
-                    { className: "contentBody" },
-                    _react2.default.createElement(
-                        "p",
-                        null,
-                        "\u041F\u0440\u0430\u0432\u0435\u043B\u044C\u043D\u044B\u0439 \u043E\u0442\u0432\u0435\u0442:",
-                        _react2.default.createElement(
-                            "span",
-                            { className: getClass(answer.correctAnswer.atrr) },
-                            answer.correctAnswer.text
-                        )
-                    ),
-                    _react2.default.createElement(
-                        "p",
-                        null,
-                        "\u041E\u0442\u0432\u0435\u0442:",
-                        _react2.default.createElement(
-                            "span",
-                            { className: getClass(answer.userAnswer.atrr) },
-                            answer.userAnswer.text
-                        )
-                    )
-                );
-            }
-    }
-}
-function getClass(atrr) {
-    console.log(atrr);
-    var className = "";
-    atrr.map(function (element) {
-        switch (element) {
-            case "user":
-                {
-                    return className += "userAnswer ";
-                };
-            case "correct":
-                {
-                    return className += "correctAnswer ";
-                };
-        }
-    });
-    return className;
-}
-
-var Answer = function Answer(props) {
-    return _react2.default.createElement(
-        "li",
-        { className: "question" },
-        _react2.default.createElement(
-            "h2",
-            { className: "title" },
-            props.answer.question
-        ),
-        getAnswer(props.answer)
-    );
-};
-exports.default = Answer;
-
-/***/ }),
+/* 647 */,
+/* 648 */,
 /* 649 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -42903,6 +42766,265 @@ var initNews = exports.initNews = function initNews(news) {
         news: news
     };
 };
+
+/***/ }),
+/* 653 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var result = function result() {
+    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+    var action = arguments[1];
+
+    switch (action.type) {
+        case 'INIT_RESULT':
+            {
+                return action.result;
+            }
+    }
+    return state;
+};
+
+exports.default = result;
+
+/***/ }),
+/* 654 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var getResult = exports.getResult = function getResult(id) {
+    return {
+        type: 'GET_RESULT',
+        id: id
+    };
+};
+var initResult = exports.initResult = function initResult(result) {
+    return {
+        type: 'INIT_RESULT',
+        result: result
+    };
+};
+
+/***/ }),
+/* 655 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(2);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _answer = __webpack_require__(656);
+
+var _answer2 = _interopRequireDefault(_answer);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var AnswerList = function (_React$Component) {
+    _inherits(AnswerList, _React$Component);
+
+    function AnswerList() {
+        _classCallCheck(this, AnswerList);
+
+        return _possibleConstructorReturn(this, (AnswerList.__proto__ || Object.getPrototypeOf(AnswerList)).apply(this, arguments));
+    }
+
+    _createClass(AnswerList, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            this.props.init(this.props.match.params.id);
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'main',
+                null,
+                _react2.default.createElement(
+                    'ul',
+                    null,
+                    this.props.result.map(function (element, num) {
+                        return _react2.default.createElement(_answer2.default, { key: num, answer: element });
+                    })
+                )
+            );
+        }
+    }]);
+
+    return AnswerList;
+}(_react2.default.Component);
+
+;
+exports.default = AnswerList;
+
+/***/ }),
+/* 656 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(2);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function getAnswer(answer) {
+    switch (answer.type) {
+        case 1:
+            {
+                return _react2.default.createElement(
+                    "ul",
+                    { className: "contentBody" },
+                    answer.answers.map(function (element) {
+                        return _react2.default.createElement(
+                            "li",
+                            { className: getClass(element.atrr) },
+                            element.text
+                        );
+                    })
+                );
+            };
+        case 2:
+            {
+                return _react2.default.createElement(
+                    "ul",
+                    { className: "contentBody" },
+                    answer.answers.map(function (element) {
+                        return _react2.default.createElement(
+                            "li",
+                            { className: getClass(element.atrr) },
+                            element.text
+                        );
+                    })
+                );
+            }
+        case 3:
+            {
+                return _react2.default.createElement(
+                    "div",
+                    { className: "contentBody" },
+                    _react2.default.createElement(
+                        "p",
+                        null,
+                        "\u041F\u0440\u0430\u0432\u0435\u043B\u044C\u043D\u044B\u0439 \u043E\u0442\u0432\u0435\u0442:",
+                        _react2.default.createElement(
+                            "span",
+                            { className: getClass(answer.correctAnswer.atrr) },
+                            answer.correctAnswer.text
+                        )
+                    ),
+                    _react2.default.createElement(
+                        "p",
+                        null,
+                        "\u041E\u0442\u0432\u0435\u0442:",
+                        _react2.default.createElement(
+                            "span",
+                            { className: getClass(answer.userAnswer.atrr) },
+                            answer.userAnswer.text
+                        )
+                    )
+                );
+            }
+    }
+}
+function getClass(atrr) {
+    console.log(atrr);
+    var className = "";
+    atrr.map(function (element) {
+        switch (element) {
+            case "user":
+                {
+                    return className += "userAnswer ";
+                };
+            case "correct":
+                {
+                    return className += "correctAnswer ";
+                };
+        }
+    });
+    return className;
+}
+
+var Answer = function Answer(props) {
+    return _react2.default.createElement(
+        "li",
+        { className: "question" },
+        _react2.default.createElement(
+            "h2",
+            { className: "title" },
+            props.answer.question
+        ),
+        getAnswer(props.answer)
+    );
+};
+exports.default = Answer;
+
+/***/ }),
+/* 657 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _reactRedux = __webpack_require__(63);
+
+var _actions = __webpack_require__(106);
+
+var _index = __webpack_require__(655);
+
+var _index2 = _interopRequireDefault(_index);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+    return {
+        init: function init(id) {
+            dispatch((0, _actions.getResult)(id));
+        }
+    };
+};
+
+var mapStateToProps = function mapStateToProps(state) {
+    return {
+        result: state.result
+    };
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_index2.default);
 
 /***/ })
 /******/ ]);
