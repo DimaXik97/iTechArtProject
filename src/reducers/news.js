@@ -1,4 +1,4 @@
-const initState=[
+/*const initState=[
     {
         title: "Новость №1",
         img: "/img/default_img.png",
@@ -29,8 +29,13 @@ const initState=[
         img: "/img/default_img.png",
         text: "Утром во вторник на шоссе столкнулись четыре машины. Одна из них – Mercedes — впоследствии загорелась, пострадали четыре человека. По предварительным данным, аварию спровоцировал водитель Mercedes, устроив \"шашки\" на дороге; после ДТП он убежал. При этом в СМИ сообщалось, что речь идет о сыне бывшего гендиректора МГТС Михаила Смирнова."
     }
-]
-const news = (state = initState) => {
+]*/
+const news = (state = [], action) => {
+    switch(action.type){
+        case "INIT_NEWS":{
+            return action.news
+        }
+    }
     return state;
 }
 

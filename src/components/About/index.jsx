@@ -7,17 +7,21 @@ import Vacancies from './vacancies.jsx';
 import News from './news.jsx';
 
 
-const About = ({news, vacancies})=> {
-  return (
-    <main className="aboutPage">
-        <Menu/>
-        <Switch>
-            <Route path="/about/contacts" component={Contacts}/>
-            <Route path="/about/vacancies" render={()=><Vacancies vacancies={vacancies}/>}/>
-            <Route path="/about/news" render={()=><News news={news}/>}/>
-            <Route path="/" render={() => <Redirect to="/about/news"/>}/>
-        </Switch>    
-    </main>
-  );
+class About extends React.Component{
+  componentDidMount(){
+    this.props.init();
+  }
+  render(){
+    return (
+      <main className="aboutPage">
+          <Menu/>
+          <Switch>
+              <Route path="/about/contacts" component={Contacts}/>
+              <Route path="/about/vacancies" render={()=><Vacancies vacancies={this.props.vacancies}/>}/>
+              <Route path="/about/news" render={()=><News news={this.props.news}/>}/>
+              <Route path="/" render={() => <Redirect to="/about/news"/>}/>
+          </Switch>    
+      </main>);
+  }
 };
 export default About;

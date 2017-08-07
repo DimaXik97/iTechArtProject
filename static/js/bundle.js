@@ -8086,6 +8086,30 @@ Object.keys(_answers).forEach(function (key) {
   });
 });
 
+var _news = __webpack_require__(652);
+
+Object.keys(_news).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _news[key];
+    }
+  });
+});
+
+var _vacancies = __webpack_require__(651);
+
+Object.keys(_vacancies).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _vacancies[key];
+    }
+  });
+});
+
 /***/ }),
 /* 107 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -39348,19 +39372,30 @@ exports.default = tests;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-var initState = [{
-    title: "Вакансия №1",
-    text: "Требуется специалист в отдел N"
-}, {
-    title: "Вакансия №2",
-    text: "Требуется специалист в отдел N"
-}, {
-    title: "Вакансия №3",
-    text: "Требуется специалист в отдел N"
-}];
+/*const initState=[
+    {
+        title: "Вакансия №1",
+        text: "Требуется специалист в отдел N"
+    },
+    {
+        title: "Вакансия №2",
+        text: "Требуется специалист в отдел N"
+    },
+    {
+        title: "Вакансия №3",
+        text: "Требуется специалист в отдел N"
+    }
+]*/
 var vacancies = function vacancies() {
-    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initState;
+    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+    var action = arguments[1];
 
+    switch (action.type) {
+        case 'INIT_VACANCIES':
+            {
+                return action.vacancies;
+            }
+    }
     return state;
 };
 
@@ -39376,34 +39411,48 @@ exports.default = vacancies;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-var initState = [{
-    title: "Новость №1",
-    img: "/img/default_img.png",
-    text: "Lorem Ipsum - это текст-\"рыба\", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной \"рыбой\" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации \"Здесь ваш текст.. Здесь ваш текст.. Здесь ваш текст..\" Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым словам \"lorem ipsum\" сразу показывает, как много веб-страниц всё ещё дожидаются своего настоящего рождения. За прошедшие годы текст Lorem Ipsum получил много версий. Некоторые версии появились по ошибке, некоторые - намеренно (например, юмористические варианты)."
-}, {
-    title: "Новость №2",
-    img: "/img/default_img.png",
-    text: "Активные увольнения, средняя зарплата, далекая от идеала, затянувшаяся уборочная и посылки белорусов из-за рубежа — все это стало самыми главными новостями за среду, 26 июля. Теперь их можно не только смотреть в социальных сетях в рамках проекта «Короткая лента», но и слушать в аудиоверсии на удобных мобильных платформах."
-}, {
-    title: "Новость №3",
-    img: null,
-    text: "Инцидент произошел в пятницу утром на железнодорожной станции Французский Вокзал. Пригородный поезд, вышедший со станции Сант-Винсенс-де Кальдерс (провинция Таррагона) врезался носом в оградительную платформу. По предварительной версии, машинист не успел затормозить. В железнодорожной компании Renfe пока не комментируют причины происшествия."
-}, {
-    title: "Новость №4",
-    img: "/img/default_img.png",
-    text: "Сотрудники ФСБ задержали семерых подозреваемых в подготовке терактов в Санкт-Петербурге, сообщает спецслужба. Ространснадзор планирует усилить меры безопасности в метро Операция по задержанию прошла в пятницу. Все семеро подозреваемых — выходцы из Центральной Азии. По данным ФСБ, они планировали атаки на железнодорожном транспорте и в местах массового скопления людей."
-}, {
-    title: "Новость №5",
-    img: null,
-    text: "Вашингтону предписали оставить в России 455 сотрудников посольства и консульств — столько же российских дипломатов находятся в США. \"В случае новых односторонних действий американских властей по сокращению численности наших дипломатов в США за этим последует зеркальный ответ\", — подчеркнули в ведомстве."
-}, {
-    title: "Новость №6",
-    img: "/img/default_img.png",
-    text: "Утром во вторник на шоссе столкнулись четыре машины. Одна из них – Mercedes — впоследствии загорелась, пострадали четыре человека. По предварительным данным, аварию спровоцировал водитель Mercedes, устроив \"шашки\" на дороге; после ДТП он убежал. При этом в СМИ сообщалось, что речь идет о сыне бывшего гендиректора МГТС Михаила Смирнова."
-}];
+/*const initState=[
+    {
+        title: "Новость №1",
+        img: "/img/default_img.png",
+        text: "Lorem Ipsum - это текст-\"рыба\", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной \"рыбой\" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации \"Здесь ваш текст.. Здесь ваш текст.. Здесь ваш текст..\" Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым словам \"lorem ipsum\" сразу показывает, как много веб-страниц всё ещё дожидаются своего настоящего рождения. За прошедшие годы текст Lorem Ipsum получил много версий. Некоторые версии появились по ошибке, некоторые - намеренно (например, юмористические варианты)."
+    },
+    {
+        title: "Новость №2",
+        img: "/img/default_img.png",
+        text: "Активные увольнения, средняя зарплата, далекая от идеала, затянувшаяся уборочная и посылки белорусов из-за рубежа — все это стало самыми главными новостями за среду, 26 июля. Теперь их можно не только смотреть в социальных сетях в рамках проекта «Короткая лента», но и слушать в аудиоверсии на удобных мобильных платформах."
+    },
+    {
+        title: "Новость №3",
+        img: null,
+        text: "Инцидент произошел в пятницу утром на железнодорожной станции Французский Вокзал. Пригородный поезд, вышедший со станции Сант-Винсенс-де Кальдерс (провинция Таррагона) врезался носом в оградительную платформу. По предварительной версии, машинист не успел затормозить. В железнодорожной компании Renfe пока не комментируют причины происшествия."
+    },
+    {
+        title: "Новость №4",
+        img: "/img/default_img.png",
+        text: "Сотрудники ФСБ задержали семерых подозреваемых в подготовке терактов в Санкт-Петербурге, сообщает спецслужба. Ространснадзор планирует усилить меры безопасности в метро Операция по задержанию прошла в пятницу. Все семеро подозреваемых — выходцы из Центральной Азии. По данным ФСБ, они планировали атаки на железнодорожном транспорте и в местах массового скопления людей."
+    },
+    {
+        title: "Новость №5",
+        img: null,
+        text: "Вашингтону предписали оставить в России 455 сотрудников посольства и консульств — столько же российских дипломатов находятся в США. \"В случае новых односторонних действий американских властей по сокращению численности наших дипломатов в США за этим последует зеркальный ответ\", — подчеркнули в ведомстве."
+    },
+    {
+        title: "Новость №6",
+        img: "/img/default_img.png",
+        text: "Утром во вторник на шоссе столкнулись четыре машины. Одна из них – Mercedes — впоследствии загорелась, пострадали четыре человека. По предварительным данным, аварию спровоцировал водитель Mercedes, устроив \"шашки\" на дороге; после ДТП он убежал. При этом в СМИ сообщалось, что речь идет о сыне бывшего гендиректора МГТС Михаила Смирнова."
+    }
+]*/
 var news = function news() {
-    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initState;
+    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+    var action = arguments[1];
 
+    switch (action.type) {
+        case "INIT_NEWS":
+            {
+                return action.news;
+            }
+    }
     return state;
 };
 
@@ -39693,6 +39742,8 @@ exports.users = users;
 exports.user = user;
 exports.userStatistics = userStatistics;
 exports.answers = answers;
+exports.news = news;
+exports.vacancies = vacancies;
 exports.default = rootSaga;
 
 var _reduxSaga = __webpack_require__(232);
@@ -39707,7 +39758,7 @@ var _axios2 = _interopRequireDefault(_axios);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var _marked = [categories, tests, questions, users, user, userStatistics, answers, rootSaga].map(regeneratorRuntime.mark);
+var _marked = [categories, tests, questions, users, user, userStatistics, answers, news, vacancies, rootSaga].map(regeneratorRuntime.mark);
 
 var ff = function ff(idCategory, idTest) {
     var url = '/api/test' + (idCategory ? '/' + idCategory : "") + (idTest ? '/' + idTest : "");
@@ -39731,6 +39782,18 @@ var apiAnswers = function apiAnswers(params, id) {
     var url = '/api/result?' + (params + '=' + id);
     return _axios2.default.get(url).then(function (res) {
         console.log(res.data);
+        return res.data;
+    });
+};
+var apiNews = function apiNews() {
+    var url = '/api/news';
+    return _axios2.default.get(url).then(function (res) {
+        return res.data;
+    });
+};
+var apiVacancies = function apiVacancies() {
+    var url = '/api/vacancies';
+    return _axios2.default.get(url).then(function (res) {
         return res.data;
     });
 };
@@ -39882,44 +39945,95 @@ function answers(action) {
         }
     }, _marked[6], this);
 }
-function rootSaga() {
-    return regeneratorRuntime.wrap(function rootSaga$(_context8) {
+function news(action) {
+    var data;
+    return regeneratorRuntime.wrap(function news$(_context8) {
         while (1) {
             switch (_context8.prev = _context8.next) {
                 case 0:
                     _context8.next = 2;
-                    return (0, _effects.takeEvery)('GET_CATEGORIES', categories);
+                    return (0, _effects.call)(apiNews);
 
                 case 2:
-                    _context8.next = 4;
-                    return (0, _effects.takeEvery)('GET_TESTS', tests);
+                    data = _context8.sent;
+                    _context8.next = 5;
+                    return (0, _effects.put)((0, _actions.initNews)(data));
 
-                case 4:
-                    _context8.next = 6;
-                    return (0, _effects.takeEvery)('GET_QUESTIONS', questions);
-
-                case 6:
-                    _context8.next = 8;
-                    return (0, _effects.takeEvery)('GET_USERS', users);
-
-                case 8:
-                    _context8.next = 10;
-                    return (0, _effects.takeEvery)('GET_USER', user);
-
-                case 10:
-                    _context8.next = 12;
-                    return (0, _effects.takeEvery)('GET_STATISTICS', userStatistics);
-
-                case 12:
-                    _context8.next = 14;
-                    return (0, _effects.takeEvery)('GET_ANSWERS', answers);
-
-                case 14:
+                case 5:
                 case 'end':
                     return _context8.stop();
             }
         }
     }, _marked[7], this);
+}
+function vacancies(action) {
+    var data;
+    return regeneratorRuntime.wrap(function vacancies$(_context9) {
+        while (1) {
+            switch (_context9.prev = _context9.next) {
+                case 0:
+                    _context9.next = 2;
+                    return (0, _effects.call)(apiVacancies);
+
+                case 2:
+                    data = _context9.sent;
+                    _context9.next = 5;
+                    return (0, _effects.put)((0, _actions.initVacancies)(data));
+
+                case 5:
+                case 'end':
+                    return _context9.stop();
+            }
+        }
+    }, _marked[8], this);
+}
+
+function rootSaga() {
+    return regeneratorRuntime.wrap(function rootSaga$(_context10) {
+        while (1) {
+            switch (_context10.prev = _context10.next) {
+                case 0:
+                    _context10.next = 2;
+                    return (0, _effects.takeEvery)('GET_CATEGORIES', categories);
+
+                case 2:
+                    _context10.next = 4;
+                    return (0, _effects.takeEvery)('GET_TESTS', tests);
+
+                case 4:
+                    _context10.next = 6;
+                    return (0, _effects.takeEvery)('GET_QUESTIONS', questions);
+
+                case 6:
+                    _context10.next = 8;
+                    return (0, _effects.takeEvery)('GET_USERS', users);
+
+                case 8:
+                    _context10.next = 10;
+                    return (0, _effects.takeEvery)('GET_USER', user);
+
+                case 10:
+                    _context10.next = 12;
+                    return (0, _effects.takeEvery)('GET_STATISTICS', userStatistics);
+
+                case 12:
+                    _context10.next = 14;
+                    return (0, _effects.takeEvery)('GET_ANSWERS', answers);
+
+                case 14:
+                    _context10.next = 16;
+                    return (0, _effects.takeEvery)('GET_NEWS', news);
+
+                case 16:
+                    _context10.next = 18;
+                    return (0, _effects.takeEvery)('GET_VACANCIES', vacancies);
+
+                case 18:
+                case 'end':
+                    return _context10.stop();
+            }
+        }
+    }, _marked[9], this);
 }
 
 /***/ }),
@@ -41346,7 +41460,7 @@ exports.default = Categories;
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _reactRedux = __webpack_require__(63);
@@ -41355,16 +41469,26 @@ var _index = __webpack_require__(625);
 
 var _index2 = _interopRequireDefault(_index);
 
+var _actions = __webpack_require__(106);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var mapStateToProps = function mapStateToProps(state) {
-    return {
-        vacancies: state.vacancies,
-        news: state.news
-    };
+  return {
+    vacancies: state.vacancies,
+    news: state.news
+  };
+};
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    init: function init() {
+      dispatch((0, _actions.getNews)());
+      dispatch((0, _actions.getVacancies)());
+    }
+  };
 };
 
-exports.default = (0, _reactRedux.connect)(mapStateToProps)(_index2.default);
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_index2.default);
 
 /***/ }),
 /* 625 */
@@ -41374,8 +41498,10 @@ exports.default = (0, _reactRedux.connect)(mapStateToProps)(_index2.default);
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(2);
 
@@ -41401,30 +41527,57 @@ var _news2 = _interopRequireDefault(_news);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var About = function About(_ref) {
-    var news = _ref.news,
-        vacancies = _ref.vacancies;
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-    return _react2.default.createElement(
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var About = function (_React$Component) {
+  _inherits(About, _React$Component);
+
+  function About() {
+    _classCallCheck(this, About);
+
+    return _possibleConstructorReturn(this, (About.__proto__ || Object.getPrototypeOf(About)).apply(this, arguments));
+  }
+
+  _createClass(About, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.props.init();
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      return _react2.default.createElement(
         'main',
         { className: 'aboutPage' },
         _react2.default.createElement(_menu2.default, null),
         _react2.default.createElement(
-            _reactRouterDom.Switch,
-            null,
-            _react2.default.createElement(_reactRouterDom.Route, { path: '/about/contacts', component: _contacts2.default }),
-            _react2.default.createElement(_reactRouterDom.Route, { path: '/about/vacancies', render: function render() {
-                    return _react2.default.createElement(_vacancies2.default, { vacancies: vacancies });
-                } }),
-            _react2.default.createElement(_reactRouterDom.Route, { path: '/about/news', render: function render() {
-                    return _react2.default.createElement(_news2.default, { news: news });
-                } }),
-            _react2.default.createElement(_reactRouterDom.Route, { path: '/', render: function render() {
-                    return _react2.default.createElement(_reactRouterDom.Redirect, { to: '/about/news' });
-                } })
+          _reactRouterDom.Switch,
+          null,
+          _react2.default.createElement(_reactRouterDom.Route, { path: '/about/contacts', component: _contacts2.default }),
+          _react2.default.createElement(_reactRouterDom.Route, { path: '/about/vacancies', render: function render() {
+              return _react2.default.createElement(_vacancies2.default, { vacancies: _this2.props.vacancies });
+            } }),
+          _react2.default.createElement(_reactRouterDom.Route, { path: '/about/news', render: function render() {
+              return _react2.default.createElement(_news2.default, { news: _this2.props.news });
+            } }),
+          _react2.default.createElement(_reactRouterDom.Route, { path: '/', render: function render() {
+              return _react2.default.createElement(_reactRouterDom.Redirect, { to: '/about/news' });
+            } })
         )
-    );
-};
+      );
+    }
+  }]);
+
+  return About;
+}(_react2.default.Component);
+
+;
 exports.default = About;
 
 /***/ }),
@@ -42704,6 +42857,50 @@ var initAnswers = exports.initAnswers = function initAnswers(answers) {
     return {
         type: 'INIT_ANSWERS',
         answers: answers
+    };
+};
+
+/***/ }),
+/* 651 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var getVacancies = exports.getVacancies = function getVacancies() {
+    return {
+        type: 'GET_VACANCIES'
+    };
+};
+var initVacancies = exports.initVacancies = function initVacancies(vacancies) {
+    return {
+        type: 'INIT_VACANCIES',
+        vacancies: vacancies
+    };
+};
+
+/***/ }),
+/* 652 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var getNews = exports.getNews = function getNews() {
+    return {
+        type: 'GET_NEWS'
+    };
+};
+var initNews = exports.initNews = function initNews(news) {
+    return {
+        type: 'INIT_NEWS',
+        news: news
     };
 };
 
