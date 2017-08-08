@@ -6,3 +6,4 @@ export * from './answers';
 export * from './news';
 export * from './vacancies';
 export * from './result';
+export * from './app';

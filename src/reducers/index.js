@@ -9,8 +9,10 @@ import questions from './questions'
 import user from './user'
 import users from './users'
 import result from './result'
+import app from './app'
 
 const rootReducer = combineReducers({
+    app,
     categories,
     tests,
     vacancies,

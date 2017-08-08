@@ -1,18 +1,20 @@
 import { connect } from 'react-redux'
-import {addСategory, deleteCategory, changeCategory,getCategories,initCategories,sortCategories} from '../actions';
+import {sort} from '../helpers'
+import {addСategory, deleteCategory, changeCategory,getCategories,initCategories,changeOrder} from '../actions';
 
 
 import Categories from '../components/Categories/index.jsx';
 const mapStateToProps = state => ({
-    categories: sort(state.categories.categories, state.categories.flag),
-    flag: state.categories.flag
+    categories: sort(state.categories.categories, {order: state.app.order, field: state.categories.field}),
+    order: state.app.order,
+    orderFields: state.categories.orderFields
 })
 const mapDispatchToProps = dispatch => ({
   init:()=>{
     dispatch(getCategories());
   },
-  sort:(flag)=>{
-    dispatch(sortCategories(flag));
+  sort:(order)=>{
+    dispatch(changeOrder(order));
   },
   addСategory: ()=>{
     dispatch(addСategory());
@@ -24,17 +26,6 @@ const mapDispatchToProps = dispatch => ({
     dispatch(changeCategory(id));
   },
 })
-let sort=(items,flag)=>{
-  return items.sort(function (a, b) {
-    if(flag){
-      return new Date(b.date) - new Date(a.date);
-    }
-    else {
-      return new Date(a.date) - new Date(b.date);
-    }
-  });
-
-}  
 export default connect(
   mapStateToProps,
   mapDispatchToProps

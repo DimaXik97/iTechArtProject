@@ -1,5 +1,6 @@
 import React from 'react';
 import ContainerElements from "./../ContainerElements/index.jsx"
+import Sort from "./../Sort/index.jsx"
 
 class Categories extends React.Component{/*({categories, addСategory,deleteCategory, changeCategory})=> */
 
@@ -10,7 +11,7 @@ componentDidMount(){
     let isAdmin = window.location.pathname.indexOf("/admin/")==0;
     return (
       <main >
-          <h1 className="title"><img src={this.props.flag?"/img/sort_down.png":"/img/sort_up.png"} onClick={()=>{this.props.sort(!this.props.flag)}}/>Выберете категорию:</h1>
+          <h1 className="title">Выберете категорию:<Sort order={this.props.order} sort={this.props.sort} orderFields={this.props.orderFields}/></h1>
           <ContainerElements url={window.location.pathname} data={this.props.categories.map((element)=>{return {id:element.id, text: element.name, isReady: element.isReady}})}
              isAdmin={isAdmin} addElement={this.props.addСategory} deleteElement={this.props.deleteCategory} changeCheckBox={this.props.changeCategory}/>
       </main>);

@@ -14,7 +14,7 @@ export const addСategory = ()=>({
     type: 'ADD_CATEGORY',
     id: ++idNew,
     name: "New Category!",
-    date: '2017.08.08',
+    date: `${(new Date()).getFullYear()}.${(new Date()).getMonth()}.${(new Date()).getDate()}`,
     isReady: false
 })
 export const deleteCategory= (id)=>({

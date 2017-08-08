@@ -3918,6 +3918,18 @@ Object.keys(_result).forEach(function (key) {
   });
 });
 
+var _app = __webpack_require__(657);
+
+Object.keys(_app).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _app[key];
+    }
+  });
+});
+
 /***/ }),
 /* 52 */
 /***/ (function(module, exports) {
@@ -39170,9 +39182,14 @@ var _result = __webpack_require__(593);
 
 var _result2 = _interopRequireDefault(_result);
 
+var _app = __webpack_require__(656);
+
+var _app2 = _interopRequireDefault(_app);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var rootReducer = (0, _redux.combineReducers)({
+    app: _app2.default,
     categories: _categories2.default,
     tests: _tests2.default,
     vacancies: _vacancies2.default,
@@ -39199,50 +39216,18 @@ Object.defineProperty(exports, "__esModule", {
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
-/*const initState=[
-    {
-        id: 1,
-        name: "C#",
-        isReady: true
-    },
-    {
-        id: 2,
-        name: "C++",
-        isReady: true
-    },
-    {
-        id: 3,
-        name: "Java",
-        isReady: true
-    },
-    {
-        id: 4,
-        name: "Ruby",
-        isReady: true
-    },
-    {
-        id: 5,
-        name: "JS",
-        isReady: true
-    },
-    {
-        id: 6,
-        name: "HTML",
-        isReady: true
-    },
-    {
-        id: 7,
-        name: "CSS",
-        isReady: true
-    },
-    {
-        id: 8,
-        name: "XML",
-        isReady: true
-    }
-]*/
+var initState = {
+    categories: [],
+    field: 'date',
+    orderFields: [{
+        value: "date",
+        text: "По дате" }, {
+        value: "name",
+        text: "По названию"
+    }]
+};
 var categories = function categories() {
-    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { categories: [], flag: true };
+    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initState;
     var action = arguments[1];
 
     switch (action.type) {
@@ -39250,11 +39235,6 @@ var categories = function categories() {
             {
                 return Object.assign({}, state, {
                     categories: action.categories });
-            }
-        case "SORT_CATEGORIES":
-            {
-                return Object.assign({}, state, {
-                    flag: action.flag });
             }
         case 'ADD_CATEGORY':
             {
@@ -39304,60 +39284,18 @@ Object.defineProperty(exports, "__esModule", {
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
-/*const initState=[
-    {
-        id: 1,
-        name: "Типы данных, переменные, операторы, циклы, массивы",
-        isReady: true
-    },
-    {
-        id: 2,
-        name: "ООП",
-        isReady: true
-    },
-    {
-        id: 3,
-        name: "Исключения",
-        isReady: true
-    },
-    {
-        id: 4,
-        name: "Коллекции",
-        isReady: true
-    },
-    {
-        id: 5,
-        name: "Строки",
-        isReady: true
-    },
-    {
-        id: 6,
-        name: "Потоки ввода/вывода",
-        isReady: true
-    },
-    {
-        id: 7,
-        name: " Потоки выполнения",
-        isReady: true
-    },
-    {
-        id: 8,
-        name: "SQL, JDBC",
-        isReady: true
-    },
-    {
-        id: 9,
-        name: "JSP",
-        isReady: true
-    },
-    {
-        id: 10,
-        name: "Servlet",
-        isReady: true
-    }
-]*/
+var initState = {
+    tests: [],
+    field: 'date',
+    orderFields: [{
+        value: "date",
+        text: "По дате" }, {
+        value: "name",
+        text: "По названию"
+    }]
+};
 var tests = function tests() {
-    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { tests: [], flag: true };
+    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initState;
     var action = arguments[1];
 
     switch (action.type) {
@@ -40142,7 +40080,7 @@ var addСategory = exports.addСategory = function addСategory() {
         type: 'ADD_CATEGORY',
         id: ++idNew,
         name: "New Category!",
-        date: '2017.08.08',
+        date: new Date().getFullYear() + "." + new Date().getMonth() + "." + new Date().getDate(),
         isReady: false
     };
 };
@@ -40169,7 +40107,7 @@ var changeCategory = exports.changeCategory = function changeCategory(id) {
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-var idNew = 10;
+var idNew = 100;
 
 var initTest = exports.initTest = function initTest(tests) {
     return {
@@ -40183,18 +40121,12 @@ var getTests = exports.getTests = function getTests(id) {
         idCategory: id
     };
 };
-var sortTests = exports.sortTests = function sortTests(flag) {
-    return {
-        type: 'SORT_TESTS',
-        flag: flag
-    };
-};
 var addTest = exports.addTest = function addTest() {
     return {
         type: 'ADD_TEST',
         id: ++idNew,
         name: "New TEST!",
-        date: "2017-08-08",
+        date: new Date().getFullYear() + '.' + new Date().getMonth() + '.' + new Date().getDate(),
         isReady: false
     };
 };
@@ -41574,6 +41506,8 @@ Object.defineProperty(exports, "__esModule", {
 
 var _reactRedux = __webpack_require__(50);
 
+var _helpers = __webpack_require__(658);
+
 var _actions = __webpack_require__(51);
 
 var _index = __webpack_require__(629);
@@ -41584,8 +41518,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
-    categories: sort(state.categories.categories, state.categories.flag),
-    flag: state.categories.flag
+    categories: (0, _helpers.sort)(state.categories.categories, { order: state.app.order, field: state.categories.field }),
+    order: state.app.order,
+    orderFields: state.categories.orderFields
   };
 };
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
@@ -41593,8 +41528,8 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     init: function init() {
       dispatch((0, _actions.getCategories)());
     },
-    sort: function sort(flag) {
-      dispatch((0, _actions.sortCategories)(flag));
+    sort: function sort(order) {
+      dispatch((0, _actions.changeOrder)(order));
     },
     addСategory: function addAtegory() {
       dispatch((0, _actions.addСategory)());
@@ -41606,15 +41541,6 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
       dispatch((0, _actions.changeCategory)(id));
     }
   };
-};
-var sort = function sort(items, flag) {
-  return items.sort(function (a, b) {
-    if (flag) {
-      return new Date(b.date) - new Date(a.date);
-    } else {
-      return new Date(a.date) - new Date(b.date);
-    }
-  });
 };
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_index2.default);
 
@@ -41638,6 +41564,10 @@ var _react2 = _interopRequireDefault(_react);
 var _index = __webpack_require__(85);
 
 var _index2 = _interopRequireDefault(_index);
+
+var _index3 = __webpack_require__(659);
+
+var _index4 = _interopRequireDefault(_index3);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -41666,8 +41596,6 @@ var Categories = function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
-
       var isAdmin = window.location.pathname.indexOf("/admin/") == 0;
       return _react2.default.createElement(
         "main",
@@ -41675,10 +41603,8 @@ var Categories = function (_React$Component) {
         _react2.default.createElement(
           "h1",
           { className: "title" },
-          _react2.default.createElement("img", { src: this.props.flag ? "/img/sort_down.png" : "/img/sort_up.png", onClick: function onClick() {
-              _this2.props.sort(!_this2.props.flag);
-            } }),
-          "\u0412\u044B\u0431\u0435\u0440\u0435\u0442\u0435 \u043A\u0430\u0442\u0435\u0433\u043E\u0440\u0438\u044E:"
+          "\u0412\u044B\u0431\u0435\u0440\u0435\u0442\u0435 \u043A\u0430\u0442\u0435\u0433\u043E\u0440\u0438\u044E:",
+          _react2.default.createElement(_index4.default, { order: this.props.order, sort: this.props.sort, orderFields: this.props.orderFields })
         ),
         _react2.default.createElement(_index2.default, { url: window.location.pathname, data: this.props.categories.map(function (element) {
             return { id: element.id, text: element.name, isReady: element.isReady };
@@ -42475,6 +42401,8 @@ Object.defineProperty(exports, "__esModule", {
 
 var _reactRedux = __webpack_require__(50);
 
+var _helpers = __webpack_require__(658);
+
 var _actions = __webpack_require__(51);
 
 var _index = __webpack_require__(647);
@@ -42485,8 +42413,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
-    tests: sort(state.tests.tests, state.tests.flag),
-    flag: state.tests.flag
+    tests: (0, _helpers.sort)(state.tests.tests, { order: state.app.order, field: state.tests.field }),
+    order: state.app.order,
+    orderFields: state.categories.orderFields
   };
 };
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
@@ -42497,8 +42426,8 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     addTest: function addTest() {
       dispatch((0, _actions.addTest)());
     },
-    sort: function sort(flag) {
-      dispatch((0, _actions.sortTests)(flag));
+    sort: function sort(order) {
+      dispatch((0, _actions.changeOrder)(order));
     },
     deleteTest: function deleteTest(id) {
       dispatch((0, _actions.deleteTest)(id));
@@ -42507,15 +42436,6 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
       dispatch((0, _actions.changeTest)(id));
     }
   };
-};
-var sort = function sort(items, flag) {
-  return items.sort(function (a, b) {
-    if (flag) {
-      return new Date(b.date) - new Date(a.date);
-    } else {
-      return new Date(a.date) - new Date(b.date);
-    }
-  });
 };
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_index2.default);
 
@@ -42539,6 +42459,10 @@ var _react2 = _interopRequireDefault(_react);
 var _index = __webpack_require__(85);
 
 var _index2 = _interopRequireDefault(_index);
+
+var _index3 = __webpack_require__(659);
+
+var _index4 = _interopRequireDefault(_index3);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -42566,8 +42490,6 @@ var Test = function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
-
       var isAdmin = window.location.pathname.indexOf("/admin/") == 0;
       return _react2.default.createElement(
         "main",
@@ -42575,10 +42497,8 @@ var Test = function (_React$Component) {
         _react2.default.createElement(
           "h1",
           { className: "title" },
-          _react2.default.createElement("img", { src: this.props.flag ? "/img/sort_down.png" : "/img/sort_up.png", onClick: function onClick() {
-              _this2.props.sort(!_this2.props.flag);
-            } }),
-          "\u0412\u044B\u0431\u0435\u0440\u0435\u0442\u0435 \u0442\u0435\u0441\u0442:"
+          "\u0412\u044B\u0431\u0435\u0440\u0435\u0442\u0435 \u0442\u0435\u0441\u0442:",
+          _react2.default.createElement(_index4.default, { order: this.props.order, sort: this.props.sort, orderFields: this.props.orderFields })
         ),
         _react2.default.createElement(_index2.default, { url: window.location.pathname, data: this.props.tests.map(function (element) {
             return { id: element.id, text: element.name, isReady: element.isReady };
@@ -43098,6 +43018,143 @@ var Answer = function Answer(props) {
     );
 };
 exports.default = Answer;
+
+/***/ }),
+/* 656 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var app = function app() {
+    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { order: true };
+    var action = arguments[1];
+
+    switch (action.type) {
+        case 'CHANGE_ORDER':
+            {
+                return Object.assign({}, state, {
+                    order: action.order });
+            }
+        default:
+            return state;
+    }
+};
+
+exports.default = app;
+
+/***/ }),
+/* 657 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var changeOrder = exports.changeOrder = function changeOrder(order) {
+    return {
+        type: 'CHANGE_ORDER',
+        order: order
+    };
+};
+
+/***/ }),
+/* 658 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var sort = exports.sort = function sort(items, param) {
+  var paramA = void 0,
+      paramB = void 0;
+  return items.sort(function (a, b) {
+    if (param.field == "date") {
+      param.order ? (paramA = a[param.field], paramB = b[param.field]) : (paramB = a[param.field], paramA = b[param.field]);
+      return new Date(paramA) - new Date(paramB);
+    } else if (param.field == "name") {
+      param.order ? (paramA = a[param.field].toLowerCase(), paramB = b[param.field].toLowerCase()) : (paramB = a[param.field].toLowerCase(), paramA = b[param.field].toLowerCase());
+      if (paramA < paramB) return -1;
+      if (paramA > paramB) return 1;
+      return 0;
+    }
+  });
+};
+
+/***/ }),
+/* 659 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(2);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Sort = function (_React$Component) {
+    _inherits(Sort, _React$Component);
+
+    function Sort() {
+        _classCallCheck(this, Sort);
+
+        return _possibleConstructorReturn(this, (Sort.__proto__ || Object.getPrototypeOf(Sort)).apply(this, arguments));
+    }
+
+    _createClass(Sort, [{
+        key: "render",
+        value: function render() {
+            var _this2 = this;
+
+            return _react2.default.createElement(
+                "span",
+                null,
+                _react2.default.createElement("img", { src: this.props.order ? "/img/sort_down.png" : "/img/sort_up.png", onClick: function onClick() {
+                        _this2.props.sort(!_this2.props.order);
+                    } }),
+                _react2.default.createElement(
+                    "select",
+                    null,
+                    this.props.orderFields.map(function (element, num) {
+                        return _react2.default.createElement(
+                            "option",
+                            { key: num, value: element.value },
+                            element.text
+                        );
+                    })
+                )
+            );
+        }
+    }]);
+
+    return Sort;
+}(_react2.default.Component);
+
+;
+
+exports.default = Sort;
 
 /***/ })
 /******/ ]);
