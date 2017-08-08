@@ -31,7 +31,8 @@ module.exports = () => {
     {
         categories=[];
         test.forEach(function(element) {
-            categories.push({id: element.id, name: element.name});
+            console.log(element);
+            categories.push({id: element.id, name: element.name, date: element.dateCreate});
         });
         res.send(categories);
     });

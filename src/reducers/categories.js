@@ -40,30 +40,42 @@
         isReady: true
     }
 ]*/
-const categories = (state = [], action) => {
+const categories = (state = {categories:[], flag: true}, action) => {
     switch (action.type) {
     case 'INIT_CATEGORIES':{
-        return action.categories
+        return Object.assign({}, state, {
+            categories: action.categories});
+    }
+    case "SORT_CATEGORIES":{
+        return Object.assign({}, state, {
+            flag: action.flag});
     }
     case 'ADD_CATEGORY':{
-        return [
-            ...state,
-            {
-                id: action.id,
-                name: action.name,
-                isReady: action.isReady
-            }
-        ]
+        return Object.assign({}, state, {
+            categories: [
+                ...state.categories,
+                {
+                    id: action.id,
+                    name: action.name,
+                    isReady: action.isReady,
+                    date: action.date
+                }
+            ]
+        }); 
     }
     case 'DELETE_CATEGORY':{
-        return  state.filter(element => element.id !== action.id);
+        return Object.assign({}, state, {
+            categories: state.categories.filter(element => element.id !== action.id)
+        }); 
     }
     case 'CHANGE_CATEGORY':{
-        return state.map(element => {
-            if(element.id==action.id) 
-                element.isReady=(!element.isReady);
-            return element
-        })
+        return Object.assign({}, state, {
+                categories: state.categories.map(element => {
+                if(element.id==action.id) 
+                    element.isReady=(!element.isReady);
+                return element
+            })
+        }); 
     }
     default:
       return state
