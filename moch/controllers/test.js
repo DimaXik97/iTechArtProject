@@ -21,7 +21,7 @@ module.exports = () => {
         test.forEach(function(element) {
             if(element.id==req.params.id){
                 element.tests.forEach(tElement=>{
-                    tests.push({id: tElement.id, name: tElement.name});
+                    tests.push({id: tElement.id, name: tElement.name, date: tElement.dateCreate});
                 })
             }
         });
@@ -31,7 +31,6 @@ module.exports = () => {
     {
         categories=[];
         test.forEach(function(element) {
-            console.log(element);
             categories.push({id: element.id, name: element.name, date: element.dateCreate});
         });
         res.send(categories);

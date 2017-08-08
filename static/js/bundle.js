@@ -39357,33 +39357,46 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
     }
 ]*/
 var tests = function tests() {
-    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { tests: [], flag: true };
     var action = arguments[1];
 
     switch (action.type) {
         case 'INIT_TESTS':
             {
-                return action.tests;
+                return Object.assign({}, state, {
+                    tests: action.tests });
+            }
+        case "SORT_TESTS":
+            {
+                return Object.assign({}, state, {
+                    flag: action.flag });
             }
         case 'ADD_TEST':
             {
-                return [].concat(_toConsumableArray(state), [{
-                    id: action.id,
-                    name: action.name,
-                    isReady: action.isReady
-                }]);
+                return Object.assign({}, state, {
+                    tests: [].concat(_toConsumableArray(state.tests), [{
+                        id: action.id,
+                        name: action.name,
+                        isReady: action.isReady,
+                        date: action.date
+                    }])
+                });
             }
         case 'DELETE_TEST':
             {
-                return state.filter(function (element) {
-                    return element.id !== action.id;
+                return Object.assign({}, state, {
+                    tests: state.tests.filter(function (element) {
+                        return element.id !== action.id;
+                    })
                 });
             }
         case 'CHANGE_TEST':
             {
-                return state.map(function (element) {
-                    if (element.id == action.id) element.isReady = !element.isReady;
-                    return element;
+                return Object.assign({}, state, {
+                    tests: state.tests.map(function (element) {
+                        if (element.id == action.id) element.isReady = !element.isReady;
+                        return element;
+                    })
                 });
             }
         default:
@@ -40170,11 +40183,18 @@ var getTests = exports.getTests = function getTests(id) {
         idCategory: id
     };
 };
+var sortTests = exports.sortTests = function sortTests(flag) {
+    return {
+        type: 'SORT_TESTS',
+        flag: flag
+    };
+};
 var addTest = exports.addTest = function addTest() {
     return {
         type: 'ADD_TEST',
         id: ++idNew,
         name: "New TEST!",
+        date: "2017-08-08",
         isReady: false
     };
 };
@@ -42465,7 +42485,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
-    tests: state.tests
+    tests: sort(state.tests.tests, state.tests.flag),
+    flag: state.tests.flag
   };
 };
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
@@ -42476,6 +42497,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     addTest: function addTest() {
       dispatch((0, _actions.addTest)());
     },
+    sort: function sort(flag) {
+      dispatch((0, _actions.sortTests)(flag));
+    },
     deleteTest: function deleteTest(id) {
       dispatch((0, _actions.deleteTest)(id));
     },
@@ -42484,7 +42508,15 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     }
   };
 };
-
+var sort = function sort(items, flag) {
+  return items.sort(function (a, b) {
+    if (flag) {
+      return new Date(b.date) - new Date(a.date);
+    } else {
+      return new Date(a.date) - new Date(b.date);
+    }
+  });
+};
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_index2.default);
 
 /***/ }),
@@ -42534,6 +42566,8 @@ var Test = function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       var isAdmin = window.location.pathname.indexOf("/admin/") == 0;
       return _react2.default.createElement(
         "main",
@@ -42541,6 +42575,9 @@ var Test = function (_React$Component) {
         _react2.default.createElement(
           "h1",
           { className: "title" },
+          _react2.default.createElement("img", { src: this.props.flag ? "/img/sort_down.png" : "/img/sort_up.png", onClick: function onClick() {
+              _this2.props.sort(!_this2.props.flag);
+            } }),
           "\u0412\u044B\u0431\u0435\u0440\u0435\u0442\u0435 \u0442\u0435\u0441\u0442:"
         ),
         _react2.default.createElement(_index2.default, { url: window.location.pathname, data: this.props.tests.map(function (element) {
