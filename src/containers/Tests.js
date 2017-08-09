@@ -1,13 +1,14 @@
 import { connect } from 'react-redux'
 import {sort} from '../helpers'
-import {addTest, deleteTest, changeTest,getTests,changeOrder} from '../actions';
+import {addTest, deleteTest, changeTest,getTests,changeOrder,changeOrderFieldTest} from '../actions';
 
 import Tests from '../components/Tests/index.jsx';
 
 const mapStateToProps = state => ({
     tests: sort(state.tests.tests, {order: state.app.order, field: state.tests.field}),
     order: state.app.order,
-    orderFields: state.categories.orderFields
+    orderFields: state.tests.orderFields,
+    field: state.tests.field
 })
 const mapDispatchToProps = dispatch => ({
   init:(id)=>{
@@ -18,6 +19,9 @@ const mapDispatchToProps = dispatch => ({
   },
   sort:(order)=>{
     dispatch(changeOrder(order));
+  },
+  changeOrderField:(field)=>{
+    dispatch(changeOrderFieldTest(field));
   },
   deleteTest: (id)=>{
     dispatch(deleteTest(id))

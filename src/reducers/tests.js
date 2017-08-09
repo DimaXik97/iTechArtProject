@@ -21,6 +21,10 @@ const tests = (state =initState, action) => {
         return Object.assign({}, state, {
             flag: action.flag});
     }
+    case 'CHANGE_ORDER_FIELD_TEST':{
+        return Object.assign({}, state, {
+            field: action.field});
+    }
     case 'ADD_TEST':{
         return Object.assign({}, state, {
             tests: [

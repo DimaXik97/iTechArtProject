@@ -7,7 +7,7 @@ const initState={
             text:"По дате"},
         {
             value: "name",
-            text:"По названию"
+            text:"По имени"
         }]
 }
 const categories = (state = initState, action) => {
@@ -15,6 +15,10 @@ const categories = (state = initState, action) => {
     case 'INIT_CATEGORIES':{
         return Object.assign({}, state, {
             categories: action.categories});
+    }
+    case 'CHANGE_ORDER_FIELD_CATEGORIES':{
+        return Object.assign({}, state, {
+            field: action.field});
     }
     case 'ADD_CATEGORY':{
         return Object.assign({}, state, {

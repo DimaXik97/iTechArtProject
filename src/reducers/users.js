@@ -1,49 +1,22 @@
-/*const initState=[
-    {
-        id: 1,
-        name: "1",
-        surName: "User"
-    },
-    {
-        id: 2,
-        name: "2",
-        surName: "User"
-    },
-    {
-        id: 3,
-        name: "3",
-        surName: "User"
-    },
-    {
-        id: 4,
-        name: "4",
-        surName: "User"
-    },
-    {
-        id: 5,
-        name: "5",
-        surName: "User"
-    },
-    {
-        id: 6,
-        name: "6",
-        surName: "User"
-    },
-    {
-        id: 7,
-        name: "726262",
-        surName: "User"
-    },
-    {
-        id: 8,
-        name: "8",
-        surName: "User"
-    }
-];*/
-const users = (state = [],action) => {
+const initState={
+    users: [],
+    field: 'name',
+    orderFields:[
+        {
+            value: "name",
+            text: "По имени"
+        }
+    ]
+}
+const users = (state = initState,action) => {
     switch(action.type){
         case 'INIT_USERS':{
-            return action.users
+            return Object.assign({}, state, {
+                users: action.users});
+        }
+        case 'CHANGE_ORDER_FIELD_CATEGORIES':{
+            return Object.assign({}, state, {
+                field: action.field});
         }
     }
     return state;

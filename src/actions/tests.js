@@ -8,6 +8,10 @@ export const getTests =(id)=>({
     type: 'GET_TESTS',
     idCategory: id
 })
+export const changeOrderFieldTest=(field)=>({
+    type: "CHANGE_ORDER_FIELD_TEST",
+    field: field
+})
 export const addTest = ()=>({
     type: 'ADD_TEST',
     id: ++idNew,

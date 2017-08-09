@@ -3,12 +3,12 @@ export const initCategories=(data)=>({
     type: "INIT_CATEGORIES",
     categories: data 
 })
-export const sortCategories= (flag)=>({
-    type: 'SORT_CATEGORIES',
-    flag: flag
-})
 export const getCategories=()=>({
     type: "GET_CATEGORIES",
+})
+export const changeOrderFieldCategory=(field)=>({
+    type: "CHANGE_ORDER_FIELD_CATEGORIES",
+    field: field
 })
 export const addСategory = ()=>({
     type: 'ADD_CATEGORY',
